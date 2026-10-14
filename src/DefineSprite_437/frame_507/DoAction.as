@@ -1,1 +1,2 @@
-// @reference DefineSprite_437_frame_507_DoAction_main
+// the loop point: back to the first frame, then play
+ gotoAndPlay(1);

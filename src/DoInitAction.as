@@ -4,14 +4,24 @@
 // @reference soundOn
 // @reference gameStart
 // @reference nextLevel
-// @reference replay
+// the replay option: clear the flag, then step the timeline through "reset" back to "game"
+function replay()
+{
+   stargeted = 0.0;
+   this.gotoAndStop("reset");
+   this.gotoAndStop("game");
+}
 // @reference newGame
 // @reference playSnd
 // @reference initLevel
 // @reference processGame
 // @reference fire
 // @reference resetkfire
-// @reference showTime
+// the clock readout: format the remaining/elapsed time into the text field
+function showTime()
+{
+   txtTime = getTimeString(timeCounter);
+}
 // @reference getTimeString
 // @reference resume
 // @reference pauseGame

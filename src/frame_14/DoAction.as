@@ -1,1 +1,2 @@
-// @reference frame_14_DoAction_main
+// the frame silences everything that is playing
+stopAllSounds();

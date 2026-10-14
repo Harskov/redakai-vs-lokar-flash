@@ -28,16 +28,16 @@ The game is an SWF whose code runs on the first ActionScript virtual machine. Th
 
 ## Progress
 
-**36 of 202 game functions are matched** (32 of 10,936 instructions, 0.29 %). 107 functions carry a name backed by evidence; 0 carry a subsystem label.
+**69 of 202 game functions are matched** (322 of 10,936 instructions, 2.94 %). 107 functions carry a name backed by evidence; 202 carry a subsystem label.
 
 | Milestone | Status | Exit judged on |
 |---|---|---|
 | M1 Contributable | done | public-build.json ok=True; matched outside their unit: 0 |
-| M2 Identified | current | name pass closed: False; unlabelled game functions: 202; review pending: 0 |
-| M3 Platform boundary | later | 0/0 platform functions matched; PLATFORM.md present |
-| M4 Core | later | 0/0 core functions matched; FORMATS.md missing |
-| M5 Gameplay | later | 0/0 gameplay functions matched |
-| M6 Complete | later | 36/202 game functions matched; check ok=True |
+| M2 Identified | current | name pass closed: True; unlabelled game functions: 0; review pending: 33 |
+| M3 Platform boundary | done | 1/1 platform functions matched; PLATFORM.md present |
+| M4 Core | later | 1/13 core functions matched; FORMATS.md missing |
+| M5 Gameplay | later | 59/146 gameplay functions matched |
+| M6 Complete | later | 69/202 game functions matched; check ok=True |
 | M7 Documented | later | docs.py check ok=None (never run) |
 | M8 Behaviour-verified | later | last behaviour compare ok=None at never |
 

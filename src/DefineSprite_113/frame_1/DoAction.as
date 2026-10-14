@@ -1,1 +1,2 @@
-// @reference DefineSprite_113_frame_1_DoAction_main
+// the tyre sprite is set to the frame the root's jeep selection names
+tyre.gotoAndStop(_root.jeepselection);

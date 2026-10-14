@@ -1,1 +1,2 @@
-// @reference frame_13_DoAction_main
+// silence the timeline as this frame plays
+stopAllSounds();

@@ -521,8 +521,8 @@ def splice(text, fns, replacements):
     """The script's P-code text with blocks replaced: `replacements` {function name: block lines (nested blocks as `@fn name`
     placeholders, as `cut` gives them; "_main" for the top-level stream)}. A placeholder expands to the function's
     replacement when one is given, else to its original block (recursively). A replacement's labels are renamed to fresh
-    ones so that the blocks never collide; a jump out of a replacement block (to a label it never defines) lands on the
-    line that follows the block, as the original compiler's did. The original's ConstantPool lines stay where they are."""
+    ones so that the blocks never collide; a jump out of a block, replaced or original (to a label it never defines), lands
+    on the line that follows the block, as the original compiler's did. The original's ConstantPool lines stay where they are."""
     by = {f.name: f for f in fns}
     counter = [0]
 
@@ -551,6 +551,19 @@ def splice(text, fns, replacements):
             out.append((defined[lab] + ":" if lab else "") + t)
         return out, list(exits.values())
 
+    def detach(block):
+        """An original block's jumps out of itself (to a label in its parent, which the compiler puts on the line after
+        the block) renamed to fresh exit labels, so they still land after the block when the parent was replaced and
+        relabelled."""
+        defined = {split_line(l)[0] for l in block} - {None}
+        exits = {}
+        out = []
+        for l in block:
+            lab, t = split_line(l)
+            t = re.sub(LABEL_REF, lambda m: m.group(0) if m.group(0) in defined else exits.setdefault(m.group(0), fresh()), t)
+            out.append((lab + ":" if lab else "") + t)
+        return out, list(exits.values())
+
     def settle(out, pending, lab):
         """Point every pending exit label at `lab` in the lines emitted so far."""
         pat = re.compile(r"\b(" + "|".join(re.escape(x) for x in pending) + r")\b")
@@ -568,7 +581,8 @@ def splice(text, fns, replacements):
                     body, exits = relabel(replacements[name])
                     body = expand(body)
                 elif f is not None:
-                    body, exits = expand(cut(text, f, fns)), []
+                    body, exits = detach(cut(text, f, fns))
+                    body = expand(body)
                 else:
                     raise KeyError(f"@fn {name}: no such function in the script")
                 if not body:

@@ -1,1 +1,2 @@
-// @reference DefineSprite_12_rocket_id_frame_39_DoAction_main
+// the sprite's frame 39: take it off the timeline
+removeMovieClip(this);
