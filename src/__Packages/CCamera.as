@@ -1,4 +1,6 @@
 // @reference Packages_CCamera_main
-// @reference CCamera
+function CCamera()
+{
+}
 // @reference CCamera.init
 // @reference CCamera.process

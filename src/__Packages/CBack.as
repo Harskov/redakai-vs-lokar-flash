@@ -1,4 +1,6 @@
 // @reference Packages_CBack_main
-// @reference CBack
+function CBack()
+{
+}
 // @reference CBack.init
 // @reference CBack.process

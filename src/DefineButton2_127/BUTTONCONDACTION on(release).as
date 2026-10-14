@@ -1,1 +1,3 @@
-// @reference DefineButton2_127_BUTTONCONDACTION_on_release_main
+on(release){
+   getURL("http://www.jeuxredakai.com/", "_blank");
+}

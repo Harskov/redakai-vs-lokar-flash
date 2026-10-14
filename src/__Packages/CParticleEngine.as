@@ -1,5 +1,7 @@
 // @reference Packages_CParticleEngine_main
-// @reference CParticleEngine
+function CParticleEngine()
+{
+}
 // @reference CParticleEngine.clear
 // @reference CParticleEngine.setHitMovie
 // @reference CParticleEngine.addParticle
