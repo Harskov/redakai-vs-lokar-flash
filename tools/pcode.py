@@ -290,12 +290,18 @@ def drop_residue(lines):
 
 def deobfuscator_leftover(text):
     """The lines of a reference listing the deobfuscator should have removed and did not (the always-logged event
-    deobfuscator-leftover): an undefined opcode, a second ConstantPool, a control-character string outside the residue."""
+    deobfuscator-leftover): an undefined opcode, a second ConstantPool, a control-character string outside the residue, a function
+    whose name is control characters."""
     lines = drop_residue(split_pushes(lines_of(text)))
     out = [l for l in lines if UNKNOWN_RE.match(split_line(l)[1].strip())]
     pools = [l for l in lines if split_line(l)[1].strip().startswith("ConstantPool")]
     out += pools[1:]
     out += [l for l in lines if split_line(l)[1].strip().startswith("Push ") and RESIDUE_NAME_RE.match(split_line(l)[1].strip()[5:].strip())]
+    for l in lines:                      # a surviving junk function (the dispatcher's `\x04\x05`)
+        t = split_line(l)[1].strip()
+        h = parse_header(t) if HDR_RE.match(t) else None
+        if h and h["name"] and RESIDUE_NAME_RE.match('"' + h["name"] + '"'):
+            out.append(l)
     return out
 
 
