@@ -16,7 +16,7 @@ function getUgol()
 {
    return Math.atan2(this.y, this.x);
 }
-// this vector's copy, built through the constructor in its own component order
+// a new vector with this one's components
 function duplicate()
 {
    return new CVector2D(this.x, this.y);
@@ -36,7 +36,7 @@ function minus(v)
 // @reference CVector2D.minusNew
 // @reference CVector2D.normalize
 // @reference CVector2D.reverseNew
-// the dot product with another vector: x*x + y*y, componentwise
+// the dot product with another vector
 function scalar(v)
 {
    return this.x * v.x + this.y * v.y;

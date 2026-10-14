@@ -4,7 +4,7 @@ function CParticleEngine()
 }
 // @reference CParticleEngine.clear
 // @reference CParticleEngine.setHitMovie
-// push the new particle onto the engine's particle pool
+// the engine keeps its particles in p_array
 function addParticle(p)
 {
    this.p_array.push(p);

@@ -4,7 +4,8 @@
 // @reference soundOn
 // @reference gameStart
 // @reference nextLevel
-// the replay option: clear the flag, then step the timeline through "reset" back to "game"
+// restart the current level: reset the stargeted count, then step the timeline
+// through "reset" back to "game" (nextLevel does the same after level++)
 function replay()
 {
    stargeted = 0.0;
@@ -17,7 +18,7 @@ function replay()
 // @reference processGame
 // @reference fire
 // @reference resetkfire
-// the clock readout: format the remaining/elapsed time into the text field
+// the clock readout: the elapsed game time (timeCounter) formatted into txtTime
 function showTime()
 {
    txtTime = getTimeString(timeCounter);
