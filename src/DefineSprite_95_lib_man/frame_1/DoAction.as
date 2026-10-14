@@ -1,0 +1,1 @@
+// @reference DefineSprite_95_lib_man_frame_1_DoAction_main

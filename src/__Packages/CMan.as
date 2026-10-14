@@ -1,0 +1,11 @@
+// @reference Packages_CMan_main
+// @reference CMan
+// @reference CMan.stopAnim
+// @reference CMan.stopMCAnim
+// @reference CMan.startAnim
+// @reference CMan.onEnterFrame
+// @reference CMan.toLeft
+// @reference CMan.toRight
+// @reference CMan.fromLeft
+// @reference CMan.fromRight
+// @reference CMan.endMove

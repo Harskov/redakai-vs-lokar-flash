@@ -1,0 +1,1 @@
+// @reference DefineSprite_12_rocket_id_frame_39_DoAction_main

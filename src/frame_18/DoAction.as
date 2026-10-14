@@ -1,0 +1,17 @@
+// @reference frame_18_DoAction_main
+// @reference frame_18_DoAction.onEnterFrame
+// @reference frame_18_DoAction.onRelease
+// @reference frame_18_DoAction.onRelease_2
+// @reference frame_18_DoAction.onRelease_3
+// @reference frame_18_DoAction.onRelease_4
+// @reference frame_18_DoAction.onRelease_5
+// @reference frame_18_DoAction.onRelease_6
+// @reference frame_18_DoAction.onRelease_7
+// @reference frame_18_DoAction.onRelease_8
+// @reference frame_18_DoAction.onRelease_9
+// @reference frame_18_DoAction.onRelease_10
+// @reference frame_18_DoAction.onRelease_11
+// @reference frame_18_DoAction.onRelease_12
+// @reference frame_18_DoAction.onRelease_13
+// @reference frame_18_DoAction.onRelease_14
+// @reference frame_18_DoAction.onRelease_15

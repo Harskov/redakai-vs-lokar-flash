@@ -1,0 +1,1 @@
+// @reference DefineSprite_20_bullet_id_frame_1_DoAction_main

@@ -1,0 +1,1 @@
+// @reference DefineSprite_86_frame_1_PlaceObject2_39_23_CLIPACTIONRECORD_onClipEvent_enterFrame_main
