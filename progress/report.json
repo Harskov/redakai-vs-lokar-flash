@@ -1,16 +1,16 @@
 {
   "version": "2",
-  "generated_at": "2026-10-14T19:44:53Z",
+  "generated_at": "2026-10-14T20:21:40Z",
   "measures": {
-    "fuzzy_match_percent": 0.07,
+    "fuzzy_match_percent": 0.29,
     "total_code": 10936,
-    "matched_code": 8,
-    "matched_code_percent": 0.07,
+    "matched_code": 32,
+    "matched_code_percent": 0.29,
     "total_functions": 202,
-    "matched_functions": 12,
-    "matched_functions_percent": 5.94,
+    "matched_functions": 36,
+    "matched_functions_percent": 17.82,
     "total_units": 95,
-    "complete_units": 9
+    "complete_units": 33
   },
   "units": [
     {
@@ -602,23 +602,23 @@
     {
       "name": "sprites/sprite_206/frame_1",
       "measures": {
-        "fuzzy_match_percent": 0.0,
+        "fuzzy_match_percent": 100.0,
         "total_code": 1,
-        "matched_code": 0,
-        "matched_code_percent": 0.0,
+        "matched_code": 1,
+        "matched_code_percent": 100.0,
         "total_functions": 1,
-        "matched_functions": 0,
-        "matched_functions_percent": 0.0
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
           "name": "DefineSprite_206_frame_1_DoAction_main",
           "size": 1,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "DefineSprite_206_frame_1_DoAction",
         "source_path": "src/DefineSprite_206/frame_1/DoAction.as"
       }
@@ -626,23 +626,23 @@
     {
       "name": "sprites/sprite_206/frame_2",
       "measures": {
-        "fuzzy_match_percent": 0.0,
+        "fuzzy_match_percent": 100.0,
         "total_code": 1,
-        "matched_code": 0,
-        "matched_code_percent": 0.0,
+        "matched_code": 1,
+        "matched_code_percent": 100.0,
         "total_functions": 1,
-        "matched_functions": 0,
-        "matched_functions_percent": 0.0
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
           "name": "DefineSprite_206_frame_2_DoAction_main",
           "size": 1,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "DefineSprite_206_frame_2_DoAction",
         "source_path": "src/DefineSprite_206/frame_2/DoAction.as"
       }
@@ -650,23 +650,23 @@
     {
       "name": "sprites/bullet_id/frame_1",
       "measures": {
-        "fuzzy_match_percent": 0.0,
+        "fuzzy_match_percent": 100.0,
         "total_code": 1,
-        "matched_code": 0,
-        "matched_code_percent": 0.0,
+        "matched_code": 1,
+        "matched_code_percent": 100.0,
         "total_functions": 1,
-        "matched_functions": 0,
-        "matched_functions_percent": 0.0
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
           "name": "DefineSprite_20_bullet_id_frame_1_DoAction_main",
           "size": 1,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "DefineSprite_20_bullet_id_frame_1_DoAction",
         "source_path": "src/DefineSprite_20_bullet_id/frame_1/DoAction.as"
       }
@@ -698,23 +698,23 @@
     {
       "name": "sprites/sprite_218/frame_1",
       "measures": {
-        "fuzzy_match_percent": 0.0,
+        "fuzzy_match_percent": 100.0,
         "total_code": 1,
-        "matched_code": 0,
-        "matched_code_percent": 0.0,
+        "matched_code": 1,
+        "matched_code_percent": 100.0,
         "total_functions": 1,
-        "matched_functions": 0,
-        "matched_functions_percent": 0.0
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
           "name": "DefineSprite_218_frame_1_DoAction_main",
           "size": 1,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "DefineSprite_218_frame_1_DoAction",
         "source_path": "src/DefineSprite_218/frame_1/DoAction.as"
       }
@@ -722,23 +722,23 @@
     {
       "name": "sprites/sprite_218/frame_34",
       "measures": {
-        "fuzzy_match_percent": 0.0,
+        "fuzzy_match_percent": 100.0,
         "total_code": 1,
-        "matched_code": 0,
-        "matched_code_percent": 0.0,
+        "matched_code": 1,
+        "matched_code_percent": 100.0,
         "total_functions": 1,
-        "matched_functions": 0,
-        "matched_functions_percent": 0.0
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
           "name": "DefineSprite_218_frame_34_DoAction_main",
           "size": 1,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "DefineSprite_218_frame_34_DoAction",
         "source_path": "src/DefineSprite_218/frame_34/DoAction.as"
       }
@@ -746,23 +746,23 @@
     {
       "name": "sprites/sprite_24/frame_1",
       "measures": {
-        "fuzzy_match_percent": 0.0,
+        "fuzzy_match_percent": 100.0,
         "total_code": 1,
-        "matched_code": 0,
-        "matched_code_percent": 0.0,
+        "matched_code": 1,
+        "matched_code_percent": 100.0,
         "total_functions": 1,
-        "matched_functions": 0,
-        "matched_functions_percent": 0.0
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
           "name": "DefineSprite_24_frame_1_DoAction_main",
           "size": 1,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "DefineSprite_24_frame_1_DoAction",
         "source_path": "src/DefineSprite_24/frame_1/DoAction.as"
       }
@@ -794,23 +794,23 @@
     {
       "name": "sprites/sprite_385/frame_1",
       "measures": {
-        "fuzzy_match_percent": 0.0,
+        "fuzzy_match_percent": 100.0,
         "total_code": 1,
-        "matched_code": 0,
-        "matched_code_percent": 0.0,
+        "matched_code": 1,
+        "matched_code_percent": 100.0,
         "total_functions": 1,
-        "matched_functions": 0,
-        "matched_functions_percent": 0.0
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
           "name": "DefineSprite_385_frame_1_DoAction_main",
           "size": 1,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "DefineSprite_385_frame_1_DoAction",
         "source_path": "src/DefineSprite_385/frame_1/DoAction.as"
       }
@@ -818,23 +818,23 @@
     {
       "name": "sprites/sprite_385/frame_5",
       "measures": {
-        "fuzzy_match_percent": 0.0,
+        "fuzzy_match_percent": 100.0,
         "total_code": 1,
-        "matched_code": 0,
-        "matched_code_percent": 0.0,
+        "matched_code": 1,
+        "matched_code_percent": 100.0,
         "total_functions": 1,
-        "matched_functions": 0,
-        "matched_functions_percent": 0.0
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
           "name": "DefineSprite_385_frame_5_DoAction_main",
           "size": 1,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "DefineSprite_385_frame_5_DoAction",
         "source_path": "src/DefineSprite_385/frame_5/DoAction.as"
       }
@@ -900,23 +900,23 @@
     {
       "name": "sprites/sprite_408/frame_1",
       "measures": {
-        "fuzzy_match_percent": 0.0,
+        "fuzzy_match_percent": 100.0,
         "total_code": 1,
-        "matched_code": 0,
-        "matched_code_percent": 0.0,
+        "matched_code": 1,
+        "matched_code_percent": 100.0,
         "total_functions": 1,
-        "matched_functions": 0,
-        "matched_functions_percent": 0.0
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
           "name": "DefineSprite_408_frame_1_DoAction_main",
           "size": 1,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "DefineSprite_408_frame_1_DoAction",
         "source_path": "src/DefineSprite_408/frame_1/DoAction.as"
       }
@@ -924,23 +924,23 @@
     {
       "name": "sprites/sprite_408/frame_2",
       "measures": {
-        "fuzzy_match_percent": 0.0,
+        "fuzzy_match_percent": 100.0,
         "total_code": 1,
-        "matched_code": 0,
-        "matched_code_percent": 0.0,
+        "matched_code": 1,
+        "matched_code_percent": 100.0,
         "total_functions": 1,
-        "matched_functions": 0,
-        "matched_functions_percent": 0.0
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
           "name": "DefineSprite_408_frame_2_DoAction_main",
           "size": 1,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "DefineSprite_408_frame_2_DoAction",
         "source_path": "src/DefineSprite_408/frame_2/DoAction.as"
       }
@@ -948,23 +948,23 @@
     {
       "name": "sprites/sprite_408/frame_3",
       "measures": {
-        "fuzzy_match_percent": 0.0,
+        "fuzzy_match_percent": 100.0,
         "total_code": 1,
-        "matched_code": 0,
-        "matched_code_percent": 0.0,
+        "matched_code": 1,
+        "matched_code_percent": 100.0,
         "total_functions": 1,
-        "matched_functions": 0,
-        "matched_functions_percent": 0.0
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
           "name": "DefineSprite_408_frame_3_DoAction_main",
           "size": 1,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "DefineSprite_408_frame_3_DoAction",
         "source_path": "src/DefineSprite_408/frame_3/DoAction.as"
       }
@@ -972,23 +972,23 @@
     {
       "name": "sprites/sprite_408/frame_4",
       "measures": {
-        "fuzzy_match_percent": 0.0,
+        "fuzzy_match_percent": 100.0,
         "total_code": 1,
-        "matched_code": 0,
-        "matched_code_percent": 0.0,
+        "matched_code": 1,
+        "matched_code_percent": 100.0,
         "total_functions": 1,
-        "matched_functions": 0,
-        "matched_functions_percent": 0.0
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
           "name": "DefineSprite_408_frame_4_DoAction_main",
           "size": 1,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "DefineSprite_408_frame_4_DoAction",
         "source_path": "src/DefineSprite_408/frame_4/DoAction.as"
       }
@@ -996,23 +996,23 @@
     {
       "name": "sprites/sprite_415/frame_1",
       "measures": {
-        "fuzzy_match_percent": 0.0,
+        "fuzzy_match_percent": 100.0,
         "total_code": 1,
-        "matched_code": 0,
-        "matched_code_percent": 0.0,
+        "matched_code": 1,
+        "matched_code_percent": 100.0,
         "total_functions": 1,
-        "matched_functions": 0,
-        "matched_functions_percent": 0.0
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
           "name": "DefineSprite_415_frame_1_DoAction_main",
           "size": 1,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "DefineSprite_415_frame_1_DoAction",
         "source_path": "src/DefineSprite_415/frame_1/DoAction.as"
       }
@@ -1020,23 +1020,23 @@
     {
       "name": "sprites/sprite_415/frame_17",
       "measures": {
-        "fuzzy_match_percent": 0.0,
+        "fuzzy_match_percent": 100.0,
         "total_code": 1,
-        "matched_code": 0,
-        "matched_code_percent": 0.0,
+        "matched_code": 1,
+        "matched_code_percent": 100.0,
         "total_functions": 1,
-        "matched_functions": 0,
-        "matched_functions_percent": 0.0
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
           "name": "DefineSprite_415_frame_17_DoAction_main",
           "size": 1,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "DefineSprite_415_frame_17_DoAction",
         "source_path": "src/DefineSprite_415/frame_17/DoAction.as"
       }
@@ -1044,23 +1044,23 @@
     {
       "name": "sprites/sprite_415/frame_33",
       "measures": {
-        "fuzzy_match_percent": 0.0,
+        "fuzzy_match_percent": 100.0,
         "total_code": 1,
-        "matched_code": 0,
-        "matched_code_percent": 0.0,
+        "matched_code": 1,
+        "matched_code_percent": 100.0,
         "total_functions": 1,
-        "matched_functions": 0,
-        "matched_functions_percent": 0.0
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
           "name": "DefineSprite_415_frame_33_DoAction_main",
           "size": 1,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "DefineSprite_415_frame_33_DoAction",
         "source_path": "src/DefineSprite_415/frame_33/DoAction.as"
       }
@@ -1068,23 +1068,23 @@
     {
       "name": "sprites/sprite_415/frame_50",
       "measures": {
-        "fuzzy_match_percent": 0.0,
+        "fuzzy_match_percent": 100.0,
         "total_code": 1,
-        "matched_code": 0,
-        "matched_code_percent": 0.0,
+        "matched_code": 1,
+        "matched_code_percent": 100.0,
         "total_functions": 1,
-        "matched_functions": 0,
-        "matched_functions_percent": 0.0
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
           "name": "DefineSprite_415_frame_50_DoAction_main",
           "size": 1,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "DefineSprite_415_frame_50_DoAction",
         "source_path": "src/DefineSprite_415/frame_50/DoAction.as"
       }
@@ -1116,23 +1116,23 @@
     {
       "name": "sprites/sprite_440/frame_1",
       "measures": {
-        "fuzzy_match_percent": 0.0,
+        "fuzzy_match_percent": 100.0,
         "total_code": 1,
-        "matched_code": 0,
-        "matched_code_percent": 0.0,
+        "matched_code": 1,
+        "matched_code_percent": 100.0,
         "total_functions": 1,
-        "matched_functions": 0,
-        "matched_functions_percent": 0.0
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
           "name": "DefineSprite_440_frame_1_DoAction_main",
           "size": 1,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "DefineSprite_440_frame_1_DoAction",
         "source_path": "src/DefineSprite_440/frame_1/DoAction.as"
       }
@@ -1140,23 +1140,23 @@
     {
       "name": "sprites/sprite_443/frame_1",
       "measures": {
-        "fuzzy_match_percent": 0.0,
+        "fuzzy_match_percent": 100.0,
         "total_code": 1,
-        "matched_code": 0,
-        "matched_code_percent": 0.0,
+        "matched_code": 1,
+        "matched_code_percent": 100.0,
         "total_functions": 1,
-        "matched_functions": 0,
-        "matched_functions_percent": 0.0
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
           "name": "DefineSprite_443_frame_1_DoAction_main",
           "size": 1,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "DefineSprite_443_frame_1_DoAction",
         "source_path": "src/DefineSprite_443/frame_1/DoAction.as"
       }
@@ -1241,23 +1241,23 @@
     {
       "name": "sprites/sprite_449/frame_1",
       "measures": {
-        "fuzzy_match_percent": 0.0,
+        "fuzzy_match_percent": 100.0,
         "total_code": 1,
-        "matched_code": 0,
-        "matched_code_percent": 0.0,
+        "matched_code": 1,
+        "matched_code_percent": 100.0,
         "total_functions": 1,
-        "matched_functions": 0,
-        "matched_functions_percent": 0.0
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
           "name": "DefineSprite_449_frame_1_DoAction_main",
           "size": 1,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "DefineSprite_449_frame_1_DoAction",
         "source_path": "src/DefineSprite_449/frame_1/DoAction.as"
       }
@@ -1265,23 +1265,23 @@
     {
       "name": "sprites/sprite_453/frame_1",
       "measures": {
-        "fuzzy_match_percent": 0.0,
+        "fuzzy_match_percent": 100.0,
         "total_code": 1,
-        "matched_code": 0,
-        "matched_code_percent": 0.0,
+        "matched_code": 1,
+        "matched_code_percent": 100.0,
         "total_functions": 1,
-        "matched_functions": 0,
-        "matched_functions_percent": 0.0
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
           "name": "DefineSprite_453_frame_1_DoAction_main",
           "size": 1,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "DefineSprite_453_frame_1_DoAction",
         "source_path": "src/DefineSprite_453/frame_1/DoAction.as"
       }
@@ -1289,23 +1289,23 @@
     {
       "name": "sprites/sprite_453/frame_5",
       "measures": {
-        "fuzzy_match_percent": 0.0,
+        "fuzzy_match_percent": 100.0,
         "total_code": 1,
-        "matched_code": 0,
-        "matched_code_percent": 0.0,
+        "matched_code": 1,
+        "matched_code_percent": 100.0,
         "total_functions": 1,
-        "matched_functions": 0,
-        "matched_functions_percent": 0.0
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
           "name": "DefineSprite_453_frame_5_DoAction_main",
           "size": 1,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "DefineSprite_453_frame_5_DoAction",
         "source_path": "src/DefineSprite_453/frame_5/DoAction.as"
       }
@@ -1313,23 +1313,23 @@
     {
       "name": "sprites/sprite_52/frame_1",
       "measures": {
-        "fuzzy_match_percent": 0.0,
+        "fuzzy_match_percent": 100.0,
         "total_code": 1,
-        "matched_code": 0,
-        "matched_code_percent": 0.0,
+        "matched_code": 1,
+        "matched_code_percent": 100.0,
         "total_functions": 1,
-        "matched_functions": 0,
-        "matched_functions_percent": 0.0
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
           "name": "DefineSprite_52_frame_1_DoAction_main",
           "size": 1,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "DefineSprite_52_frame_1_DoAction",
         "source_path": "src/DefineSprite_52/frame_1/DoAction.as"
       }
@@ -1361,23 +1361,23 @@
     {
       "name": "sprites/sprite_86/frame_1",
       "measures": {
-        "fuzzy_match_percent": 0.0,
+        "fuzzy_match_percent": 100.0,
         "total_code": 1,
-        "matched_code": 0,
-        "matched_code_percent": 0.0,
+        "matched_code": 1,
+        "matched_code_percent": 100.0,
         "total_functions": 1,
-        "matched_functions": 0,
-        "matched_functions_percent": 0.0
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
           "name": "DefineSprite_86_frame_1_DoAction_main",
           "size": 1,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "DefineSprite_86_frame_1_DoAction",
         "source_path": "src/DefineSprite_86/frame_1/DoAction.as"
       }
@@ -1481,23 +1481,23 @@
     {
       "name": "sprites/sprite_87/frame_1",
       "measures": {
-        "fuzzy_match_percent": 0.0,
+        "fuzzy_match_percent": 100.0,
         "total_code": 1,
-        "matched_code": 0,
-        "matched_code_percent": 0.0,
+        "matched_code": 1,
+        "matched_code_percent": 100.0,
         "total_functions": 1,
-        "matched_functions": 0,
-        "matched_functions_percent": 0.0
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
           "name": "DefineSprite_87_frame_1_DoAction_main",
           "size": 1,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "DefineSprite_87_frame_1_DoAction",
         "source_path": "src/DefineSprite_87/frame_1/DoAction.as"
       }
@@ -2834,13 +2834,13 @@
       "id": "unlabelled",
       "name": "unlabelled",
       "measures": {
-        "fuzzy_match_percent": 0.07,
+        "fuzzy_match_percent": 0.29,
         "total_code": 10936,
-        "matched_code": 8,
-        "matched_code_percent": 0.07,
+        "matched_code": 32,
+        "matched_code_percent": 0.29,
         "total_functions": 202,
-        "matched_functions": 12,
-        "matched_functions_percent": 5.94
+        "matched_functions": 36,
+        "matched_functions_percent": 17.82
       }
     }
   ]
