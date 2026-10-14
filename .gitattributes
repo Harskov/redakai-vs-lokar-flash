@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.as text eol=lf
+*.tsv text eol=lf
+*.swf binary
+*.png binary

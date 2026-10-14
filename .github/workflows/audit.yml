@@ -1,0 +1,23 @@
+name: Audit
+
+# Nothing from the game may be tracked here. On every push and every pull request, tools/audit_public.py walks the
+# files git tracks and fails when one is an original, an export, a render, an object or an archive by name or by its
+# first bytes, when its SHA-1 is one recorded in config/flash-avm1/checksum.sha1 (the original file), or when it is larger
+# than any source file can be. The self-test first plants a game-shaped fixture and checks that the audit rejects it.
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: The audit rejects a planted game-shaped fixture
+        run: python3 tools/audit_public.py --self-test
+      - name: No tracked file is game-derived
+        run: python3 tools/audit_public.py
