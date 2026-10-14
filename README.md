@@ -34,7 +34,7 @@ The game is an SWF whose code runs on the first ActionScript virtual machine. Th
 |---|---|---|
 | M1 Contributable | current | public-build.json ok=None; matched outside their unit: 0 |
 | M2 Identified | later | name pass closed: False; unlabelled game functions: 202; review pending: 0 |
-| M3 Platform boundary | later | 0/0 platform functions matched; PLATFORM.md missing |
+| M3 Platform boundary | later | 0/0 platform functions matched; PLATFORM.md present |
 | M4 Core | later | 0/0 core functions matched; FORMATS.md missing |
 | M5 Gameplay | later | 0/0 gameplay functions matched |
 | M6 Complete | later | 0/202 game functions matched; check ok=True |
