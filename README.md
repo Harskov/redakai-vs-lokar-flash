@@ -38,7 +38,7 @@ The game is an SWF whose code runs on the first ActionScript virtual machine. Th
 | M4 Core | current | 1/13 core functions matched; FORMATS.md missing |
 | M5 Gameplay | later | 59/146 gameplay functions matched |
 | M6 Complete | later | 69/202 game functions matched; check ok=True |
-| M7 Documented | later | docs.py check ok=None (never run) |
+| M7 Documented | done | docs.py check ok=True (2026-10-14T23:34:21Z) |
 | M8 Behaviour-verified | later | last behaviour compare ok=None at never |
 
 The milestones and why they come in this order: [ROADMAP.md](ROADMAP.md).
