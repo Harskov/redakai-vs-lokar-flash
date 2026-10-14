@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""pcode.py — FFDec's AVM1 P-code export: parse, enumerate functions, cut a function's block, normalize (version 1),
+"""pcode.py — FFDec's AVM1 P-code export: parse, enumerate functions, cut a function's block, normalize (version 2),
 score, splice. A verifier file: a change to the normalizer is a remediation with proof.
 
     python3 platforms/flash-avm1/scripts/pcode.py functions FILE.pcode [--json]       the functions of one script in order
@@ -24,6 +24,15 @@ decimals; 100 only when every line is equal; rows print `|` replaced, `<` missin
 (g) A `Push` carrying several values is split into one `Push` per value: the player runs both forms identically and
 FFDec's compiler always emits the split form where the original compiler merged (measured on the first target:
 build evidence 03a).
+
+Normalizer version 2 (remediation 2026-10-14-remediation-5): (h) the obfuscator's residue is dropped — a `DefineLocal` whose
+name is a string literal of control-character escapes only (`"\x01"`, `"\x0f"`: the dispatcher's state variable and its
+junk local, the two statements FFDec's AS1/2 deobfuscator leaves at the top of a deobfuscated stream) with a numeric
+literal value; a label on a dropped line moves to the next kept line. No ActionScript source writes such a `var`, the
+author never did, and nothing but `eval` can read it. The pushes are split before the rule runs, so the merged and the
+split forms are treated alike. v2 is identical to v1 on every stream without such a statement (the inertness proof in
+the round's record: every clean script of the first target normalizes the same under both). A `Push 0.0` (a Double) and
+a `Push 0` (an integer) stay different: the source writes either (the `double-literal` residual class; cookbook C2).
 """
 import argparse
 import difflib
@@ -31,8 +40,12 @@ import json
 import re
 import sys
 
-NORMALIZER_VERSION = 1
+NORMALIZER_VERSION = 2
 LABEL_RE = re.compile(r"^(\w+):(.*)$")
+UNKNOWN_RE = re.compile(r"^Unknown_[0-9A-Fa-f]+$")
+RESIDUE_NAME_RE = re.compile(r'^"(?:\\x[0-9a-fA-F]{2})+"$')   # a string literal of control-character escapes only, as FFDec prints "\x01"
+NUMBER_RE = re.compile(r"^-?\d+(?:\.\d+)?$")
+DOUBLE_INT_RE = re.compile(r"^Push (-?\d+)\.0$")
 LABEL_REF = r"\b(?:loc[0-9a-fA-F]+|spl[0-9a-f]+)\b"
 HDR_RE = re.compile(r"^(DefineFunction2?)\s+(.*)\s*\{\s*$")
 PRELOAD_ORDER = ("this", "arguments", "super", "_root", "_parent", "_global")
@@ -231,9 +244,66 @@ def cut(text, fn=None, fns=None, unit="unit", class_name=None, keep_pool=False):
     return out
 
 
+def split_pushes(block):
+    """Rule (g) as a pass: one value per Push; a label stays on the first of the split lines."""
+    out = []
+    for l in block:
+        lab, t = split_line(l)
+        t = t.strip()
+        if t.startswith("Push "):
+            vals = parse_args_list(t[5:])
+            if len(vals) > 1:
+                out.append((lab + ":" if lab else "") + "Push " + vals[0])
+                out.extend("Push " + v for v in vals[1:])
+                continue
+        out.append(l)
+    return out
+
+
+def drop_residue(lines):
+    """Rule (h): `Push "<control chars>"`, `Push <number>`, `DefineLocal` dropped (the lines one value per Push); a label on a
+    dropped line is carried to the next kept line and every reference to it renamed."""
+    out, alias, carry, i = [], {}, [], 0
+    while i < len(lines):
+        lab, t = split_line(lines[i])
+        t = t.strip()
+        if t.startswith("Push ") and RESIDUE_NAME_RE.match(t[5:].strip()) and i + 2 < len(lines):
+            l1, t1 = split_line(lines[i + 1])
+            l2, t2 = split_line(lines[i + 2])
+            t1, t2 = t1.strip(), t2.strip()
+            if t1.startswith("Push ") and NUMBER_RE.match(t1[5:].strip()) and t2 == "DefineLocal":
+                carry += [x for x in (lab, l1, l2) if x]
+                i += 3
+                continue
+        if carry:
+            lab = lab or carry[0]
+            for x in carry:
+                if x != lab:
+                    alias[x] = lab
+            carry = []
+        out.append((lab + ":" if lab else "") + t)
+        i += 1
+    if alias:
+        out = [re.sub(LABEL_REF, lambda m: alias.get(m.group(0), m.group(0)), l) for l in out]
+    return out
+
+
+def deobfuscator_leftover(text):
+    """The lines of a reference listing the deobfuscator should have removed and did not (the always-logged event
+    deobfuscator-leftover): an undefined opcode, a second ConstantPool, a control-character string outside the residue."""
+    lines = drop_residue(split_pushes(lines_of(text)))
+    out = [l for l in lines if UNKNOWN_RE.match(split_line(l)[1].strip())]
+    pools = [l for l in lines if split_line(l)[1].strip().startswith("ConstantPool")]
+    out += pools[1:]
+    out += [l for l in lines if split_line(l)[1].strip().startswith("Push ") and RESIDUE_NAME_RE.match(split_line(l)[1].strip()[5:].strip())]
+    return out
+
+
 def normalize(block, pool, header_info=None, version=NORMALIZER_VERSION):
     """Normalized lines of a cut block (see the module doc). header_info: the parsed header for register naming."""
     lines = [resolve_constants(l, pool) for l in block]
+    if version >= 2:
+        lines = drop_residue(split_pushes(lines))
     lines = [l for l in lines if not split_line(l)[1].startswith("ConstantPool")]
     labels = {}
     referenced = set()
@@ -324,7 +394,7 @@ def score(target, cand):
 
 def residual_classes(target, cand, pool_t, pool_c):
     """The classes of difference between two raw blocks when their normalized forms are equal or close: constant-pool
-    order, register numbering, jump encoding (labels), header flags, push merging, other."""
+    order, register numbering, jump encoding (labels), header flags, push merging, double literal, push value, other."""
     classes = set()
     raw_t = [split_line(l)[1].strip() for l in target]
     raw_c = [split_line(l)[1].strip() for l in cand]
@@ -348,10 +418,15 @@ def residual_classes(target, cand, pool_t, pool_c):
     if [l for l in nt if not HDR_RE.match(l)] == [l for l in nc if not HDR_RE.match(l)] and ht != hc:
         classes.add("header-flags")
         return classes
-    pt = [l for l in nt if not l.startswith("Push")]
-    pc = [l for l in nc if not l.startswith("Push")]
-    if pt == pc:
-        classes.add("push-merging")
+    st, sc = drop_residue(split_pushes(nt)), drop_residue(split_pushes(nc))
+    if st == sc:
+        classes.add("push-merging")        # the original compiler merged consecutive pushes; FFDec's emits one per value
+        return classes
+    if [DOUBLE_INT_RE.sub(r"Push \1", l) for l in st] == [DOUBLE_INT_RE.sub(r"Push \1", l) for l in sc]:
+        classes.add("double-literal")      # a Double literal the draft prints as an integer (cookbook C2: write 0.0)
+        return classes
+    if [l for l in st if not l.startswith("Push")] == [l for l in sc if not l.startswith("Push")]:
+        classes.add("push-value")          # the pushed values differ
         return classes
     if any("Unknown_" in l for l in rt):
         classes.add("obfuscation-junk")

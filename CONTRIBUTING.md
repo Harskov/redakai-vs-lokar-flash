@@ -10,6 +10,12 @@ not pinned yet; criterion `unpinned`. `python3 configure.py` installs it from th
 `tools/check.py` compares the rebuilt artifact with your own original. No scratch from decomp.me or any other site is
 copied here: the work is clean-room from the original file.
 
+### Flash specifics
+
+- `tools/check.py` exports the P-code of both files with the pinned FFDec and compares every script's functions under the criterion; `tools/lint_as.py` is the readability lint the maintainer's tooling applies before accepting a function (`python3 tools/lint_as.py src/...`).
+- A unit file's `// @reference <fn>` line marks a function not yet written; replace the line with the function and keep every other line. The top-level stream of a script is itself a function (`<unit>_main`).
+- Write what the P-code says: FFDec's compiler emits one `Push` per value, `DefineFunction` for a function without parameters, `0.0` for a Double zero; the normalizer absorbs push merging, register and label numbering and the two `var` lines an obfuscator leaves at the top of a stream (control-character names), nothing else. `tools/check.py` exports both files with FFDec's AS1/2 deobfuscator on, as the maintainer's tooling does.
+- Names come from evidence only (a string literal, a linkage name, a frame label, a field); a systematic `fn_<unit>_<n>` stays until evidence exists.
 
 
 ## Naming
