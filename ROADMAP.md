@@ -9,7 +9,7 @@ The project serves four purposes — preservation, recompilation, porting and le
 | M3 | Platform boundary | later | 0/0 platform functions matched; PLATFORM.md missing |
 | M4 | Core | later | 0/0 core functions matched; FORMATS.md missing |
 | M5 | Gameplay | later | 0/0 gameplay functions matched |
-| M6 | Complete | later | 0/0 game functions matched; check ok=None |
+| M6 | Complete | later | 0/0 game functions matched; check ok=True |
 | M7 | Documented | later | docs.py check ok=None (never run) |
 | M8 | Behaviour-verified | later | last behaviour compare ok=None at never |
 

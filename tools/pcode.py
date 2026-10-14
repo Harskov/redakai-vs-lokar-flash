@@ -33,6 +33,20 @@ author never did, and nothing but `eval` can read it. The pushes are split befor
 split forms are treated alike. v2 is identical to v1 on every stream without such a statement (the inertness proof in
 the round's record: every clean script of the first target normalizes the same under both). A `Push 0.0` (a Double) and
 a `Push 0` (an integer) stay different: the source writes either (the `double-literal` residual class; cookbook C2).
+
+Normalizer version 3 (remediation 2026-10-14-remediation-6): (i) the `DefineFunction2` header's register count is reduced
+to `regs=fit` when it exceeds every register the block references (preloads and parameter registers included), and kept
+as `regs=<n><<needed>` otherwise. Rule (b) already renumbers the registers, so which slots the compiler allocated is not
+the source's; the count is the size of that allocation, and a slot the block never references is never read by the
+player. The original compiler allocated slots the code never uses and placed parameters above gaps (Redakai's
+CCamera.process declares 6 and references up to r3; FFDec's compiler declares 4) where the instructions are equal after
+renumbering. What is lost: a local the author declared and never used compiles to no instruction, so it is not
+recoverable from the bytes either way. v3 equals v2 on every pair v2 equates (the rule only removes information).
+
+Residual classes (`residual_classes` on raw blocks, `normalized_residuals` on normalized lines — the one calibrate uses):
+`double-literal` (cookbook C2) and `increment` (one register updated in place by `Push 1` + `Add2` where the other side has
+`Increment`, or `Push 1` + `Subtract` against `Decrement`: FFDec's draft prints `x = x + 1` where the bytes say `x++`; cookbook
+C6) are the classes the source reproduces; `push-value` and `other` are not.
 """
 import argparse
 import difflib
@@ -40,7 +54,7 @@ import json
 import re
 import sys
 
-NORMALIZER_VERSION = 2
+NORMALIZER_VERSION = 3
 LABEL_RE = re.compile(r"^(\w+):(.*)$")
 UNKNOWN_RE = re.compile(r"^Unknown_[0-9A-Fa-f]+$")
 RESIDUE_NAME_RE = re.compile(r'^"(?:\\x[0-9a-fA-F]{2})+"$')   # a string literal of control-character escapes only, as FFDec prints "\x01"
@@ -338,6 +352,14 @@ def normalize(block, pool, header_info=None, version=NORMALIZER_VERSION):
         for reg, pname in (h.get("preg") or {}).items():
             regmap[reg] = f"p:{pname}"
     nxt = [1]
+    regs_text = None
+    if h and h.get("flags") is not None:
+        regs_text = str(h["regs"])
+        if version >= 3:     # rule (i)
+            used = {int(x) for l in lines[1:] for x in re.findall(r"\bregister(\d+)\b|^StoreRegister (\d+)$", split_line(l)[1].strip()) for x in x if x}
+            used |= set((h.get("preg") or {}).keys()) | set(range(1, sum(1 for f in h["flags"] if f) + 1))
+            needed = max(used | {0}) + 1
+            regs_text = "fit" if h["regs"] >= needed else f"{h['regs']}<{needed}"
 
     def regname(n):
         n = int(n)
@@ -353,7 +375,7 @@ def normalize(block, pool, header_info=None, version=NORMALIZER_VERSION):
             continue
         t = re.sub(r"\s+", " ", t)
         if i == 0 and h and HDR_RE.match(t):
-            t = f"{h['kind']} \"{h['name']}\" params=({','.join(h['params'])}) regs={h['regs']} flags={''.join('1' if x else '0' for x in (h['flags'] or []))}"
+            t = f"{h['kind']} \"{h['name']}\" params=({','.join(h['params'])}) regs={regs_text if regs_text is not None else h['regs']} flags={''.join('1' if x else '0' for x in (h['flags'] or []))}"
         else:
             t = re.sub(LABEL_REF, lambda m: labels.get(m.group(0), m.group(0)), t)
             t = re.sub(r"\bregister(\d+)\b", lambda m: regname(m.group(1)), t)
@@ -437,6 +459,61 @@ def residual_classes(target, cand, pool_t, pool_c):
     if any("Unknown_" in l for l in rt):
         classes.add("obfuscation-junk")
     classes.add("other")
+    return classes
+
+
+NORM_LABEL_RE = re.compile(r"^((?:L|X)\d+:)?(.*)$")
+
+
+def _rewrite_double(lines):
+    out = []
+    for l in lines:
+        lab, t = NORM_LABEL_RE.match(l).groups()
+        m = DOUBLE_INT_RE.match(t)
+        out.append((lab or "") + (f"Push {m.group(1)}" if m else t))
+    return out
+
+
+def _rewrite_increment(lines):
+    """`Push R`, `Push 1`, `Add2|Subtract`, `StoreRegister R` (one register updated in place: what `x++` / `x--` compiles to
+    with `Increment` / `Decrement`, and `x = x + 1` with the pair) -> the one-instruction form. Only that shape: `a = b + 1`
+    has no `++` spelling, and a jump target inside the pair keeps it."""
+    out, i = [], 0
+    while i < len(lines):
+        m = re.match(r"^Push (r\d+|p:\S+)$", NORM_LABEL_RE.match(out[-1]).group(2)) if out else None
+        if (m and lines[i] == "Push 1" and i + 2 < len(lines) and lines[i + 1] in ("Add2", "Subtract")
+                and lines[i + 2] == f"StoreRegister {m.group(1)}"):
+            out.append("Increment" if lines[i + 1] == "Add2" else "Decrement")
+            i += 2
+            continue
+        out.append(lines[i])
+        i += 1
+    return out
+
+
+def _diff_rows(a, b):
+    sm = difflib.SequenceMatcher(a=a, b=b, autojunk=False)
+    return sum(max(i2 - i1, j2 - j1) for tag, i1, i2, j1, j2 in sm.get_opcodes() if tag != "equal")
+
+
+def normalized_residuals(target, cand):
+    """The residual classes of two normalized blocks the normalizer does not equate: the reproducible rewrites
+    (`double-literal`, `increment`) are applied to both sides in turn and a class is reported when its rewrite reduced the
+    differing rows; sides still unequal after every rewrite add `push-value` (only pushed values differ) or `other`. A mix
+    of reproducible classes is classed as such (redakai run 2026-10-14-005-calibrate F-2: CParticle's double-literal rows
+    beside a parameter-register order the normalizer absorbs fell to `other` under the raw classifier)."""
+    if target == cand:
+        return set()
+    classes = set()
+    t, c = list(target), list(cand)
+    for name, rw in (("double-literal", _rewrite_double), ("increment", _rewrite_increment)):
+        t2, c2 = rw(t), rw(c)
+        if _diff_rows(t2, c2) < _diff_rows(t, c):
+            classes.add(name)
+        t, c = t2, c2
+    if t != c:
+        strip = lambda ls: [x for x in (NORM_LABEL_RE.match(l).group(2) for l in ls) if not x.startswith("Push")]  # noqa: E731
+        classes.add("push-value" if strip(t) == strip(c) else "other")
     return classes
 
 

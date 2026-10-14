@@ -2,11 +2,11 @@
 
 Pull requests are welcome on `src/` and `docs/`. The maintainer's tooling imports a merged pull request's source at the
 next run, rebuilds it with the pinned toolchain and records a match only when the rebuilt code matches the original under
-the project's criterion (not pinned yet (the calibration step has not run)); a function that does not match stays as the reference line.
+the project's criterion (the recompiled P-code must equal the original's listing, both taken with FFDec's AS1/2 deobfuscator on, after a documented normalization (constant-pool resolution, register and jump numbering, one value per push, an obfuscator's two leftover statements)); a function that does not match stays as the reference line.
 
 ## The toolchain
 
-not pinned yet; criterion `unpinned`. `python3 configure.py` installs it from the pinned release into `tools/` and
+JPEXS Free Flash Decompiler 26.3.0; criterion `pcode-normalized`. `python3 configure.py` installs it from the pinned release into `tools/` and
 `tools/check.py` compares the rebuilt artifact with your own original. No scratch from decomp.me or any other site is
 copied here: the work is clean-room from the original file.
 
