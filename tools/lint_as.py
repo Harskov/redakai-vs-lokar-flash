@@ -33,6 +33,18 @@ except ImportError:            # the contributor copy under a public repository'
         def ref_as_text(repo, script):
             return None
 
+        @staticmethod
+        def add_repo_args(ap):
+            ap.add_argument("--target", metavar="SLUG", help="(the pack's registry; not available in a contributor copy)")
+            ap.add_argument("--repo", metavar="PATH", help="the repository (default: the folder above tools/)")
+
+        @staticmethod
+        def repo_of(a, default=None):
+            if a.target:
+                print("--target needs the pack's registry; a contributor copy takes --repo <path> or runs from tools/", file=sys.stderr)
+                sys.exit(2)
+            return Path(a.repo).resolve() if a.repo else Path(default).resolve()
+
 REGISTER = re.compile(r"\b(_loc\d+_|__reg\d+|_temp_?\d+)\b")
 ARTIFACT = re.compile(r"§§|//\s*unresolved|^\s*loop\d+:|\baddr\d+\b|^\s*undefined;\s*$|\\x[0-9a-fA-F]{2}|ÿ|\(not compilable\)|^\s*§")
 PROCESS = re.compile(r"\b(run \d{4}-\d{2}-\d{2}|score \d+|\d{1,3}(\.\d+)? ?%|F-\d+\b|K[1-9]-|round [A-Z]-?\d|FFDec|ffdec|normalizer|attempt-\d|ledger|batch|campaign)\b", re.I)
@@ -151,12 +163,11 @@ def readability_debt(findings, files):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0], formatter_class=argparse.RawDescriptionHelpFormatter, epilog=__doc__)
-    ap.add_argument("--repo", default=None, help="the target (default: the folder above tools/ when run as a contributor copy)")
-    ap.add_argument("--target")
+    C.add_repo_args(ap)      # default: the folder above tools/ when run as a contributor copy
     ap.add_argument("files", nargs="*")
     ap.add_argument("--json", action="store_true")
     a = ap.parse_args()
-    repo = Path(a.repo).resolve() if a.repo else Path(__file__).resolve().parent.parent
+    repo = C.repo_of(a, default=Path(__file__).resolve().parent.parent)
     files = []
     for f in a.files:
         p = Path(f)
