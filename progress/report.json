@@ -1,14 +1,14 @@
 {
   "version": "2",
-  "generated_at": "2026-10-14T23:34:58Z",
+  "generated_at": "2026-10-15T00:43:52Z",
   "measures": {
-    "fuzzy_match_percent": 4.72,
+    "fuzzy_match_percent": 5.34,
     "total_code": 10936,
-    "matched_code": 322,
-    "matched_code_percent": 2.94,
+    "matched_code": 349,
+    "matched_code_percent": 3.19,
     "total_functions": 202,
-    "matched_functions": 69,
-    "matched_functions_percent": 34.16,
+    "matched_functions": 70,
+    "matched_functions_percent": 34.65,
     "total_units": 95,
     "complete_units": 48
   },
@@ -1553,7 +1553,7 @@
     {
       "name": "init/DoInitAction",
       "measures": {
-        "fuzzy_match_percent": 1.24,
+        "fuzzy_match_percent": 2.66,
         "total_code": 2832,
         "matched_code": 22,
         "matched_code_percent": 0.78,
@@ -1585,7 +1585,7 @@
         {
           "name": "gameStart",
           "size": 26,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 96.55
         },
         {
           "name": "nextLevel",
@@ -1600,7 +1600,7 @@
         {
           "name": "newGame",
           "size": 16,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 94.44
         },
         {
           "name": "playSnd",
@@ -2208,19 +2208,19 @@
     {
       "name": "timeline/frame_1",
       "measures": {
-        "fuzzy_match_percent": 0.0,
+        "fuzzy_match_percent": 27.55,
         "total_code": 98,
-        "matched_code": 0,
-        "matched_code_percent": 0.0,
+        "matched_code": 27,
+        "matched_code_percent": 27.55,
         "total_functions": 2,
-        "matched_functions": 0,
-        "matched_functions_percent": 0.0
+        "matched_functions": 1,
+        "matched_functions_percent": 50.0
       },
       "functions": [
         {
           "name": "frame_1_DoAction_main",
           "size": 27,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "frame_1_DoAction.onEnterFrame",
@@ -2847,13 +2847,13 @@
       "id": "core",
       "name": "core",
       "measures": {
-        "fuzzy_match_percent": 0.56,
+        "fuzzy_match_percent": 3.07,
         "total_code": 2681,
-        "matched_code": 15,
-        "matched_code_percent": 0.56,
+        "matched_code": 42,
+        "matched_code_percent": 1.57,
         "total_functions": 13,
-        "matched_functions": 1,
-        "matched_functions_percent": 7.69
+        "matched_functions": 2,
+        "matched_functions_percent": 15.38
       }
     },
     {

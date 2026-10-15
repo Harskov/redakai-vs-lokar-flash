@@ -71,10 +71,10 @@ DoInitAction_main	DoInitAction	main	asm	core	initialises the game globals gameSt
 updateSoundLoop	DoInitAction	function	asm	audio	reads stopSoundFlag, zastSoundFlag; drives mc_sloop, mc_sloop_zast
 soundOff	DoInitAction	function	asm	audio	writes stopSoundFlag; drives the sound-loop clips mc_sloop, mc_sloop_zast
 soundOn	DoInitAction	function	asm	audio	writes stopSoundFlag; drives the sound-loop clips mc_sloop, mc_sloop_zast
-gameStart	DoInitAction	function	asm	core	writes level, life, scores; called by the level-selection buttons
+gameStart	DoInitAction	function	wip	core	writes level, life, scores; called by the level-selection buttons
 nextLevel	DoInitAction	function	asm	core	steps the main timeline through "reset" to "game"; calls newGame
 replay	DoInitAction	function	matched	core	steps the main timeline through "reset" to "game"
-newGame	DoInitAction	function	asm	core	gotoAndStop("main"); calls updateSoundLoop
+newGame	DoInitAction	function	wip	core	gotoAndStop("main"); calls updateSoundLoop
 playSnd	DoInitAction	function	asm	audio	constructs or drives Sound (Sound, attachSound, start)
 initLevel	DoInitAction	function	asm	core	writes gameState; builds engine, bikeSync, objCamera for the level
 processGame	DoInitAction	function	asm	core	reads and writes gameState; the per-frame loop calling showTime, loose, clearStuff
@@ -160,7 +160,7 @@ CWheel.checkCollision	Packages_CWheel	method	asm	gameplay/cwheel	a method of cla
 CWheel.pushOut	Packages_CWheel	method	asm	gameplay/cwheel	a method of class CWheel (__Packages)
 CWheel.validateRotation	Packages_CWheel	method	asm	gameplay/cwheel	a method of class CWheel (__Packages)
 CWheel.applyAddedAcc	Packages_CWheel	method	asm	gameplay/cwheel	a method of class CWheel (__Packages)
-frame_1_DoAction_main	frame_1_DoAction	main	asm	core	frame 1 of the main timeline (boot)
+frame_1_DoAction_main	frame_1_DoAction	main	matched	core	frame 1 of the main timeline (boot)
 frame_1_DoAction.onEnterFrame	frame_1_DoAction	handler	asm	core	frame 1 of the main timeline (boot)
 frame_10_DoAction_main	frame_10_DoAction	main	asm	audio	constructs or drives Sound (Sound, attachSound, start)
 frame_11_DoAction_main	frame_11_DoAction	main	matched	platform	only player API: stop

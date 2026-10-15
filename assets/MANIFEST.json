@@ -1,0 +1,4947 @@
+{
+  "schema": 1,
+  "at": "2026-10-15T00:43:24Z",
+  "original_sha256": "ced1985307d9ac4add72f8fb4dd23729428691075d7c0b2f9ffeefd72700a508",
+  "count": 511,
+  "by_type": {
+    "sound": 10,
+    "shape": 163,
+    "sprite": 206,
+    "font": 11,
+    "font-align": 11,
+    "text": 59,
+    "morph-shape": 20,
+    "video": 1,
+    "image": 15,
+    "button": 8,
+    "edit-text": 7
+  },
+  "assets": [
+    {
+      "type": "sound",
+      "tag": "DefineSound",
+      "id": 1,
+      "size": 130113,
+      "sha256": "570d4b388c23f1f1e2b6c5764abf528e54550dad1f72b1005cc3185215684ad8",
+      "format": "MP3",
+      "rate_hz": 44100,
+      "bits": 16,
+      "stereo": false,
+      "samples": 355968,
+      "seconds": 8.07,
+      "tag_index": 3,
+      "name": "bat_sound"
+    },
+    {
+      "type": "sound",
+      "tag": "DefineSound",
+      "id": 2,
+      "size": 20029,
+      "sha256": "d63f8cd46c0180f35fa5520d16247f77d145847822f999d4341e2d94f3bde4d1",
+      "format": "MP3",
+      "rate_hz": 22050,
+      "bits": 16,
+      "stereo": false,
+      "samples": 85824,
+      "seconds": 3.89,
+      "tag_index": 5,
+      "name": "helicop_snd"
+    },
+    {
+      "type": "sound",
+      "tag": "DefineSound",
+      "id": 3,
+      "size": 973287,
+      "sha256": "7a93052dcb12b04373a036ea92897d2cd38d5a9bc85a0aa78d675dc4bf6e4510",
+      "format": "MP3",
+      "rate_hz": 44100,
+      "bits": 16,
+      "stereo": false,
+      "samples": 2685312,
+      "seconds": 60.89,
+      "tag_index": 7,
+      "name": "accLoop"
+    },
+    {
+      "type": "sound",
+      "tag": "DefineSound",
+      "id": 4,
+      "size": 2505,
+      "sha256": "0002eab0d3c6e2e9c96dec06f1239793fdb59319696552051600bc9279934c90",
+      "format": "MP3",
+      "rate_hz": 11025,
+      "bits": 16,
+      "stereo": false,
+      "samples": 10944,
+      "seconds": 0.99,
+      "tag_index": 9,
+      "name": "accSnd"
+    },
+    {
+      "type": "sound",
+      "tag": "DefineSound",
+      "id": 5,
+      "size": 29616,
+      "sha256": "cf3dcd42d8706887ec4ecbe3c134085d3aad41f6ecffd7f801ef8c528f30aa20",
+      "format": "MP3",
+      "rate_hz": 44100,
+      "bits": 16,
+      "stereo": false,
+      "samples": 78336,
+      "seconds": 1.78,
+      "tag_index": 11,
+      "name": "intro"
+    },
+    {
+      "type": "sound",
+      "tag": "DefineSound",
+      "id": 6,
+      "size": 121689,
+      "sha256": "898e56bff222e3a6702fb5b43996ae49136a92d7b0ec4299eca27b2d10a5d4d4",
+      "format": "MP3",
+      "rate_hz": 11025,
+      "bits": 16,
+      "stereo": false,
+      "samples": 671328,
+      "seconds": 60.89,
+      "tag_index": 13,
+      "name": "btnon"
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape2",
+      "id": 7,
+      "size": 163,
+      "sha256": "b3659d3b30a57646a279ccfa8c87d94c5a5fad15a30fc59daa9abab43edf52e8",
+      "tag_index": 15,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 8,
+      "size": 22,
+      "sha256": "8b156340d2545ea934a14987a25a704b84c4225417c22bce1629590f89fdbd1f",
+      "frames": 1,
+      "tag_index": 16,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape2",
+      "id": 9,
+      "size": 232,
+      "sha256": "e8ff909ebea9d10c36ea85463e137add0a638f2711317c452ce55379d125654e",
+      "tag_index": 17,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 10,
+      "size": 22,
+      "sha256": "d9f0480efd8ecba0ebd695f787e1e11e1cfa15c094c55625e84b385687213302",
+      "frames": 1,
+      "tag_index": 18,
+      "name": null
+    },
+    {
+      "type": "sound",
+      "tag": "DefineSound",
+      "id": 11,
+      "size": 14179,
+      "sha256": "6eff1c55912e8ea490f89c71da0e55ef69cbe876a9ca76008e68162c30c1849a",
+      "format": "MP3",
+      "rate_hz": 22050,
+      "bits": 16,
+      "stereo": false,
+      "samples": 59904,
+      "seconds": 2.72,
+      "tag_index": 19,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 12,
+      "size": 714,
+      "sha256": "8dd517186c3840432f8872d3b5b2055861473fe02ae9050eec7e5a58a9cb4446",
+      "frames": 39,
+      "tag_index": 20,
+      "name": "rocket_id"
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 13,
+      "size": 49,
+      "sha256": "60246e455aa36979e5a619acc3cf46bd7c3eeff511d9fa8a32d5a431be0edf8b",
+      "tag_index": 22,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 14,
+      "size": 22,
+      "sha256": "1e06d152e7bf1fcff5aee90635b3987d16a9fe49dc56192b29e45db1022137a9",
+      "frames": 1,
+      "tag_index": 23,
+      "name": "snowFlake_mc"
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape2",
+      "id": 15,
+      "size": 123,
+      "sha256": "fe52fd535dfbd2188ffb5d82db82cc6a2ef99ac1255b95e7f3db9ee2bc3908cb",
+      "tag_index": 25,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 16,
+      "size": 22,
+      "sha256": "716a1299179b9946b32f3a960329dc3ef1b138cafe0cbe9f6ffd1128a5749859",
+      "frames": 1,
+      "tag_index": 26,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape2",
+      "id": 17,
+      "size": 217,
+      "sha256": "d59791e85e075f1d5a3893c063b48f6dd9254ff4b32179c70f90663573087d74",
+      "tag_index": 27,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 18,
+      "size": 22,
+      "sha256": "823148ae95655db51b9ef56f265e81a211b3f500f19a44dc072f049762a6b398",
+      "frames": 1,
+      "tag_index": 28,
+      "name": null
+    },
+    {
+      "type": "sound",
+      "tag": "DefineSound",
+      "id": 19,
+      "size": 16689,
+      "sha256": "3c6837590cfa2c3f8701a450fb5ced7c3bb6b2a69ac65aa2b0b66b5b2e3a44c8",
+      "format": "MP3",
+      "rate_hz": 44100,
+      "bits": 16,
+      "stereo": false,
+      "samples": 42624,
+      "seconds": 0.97,
+      "tag_index": 29,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 20,
+      "size": 716,
+      "sha256": "a7cdfebe6593d5a50c1efece1438963152cf8cd3852cfe98965210f4e16b4c80",
+      "frames": 39,
+      "tag_index": 30,
+      "name": "bullet_id"
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape2",
+      "id": 21,
+      "size": 62,
+      "sha256": "7fd2d45ab59ec97b8933e1cff3ae1a21bfd1718a9c1595144a031b1dd81b0ef5",
+      "tag_index": 35,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 22,
+      "size": 49,
+      "sha256": "74e35dd65f6c8b2911dae9c44e850b22fce6763919f1b013737de1ec0f109aeb",
+      "tag_index": 37,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 23,
+      "size": 22,
+      "sha256": "0f0258ef0b320b90cba9baa3a2563db44e9925d1f04f809624e892edf5b71f58",
+      "frames": 1,
+      "tag_index": 38,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 24,
+      "size": 54,
+      "sha256": "5bc208b2aae7a40d9f7cc566912b661932a6245474b436433dc3be3d1469a255",
+      "frames": 19,
+      "tag_index": 40,
+      "name": null
+    },
+    {
+      "type": "font",
+      "tag": "DefineFont3",
+      "id": 25,
+      "size": 7950,
+      "sha256": "d3a037e21b84a2e44c500e13aa65b4f8d817dd325f76f5c1294c3963f2274a3b",
+      "font_name": "Arial",
+      "tag_index": 42,
+      "name": null
+    },
+    {
+      "type": "font-align",
+      "tag": "DefineFontAlignZones",
+      "id": 25,
+      "size": 233,
+      "sha256": "be5ad4ffeab7790c6919c0307e93c245a39b6c3078c4ec04c4f974a4cc2dfaad",
+      "tag_index": 43,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 26,
+      "size": 50,
+      "sha256": "8d800ebaf18989ff40d78c5b56691d106f708445a6b69bd95ea6b73e760bb08d",
+      "tag_index": 45,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 27,
+      "size": 52,
+      "sha256": "241ffa106191088b0a8c5777ee852b0e775929648adeb6c0ee9a49416f808772",
+      "tag_index": 46,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 28,
+      "size": 54,
+      "sha256": "dfe3891d4c1a0ccd46bfef277bbcbeb31b75ea2da52bf001648ba9b1546d195c",
+      "tag_index": 47,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 29,
+      "size": 56,
+      "sha256": "bcd4becee851d3af05395e7818335969c737769c91c6c95a055dbea56fb835fb",
+      "tag_index": 48,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 30,
+      "size": 88,
+      "sha256": "78647eba6d599756c740ad50ac44b7661da7d31f94e0a3f55402bf27c9411b79",
+      "frames": 20,
+      "tag_index": 49,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 31,
+      "size": 149,
+      "sha256": "5a4457c04e0db6d75900a27f6e50fcfec81f4af22b4d51b488586f68d2b3e29b",
+      "tag_index": 51,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 32,
+      "size": 49,
+      "sha256": "b646e28c91d57980a5d357984c373f7e8a134c7242461997e9cb4bb36e2ec98c",
+      "tag_index": 53,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 492,
+      "size": 6,
+      "sha256": "e289f880e69e95f80412f89efb1064e14ef1b45e2e374aa02bc481270b1e9b7b",
+      "frames": 0,
+      "tag_index": 55,
+      "name": "__Packages.CWheel"
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 493,
+      "size": 6,
+      "sha256": "34f2f11f8fdbb23d377db313516fee667c34645104b8c1ab9575457cfc929330",
+      "frames": 0,
+      "tag_index": 59,
+      "name": "__Packages.CVector2D"
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 494,
+      "size": 6,
+      "sha256": "fdec36a15c123fa881b8363284fda1b640853790c7e87429653a711cc791ad26",
+      "frames": 0,
+      "tag_index": 63,
+      "name": "__Packages.CMan"
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 495,
+      "size": 6,
+      "sha256": "eaf47998b7e10aabc28ddb19e9d1af97cc56628e26611640b800875cf4ff1343",
+      "frames": 0,
+      "tag_index": 67,
+      "name": "__Packages.CParticleEngine"
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 496,
+      "size": 6,
+      "sha256": "6c4c1f7e48942da74324afaf1fc329a0f2128e852103331d4104f95d579d8a3b",
+      "frames": 0,
+      "tag_index": 71,
+      "name": "__Packages.CSpringConstraint"
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 497,
+      "size": 6,
+      "sha256": "135d7d7b74de33535ebd1eece8953121aca6cf2eba23ec66c605f5f492bb06de",
+      "frames": 0,
+      "tag_index": 75,
+      "name": "__Packages.CParticle"
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 498,
+      "size": 6,
+      "sha256": "9d948c86edca3f3be455a417cf5483ae0dfcc18352660400f2aed993130d0015",
+      "frames": 0,
+      "tag_index": 79,
+      "name": "__Packages.CCamera"
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 499,
+      "size": 6,
+      "sha256": "f68632c0454823ae1c30f7aa3ede28af1146614bc8e93706d57bf9dbf6b6ffb2",
+      "frames": 0,
+      "tag_index": 83,
+      "name": "__Packages.CBack"
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 500,
+      "size": 6,
+      "sha256": "b48fa4894e154bf4460ee4ba95a8e46a6accf643869d78654ad42d8f27705923",
+      "frames": 0,
+      "tag_index": 87,
+      "name": "__Packages.CBikeSynchronizer"
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 33,
+      "size": 14,
+      "sha256": "eb8b9f6d78ed2e5084e3e1f33a2f76dfc15afe1356af45b6537c9b29935da72f",
+      "frames": 1,
+      "tag_index": 108,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 34,
+      "size": 14,
+      "sha256": "adf19af544fb96e5676dcdaeace0cda626780dccdf8fe1a985161f0267e15d45",
+      "frames": 1,
+      "tag_index": 109,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape2",
+      "id": 35,
+      "size": 3743,
+      "sha256": "109e0eed42256af79c954f45245c315ca245fb10f74f970a0dfd2153b5e70c71",
+      "tag_index": 110,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape2",
+      "id": 36,
+      "size": 2512,
+      "sha256": "6ad5a1ed40ddf327ad225f620a5ae50fb575273aee91d099cf390da887383b1b",
+      "tag_index": 111,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 37,
+      "size": 22,
+      "sha256": "44aaf60533e083ab8f3140f288e49b2166b1ed617a038aff522a9e9de70e342c",
+      "frames": 1,
+      "tag_index": 112,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 38,
+      "size": 58,
+      "sha256": "9c4f2e934f1c45157c4477276bcdcb63c850bde396f7dd132c581b96768f3ee1",
+      "tag_index": 113,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 39,
+      "size": 22,
+      "sha256": "10abc76ec0be43226da13e4294ed78a084ab43178a024c454bab38623a13fdeb",
+      "frames": 1,
+      "tag_index": 114,
+      "name": null
+    },
+    {
+      "type": "morph-shape",
+      "tag": "DefineMorphShape",
+      "id": 40,
+      "size": 113,
+      "sha256": "6312e19d9af63d9a8d8acbf89b87b2b148265017ae7c9d64f88bd27d419a516b",
+      "tag_index": 115,
+      "name": null
+    },
+    {
+      "type": "morph-shape",
+      "tag": "DefineMorphShape",
+      "id": 41,
+      "size": 117,
+      "sha256": "4d417950b57069413baec93b657d9d3f68ff1b88b919885997700ecca8546ccf",
+      "tag_index": 116,
+      "name": null
+    },
+    {
+      "type": "morph-shape",
+      "tag": "DefineMorphShape",
+      "id": 42,
+      "size": 110,
+      "sha256": "bc7d558aab0cd5daadb630586ce7c0c1304b386d49914617e800cb079a4d4d49",
+      "tag_index": 117,
+      "name": null
+    },
+    {
+      "type": "morph-shape",
+      "tag": "DefineMorphShape",
+      "id": 43,
+      "size": 112,
+      "sha256": "4ad2089f7a339354028c416256928b77ab74cbfbcb8c1d2ed9986a2530804100",
+      "tag_index": 118,
+      "name": null
+    },
+    {
+      "type": "morph-shape",
+      "tag": "DefineMorphShape",
+      "id": 44,
+      "size": 119,
+      "sha256": "739ee7c33693b0f16d96c80996d116bd7b4b736bfa7c414ebb74a797bf8b685d",
+      "tag_index": 119,
+      "name": null
+    },
+    {
+      "type": "morph-shape",
+      "tag": "DefineMorphShape",
+      "id": 45,
+      "size": 115,
+      "sha256": "482d4cf6b3ac950c4c6b9e5c0ede54abf97044f5a134f2095a0794b427dc2774",
+      "tag_index": 120,
+      "name": null
+    },
+    {
+      "type": "morph-shape",
+      "tag": "DefineMorphShape",
+      "id": 46,
+      "size": 114,
+      "sha256": "6a9ac3d532738d2240f16eff457edf107cf0a94788a7c2714c0053519a1d6050",
+      "tag_index": 121,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape3",
+      "id": 47,
+      "size": 135,
+      "sha256": "da00b36b8dfd66f89ea3bd8339f22a537d7e027c4a17d3a00c4c10e26db002ab",
+      "tag_index": 122,
+      "name": null
+    },
+    {
+      "type": "morph-shape",
+      "tag": "DefineMorphShape",
+      "id": 48,
+      "size": 344,
+      "sha256": "e22b6916f2fc883fdec3e430eedca0fbb58b32cf3f615fc0bc2499fbb5483fe2",
+      "tag_index": 123,
+      "name": null
+    },
+    {
+      "type": "morph-shape",
+      "tag": "DefineMorphShape",
+      "id": 49,
+      "size": 187,
+      "sha256": "c7a0b64da77c60a38362908187d7706857b17a9339e7a5df9caef636235c5db0",
+      "tag_index": 124,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape3",
+      "id": 50,
+      "size": 672,
+      "sha256": "9be77277a1d584086d3f9f4c23bddc81a44a098e4317553123f972490d0c3937",
+      "tag_index": 125,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape3",
+      "id": 51,
+      "size": 610,
+      "sha256": "fea31de962b9fc9861ea4ec0e2178240e49bb9a3738b796b00fe159459a4cacf",
+      "tag_index": 126,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 52,
+      "size": 1099,
+      "sha256": "ba415e98d28d22a7d5dc3cf1d2bdff46ef9e9af1fc4d829e62d3c22e73bdf808",
+      "frames": 18,
+      "tag_index": 127,
+      "name": null
+    },
+    {
+      "type": "video",
+      "tag": "DefineVideoStream",
+      "id": 53,
+      "size": 10,
+      "sha256": "9e3a2a7ed15139724acee6ac13b876413163fc486a40e5d95460d95b8455962b",
+      "frames": 0,
+      "width": 300,
+      "height": 300,
+      "codec": 5,
+      "tag_index": 128,
+      "name": null
+    },
+    {
+      "type": "image",
+      "tag": "DefineBitsLossless2",
+      "id": 54,
+      "size": 1015,
+      "sha256": "7cfd42ec3d1ea83fb78bdd7bed9855c8689413a8ee0d58aeee873b95c2c3bbcc",
+      "format": "lossless+alpha (DefineBitsLossless2)",
+      "width": 64,
+      "height": 64,
+      "bitmap_format": "24/32-bit",
+      "tag_index": 129,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 55,
+      "size": 40,
+      "sha256": "1f6065ddc7748eca3a0860f26e1a8cd5d21fe5b1d671b353d1790d002d17f8dc",
+      "tag_index": 130,
+      "name": null
+    },
+    {
+      "type": "image",
+      "tag": "DefineBitsJPEG3",
+      "id": 56,
+      "size": 2485,
+      "sha256": "a96ffde1673b23e829fe319e80cde79c0c5ee17b8b669f5581b24845ff9f3003",
+      "format": "jpeg+alpha (DefineBitsJPEG3)",
+      "width": 64,
+      "height": 64,
+      "tag_index": 131,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 57,
+      "size": 40,
+      "sha256": "738dbc54c883fc3836a43b5707cb6cccb22e101d04bfaf837507036d6a4c9db6",
+      "tag_index": 132,
+      "name": null
+    },
+    {
+      "type": "image",
+      "tag": "DefineBitsJPEG3",
+      "id": 58,
+      "size": 2801,
+      "sha256": "159449d6dc7d7f3ac4ebeef0249a1b5daf32be2af21f86420dd4a12aa1debc0b",
+      "format": "jpeg+alpha (DefineBitsJPEG3)",
+      "width": 64,
+      "height": 64,
+      "tag_index": 133,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 59,
+      "size": 40,
+      "sha256": "9bc1ebd8d44c25b34d887759b95bdb1fd6c69657f115f4a29fa78bcbbec2aa3b",
+      "tag_index": 134,
+      "name": null
+    },
+    {
+      "type": "image",
+      "tag": "DefineBitsJPEG3",
+      "id": 60,
+      "size": 3154,
+      "sha256": "a7ad563a0f5dc0edb18e5da4c845e826d09791ae0b69d2f662bd7aa44bc8d36c",
+      "format": "jpeg+alpha (DefineBitsJPEG3)",
+      "width": 64,
+      "height": 64,
+      "tag_index": 135,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 61,
+      "size": 40,
+      "sha256": "7236e7e143ccdee60bb5d1446367ed9f758301aeabe96a3d4d3ecfab935d8abd",
+      "tag_index": 136,
+      "name": null
+    },
+    {
+      "type": "image",
+      "tag": "DefineBitsJPEG3",
+      "id": 62,
+      "size": 3201,
+      "sha256": "4e791099ddc46b6435a3812290f89eb02a8675bb2e59855c2d4229f3fa5d8f5c",
+      "format": "jpeg+alpha (DefineBitsJPEG3)",
+      "width": 64,
+      "height": 64,
+      "tag_index": 137,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 63,
+      "size": 40,
+      "sha256": "64b0543acb15ba8fb5708648468b1f24db9434c9eed8a927555e8b619dec26a6",
+      "tag_index": 138,
+      "name": null
+    },
+    {
+      "type": "image",
+      "tag": "DefineBitsJPEG3",
+      "id": 64,
+      "size": 3664,
+      "sha256": "666359ad39582ce8a6d5d18bea6c21661db8489394d35c68cf1625086181513f",
+      "format": "jpeg+alpha (DefineBitsJPEG3)",
+      "width": 64,
+      "height": 64,
+      "tag_index": 139,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 65,
+      "size": 40,
+      "sha256": "3799cccabeb4a32c9fd1c147de8dd67744a1bfb36d63f21afe71d437dc81ae26",
+      "tag_index": 140,
+      "name": null
+    },
+    {
+      "type": "image",
+      "tag": "DefineBitsJPEG3",
+      "id": 66,
+      "size": 3841,
+      "sha256": "154df9a7c269f91b23a3ea8078e742fa9ce2cf448ccea8511c67a89f4303af59",
+      "format": "jpeg+alpha (DefineBitsJPEG3)",
+      "width": 64,
+      "height": 64,
+      "tag_index": 141,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 67,
+      "size": 40,
+      "sha256": "7f1402db7fa2715a849f2c3ace92f4e0d69b7627e3f89070af9805a413dd45df",
+      "tag_index": 142,
+      "name": null
+    },
+    {
+      "type": "image",
+      "tag": "DefineBitsJPEG3",
+      "id": 68,
+      "size": 4287,
+      "sha256": "6ea4f3cb955d94b0d6fed588f4bfd09c452ceeb9ff6de7cd51bc82aaf1c600b9",
+      "format": "jpeg+alpha (DefineBitsJPEG3)",
+      "width": 64,
+      "height": 64,
+      "tag_index": 143,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 69,
+      "size": 40,
+      "sha256": "c9e65ac86bdcad3698985d5e18216301fbb851acd49edd458e1e819322fc035e",
+      "tag_index": 144,
+      "name": null
+    },
+    {
+      "type": "image",
+      "tag": "DefineBitsJPEG3",
+      "id": 70,
+      "size": 4577,
+      "sha256": "04b75a90626e829fb82193121fb0874a1cfcb1c0817288e8d2fac12158f9e36f",
+      "format": "jpeg+alpha (DefineBitsJPEG3)",
+      "width": 64,
+      "height": 64,
+      "tag_index": 145,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 71,
+      "size": 40,
+      "sha256": "5ea80d87b6c4bc2be4b88497e195f9793cf160e6cbfde57259690fc3a0f097b5",
+      "tag_index": 146,
+      "name": null
+    },
+    {
+      "type": "image",
+      "tag": "DefineBitsJPEG3",
+      "id": 72,
+      "size": 4561,
+      "sha256": "1a9cdb32d65eddd220ba326d9cff9dfbf7468f0d944d8e571dc090624713e20b",
+      "format": "jpeg+alpha (DefineBitsJPEG3)",
+      "width": 64,
+      "height": 64,
+      "tag_index": 147,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 73,
+      "size": 40,
+      "sha256": "615bbedacd6060f50cc4b6eaea6d0e5fe1bd7e72f196d44cf19b496df56038b7",
+      "tag_index": 148,
+      "name": null
+    },
+    {
+      "type": "image",
+      "tag": "DefineBitsJPEG3",
+      "id": 74,
+      "size": 4539,
+      "sha256": "234c0453fcd42569c5b1c56d1e7c4f6c32b2b1eb9b43745605ea7ff7252c1ee8",
+      "format": "jpeg+alpha (DefineBitsJPEG3)",
+      "width": 64,
+      "height": 64,
+      "tag_index": 149,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 75,
+      "size": 40,
+      "sha256": "c73f2a935ddf88ee34b03625f0056f88d00fa6975d732fdcc580721a2de6753c",
+      "tag_index": 150,
+      "name": null
+    },
+    {
+      "type": "image",
+      "tag": "DefineBitsJPEG3",
+      "id": 76,
+      "size": 4630,
+      "sha256": "63045bad21ee37bd44ff9d3915cef26cd5840ac581ecacb7e0651cd23cd680d2",
+      "format": "jpeg+alpha (DefineBitsJPEG3)",
+      "width": 64,
+      "height": 64,
+      "tag_index": 151,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 77,
+      "size": 40,
+      "sha256": "fe69a87500af725c8ac311449a932143a1e759e033a85935ad1e44edb707bfa7",
+      "tag_index": 152,
+      "name": null
+    },
+    {
+      "type": "image",
+      "tag": "DefineBitsJPEG3",
+      "id": 78,
+      "size": 4513,
+      "sha256": "520cd6ff0e0858be4f7868ff4cced31f52cb118698346b01cdada9aa653e7531",
+      "format": "jpeg+alpha (DefineBitsJPEG3)",
+      "width": 64,
+      "height": 64,
+      "tag_index": 153,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 79,
+      "size": 40,
+      "sha256": "fde86806024c6ed86f95b991a7e177e58335c014711cb531ba552dd8f5da4645",
+      "tag_index": 154,
+      "name": null
+    },
+    {
+      "type": "image",
+      "tag": "DefineBitsJPEG3",
+      "id": 80,
+      "size": 4499,
+      "sha256": "e2e7d60a374aa1d2e7149d894bfbcc6da37524736a51e102e32f4a25e0c959fb",
+      "format": "jpeg+alpha (DefineBitsJPEG3)",
+      "width": 64,
+      "height": 64,
+      "tag_index": 155,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 81,
+      "size": 40,
+      "sha256": "47c78a8c0b08b79844e0a638000bdece7f66ee4b025affb7370c9113029f8831",
+      "tag_index": 156,
+      "name": null
+    },
+    {
+      "type": "image",
+      "tag": "DefineBitsJPEG3",
+      "id": 82,
+      "size": 4055,
+      "sha256": "4ae60af79c171260f6b056da3c9270cfdfa188c0748c8287362677aa8a319404",
+      "format": "jpeg+alpha (DefineBitsJPEG3)",
+      "width": 64,
+      "height": 64,
+      "tag_index": 157,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 83,
+      "size": 40,
+      "sha256": "33d4791dd0dd21ffbe7de7ae6e34562158131400b65b2e6333b9751f05aad16d",
+      "tag_index": 158,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 84,
+      "size": 178,
+      "sha256": "e62d5db7e60c861fa0ec084836ecac6296003bf814347a3d93bd534356cc4a40",
+      "frames": 30,
+      "tag_index": 159,
+      "name": null
+    },
+    {
+      "type": "sound",
+      "tag": "DefineSound",
+      "id": 85,
+      "size": 13399,
+      "sha256": "edfaceae7d73875b47ecdcbfb642a2ad0b4ad053a5d8d481660e133da971ca07",
+      "format": "MP3",
+      "rate_hz": 22050,
+      "bits": 16,
+      "stereo": false,
+      "samples": 56448,
+      "seconds": 2.56,
+      "tag_index": 160,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 86,
+      "size": 5462,
+      "sha256": "dc5efed0a720f8cb7da445c23fe423ea62622781a3930068e6946ff547c2007b",
+      "frames": 61,
+      "tag_index": 161,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 87,
+      "size": 31,
+      "sha256": "fffe0415ee523ca0a5a61a18e6490ac67cd26570bf137bbc0f9ceafa91d80442",
+      "frames": 1,
+      "tag_index": 162,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 88,
+      "size": 14,
+      "sha256": "b94f326ab07e2dc9995f1fb5e4367f6795e1e85c02b5415734a0a1a903b6dc42",
+      "frames": 1,
+      "tag_index": 163,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 89,
+      "size": 27,
+      "sha256": "590bbf39e2cc3e068a2a74c07f9d215339abb2c6b554297645623f67bfc484be",
+      "frames": 1,
+      "tag_index": 164,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape4",
+      "id": 90,
+      "size": 54,
+      "sha256": "51db778d4b6db972c7311e053d4a3d1de99b98ba3fd5ae9e1348e4283cdb2b5e",
+      "tag_index": 165,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 91,
+      "size": 35,
+      "sha256": "e7ca646c125f1d9281c542509480d480413b08ba687c4d769bad3f2b291ec41d",
+      "frames": 1,
+      "tag_index": 166,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 92,
+      "size": 91,
+      "sha256": "12ffe27990b532e8347b78e83358c9f35a616e1b21a27961c0811e9d62133b7f",
+      "tag_index": 167,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 93,
+      "size": 35,
+      "sha256": "dc89960a7684e9b5197425d1a4f8ca97566e0b6f38a3736426ede983c0fc1d90",
+      "frames": 1,
+      "tag_index": 168,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 94,
+      "size": 102,
+      "sha256": "2e3b81b60a34362eb18fe25589aefa6b95931490668c3b218f6457b7d483e658",
+      "frames": 1,
+      "tag_index": 169,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 95,
+      "size": 75,
+      "sha256": "f91cce54501e9933deecd99e31f929e6d64630715a425a118be648984a5f59c6",
+      "frames": 1,
+      "tag_index": 170,
+      "name": "lib_man"
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 96,
+      "size": 42,
+      "sha256": "469abffd1d43fb5c7b1428d26a3ead76012c2ee3cb7e3c768729f6452050b554",
+      "frames": 1,
+      "tag_index": 172,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 97,
+      "size": 221,
+      "sha256": "6e7112d9cb838641b3fd36e04d45f0babf43f39488b2e2dfcc1799d40a0dc489",
+      "frames": 1,
+      "tag_index": 173,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 98,
+      "size": 32,
+      "sha256": "7c6859fc4f45673ef6d6240d46c8151f20e1c1ec6d21539fa2044295bc1e65da",
+      "frames": 1,
+      "tag_index": 174,
+      "name": "lib_bike_body"
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 99,
+      "size": 36,
+      "sha256": "11260006d507048ce72f649be7705ebf33f9a925e442f60254592e36e7b28ec8",
+      "tag_index": 177,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape2",
+      "id": 100,
+      "size": 79,
+      "sha256": "10493608b86a425a429bc08195061f5338f9d19377abf976f65736c8398626e6",
+      "tag_index": 178,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 101,
+      "size": 54,
+      "sha256": "5a6e1811f237b474ac1ee8942d0799465d1c938f7f139498e842316356c1209f",
+      "tag_index": 179,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 102,
+      "size": 37,
+      "sha256": "57f170879be8d3ca8d3de12984afe6a4d6e87e06895f2aab2e6b73cefadbd646",
+      "tag_index": 180,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape3",
+      "id": 103,
+      "size": 468,
+      "sha256": "24305b765b71f911d221c86740fcb0790e1197174a16fbe15cbcf59efda025ae",
+      "tag_index": 181,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 104,
+      "size": 4718,
+      "sha256": "979007139cf36ae9970410f1a0917e0e7e54acaa728fe9f8ad5c9d3e294e6995",
+      "frames": 229,
+      "tag_index": 182,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape3",
+      "id": 105,
+      "size": 1335,
+      "sha256": "c079a1215e5344691cc81737f07ad2c84225c1fd9cb2aff447d48802ee62e04e",
+      "tag_index": 183,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 106,
+      "size": 64,
+      "sha256": "b079d10682e83985cd62fbc696502866d2be773fe685441fea86b19f3142dbcc",
+      "frames": 1,
+      "tag_index": 184,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 107,
+      "size": 41,
+      "sha256": "12811b95b8b48090cb24575b594c4d8671fe6b48cae83e6e3f5629dcaa5c259f",
+      "frames": 2,
+      "tag_index": 185,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 108,
+      "size": 52,
+      "sha256": "6399b1452e56fc7df37b388232d708f102013d12d7c29943a0d2ae2f6810c4ba",
+      "frames": 1,
+      "tag_index": 186,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 109,
+      "size": 96,
+      "sha256": "531652b94a93c10d5ef982f68b30a12722513514ab2163635604d1f512894d62",
+      "tag_index": 189,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape2",
+      "id": 110,
+      "size": 356,
+      "sha256": "23a100738716d5761c62fb21f04e0a4927a302d130e9d4a03e935c1307fa680b",
+      "tag_index": 190,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 111,
+      "size": 22,
+      "sha256": "065b0e5d20725dd5d6ee3db0d4e75f8c190637423d9370a5fefa33d7a27538e5",
+      "frames": 1,
+      "tag_index": 191,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 112,
+      "size": 53,
+      "sha256": "5efee72b165d1e07c6f81d85852a65511f0852acc27e1ad28fae7fd824e4739d",
+      "frames": 1,
+      "tag_index": 192,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 113,
+      "size": 98,
+      "sha256": "54fd245c6aa7f74addd74bc004b7c542d31f053aabc260115371c9b42e540a20",
+      "frames": 1,
+      "tag_index": 193,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 114,
+      "size": 34,
+      "sha256": "4f2d0f4fb16ebb7c2f48a4d94c6f9ffe56bfe564b76e32fd81433d66036fcd2f",
+      "frames": 1,
+      "tag_index": 194,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 115,
+      "size": 31,
+      "sha256": "4ff97e06568ea0fa4694fcf5c2bfc9e2067a72419426eced57d9cfdb8145e8da",
+      "frames": 1,
+      "tag_index": 195,
+      "name": "lib_forward_wheel"
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 116,
+      "size": 31,
+      "sha256": "f7595ddb87bc70c834a3dac2de6d6910f0dd815824d41ef9ab0190cc54a3caaf",
+      "frames": 1,
+      "tag_index": 198,
+      "name": "lib_back_wheel"
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape2",
+      "id": 117,
+      "size": 4224,
+      "sha256": "80f70acf563b6b9547f84c2af30bc6eb8a6934902c03d476a585471ad89964b6",
+      "tag_index": 201,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape2",
+      "id": 118,
+      "size": 7533,
+      "sha256": "3093ca7c3bc69f4c81c6f203de99507e47baa4b41c0984bbbff1228b475b6055",
+      "tag_index": 203,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape4",
+      "id": 119,
+      "size": 984,
+      "sha256": "fd08bf8cacadd050bc864d44f720686ba095da87ed2d853473ecddb61cde76e0",
+      "tag_index": 205,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape4",
+      "id": 120,
+      "size": 85,
+      "sha256": "16b7e8d2c913806bd2cd521e494176b42e658e08c8979f6d0c7825d750ff2903",
+      "tag_index": 207,
+      "name": null
+    },
+    {
+      "type": "font",
+      "tag": "DefineFont3",
+      "id": 121,
+      "size": 3947,
+      "sha256": "9d325358f56a3447b03aa809d4f22260b15bd3de6256e7d3a4ccb4022fd58e20",
+      "font_name": "Cheri",
+      "tag_index": 208,
+      "name": null
+    },
+    {
+      "type": "font-align",
+      "tag": "DefineFontAlignZones",
+      "id": 121,
+      "size": 393,
+      "sha256": "df6c787e6304b51f22ca10863721e4bca065abd199c4b295d58362e74580f360",
+      "tag_index": 209,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 122,
+      "size": 47,
+      "sha256": "be7de7d9f29d47b496803aab6f3dcb4dfa2084e3abc1335284d65e284bbeae0d",
+      "tag_index": 211,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 123,
+      "size": 47,
+      "sha256": "7ccd8c008820981674bba5a5da8251c147a8a7314fca04b464f045bd43d5e0be",
+      "tag_index": 213,
+      "name": null
+    },
+    {
+      "type": "button",
+      "tag": "DefineButton2",
+      "id": 124,
+      "size": 1002,
+      "sha256": "a4d7db41fcfdfaee15f8b5e66b1f9e611506d57dea8efbaf59256bd423d6706e",
+      "tag_index": 216,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 125,
+      "size": 46,
+      "sha256": "042ae1b98dba09072214945df987ecec40c004e34ae7a20ac8faaef4edb9f660",
+      "tag_index": 218,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 126,
+      "size": 46,
+      "sha256": "043856e487d1ed84b06742ef09cca91155b59204a68ad24c4bf8f65c9970bbaf",
+      "tag_index": 220,
+      "name": null
+    },
+    {
+      "type": "button",
+      "tag": "DefineButton2",
+      "id": 127,
+      "size": 76,
+      "sha256": "79f3b1527bd653f576be3d3b0517039631a7b4748ddcf4fb70949e1a3a57b8c1",
+      "tag_index": 222,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 128,
+      "size": 70,
+      "sha256": "169251bf47b9f1e954768f9bcca4e65dde1f7b333e67bc535062f3f225c0c8e7",
+      "tag_index": 224,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 129,
+      "size": 64,
+      "sha256": "b105c3e4304b806f500e8a2246be9c6a6d5c0050ce3ca64a481f34f4bb0af662",
+      "tag_index": 227,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 130,
+      "size": 77,
+      "sha256": "f1382a0e22055904e851a02fa7e2410ec041ceb055e2eb756514eb55597ae545",
+      "tag_index": 230,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 131,
+      "size": 115,
+      "sha256": "6af86888cdd05e2f9c9c4bc66e129a7d268cd5fcde3970ed663a6bc9e3221023",
+      "tag_index": 233,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 132,
+      "size": 84,
+      "sha256": "8f1e383794576dad89f7507b1e5c24a7579413a1ce6c351f24db4532f55116e3",
+      "tag_index": 236,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 133,
+      "size": 156,
+      "sha256": "03e398086e11b6414bcdb86b2c32c4b01b7f6ccfccb8c8acafe244accd68b17f",
+      "tag_index": 239,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 134,
+      "size": 30,
+      "sha256": "bc1fb9ec56edaf02703e7fe12f07bbe982758c9ea0718a8dedc7b86b7af6cac1",
+      "tag_index": 242,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 135,
+      "size": 324,
+      "sha256": "21ce9bc588ee071555c21bd7b8159e6d09f4b068765d58c418b5d73ffad601c1",
+      "frames": 31,
+      "tag_index": 243,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape4",
+      "id": 136,
+      "size": 917,
+      "sha256": "3f91476e91732407ce9722fee72f2970096cc6a860e109d68d52ca9eb28fbf1e",
+      "tag_index": 245,
+      "name": null
+    },
+    {
+      "type": "font",
+      "tag": "DefineFont3",
+      "id": 137,
+      "size": 624,
+      "sha256": "56a5e0391e06a131c0a1fbd03c38648191aaa58ec28bdd3e8582100d023bf3c4",
+      "font_name": "Aharoni",
+      "tag_index": 246,
+      "name": null
+    },
+    {
+      "type": "font-align",
+      "tag": "DefineFontAlignZones",
+      "id": 137,
+      "size": 63,
+      "sha256": "a61dc1bd5e6ca7328803bec5a3da5d1e96523a3361e86f8b0915ac9104763cfa",
+      "tag_index": 247,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 138,
+      "size": 39,
+      "sha256": "07478571d0586daeac76f3fe278217a007d2996fddb77d9aec296ec94f74056f",
+      "tag_index": 249,
+      "name": null
+    },
+    {
+      "type": "font",
+      "tag": "DefineFont3",
+      "id": 139,
+      "size": 594,
+      "sha256": "0bf3dfaabb3f0b207daf84c2275c45e978130a9ab6ff704fdc0932b76a4d5447",
+      "font_name": "Adobe Caslon Pro",
+      "tag_index": 250,
+      "name": null
+    },
+    {
+      "type": "font-align",
+      "tag": "DefineFontAlignZones",
+      "id": 139,
+      "size": 43,
+      "sha256": "2b78e0b0a1d16a4ff0a9b947c9783bed0999d5d87b71411351d1cd7a6279717d",
+      "tag_index": 251,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 140,
+      "size": 32,
+      "sha256": "4b08c46b64b8326aaf51f5dfc14a2a18d6203b5fce6adee453f936eda680fc74",
+      "tag_index": 253,
+      "name": null
+    },
+    {
+      "type": "font",
+      "tag": "DefineFont3",
+      "id": 141,
+      "size": 699,
+      "sha256": "b676340146ddac93e40a6e947ab5bdfed5950604cd484fd51f34f15c2627e397",
+      "font_name": "Arvo",
+      "tag_index": 254,
+      "name": null
+    },
+    {
+      "type": "font-align",
+      "tag": "DefineFontAlignZones",
+      "id": 141,
+      "size": 53,
+      "sha256": "01787f0c285f3b4ecc406d130a0d80cfa5ad6099378463dc5af8642693753a10",
+      "tag_index": 255,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 142,
+      "size": 37,
+      "sha256": "4cd4634a41ace176cacd37e2ba9a3d10c8da8f487eab2a2acb1ac098c8d47c9a",
+      "tag_index": 257,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 143,
+      "size": 1703,
+      "sha256": "81e6da097d422a609b52a3e610e6aed9881cd34d39c63d1d30d672053b00cc8b",
+      "frames": 44,
+      "tag_index": 258,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 144,
+      "size": 4840,
+      "sha256": "b5d4884cea14e3f77ff99744120864f28a6c106c874ac84ec100ddcd66d90995",
+      "tag_index": 260,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 145,
+      "size": 14,
+      "sha256": "42e23a067a987a48ef24f4b02beb501e8ffa1eb0bd2b00277f4e13992aee7f37",
+      "frames": 1,
+      "tag_index": 288,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 146,
+      "size": 33,
+      "sha256": "8e09bc45c27db01f8e0cba9501d5ac2b7087dd11652e1ed0de595d0a240c0cbb",
+      "tag_index": 290,
+      "name": null
+    },
+    {
+      "type": "button",
+      "tag": "DefineButton2",
+      "id": 147,
+      "size": 142,
+      "sha256": "5d7ad433ea4f05e441a29e67bf7807b73f3841965f85ea3f6e77fba4cfad9dfc",
+      "tag_index": 291,
+      "name": null
+    },
+    {
+      "type": "button",
+      "tag": "DefineButton2",
+      "id": 148,
+      "size": 150,
+      "sha256": "2645a5b09296374301e9b7916027b5d17c5fc2c3964b68ec4309b3587f9155c7",
+      "tag_index": 293,
+      "name": null
+    },
+    {
+      "type": "button",
+      "tag": "DefineButton2",
+      "id": 149,
+      "size": 13,
+      "sha256": "7e465153eb43971f0a60de232863270cdaa612cb806df5ca8128e87de61b7fd4",
+      "tag_index": 295,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 150,
+      "size": 17,
+      "sha256": "d53d2e4231f26dc7a6ba26fed1069a95163df77c20be10bcac4f67c6938ae556",
+      "frames": 1,
+      "tag_index": 297,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape4",
+      "id": 151,
+      "size": 46,
+      "sha256": "7d4bdb74facd836c65824ec8a690dd2cb33ca7fc5622f277909105a8a5afa193",
+      "tag_index": 300,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 152,
+      "size": 22,
+      "sha256": "acd156234f033273c19c95c22927f0215bff713f31c6887e6834c2c80065a90d",
+      "frames": 1,
+      "tag_index": 301,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 153,
+      "size": 47,
+      "sha256": "2e45f89fb7bd0af29c7f0a88e46c4ff03ef0fa8cb1cfd5a3422d2aa6c0655e05",
+      "tag_index": 332,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 154,
+      "size": 32,
+      "sha256": "0cb2d0a0153c90084ba89f918dedd18ffb3a76fdab886c9842a2471149b1595d",
+      "tag_index": 342,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape2",
+      "id": 155,
+      "size": 82,
+      "sha256": "7cf78f1e813624c94e59445755bdb756dc0360cf11998de1591fa508e64ded76",
+      "tag_index": 343,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape2",
+      "id": 156,
+      "size": 85,
+      "sha256": "7b98f8cea6afaed6a58ca2593ddb610b25e0b182f9e5f40fedf216e5f72fd139",
+      "tag_index": 344,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 157,
+      "size": 41,
+      "sha256": "56598e7c070096104602068b1ec1ac94faea5030284e474517a98acfa20c43d8",
+      "frames": 1,
+      "tag_index": 345,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 158,
+      "size": 1353,
+      "sha256": "75442636993d326a67138d519880d7a4b35f2d8c87fd0acf8e95df67ca6d6578",
+      "tag_index": 346,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 159,
+      "size": 1686,
+      "sha256": "dba5fee65d18c65a12a5a3e4e26d0fa0153f2cd626829b7a63bf92430fb3284f",
+      "frames": 1,
+      "tag_index": 347,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 160,
+      "size": 14,
+      "sha256": "be21ef583b2c725318c70d06092d8696169427166d7ab6b7adbe475790e39b18",
+      "frames": 1,
+      "tag_index": 348,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 161,
+      "size": 57,
+      "sha256": "7a2b6021a9e6cfd427b93add0ce0c90ff0f172a5bb9d494ee7c2d920ff0758ea",
+      "frames": 1,
+      "tag_index": 349,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape3",
+      "id": 162,
+      "size": 1898,
+      "sha256": "2b7ac7daa63b0944e3fd72f17aa8f557c86eb86932157b89dfcf27a685d2df88",
+      "tag_index": 350,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 163,
+      "size": 22,
+      "sha256": "e9f6d706f74fec1435568f8288f1bd03527276249d26e4b160b8dbd441acd3a1",
+      "frames": 1,
+      "tag_index": 351,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 164,
+      "size": 25,
+      "sha256": "57a401bae263a633cd64b2fdcfe95f2d26d653c91c3094fd1d357d0330b0bad6",
+      "frames": 1,
+      "tag_index": 352,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape2",
+      "id": 165,
+      "size": 1284,
+      "sha256": "b8785046096f689b6b7c83066084d7e5ed8ebd06937f25dfa90a617b26c9fb02",
+      "tag_index": 353,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 166,
+      "size": 22,
+      "sha256": "b00d711a2cff172352d2b8557e3f79c54c4587bda906560faaab9e84a33a1a92",
+      "frames": 1,
+      "tag_index": 354,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 167,
+      "size": 47,
+      "sha256": "ea6b818040bdeb4a06e2a230cc2e5562eddada3f3319da38cb30646290efefaf",
+      "frames": 1,
+      "tag_index": 355,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 168,
+      "size": 42,
+      "sha256": "90b433004f9cb44c807bc5205613fb8d72cf84ed63deffa906e65ddf52251676",
+      "frames": 1,
+      "tag_index": 356,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 169,
+      "size": 1237,
+      "sha256": "fc922715fa4f7d44f643b34d6fcf8b458e0b3b904e32b31faad0e07ec7974781",
+      "tag_index": 357,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 170,
+      "size": 22,
+      "sha256": "534953411551574241cb43ed8982459fbe829b5c22f4f7c90b97e4c64405747b",
+      "frames": 1,
+      "tag_index": 358,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 171,
+      "size": 40,
+      "sha256": "0d76627d6ba630d85c7f169bc4f2dcfdaa326152ca22759fc90dca2f05a019d3",
+      "frames": 1,
+      "tag_index": 359,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 172,
+      "size": 45,
+      "sha256": "fffba1d0686d9c4db3b7f8f693ddcda126453280959aca17785cd02bb0d7a5fc",
+      "frames": 1,
+      "tag_index": 360,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape3",
+      "id": 173,
+      "size": 1827,
+      "sha256": "1a0c9b5934894b8ae273e94c5930898fe6b179b518ff9e3db15cf4582a0aedc0",
+      "tag_index": 361,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 174,
+      "size": 22,
+      "sha256": "d87bdb6c7b574a2daf7dc2e34e0ae7496e6fc319c35c9e162a46aade6615117d",
+      "frames": 1,
+      "tag_index": 362,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 175,
+      "size": 44,
+      "sha256": "81ca3136327b59af1b1d2f0132940bd6aea8158cf384dea7979d8166cc748e15",
+      "frames": 1,
+      "tag_index": 363,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 176,
+      "size": 513,
+      "sha256": "1e53d9c4a7f8ccf6e9cced81c93b0f6fde6217f6b87f6650c479d0bb61ed06a9",
+      "tag_index": 364,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 177,
+      "size": 22,
+      "sha256": "c53ad43ef9297497951ec97e79aaffeb414c6a2f7d81ab89fe0ecef26826a643",
+      "frames": 1,
+      "tag_index": 365,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 178,
+      "size": 25,
+      "sha256": "a1b5865d3c2344e1f1c1ec12bd0365007e7596a34971e3750d59cf201e0ccc6d",
+      "frames": 1,
+      "tag_index": 366,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 179,
+      "size": 50,
+      "sha256": "3ddb2a5d97a48ed6333ed833684e8d8409c413cded97c3ba395d725fcfef4fdd",
+      "frames": 1,
+      "tag_index": 367,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 180,
+      "size": 51,
+      "sha256": "f05b7495a8fdb8bfe244f4db2fb1e288b666a36e3787b96323ab75134c566b38",
+      "frames": 1,
+      "tag_index": 368,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 181,
+      "size": 823,
+      "sha256": "f6ef777c93d13d6b6bce44d4166c74d9d2fa5eed434658e86d4762c22ba450c2",
+      "tag_index": 369,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape2",
+      "id": 182,
+      "size": 697,
+      "sha256": "1c37ff6f2ba7d39ca6d798982dc6f982bb154a7b2a8b4a0a0f027df92a1b74de",
+      "tag_index": 370,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape2",
+      "id": 183,
+      "size": 429,
+      "sha256": "b2958b5d7acdc56f67488f517b9bdf77a9113039f9617240846a021875d0fca1",
+      "tag_index": 371,
+      "name": null
+    },
+    {
+      "type": "sound",
+      "tag": "DefineSound",
+      "id": 184,
+      "size": 22944,
+      "sha256": "04cabbbf9ec6d8008ca8dc9adfa5eb55a5d48c2197f4284e13d51a1569df8b86",
+      "format": "MP3",
+      "rate_hz": 44100,
+      "bits": 16,
+      "stereo": false,
+      "samples": 59904,
+      "seconds": 1.36,
+      "tag_index": 372,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape2",
+      "id": 185,
+      "size": 472,
+      "sha256": "2740bab71b8d8b0c461f9b6a78a3d6604edaf0795e3dadd5f872b7b6501c59bf",
+      "tag_index": 373,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape2",
+      "id": 186,
+      "size": 237,
+      "sha256": "97e960efac418db0fb6f982fe76b4b9bf7275d6992702e9ffe04cbd27cb29917",
+      "tag_index": 374,
+      "name": null
+    },
+    {
+      "type": "morph-shape",
+      "tag": "DefineMorphShape",
+      "id": 187,
+      "size": 78,
+      "sha256": "1f0f8c55874c1044ac15491637b299b26981ba768b18227f1ca0e3a103e7376e",
+      "tag_index": 375,
+      "name": null
+    },
+    {
+      "type": "morph-shape",
+      "tag": "DefineMorphShape",
+      "id": 188,
+      "size": 86,
+      "sha256": "1ab48f6e0037a3582f295ff4ae9003e7a716d5d59dad3a73412b1f88cd71f870",
+      "tag_index": 376,
+      "name": null
+    },
+    {
+      "type": "morph-shape",
+      "tag": "DefineMorphShape",
+      "id": 189,
+      "size": 85,
+      "sha256": "8f5ffe3e38b74309aa94c971ae0185dc10dc4f0b7365e2f3250ff17d5c454730",
+      "tag_index": 377,
+      "name": null
+    },
+    {
+      "type": "morph-shape",
+      "tag": "DefineMorphShape",
+      "id": 190,
+      "size": 79,
+      "sha256": "d0966ebc08cf25d662311dde5d82b34800d94973974d140da06e54febc500782",
+      "tag_index": 378,
+      "name": null
+    },
+    {
+      "type": "morph-shape",
+      "tag": "DefineMorphShape",
+      "id": 191,
+      "size": 86,
+      "sha256": "227bcba74f2fab2ee95c6df74d42581f969248fd7e81c90c07203cb8f328a642",
+      "tag_index": 379,
+      "name": null
+    },
+    {
+      "type": "morph-shape",
+      "tag": "DefineMorphShape",
+      "id": 192,
+      "size": 86,
+      "sha256": "2c7b696ed299e95f628eb75c75acfd1fed1408addea343d3b812e2853855ecc7",
+      "tag_index": 380,
+      "name": null
+    },
+    {
+      "type": "morph-shape",
+      "tag": "DefineMorphShape",
+      "id": 193,
+      "size": 92,
+      "sha256": "8c1f954840991e09a1b7909a8ddd7d75b34c5be71954bb60fa20b4261e822bb9",
+      "tag_index": 381,
+      "name": null
+    },
+    {
+      "type": "morph-shape",
+      "tag": "DefineMorphShape",
+      "id": 194,
+      "size": 86,
+      "sha256": "8a924505678388b96c0df70bfadcc1fba2f9ff315726ed0efebd4bd3c825ddcc",
+      "tag_index": 382,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape3",
+      "id": 195,
+      "size": 278,
+      "sha256": "14c5ee3fd4bf4cca3c1e38292a60a351ed5a83e40d718bcab3e7307023f77dff",
+      "tag_index": 383,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape2",
+      "id": 196,
+      "size": 222,
+      "sha256": "b2cd43b69f90a4cb4c3236b8196c6e17f5470c39a0480355ab178da28be3a3ef",
+      "tag_index": 384,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 197,
+      "size": 374,
+      "sha256": "f5933fa0ff1a2773311e1481d35da98d94c80d30f6481ae0f882c25c623558e3",
+      "frames": 11,
+      "tag_index": 385,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 198,
+      "size": 81,
+      "sha256": "d3fe02b8e17444d9052e3ce1435e1939349cf2ce9f950b705ccc2a57f0d22622",
+      "frames": 1,
+      "tag_index": 386,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape4",
+      "id": 199,
+      "size": 110,
+      "sha256": "f00cd95c277388592d4f3417db449bac7ae7f00d713f3340a6493db5ef9e0ebc",
+      "tag_index": 387,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 200,
+      "size": 22,
+      "sha256": "016a5cfd18ea763420b6ee2a2ac4c6fa3e0cf3af9b39b49176040d0a65244e1b",
+      "frames": 1,
+      "tag_index": 388,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 201,
+      "size": 832,
+      "sha256": "15f758100195aa33fd359eaeb8f0d5fe4626e2b54f4cdd4d2e7748fd72489af7",
+      "tag_index": 389,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 202,
+      "size": 34,
+      "sha256": "0859796f57a8aed7831b581d0c20f9a88b7c71d78d5bb0c7ab4a31e01436f54e",
+      "frames": 1,
+      "tag_index": 390,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 203,
+      "size": 296,
+      "sha256": "08201ff6dcf9244251a9477465b2822a85c73146abb8d39d9ea8399689b4714b",
+      "tag_index": 391,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 204,
+      "size": 22,
+      "sha256": "65352469adbc4c4fdfe7faddc6b87a0af313fcd20517912851e505fc26a4cb6c",
+      "frames": 1,
+      "tag_index": 392,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 205,
+      "size": 221,
+      "sha256": "c1b4bbccacda34e67ff4e70ea83b6c44d373a4c6f8e90aa7174a49e83a696fed",
+      "frames": 2,
+      "tag_index": 393,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 206,
+      "size": 54,
+      "sha256": "2ac418961d2ed3f416a13d0181a6a0c63f6f1aabb895789a5422f9559b4cf31e",
+      "frames": 2,
+      "tag_index": 394,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 207,
+      "size": 87,
+      "sha256": "8e661048675bcc77a5de3d09097a4599beed55c12baeb2df757c648f090a6390",
+      "frames": 1,
+      "tag_index": 395,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 208,
+      "size": 14,
+      "sha256": "39548d0b9424501091497f12e42f9e9b25d8d7ec22928b074f97f165097917f7",
+      "frames": 1,
+      "tag_index": 396,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape2",
+      "id": 209,
+      "size": 1206,
+      "sha256": "2142d64f91c91caf81b926cb5614f7895f321d0805a5d0ac687538708073ce98",
+      "tag_index": 397,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape2",
+      "id": 210,
+      "size": 1228,
+      "sha256": "6f0706b716ca58637155381c5509475176a09f2d21f9b049d3653e2426ee8ecd",
+      "tag_index": 398,
+      "name": null
+    },
+    {
+      "type": "morph-shape",
+      "tag": "DefineMorphShape2",
+      "id": 211,
+      "size": 569,
+      "sha256": "079f54c849cf6f24e6afa89b22decd6c6db67f409e8ce6b86dc6d26f71db9781",
+      "tag_index": 399,
+      "name": null
+    },
+    {
+      "type": "morph-shape",
+      "tag": "DefineMorphShape",
+      "id": 212,
+      "size": 835,
+      "sha256": "96b44bc471c58ccd6eebf92d0c89aa6f2349197ab03b4baf9872de9f4bff42b5",
+      "tag_index": 400,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape3",
+      "id": 213,
+      "size": 355,
+      "sha256": "4bb81135cdfffa359f441ddba2986d53c4d3b3da32d3948a62d896488564a73b",
+      "tag_index": 401,
+      "name": null
+    },
+    {
+      "type": "morph-shape",
+      "tag": "DefineMorphShape",
+      "id": 214,
+      "size": 622,
+      "sha256": "4b0dcc2e5592f1b6c81b443f04dde5a11dc789ae3fd654cf7b9780a16958ec73",
+      "tag_index": 402,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape4",
+      "id": 215,
+      "size": 497,
+      "sha256": "2d7d93c0e97298499ffa60b31dd0cbcaba19102927776d963b4ce88dcc72595b",
+      "tag_index": 403,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape3",
+      "id": 216,
+      "size": 327,
+      "sha256": "6434d88584347d14770bc1517aa3a70d83d3201ecf8e9f4e0ef8b4dfe0eca234",
+      "tag_index": 404,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape4",
+      "id": 217,
+      "size": 170,
+      "sha256": "1d4b49a36bfc95437ada5dcc731bc96ac3532a680bdc4f1db205eb699ce2a560",
+      "tag_index": 405,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 218,
+      "size": 594,
+      "sha256": "ae7bf52c4a7f23f727387f8fd9adff84ee81f39d51b8ebe16440b6557b733f58",
+      "frames": 34,
+      "tag_index": 406,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 219,
+      "size": 507,
+      "sha256": "536838a4bc2f30c345b3573348f45701c360a7f75af1ed5a61168ed7085e3923",
+      "frames": 1,
+      "tag_index": 407,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 220,
+      "size": 14,
+      "sha256": "e5d195cacabd43011d0821ea978cffd61d0b9b536470b582636b1bcf70463329",
+      "frames": 1,
+      "tag_index": 408,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 221,
+      "size": 1993,
+      "sha256": "fcc57aa11b12001f6ca0fab02a59b3f97c67c88ed130e424c43a84e8f6356c61",
+      "frames": 100,
+      "tag_index": 409,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 222,
+      "size": 102,
+      "sha256": "aa6ead2b6551534b8df87d5b412f03a8e5f70b6d55e720a4e9801acdd0b5b92f",
+      "frames": 45,
+      "tag_index": 410,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 223,
+      "size": 14,
+      "sha256": "c5848a507d118076b7515cea77e4438590fefc8584a9c9393c71f01abd370271",
+      "frames": 1,
+      "tag_index": 411,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 224,
+      "size": 58,
+      "sha256": "5e3d35bcf02d2a39314c523e487580ef38a93358ba01e3c47f11bab9997ec45d",
+      "frames": 1,
+      "tag_index": 412,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 225,
+      "size": 940,
+      "sha256": "7ff09799e22243a466caa24100480aa8b30804861874b94deb1cc6c8ea299ad6",
+      "tag_index": 413,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 226,
+      "size": 212,
+      "sha256": "06fddc21a046feb8cd6eb04732280b4a5c955387c65c66ca69c56df188b83d0c",
+      "frames": 1,
+      "tag_index": 414,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 227,
+      "size": 1976,
+      "sha256": "ae18fe8a76cf2a92745f4283151e0f73df8c8544d6ff30fe15e6257e93bebafc",
+      "tag_index": 415,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 228,
+      "size": 37,
+      "sha256": "472bdc97223fc08a463c483acd3fd5dcc578ce6fc6be47928bb3b2c7b936ec46",
+      "frames": 1,
+      "tag_index": 416,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 229,
+      "size": 724,
+      "sha256": "8420f2cc7958db2338abbf5dd3da6924570fe5f39b75c658bbc80c59de1abe54",
+      "frames": 1,
+      "tag_index": 417,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 230,
+      "size": 38,
+      "sha256": "cba5a086c8bf38efe17e96973b4d5c4c45cf4aa743a6ee5b9270df038e8b32c3",
+      "tag_index": 418,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 231,
+      "size": 31,
+      "sha256": "ad9c776dc11b770eb15e356bffef811231ffafb8c297c47ec1756570670d9c15",
+      "tag_index": 419,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 232,
+      "size": 14,
+      "sha256": "7527e3755527a850d2268fdedb06e3f9785d86595c1afdbd79ff2f594e5f141e",
+      "frames": 1,
+      "tag_index": 420,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 233,
+      "size": 14,
+      "sha256": "453bffdca77fa6a7c679188409a33f28ce0197a30432e1a7b6f002789df32ee3",
+      "frames": 1,
+      "tag_index": 421,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 234,
+      "size": 982,
+      "sha256": "88bcc73d7090edf2ecf93141ff7055b9c6338c4dd8ba935686d846ccf8721882",
+      "tag_index": 422,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 235,
+      "size": 22,
+      "sha256": "a6232f0751b324176705cb292bd5cec6cd74f5514d7f9f87d34256634ba4a27a",
+      "frames": 1,
+      "tag_index": 423,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 236,
+      "size": 361,
+      "sha256": "7956f774ff12146f5b6730ca8729dbecddeb175a85ba4a255f72ec0dc9fc453b",
+      "tag_index": 424,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 237,
+      "size": 22,
+      "sha256": "f252d0220a70537ce5d10e78aa0720d927efe92d2ac711b9708824e2fe135a10",
+      "frames": 1,
+      "tag_index": 425,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 238,
+      "size": 792,
+      "sha256": "6acc356853fc3ef2fb88d2d6af575a96c1cfffe99a07b408fef560ba753087a8",
+      "tag_index": 426,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 239,
+      "size": 22,
+      "sha256": "086c886e20550faa590f421447a94f89d484cce820cc19e460eab43291f84c2d",
+      "frames": 1,
+      "tag_index": 427,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 240,
+      "size": 14,
+      "sha256": "71310e9aced03ea23a09eab9874a33d657e9bf91adad8c29fa905c710f1560b6",
+      "frames": 1,
+      "tag_index": 428,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 241,
+      "size": 44,
+      "sha256": "10f601e3faffab5518488f3473f5194970f468a8dc284106b0c65b398f3cd484",
+      "tag_index": 429,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 242,
+      "size": 22,
+      "sha256": "8905e4fcd1eefc42c2bac60cf706bcbd582c28cf0cbaec3f2743a7f311e24e93",
+      "frames": 1,
+      "tag_index": 430,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 243,
+      "size": 171,
+      "sha256": "0285130ebc48a5dfac533882f807e44c2c2a62047c04aa4dd3e62187a60a1750",
+      "frames": 1,
+      "tag_index": 431,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 244,
+      "size": 14,
+      "sha256": "982ec53c8ed58915d02caa57935fba73eedde78ced3a225e22239027f77fdb25",
+      "frames": 1,
+      "tag_index": 432,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 245,
+      "size": 215,
+      "sha256": "710f002ce6e9127f249b79fe19aad0ab1168962804b55f2064081d1baa7a8138",
+      "tag_index": 433,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 246,
+      "size": 54,
+      "sha256": "df8a08b3eedc8a44e6e494591685463bbb15473c435402cade354d5f11754d17",
+      "tag_index": 434,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 247,
+      "size": 32,
+      "sha256": "7c68b8ed5423b6bc1a2a8d73ebc8ce089195f727829ee9163024529b475ead20",
+      "frames": 1,
+      "tag_index": 435,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 248,
+      "size": 38,
+      "sha256": "13f21588a53edd983b325ba4f7049d06798d51ff472a544968ec32397ead43aa",
+      "frames": 1,
+      "tag_index": 436,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 249,
+      "size": 22,
+      "sha256": "7d5ffa4a64a9cb05463b6973dc38bae37162c5aa8620c9bdac64e11cd5b28d80",
+      "frames": 1,
+      "tag_index": 437,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 250,
+      "size": 259,
+      "sha256": "4f8745b8c21d293950907bb81d6205ea46fcb734394307635652379aee6eada2",
+      "tag_index": 438,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 251,
+      "size": 55,
+      "sha256": "0f76ede73e33a9b80146fbc2952cc6fdb69636a5bba02b3a085f961c8545afa4",
+      "tag_index": 439,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 252,
+      "size": 32,
+      "sha256": "c8393bed92e9a0c47e7811bf73c83d6818a6b95d454c76d7d1be1d5ea32d203b",
+      "frames": 1,
+      "tag_index": 440,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 253,
+      "size": 38,
+      "sha256": "6167259fc15fc28346aea02c73baa75b4c3c77091350c06ad22da7725e43daff",
+      "frames": 1,
+      "tag_index": 441,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 254,
+      "size": 22,
+      "sha256": "b1752512d1e39289defa8f314cd173666225cceae3386020a1caf879058ac7b3",
+      "frames": 1,
+      "tag_index": 442,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 255,
+      "size": 318,
+      "sha256": "7bad2c1ea83f72b5c15798f3c5aed413577410b847103828c800581b5682812d",
+      "tag_index": 443,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 256,
+      "size": 55,
+      "sha256": "0816f5dfd6c58604ca22fc9bb1fdba016fd1536d0202a77d4653dc84bd59dad8",
+      "tag_index": 444,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 257,
+      "size": 32,
+      "sha256": "12a46e2a75d2ddc46e6bca9227a3a0d7bfe13e3a2cd4462a772b0bbfd31107bc",
+      "frames": 1,
+      "tag_index": 445,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 258,
+      "size": 38,
+      "sha256": "7530645dfe228cf60ad85cdd441d81ab50811200d13f55e0c362502d2791c39b",
+      "frames": 1,
+      "tag_index": 446,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 259,
+      "size": 22,
+      "sha256": "0300c64a37d03113add8593edffa038e085eea3024f18ed2f8ad062aba1e3963",
+      "frames": 1,
+      "tag_index": 447,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 260,
+      "size": 274,
+      "sha256": "2bef1de8ac8fd025bb5e988d2b395d504b6b2ba1fb9eb3671533b9c116b28db7",
+      "tag_index": 448,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 261,
+      "size": 53,
+      "sha256": "9bbb9340e7ca0e7e19f5d94ed34bd3c24661d3d3b3e5926fb568d037109ae213",
+      "tag_index": 449,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 262,
+      "size": 37,
+      "sha256": "ed9326e292270f4fe474f6787ccbbf3e534ed8b016864c77b54b1457a62a7fb6",
+      "frames": 1,
+      "tag_index": 450,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 263,
+      "size": 37,
+      "sha256": "5f2d952a4acd7df1c5327f1efdcd646e8c9a7821f14e5c42b5b01740fd0acdad",
+      "frames": 1,
+      "tag_index": 451,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 264,
+      "size": 22,
+      "sha256": "36ce85220f3a4bc543a99223484dba395d4e8a47d1cc834f7b03c3cda7b40de1",
+      "frames": 1,
+      "tag_index": 452,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 265,
+      "size": 310,
+      "sha256": "3f68bdf69e869e8e217a921a8a9fae1c0ade6b189fed5d47822b85fbadfa9d56",
+      "tag_index": 453,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 266,
+      "size": 55,
+      "sha256": "1c1b7d20391563b286db5cef334bcb637a69213de56f2904ff90383d328cac51",
+      "tag_index": 454,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 267,
+      "size": 32,
+      "sha256": "fdc17618d4f08f5acfcec2498c57f9a31963854a0d73f3c2eba016c23c85068f",
+      "frames": 1,
+      "tag_index": 455,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 268,
+      "size": 38,
+      "sha256": "9a4800d6c13eba3f0fc237d15966ac6098a7f7e586ee15995f412e823d9c5e1a",
+      "frames": 1,
+      "tag_index": 456,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 269,
+      "size": 22,
+      "sha256": "906c98a2026ca56b878581d02bd3f4a874cf301375797e76cfac124d313c1d66",
+      "frames": 1,
+      "tag_index": 457,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 270,
+      "size": 237,
+      "sha256": "05620970b5a73ec2a3cd0a419788f1a1779fa2500aad8c732d28570c3e455651",
+      "tag_index": 458,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 271,
+      "size": 55,
+      "sha256": "27a9f085c841b5bba18bd62159a15cc83b6003c9ec7d38ccc6199471f21a5023",
+      "tag_index": 459,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 272,
+      "size": 32,
+      "sha256": "4f4857fad14bf5b3c8bb2a3a430670227bc37e34c69c3cfb6a6959010b2e1718",
+      "frames": 1,
+      "tag_index": 460,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 273,
+      "size": 38,
+      "sha256": "3df39be5d3773527b8a7f27ef5702f5594b700a857be0af0aaff1b9afe26d4a9",
+      "frames": 1,
+      "tag_index": 461,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 274,
+      "size": 22,
+      "sha256": "b2660fae73e9c7dda8b7d59887edf8f0df0480a63b6e5f1f71786374b3d94859",
+      "frames": 1,
+      "tag_index": 462,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 275,
+      "size": 209,
+      "sha256": "f67a19a6c31e0b6abc2f2a28f40458eafd6d4c965ab1c20aeff5bd54bee912db",
+      "tag_index": 463,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 276,
+      "size": 53,
+      "sha256": "c5ab7065f08b78b8405ca7c3c98ea75cbcb989a2fcffb8268f7de2c082e550e7",
+      "tag_index": 464,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 277,
+      "size": 32,
+      "sha256": "28aaaf92b1a3eab37f0ab9c70e62a1566aad62c81504f180a99732fddbbac6f5",
+      "frames": 1,
+      "tag_index": 465,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 278,
+      "size": 37,
+      "sha256": "00d21cf673f3d62bbc543bd903a9bb657b9009ccd82c6d4d7e3f77dbd8f9228c",
+      "frames": 1,
+      "tag_index": 466,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 279,
+      "size": 22,
+      "sha256": "dbb520ca6aa97f38f7b872e7b7dc2dfbcf09bbdd098d42c7a6ba2244ea39d692",
+      "frames": 1,
+      "tag_index": 467,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 280,
+      "size": 223,
+      "sha256": "d98cf878e7e9c39ffe1261b5598a4d5a140473acee61e9a51fbec26109ffce68",
+      "tag_index": 468,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 281,
+      "size": 53,
+      "sha256": "8687c44b845f35717e893ad42ef12eceb710b8916d4af705d1b5bcea1b05e685",
+      "tag_index": 469,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 282,
+      "size": 32,
+      "sha256": "57c4350c6e80ca41fcaa64cdbdb5f6f6049d8f9e456b58c87df4e43d2b37adb5",
+      "frames": 1,
+      "tag_index": 470,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 283,
+      "size": 37,
+      "sha256": "45b607cae3eedfb68ba6df6ae7a41cca12241ad561e239f17e83cd253c6a2895",
+      "frames": 1,
+      "tag_index": 471,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 284,
+      "size": 22,
+      "sha256": "0533cc99e5e62a957a55a8c9775116777967d8fede7edd0abf630b093df84548",
+      "frames": 1,
+      "tag_index": 472,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 285,
+      "size": 192,
+      "sha256": "78552b0e67e69374ae34b68803be10787ce3274402af0687aed1fb9b178a4df6",
+      "tag_index": 473,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 286,
+      "size": 53,
+      "sha256": "eb6fbcee9d88f780a978236b17a993ea2e81191141bc10cd4b0e420fc144f24e",
+      "tag_index": 474,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 287,
+      "size": 32,
+      "sha256": "acd4ed0c90092b17b18911aedab100d4e2bf8dbd25410e8b9ce3dc6a865ea9b4",
+      "frames": 1,
+      "tag_index": 475,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 288,
+      "size": 37,
+      "sha256": "89604b480957b0348573b2e79a62a73a8ad88e321801979a42be15a7b327fc60",
+      "frames": 1,
+      "tag_index": 476,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 289,
+      "size": 22,
+      "sha256": "16b3cf37987ad195dce1e2175dd95b30e140906efbc929074676e38fe4b6845c",
+      "frames": 1,
+      "tag_index": 477,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 290,
+      "size": 218,
+      "sha256": "cfcac5756748ca3a8f3c35f645df00da419b408179296d3d1a3d9be0758b65c0",
+      "tag_index": 478,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 291,
+      "size": 53,
+      "sha256": "cab821fced380442c67c5fff7ea5d9f8553d5bdb209123fceb37f10b973de7cd",
+      "tag_index": 479,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 292,
+      "size": 37,
+      "sha256": "d46a6897ea46ade2b05562f5d4d855018f1d58fc53491056505bce1146d16e45",
+      "frames": 1,
+      "tag_index": 480,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 293,
+      "size": 37,
+      "sha256": "b516b446eafd06a4d4db225d61a38cfadd2915813733a27388aa0ebdcbcaffdc",
+      "frames": 1,
+      "tag_index": 481,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 294,
+      "size": 22,
+      "sha256": "d6deba12d33e7f1a4671c651fc6c7652499d7b33941862d91184865e612c91e2",
+      "frames": 1,
+      "tag_index": 482,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 295,
+      "size": 269,
+      "sha256": "ba2d0009ac1cc90e0df7a196fa5d4d78f7b2285f95a6282b39423377c75c22da",
+      "tag_index": 483,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 296,
+      "size": 55,
+      "sha256": "d6de9b3fcc688532e56b4febdd991b60a95bfb70a62a97daccc0e89bdbc12e88",
+      "tag_index": 484,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 297,
+      "size": 37,
+      "sha256": "38d1ab4831fc8de8fb30efc27009b145f98a2a95a5dd359d507805a220861d08",
+      "frames": 1,
+      "tag_index": 485,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 298,
+      "size": 37,
+      "sha256": "2ae23171d5ce6ab5946102b175d48dea2d0807dedf98cb2e8eaafc60b2197af5",
+      "frames": 1,
+      "tag_index": 486,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 299,
+      "size": 22,
+      "sha256": "4f8b50ab2d5c6a74e4c3b4659aa7b986d79d2d1fc580d85b549682072205a633",
+      "frames": 1,
+      "tag_index": 487,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 300,
+      "size": 244,
+      "sha256": "7a2aa36b0f6ac2e04ab574a551a76d8ac1756716b10aa6caacb16c1b79dabc49",
+      "tag_index": 488,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 301,
+      "size": 53,
+      "sha256": "8f169780f5fe8efcf199f84aaf47ca8196881ff30819bda75d9ced710c2d9012",
+      "tag_index": 489,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 302,
+      "size": 32,
+      "sha256": "995d89c3dfa8b270b9c7485e68cfb996c4196a03403e7de858e075e401e48b73",
+      "frames": 1,
+      "tag_index": 490,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 303,
+      "size": 32,
+      "sha256": "ae659201f2a4704065cbc05a206abe26eecbddafd41dcd3d5eafdf3ba6c78625",
+      "frames": 1,
+      "tag_index": 491,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 304,
+      "size": 22,
+      "sha256": "87059295e3a912a98ce97c5dd4a555b853509b4bb60d1aac608db402a9b83919",
+      "frames": 1,
+      "tag_index": 492,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 305,
+      "size": 212,
+      "sha256": "20b9032d6a9db2adf9f4954e5b3d1e64da64c9c382e7ab3cf0e67878d5afda66",
+      "tag_index": 493,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 306,
+      "size": 53,
+      "sha256": "2ad3826dbcb9b61782dcc661801e141ac0c50420393ad8ba3e6ab65faea7d2e9",
+      "tag_index": 494,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 307,
+      "size": 32,
+      "sha256": "e742bb386dd5f47e439ebcbcf97edc3a05edc99848721e65caf36ff2679cb6ab",
+      "frames": 1,
+      "tag_index": 495,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 308,
+      "size": 37,
+      "sha256": "71268140dd38d52ac969f1e7bda767b2f67e4e88e7458dcc94d3be22af908acd",
+      "frames": 1,
+      "tag_index": 496,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 309,
+      "size": 22,
+      "sha256": "1a3fa3a47e3d52397f019570fe5812bb34b6e01e723e8c1a32924aa36ea99f84",
+      "frames": 1,
+      "tag_index": 497,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 310,
+      "size": 179,
+      "sha256": "b22d9ad0ad1b321d98216898af28abc4c38c60661f42aa3a09cc48c5e1d7ccc9",
+      "tag_index": 498,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 311,
+      "size": 52,
+      "sha256": "d7522249c73665771178b6fe7e1d80655a8b3b0ccf25f0a91af67b7b0ee4c44c",
+      "tag_index": 499,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 312,
+      "size": 37,
+      "sha256": "7a96eda7e95a1b251b64f67db4dbaed719ff9a3d99963067ce7510a8a9348625",
+      "frames": 1,
+      "tag_index": 500,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 313,
+      "size": 37,
+      "sha256": "424d037d9e2d51fae95e741041c2c66f665c8eeb5b8f64d0740e690b4cef6382",
+      "frames": 1,
+      "tag_index": 501,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 314,
+      "size": 22,
+      "sha256": "45def6455582eed891ca68edb062c9adc1c41ee071cda811de7c3c7c367fc144",
+      "frames": 1,
+      "tag_index": 502,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 315,
+      "size": 208,
+      "sha256": "7cf5cafe38f7c1b8e5138c3660ae0908d518b5f1102fdfa5100f42e8119f368e",
+      "tag_index": 503,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 316,
+      "size": 37,
+      "sha256": "0dccd05feb7ffafc3607b0862e9ed179f74913e67b3e1eca2d9bda6c27ed195e",
+      "frames": 1,
+      "tag_index": 504,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 317,
+      "size": 37,
+      "sha256": "96abc71867d5cbf04320fdb224d9d129917e0acdc28e4ff662bff02930196da0",
+      "frames": 1,
+      "tag_index": 505,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 318,
+      "size": 22,
+      "sha256": "9438810bd77efca1419b1342c916932efd8ac7767fd368f2380c62e25a853cbb",
+      "frames": 1,
+      "tag_index": 506,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 319,
+      "size": 188,
+      "sha256": "6c48e54ea6587ab052e535750237794c25b8e126c997495f6f7017b5cb1305cc",
+      "tag_index": 507,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 320,
+      "size": 53,
+      "sha256": "0d2db2e052d31745ed59705252cfcaea20d69eff7172e018f5e2945806443ce6",
+      "tag_index": 508,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 321,
+      "size": 32,
+      "sha256": "895cbdd6a905361a8d4c4752ba092493a8d8e953f7520a0fdf2cfc676cb5f598",
+      "frames": 1,
+      "tag_index": 509,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 322,
+      "size": 37,
+      "sha256": "2dce77503141e49f885c95e9833d12e34e6d435fdb23ed7a90068b004db35fad",
+      "frames": 1,
+      "tag_index": 510,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 323,
+      "size": 22,
+      "sha256": "7faf0b4d30bf1c6fcebfa9a00762c0212bffaed5fb60ac2457cd37e6ec49b120",
+      "frames": 1,
+      "tag_index": 511,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 324,
+      "size": 53,
+      "sha256": "d7eeab2b033542c3faa42b95968f41ad1ee9ba8f8538caa4d95924b3c9f1b4a3",
+      "tag_index": 512,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 325,
+      "size": 32,
+      "sha256": "79d6e800fa8ecff247c5801dd29b699350e2724cff428a4ead8ff69ffc91291a",
+      "frames": 1,
+      "tag_index": 513,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 326,
+      "size": 37,
+      "sha256": "cb88989a0f102fa8cbb998e181c421e5f712c7917fb055cddd65a48f3b066cbf",
+      "frames": 1,
+      "tag_index": 514,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 327,
+      "size": 22,
+      "sha256": "7013c936bf2e8e807048519aa569440e28ab88b3e22bc31a95a4dfa474bfebb3",
+      "frames": 1,
+      "tag_index": 515,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 328,
+      "size": 289,
+      "sha256": "45b21f0af77670f4469c8f86a4337a0869da9df93d3b22f97789b58e3b3431d2",
+      "tag_index": 516,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 329,
+      "size": 55,
+      "sha256": "862f3624282bef95ed4ebc480dd894ffa32b81d59ee207c422b1a98cccb6a4cb",
+      "tag_index": 517,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 330,
+      "size": 32,
+      "sha256": "6c7b59e21dbc5f6727126e6d01d78baeb306a8d9e4a7a3efa531e34be6b6ac48",
+      "frames": 1,
+      "tag_index": 518,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 331,
+      "size": 38,
+      "sha256": "6d57c2f4e8c073c211796d69866efad05af5c4dcc089fa1e32fe29477fe09d55",
+      "frames": 1,
+      "tag_index": 519,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 332,
+      "size": 22,
+      "sha256": "d8b2ce062feca71dbbaca55138c38a0f071e5f945128b5e7a3ef07988c954545",
+      "frames": 1,
+      "tag_index": 520,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 333,
+      "size": 53,
+      "sha256": "bd3c3517673646292359133d866d6d006d6db40c51b5d6c9e18a27d38c8d8c49",
+      "tag_index": 521,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 334,
+      "size": 32,
+      "sha256": "aa36ac41093c22481a3b1367e5dd5678f6145a6406a0ede66ad9fe17c0d9320b",
+      "frames": 1,
+      "tag_index": 522,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 335,
+      "size": 37,
+      "sha256": "dee12ac12884c8312d425002341901ca47b7330fe1d7e8ae3fcbf07b9e5a85a8",
+      "frames": 1,
+      "tag_index": 523,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 336,
+      "size": 22,
+      "sha256": "af356ffaa76b3c681edb2b16acf9242ac02410e2a0927f98eb43c88da2c7dfec",
+      "frames": 1,
+      "tag_index": 524,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 337,
+      "size": 53,
+      "sha256": "2215f355c83069369493a3719f803eabdcd8f0b7a2d0b5f8b05c0abf3a08a156",
+      "tag_index": 525,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 338,
+      "size": 32,
+      "sha256": "cadfb24658fa96e6647b05ac5abbec0ccc14187fb6827e9d69b2118e4f887997",
+      "frames": 1,
+      "tag_index": 526,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 339,
+      "size": 37,
+      "sha256": "3a2d42179f03dd67d79775921cd3bb3cf58f08910f8cab8646e32bf44437f042",
+      "frames": 1,
+      "tag_index": 527,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 340,
+      "size": 22,
+      "sha256": "043f6c9707dfe3e853bdba403844d025d21f95ecc9efdc02af7262262de60581",
+      "frames": 1,
+      "tag_index": 528,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 341,
+      "size": 181,
+      "sha256": "fa09c4c530cc365af3325e7c366c5a7c15586be17423617dc17bbdcc50d2f1a0",
+      "tag_index": 529,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 342,
+      "size": 52,
+      "sha256": "99d58a465410f4db91370f034f03690a49b68a44fc0a22665e714969ec551436",
+      "tag_index": 530,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 343,
+      "size": 32,
+      "sha256": "f85840c34f6a0fb7b1305ffe3b339f6abacc7259829bc4664af9d9cc443eb99b",
+      "frames": 1,
+      "tag_index": 531,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 344,
+      "size": 37,
+      "sha256": "07917fd6d2efc01f7f803f0c4450f3f0721eb0f8711d6289151b6260ab49649e",
+      "frames": 1,
+      "tag_index": 532,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 345,
+      "size": 22,
+      "sha256": "198fbfca4d015fafce35d987d8d4cd844ad85d3e05356a09408d8f75507a8641",
+      "frames": 1,
+      "tag_index": 533,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 346,
+      "size": 186,
+      "sha256": "250d1f23ef91256a1b5b163034899081f77c0e581a276752fe291263558da0be",
+      "tag_index": 534,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 347,
+      "size": 55,
+      "sha256": "f212e9ebdb27fbf1b618daa24715c53490bb347b0da996be59db57c9b5b81d7c",
+      "tag_index": 535,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 348,
+      "size": 32,
+      "sha256": "2c2be8d4c9c5d6df1c3213833e2dab849927e2d480d85a0d73cd7d9f466533cd",
+      "frames": 1,
+      "tag_index": 536,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 349,
+      "size": 38,
+      "sha256": "51af5ca088fff76b13941c301d5369b44e227e90b791481f802de643374ad5ec",
+      "frames": 1,
+      "tag_index": 537,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 350,
+      "size": 22,
+      "sha256": "ffa127c093c9b6e0bcc314b30c3ee9159a42d6f430f7d9a3828d50976d9fc634",
+      "frames": 1,
+      "tag_index": 538,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 351,
+      "size": 68,
+      "sha256": "03f53ffef0960b78f49f44845e5aea75cea1c13b98a00d09e5c26e2289392dc4",
+      "tag_index": 539,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 352,
+      "size": 901,
+      "sha256": "ec75dce6b94f3e139077bb063c8bef784a1a674655a344a28f09e1fad44b032d",
+      "frames": 1,
+      "tag_index": 540,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 353,
+      "size": 38,
+      "sha256": "fdfba51e946ace35ed314de21744ae736305ba628fc245a2c69dc09343450658",
+      "frames": 1,
+      "tag_index": 541,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 354,
+      "size": 80,
+      "sha256": "618ba475465a7d553ec6c24480505ccb19896a58334faf738c8034fcedf37428",
+      "frames": 1,
+      "tag_index": 542,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 355,
+      "size": 22,
+      "sha256": "24309729a6d4888b46feb074432540d9bf136abafe54d9f22957d4e08231bf12",
+      "frames": 1,
+      "tag_index": 543,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 356,
+      "size": 59,
+      "sha256": "5edbeb525e883b4684bc421d2ae9c897c09fd3434a666c43158ec3245cf7a056",
+      "frames": 1,
+      "tag_index": 544,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape2",
+      "id": 357,
+      "size": 1400,
+      "sha256": "9bcc7cdd590a977bc13d4557f9717d22bb583393da06724a1e91d54a76a3b0b5",
+      "tag_index": 545,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 358,
+      "size": 1378,
+      "sha256": "3568af941e56f14cbdbc65aa83b5e1c298e33c93e67fe4d731a56ecca7db6d04",
+      "frames": 1,
+      "tag_index": 546,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 359,
+      "size": 14,
+      "sha256": "9eb3ac27c56576afd26de4c8b851fe02567cfc178db12cd657fc79858bea8af1",
+      "frames": 1,
+      "tag_index": 547,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 360,
+      "size": 1437,
+      "sha256": "245abb9d9f04e3e2803671be54b840ddb2b4d5e069658ea2e735b74681ba1164",
+      "tag_index": 548,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 361,
+      "size": 213,
+      "sha256": "8a738211830eae311a506e69aab62828e0b361e0ea6d8646aa5b3b5b34bd2da0",
+      "frames": 1,
+      "tag_index": 549,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 362,
+      "size": 3602,
+      "sha256": "96d11bce5129ce6f4a3b6e5b924c4feaac35530ce07b878b30906df8ea7d773d",
+      "tag_index": 550,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape4",
+      "id": 363,
+      "size": 12747,
+      "sha256": "b98b63a599fce8de937ca8939989d10a4b6535d4dd4f6381a16323cc46866b03",
+      "tag_index": 551,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 364,
+      "size": 22,
+      "sha256": "e60fe1a8fbea75c9c59993a707eb93a612f7013f583da27488f0d0efda0bb125",
+      "frames": 1,
+      "tag_index": 552,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 365,
+      "size": 37,
+      "sha256": "720849c5a4cc274fb27109d7559e908656cffcf26e0fb1aa9a06af04f32b8b3b",
+      "frames": 1,
+      "tag_index": 553,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 366,
+      "size": 37,
+      "sha256": "2bab418f459e29ecabe90f5bdc2ab81910b8bf7639ca2b9fd605da11b9743c6b",
+      "frames": 1,
+      "tag_index": 554,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 367,
+      "size": 749,
+      "sha256": "ab8be18e8d71fba384c7b14312f0a01222d135fdae0cccfe098ee4b9845678ba",
+      "frames": 1,
+      "tag_index": 555,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 368,
+      "size": 877,
+      "sha256": "dfe21ec802315aaab64040117a2fb18148a7f1c32416598912ad516a186bd37f",
+      "tag_index": 556,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 369,
+      "size": 212,
+      "sha256": "4b16cf4fc45e26fb2f14fa3d4058471e6e5363070880da1ab3d4f56312a7712a",
+      "frames": 1,
+      "tag_index": 557,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape4",
+      "id": 370,
+      "size": 3076,
+      "sha256": "3e792f52e11cb1a20fbd724e88971ee532d5f1f0fb37de9dbb1a72fb266ebba4",
+      "tag_index": 558,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 371,
+      "size": 33,
+      "sha256": "05948521ecc714264b66d83c6e0d7686a45d6f3f3328db996c9256750d7d53f9",
+      "frames": 1,
+      "tag_index": 559,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 372,
+      "size": 2198,
+      "sha256": "f7e159bec520fd36dc11ef9c083d6d5a47506bff458fff8bf1bdab947c0bd673",
+      "tag_index": 560,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 373,
+      "size": 34,
+      "sha256": "9371750a36d97dbd79ff7161527fdbacae5785a7f6c0aebb0f2b1941a8be4831",
+      "frames": 1,
+      "tag_index": 561,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 374,
+      "size": 646,
+      "sha256": "1ee769e2e7f7eb917a98b235183c7369eaf47b1dd3ce5417090b9bc5fabbeb95",
+      "frames": 1,
+      "tag_index": 562,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 375,
+      "size": 2135,
+      "sha256": "32200782e4f9bb3ec7eaa268e5491fe06265cd69ea25955dbeeb0b1682d5a793",
+      "tag_index": 563,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 376,
+      "size": 217,
+      "sha256": "06b35eb63bdad4c94d5a60e267a0840db3b56631d28fda5c5ca6a593b7e37052",
+      "frames": 1,
+      "tag_index": 564,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 377,
+      "size": 2880,
+      "sha256": "4c47f04cc9fb5a59515d3be1fc19e1aa59d9e28736e83d2636f6a25046e49e1d",
+      "tag_index": 565,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 378,
+      "size": 43,
+      "sha256": "55414ccde3505733161c2a00bad9b4defc8e63537daa4780f91379ebfc1c006c",
+      "frames": 1,
+      "tag_index": 566,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 379,
+      "size": 643,
+      "sha256": "a898bbec15aef0c5cd41c7da680944a486eeaab75e2f63c3bff4474e33150099",
+      "frames": 1,
+      "tag_index": 567,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 380,
+      "size": 1715,
+      "sha256": "2dff4993a17abd58f8baebdc8650b61f10d446547e965200eb84b89cca7e76a1",
+      "tag_index": 568,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 381,
+      "size": 185,
+      "sha256": "f3ba296c44b934c6e01611102f5cc3211eac695d1f1f05191980bbad8997c7a4",
+      "frames": 1,
+      "tag_index": 569,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 382,
+      "size": 34,
+      "sha256": "8da3eefa52e6fa78d696729160654e02855763e7aec4b3d0090cda5c24c317bd",
+      "frames": 1,
+      "tag_index": 570,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape4",
+      "id": 383,
+      "size": 2978,
+      "sha256": "99fb412934ccc082d1a49d5faebec7fab380e5432cc8217023cec6e6a46efd17",
+      "tag_index": 571,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape2",
+      "id": 384,
+      "size": 1653,
+      "sha256": "e39500b45b41d95ccdcddf56313c6c30190311de0aa86660d0535492650663e6",
+      "tag_index": 572,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 385,
+      "size": 53,
+      "sha256": "56292b26ad2896eb81cfdc5ded29c16f6fdd3471b49506865e5cec01300a011f",
+      "frames": 5,
+      "tag_index": 573,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 386,
+      "size": 540,
+      "sha256": "164454c458446c6558b95b87dde1a54deb1e690be8a29b88088c7161feaab5ec",
+      "frames": 1,
+      "tag_index": 574,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 387,
+      "size": 251,
+      "sha256": "a9dfd5ee3fbcaf8693912b0c6b2cd0c63bb76f1b582736023d2dcb71c4bf601f",
+      "frames": 6,
+      "tag_index": 575,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape2",
+      "id": 388,
+      "size": 151,
+      "sha256": "f9f3c0f36e119db35140957c0f3489d09f6bc9815a5380053a79ef758d502dd1",
+      "tag_index": 577,
+      "name": null
+    },
+    {
+      "type": "button",
+      "tag": "DefineButton2",
+      "id": 389,
+      "size": 75,
+      "sha256": "5f21d0505e5e4e7f6642eca35e02a4bcadcbed6031a8b494fc53c29c1d3f78bc",
+      "tag_index": 579,
+      "name": null
+    },
+    {
+      "type": "font",
+      "tag": "DefineFont3",
+      "id": 390,
+      "size": 18,
+      "sha256": "87dcf49b538fd581b91f51afd59a93a3967a8cc21204eb7ed57f0620547a1419",
+      "font_name": "Constantia",
+      "tag_index": 581,
+      "name": null
+    },
+    {
+      "type": "font-align",
+      "tag": "DefineFontAlignZones",
+      "id": 390,
+      "size": 3,
+      "sha256": "147fe19102ef49936839c4acd737612dd6cbb549b7b1fe960a0f1dda3531cdce",
+      "tag_index": 582,
+      "name": null
+    },
+    {
+      "type": "edit-text",
+      "tag": "DefineEditText",
+      "id": 391,
+      "size": 36,
+      "sha256": "bb431b72fa346b3976000be8874b7e596e3dd7f2913b40289e3dd72010e26b83",
+      "tag_index": 583,
+      "name": null
+    },
+    {
+      "type": "font",
+      "tag": "DefineFont3",
+      "id": 392,
+      "size": 13682,
+      "sha256": "c2aba85b06bf9ea6fa33de9d5d4aa05b52a26ab5118aa4f3ebfc7208c6fc464c",
+      "font_name": "Cheboygan",
+      "tag_index": 586,
+      "name": null
+    },
+    {
+      "type": "font-align",
+      "tag": "DefineFontAlignZones",
+      "id": 392,
+      "size": 243,
+      "sha256": "d4ebd61542c305161d1cb592848852b3abb4642821c2088b012621cb9b2adc24",
+      "tag_index": 587,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 393,
+      "size": 39,
+      "sha256": "cb74a86420d4296a4c7bf31695fcc4d150208fbb232ca70a090cd3b01f93b8e0",
+      "tag_index": 589,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 394,
+      "size": 39,
+      "sha256": "dd5ad5104ed3ccea08a5a11af5b5e027c05f43da3b993a2bab440fa70cf476f2",
+      "tag_index": 592,
+      "name": null
+    },
+    {
+      "type": "edit-text",
+      "tag": "DefineEditText",
+      "id": 395,
+      "size": 36,
+      "sha256": "ef02dff417a2c64182b275158c923e39a781b81c843663bc9da28a4cddb23094",
+      "tag_index": 596,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 396,
+      "size": 225,
+      "sha256": "bc764d83e2ec9b28412e278db7e3003d58ca21ad0c495881eb611b284e377837",
+      "tag_index": 599,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 397,
+      "size": 22,
+      "sha256": "9f46efc63fd247e33ae62882b67aac89a42070240c84b5df449a1bea815b7d8c",
+      "frames": 1,
+      "tag_index": 600,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape4",
+      "id": 398,
+      "size": 54,
+      "sha256": "1011350464820453c22b15b9b1b17cff0a7e5e1cd47819659a3c28f6105169ce",
+      "tag_index": 601,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 399,
+      "size": 162,
+      "sha256": "3339be2d78731f6170b90c558726982ff570902ae9e60e77dd2670aa3d35ee2c",
+      "frames": 2,
+      "tag_index": 602,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 400,
+      "size": 40,
+      "sha256": "b91bc838b801d238965adae8071ebe9815c9ff4179e0407bc586e3d90bbd3064",
+      "tag_index": 604,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape2",
+      "id": 401,
+      "size": 122,
+      "sha256": "334b89f6f3634e94e53f71db5363c830644b0108f01e054065182e11b88350b6",
+      "tag_index": 607,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape4",
+      "id": 402,
+      "size": 51,
+      "sha256": "7b97ab50312a038acb146896a19cff2e3f8001ead66f8d4580bf7676657eb115",
+      "tag_index": 608,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape4",
+      "id": 403,
+      "size": 51,
+      "sha256": "1e315f30ab0abe3a1691e9bbfe350e95d151c5543652a31e29a546b7a9ef0dfb",
+      "tag_index": 609,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape4",
+      "id": 404,
+      "size": 51,
+      "sha256": "cea3b7d636afeec5879f0a3216851daee672f22d51793c5c909d824ac3332a3f",
+      "tag_index": 610,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape4",
+      "id": 405,
+      "size": 51,
+      "sha256": "bbb7c4d773492bf2a7b78334b377f0577a5d5a827057dcb6a6ac0e80a2293550",
+      "tag_index": 611,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 406,
+      "size": 43,
+      "sha256": "7953870c9e1a08407dd416e2f95b975a22e122437348dc2f98946e7218facda1",
+      "frames": 8,
+      "tag_index": 612,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape4",
+      "id": 407,
+      "size": 66,
+      "sha256": "12cb6b04d187c5cfaaeb9572116821c20b612fbabc230973bb1afd57ba16b8b1",
+      "tag_index": 613,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 408,
+      "size": 93,
+      "sha256": "337c03a372bfb86e8f142bbcda35607310edf13892891b31e8cfd12cee9cf7b2",
+      "frames": 4,
+      "tag_index": 614,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 409,
+      "size": 29,
+      "sha256": "125b55c80da2ad8e2947a71b23bc21b778fa82b9c62deeb26f38ab9c47b27e6e",
+      "tag_index": 616,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 410,
+      "size": 39,
+      "sha256": "a6054ec18a98ba10a5b2e06ba6a742ba1e8df3ff7c6db27f56f36ad779b3bed6",
+      "tag_index": 619,
+      "name": null
+    },
+    {
+      "type": "edit-text",
+      "tag": "DefineEditText",
+      "id": 411,
+      "size": 32,
+      "sha256": "9fe79d729e37cde6dcd1c7935225d28499c5fd04fa47bd9a43c606b561f81ed5",
+      "tag_index": 622,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 412,
+      "size": 32,
+      "sha256": "87bdc3e3fc6fc2f03faaee5fc10ee9760b5abad2d6ac782240d0b393bb1f19dc",
+      "tag_index": 625,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 413,
+      "size": 32,
+      "sha256": "e19358dd5e163be5dba440901178e6bd78c518676020c39b25a7491f84e92669",
+      "tag_index": 627,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 414,
+      "size": 32,
+      "sha256": "77d2229e9c92b4b1def00a759c6fa1518d4ea69715ed77d40ee477ad25f1f38c",
+      "tag_index": 629,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 415,
+      "size": 623,
+      "sha256": "6420a08dc939f5be46f07fe1a92105083b1882053239de3209d4a3ec6bab0763",
+      "frames": 50,
+      "tag_index": 631,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape4",
+      "id": 416,
+      "size": 87,
+      "sha256": "03273121dd5b8180802380c9df876518f9b9944d3cfb9ab739c96a560e332479",
+      "tag_index": 633,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape4",
+      "id": 417,
+      "size": 1499,
+      "sha256": "ce2766f7fa88b243370180a8a45f6afed8b8f0eed0ebcb37c4edd241a66fd702",
+      "tag_index": 634,
+      "name": null
+    },
+    {
+      "type": "font",
+      "tag": "DefineFont3",
+      "id": 418,
+      "size": 3228,
+      "sha256": "d4eeea0dc6e2e7bf955f8a3a9d083fc6ce7d20a3331027fd4411bcd0f132b4d4",
+      "font_name": "Cheri",
+      "tag_index": 635,
+      "name": null
+    },
+    {
+      "type": "font-align",
+      "tag": "DefineFontAlignZones",
+      "id": 418,
+      "size": 333,
+      "sha256": "32ed12e2442f1a24acb51ee44ff4b6163e9cc6363caf4291533b4699559c99a2",
+      "tag_index": 636,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 419,
+      "size": 43,
+      "sha256": "d2152ebd3a22b11b07bbd339ec8c753ae759036d4693fc64b4857b804d3335a5",
+      "tag_index": 638,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 420,
+      "size": 43,
+      "sha256": "4c7714ca40ea343ac1d79aacdeb89ee505689ff6c24f8eed8a308ef05b63ae8b",
+      "tag_index": 639,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 421,
+      "size": 52,
+      "sha256": "b351761a239e8048cfeff5d7b3b978e38d4a3b8f85137e1ba4ca386d20d729b4",
+      "tag_index": 640,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 422,
+      "size": 52,
+      "sha256": "307de8974b91012b9f87223b02fd915a194725b863d8a570e6a34dd15e955566",
+      "tag_index": 641,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 423,
+      "size": 54,
+      "sha256": "256fee1bbd6b5dd5d45eb05e60184b76d13daaf773a68f5a2690e86d285c8cf5",
+      "tag_index": 642,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 424,
+      "size": 54,
+      "sha256": "f6a53bd096b097de99867b98913bb5724ea2bab951a03484ca087b559ff6a9ae",
+      "tag_index": 643,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 425,
+      "size": 70,
+      "sha256": "f217c6ee150ce98a7a48d3f188e1aa1879a985b62067dfaa80dcc1012ef05748",
+      "tag_index": 644,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 426,
+      "size": 70,
+      "sha256": "514bcbcf10477cedc53afab4c2319991c27410e5c6f2b20483384ce4d732fd18",
+      "tag_index": 645,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 427,
+      "size": 52,
+      "sha256": "1a7aab3e31400761f7f936851bd696512a10e88fa3f436397646b14053554e9f",
+      "tag_index": 646,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 428,
+      "size": 52,
+      "sha256": "dfe13fb7cd7249df2bcdb88c0428ab61fd2b426432a8a90d9c642db660cb52b8",
+      "tag_index": 647,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 429,
+      "size": 45,
+      "sha256": "59064fe04cd0bf100081986f966140cb6e4ac2174e497fb3c1f6bdbc3b1c70c9",
+      "tag_index": 648,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 430,
+      "size": 45,
+      "sha256": "1349970ef2796787bf0da380b2e3ec8c145383478cb15bd6702747e674c0cf09",
+      "tag_index": 649,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 431,
+      "size": 50,
+      "sha256": "43ebc217b67fad6486cd195c279e11334d40005ec1309548b23d01a04ae5b891",
+      "tag_index": 650,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 432,
+      "size": 50,
+      "sha256": "30bc3f7aa2804bacad05127922f0c5c0daa775ffdf656c10e5b44cfc48209aeb",
+      "tag_index": 651,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 433,
+      "size": 60,
+      "sha256": "d408f9eca819aeaf68f903cddec8c2b30eb9a1d464dd7255da7ab66e2f1506ec",
+      "tag_index": 652,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 434,
+      "size": 60,
+      "sha256": "28b82f39da61329922775374fbc1a0f39dc7feaf5b3405e40b6ae516d4e9f81b",
+      "tag_index": 653,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 435,
+      "size": 43,
+      "sha256": "43719b34325179eadfa30f5e4b2c9b715767cd00acfee37e99dc425be3caef73",
+      "tag_index": 654,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 436,
+      "size": 43,
+      "sha256": "0f169544961687b4d4cabc8875e34108f7bf03bfee4af5edf9b3e2a439818d38",
+      "tag_index": 655,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 437,
+      "size": 1266,
+      "sha256": "0b9c2e7171c7f4741f35f47ebc75b1166c0412afa079f3e08f087fa6138ca858",
+      "frames": 508,
+      "tag_index": 656,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 438,
+      "size": 42,
+      "sha256": "8b3c9bd5432f9003f14dc63523da31a53dfc6fa80831972f7837bbb16c12facd",
+      "tag_index": 658,
+      "name": null
+    },
+    {
+      "type": "edit-text",
+      "tag": "DefineEditText",
+      "id": 439,
+      "size": 45,
+      "sha256": "85e57f0221842a08ad2226ac67d66f903d9bc7c04c76f1b3631b07dc27ca27a8",
+      "tag_index": 661,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 440,
+      "size": 20,
+      "sha256": "21609ccc6c799695d86b0e69224abb2484ab1e1a90cef3f4cf5c77a49ba4c6f7",
+      "frames": 2,
+      "tag_index": 664,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 441,
+      "size": 41,
+      "sha256": "1c9d74ab9f83f894667c929cba9a3b7207e1f0279017956d47d1c03e53a5600e",
+      "tag_index": 666,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 442,
+      "size": 25,
+      "sha256": "f91a4724a68bbedc9c06116b4e3abf30954c5f3b7ae14dd4442aa39b59f0ddcb",
+      "frames": 1,
+      "tag_index": 668,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 443,
+      "size": 5661,
+      "sha256": "aa80f28dccd5595ae1626dbf0569b39663456e34753c749596858ddbc0924103",
+      "frames": 51,
+      "tag_index": 669,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape4",
+      "id": 444,
+      "size": 2716,
+      "sha256": "636fe7b097604d04949bfa2e8961058990def5ecfce15ce83144575965d671c9",
+      "tag_index": 671,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape4",
+      "id": 445,
+      "size": 2618,
+      "sha256": "d77410d028056c7d503773d23adc29403c39d1a42ab4a4fb0711d044c1325834",
+      "tag_index": 672,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 446,
+      "size": 2015,
+      "sha256": "8baa0326b33b0c21af00c8e6e9da2e77f74c0d0a3ebd1adeb18063ed4cd36b94",
+      "frames": 8,
+      "tag_index": 673,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 447,
+      "size": 469,
+      "sha256": "4599ce3c1a0c4049a821aeeb9b4e63506a07c7c4938ab5840af3dcac8a6aee99",
+      "tag_index": 676,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 448,
+      "size": 552,
+      "sha256": "57c3f8165f1919b66932add6017ccd79f5d4d11444cca7772e208907544a07df",
+      "tag_index": 677,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 449,
+      "size": 56,
+      "sha256": "ba34bb5e98029907bbeb9836e90b393063cd69ab2d372db00991b867969ee5c8",
+      "frames": 8,
+      "tag_index": 678,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape2",
+      "id": 450,
+      "size": 269,
+      "sha256": "dafc99cb2b5643ed9fecea83c8e6f72cb64a2bd03f750677028266ce923a5e0d",
+      "tag_index": 680,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 451,
+      "size": 186,
+      "sha256": "8d563046887a48d1c698906bb27302a0f5168e2d882199077bd31bc24cf30eed",
+      "tag_index": 681,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 452,
+      "size": 245,
+      "sha256": "c6014de3bc3f7afb411e0eb43dc10f46611b8a1dd44fb4dcb5ceeff8c8c7095c",
+      "tag_index": 682,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 453,
+      "size": 66,
+      "sha256": "e31443019285f54d48c0fdd963ac9c53850241fffe8a890ca1f04c1089f9186a",
+      "frames": 5,
+      "tag_index": 683,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape4",
+      "id": 454,
+      "size": 49,
+      "sha256": "f76e529ad55353a3479a59e506dd50c965d28e1810046b5f3edb0411f30279e9",
+      "tag_index": 686,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 455,
+      "size": 22,
+      "sha256": "c96bcba5251792cd74ee0ed24e5f12892de6ea0ee6507efe37706bd3b178ebb0",
+      "frames": 1,
+      "tag_index": 687,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 456,
+      "size": 14,
+      "sha256": "575a9f7f7ca23387f235227083ebb4be4d3b6a608b89fdb071dab520887efaa2",
+      "frames": 1,
+      "tag_index": 723,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape4",
+      "id": 457,
+      "size": 60,
+      "sha256": "8dd3772c1f13607ac6da77cee7a58bd848cfe561e79d32b795cd91f5058b7bc0",
+      "tag_index": 727,
+      "name": null
+    },
+    {
+      "type": "font",
+      "tag": "DefineFont3",
+      "id": 458,
+      "size": 5775,
+      "sha256": "0bc19bfacbf6c7cb4b7107c986ab563aeefa4fe629c6be788b59f319172f5587",
+      "font_name": "Contax",
+      "tag_index": 728,
+      "name": null
+    },
+    {
+      "type": "font-align",
+      "tag": "DefineFontAlignZones",
+      "id": 458,
+      "size": 423,
+      "sha256": "e775b0ebfef285694362d1a31889187bc32c0386f0b1962797ab95253130d21f",
+      "tag_index": 729,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 459,
+      "size": 47,
+      "sha256": "f57c5d96ea18f2b931155e0a1225f1e0ff5a63d300fd9d72838b7ecd24a2f781",
+      "tag_index": 731,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 460,
+      "size": 47,
+      "sha256": "b7fdc515aed45398dee55604402c9d75704ab0c3762801f158d90efcae1ab4c0",
+      "tag_index": 733,
+      "name": null
+    },
+    {
+      "type": "button",
+      "tag": "DefineButton2",
+      "id": 461,
+      "size": 1306,
+      "sha256": "2b18b4e81bd0b39132eaa3223ee82c533120d63a74d6ed308ddb875a5438564b",
+      "tag_index": 736,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 462,
+      "size": 63,
+      "sha256": "851f85107530fc3bab0a21cb5cee1b7295508e7d0ea30f5072294ae7bbf431d4",
+      "tag_index": 738,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 463,
+      "size": 83,
+      "sha256": "2889c32b755c110f5f2b446ae7f8eb17cdf4bd43192d74353669d82700fc7345",
+      "tag_index": 741,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 464,
+      "size": 53,
+      "sha256": "586383d825eabef988c5d07ba0c110d49c64d10ce4c6311c09f45461a404a566",
+      "tag_index": 744,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 465,
+      "size": 344,
+      "sha256": "64e181882fc40d3fb0dd3eff8bc1a01bbdc0ee5eb3b2a3b6ab783efa15810df2",
+      "frames": 30,
+      "tag_index": 746,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape4",
+      "id": 466,
+      "size": 232,
+      "sha256": "516904b076acec459833fd30bcb884ccff71fc599ff589f3bedccaba1f0a0aab",
+      "tag_index": 748,
+      "name": null
+    },
+    {
+      "type": "font",
+      "tag": "DefineFont3",
+      "id": 467,
+      "size": 16,
+      "sha256": "d1de5e62e8d553d0dba5c553c11063dcdd00682e7f9d5e4f7d4b3512867135fb",
+      "font_name": "Consolas",
+      "tag_index": 793,
+      "name": null
+    },
+    {
+      "type": "font-align",
+      "tag": "DefineFontAlignZones",
+      "id": 467,
+      "size": 3,
+      "sha256": "25082f663e59c5277770155ddb462c1cd94c8b657b7c245ec62dee05ce0a9882",
+      "tag_index": 794,
+      "name": null
+    },
+    {
+      "type": "edit-text",
+      "tag": "DefineEditText",
+      "id": 468,
+      "size": 50,
+      "sha256": "ffaaa0a151fbef839671bceb140e401d4f2854e0fd7cc52080b3b77d2764b029",
+      "tag_index": 795,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 469,
+      "size": 66,
+      "sha256": "f0738948279c33d2682173f861b7b2b58dfc541c2b9459fb8796e037e10ab1a8",
+      "tag_index": 801,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 470,
+      "size": 374,
+      "sha256": "c0481282f6967b1e62e007044ab825d6de09e1a2c48c161fe6547881b426c3e9",
+      "frames": 30,
+      "tag_index": 803,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 471,
+      "size": 45,
+      "sha256": "48f5098e528900725d0f6379445ff0f72c76905a0f9ea1b18296a70d7d72f327",
+      "tag_index": 806,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 472,
+      "size": 45,
+      "sha256": "6f7eb1993ef99af8d6b1a18e0a5823749d7d51c60e114cc1f950db2aa797639b",
+      "tag_index": 808,
+      "name": null
+    },
+    {
+      "type": "button",
+      "tag": "DefineButton2",
+      "id": 473,
+      "size": 1959,
+      "sha256": "87480866ffbe733b9e94cb4df9fc727a31f9aaff31f2eca79359f418440e98ff",
+      "tag_index": 811,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape4",
+      "id": 474,
+      "size": 85,
+      "sha256": "17915c9aa487989948c1eee412ccf2227bf7ccb7e958e2a096ec4487302c8e13",
+      "tag_index": 813,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape",
+      "id": 475,
+      "size": 67,
+      "sha256": "e459999c546e6b8987d1de9bfaddfe60499cfc1293b6d126a86a48ae9afe94ea",
+      "tag_index": 814,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape4",
+      "id": 476,
+      "size": 1503,
+      "sha256": "c76bf6d36e2ce3ae62064ed718ca2d090409cde45f753db9ca4e635409766293",
+      "tag_index": 815,
+      "name": null
+    },
+    {
+      "type": "font",
+      "tag": "DefineFont3",
+      "id": 477,
+      "size": 2036,
+      "sha256": "69cb67645a3f7c950c02cf26a1c13c87cbf56d47ee2323e301ef87f568183249",
+      "font_name": "Century Gothic",
+      "tag_index": 816,
+      "name": null
+    },
+    {
+      "type": "font-align",
+      "tag": "DefineFontAlignZones",
+      "id": 477,
+      "size": 213,
+      "sha256": "fabb006bcddde2583e7bc05a85eee4fd6dccaafb2aea82212a0356dba3c0373f",
+      "tag_index": 817,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 478,
+      "size": 64,
+      "sha256": "215304e070ad42bd23b9409d2b7309b4c2b356417a90963da583d63a106a467a",
+      "tag_index": 819,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 479,
+      "size": 64,
+      "sha256": "222d2d0fb42ea79b66e8b02c7009d5bae0186f6378b6d1d2b14b1c26a64d14f8",
+      "tag_index": 820,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape4",
+      "id": 480,
+      "size": 287,
+      "sha256": "33e9769e94c864d0fce98121ab5a985b77cc2973588e8ba6ffce93fd6f0b7f67",
+      "tag_index": 821,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 481,
+      "size": 72,
+      "sha256": "f4eea6387c83f1846992c901d18759246f1ba85c420b8e9eabe0999daea82225",
+      "frames": 1,
+      "tag_index": 822,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 482,
+      "size": 44,
+      "sha256": "1fe3923d43f273b5472424dd53f37724e5961802e87da9476b93c27ca01d1b76",
+      "tag_index": 824,
+      "name": null
+    },
+    {
+      "type": "edit-text",
+      "tag": "DefineEditText",
+      "id": 483,
+      "size": 33,
+      "sha256": "b71130b3ebdf148eed68b2c57f369904ae44f50e130a8dcb7ce0dd7fa15e6f00",
+      "tag_index": 827,
+      "name": null
+    },
+    {
+      "type": "edit-text",
+      "tag": "DefineEditText",
+      "id": 484,
+      "size": 50,
+      "sha256": "9678200e87c8528c76edb2c873bdffe6afa5581fc08f2d4037438b8ab6fb545a",
+      "tag_index": 839,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 485,
+      "size": 52,
+      "sha256": "e63367ed0fb9c8a6540aededd12fb564dc94577210e5273af4211756ab3295a6",
+      "tag_index": 843,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 486,
+      "size": 374,
+      "sha256": "f68070da2944d2951c46d18a1484b7e31618fbded2aeec7976a751d878f59df6",
+      "frames": 30,
+      "tag_index": 845,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape4",
+      "id": 487,
+      "size": 85,
+      "sha256": "839443699529bf01df314390f20405c208cbd4c67842f6602719a857c8d828cc",
+      "tag_index": 849,
+      "name": null
+    },
+    {
+      "type": "shape",
+      "tag": "DefineShape4",
+      "id": 488,
+      "size": 1499,
+      "sha256": "2723514dc0ab172b4cf3a602c49d7472c89a303b118d23e3ebcdb44c7a1f9803",
+      "tag_index": 850,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 489,
+      "size": 64,
+      "sha256": "2d2bf0a651a8289eb3e4c4e638e51690cab19d95f91389282cf3b58737be8684",
+      "tag_index": 851,
+      "name": null
+    },
+    {
+      "type": "text",
+      "tag": "DefineText",
+      "id": 490,
+      "size": 64,
+      "sha256": "043a0c2c8922cc5c8a43a73e475c00cfea04bc626626e7b91265647cb92a63cd",
+      "tag_index": 852,
+      "name": null
+    },
+    {
+      "type": "sprite",
+      "tag": "DefineSprite",
+      "id": 491,
+      "size": 56,
+      "sha256": "4aaba776245e16f220e42e4e5a0d187f86fd6833e36eeba5d5bccc4990f2d6c2",
+      "frames": 1,
+      "tag_index": 853,
+      "name": null
+    }
+  ]
+}
