@@ -69,9 +69,3 @@ checksum · `symbols/` the symbol map with its evidence · `tools/` the contribu
 
 The source in this repository is dedicated to the public domain under CC0 1.0 Universal (see LICENSE). The game itself is not
 covered: nothing of it is here.
-
-## Acknowledgements
-
-Thanks to decomp.dev and to the broader decompilation community for the work they put into their own decompilations and
-into the resources for newcomers, which let a fresh face come into the scene with a strong grounding. The website was an
-invaluable resource, and the maintainer is grateful to the people behind it.
