@@ -9,7 +9,12 @@ function addParticle(p)
 {
    this.p_array.push(p);
 }
-// @reference CParticleEngine.addWheel
+// sets the wheel up with its particle, top speed and radius, then adds it to the engine's wheels
+function addWheel(wheel, p, maxSpeed, radius)
+{
+   wheel.init(p, maxSpeed, radius);
+   this.w_array.push(wheel);
+}
 // @reference CParticleEngine.addSpringConstraint
 // stamps the engine's `prevTime` with the current timer reading, the baseline the next step measures against
 function start()

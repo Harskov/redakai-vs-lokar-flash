@@ -33,7 +33,11 @@ function minus(v)
    this.x -= v.x;
    this.y -= v.y;
 }
-// @reference CVector2D.minusNew
+// the difference of this vector and v as a new vector
+function minusNew(v)
+{
+   return new CVector2D(this.x - v.x, this.y - v.y);
+}
 // @reference CVector2D.normalize
 // @reference CVector2D.reverseNew
 // the dot product with another vector
@@ -51,8 +55,17 @@ function mult(k)
    this.x *= k;
    this.y *= k;
 }
-// @reference CVector2D.multNew
-// @reference CVector2D.plus
+// a new vector with both components scaled by k
+function multNew(k)
+{
+   return new CVector2D(this.x * k, this.y * k);
+}
+// adds v's components to this vector's, in place
+function plus(v)
+{
+   this.x += v.x;
+   this.y += v.y;
+}
 // the sum of this vector and v as a new vector, both components added
 function plusNew(v)
 {
