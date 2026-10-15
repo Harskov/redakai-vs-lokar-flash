@@ -1,6 +1,8 @@
 # Redakai vs Lokar
 
 [![Audit](https://github.com/Harskov/redakai-vs-lokar-flash/actions/workflows/audit.yml/badge.svg)](https://github.com/Harskov/redakai-vs-lokar-flash/actions/workflows/audit.yml)
+[![Code](https://bytematch.dev/Harskov/redakai-vs-lokar-flash.svg?label=Code&measure=matched_code_percent)](https://bytematch.dev/Harskov/redakai-vs-lokar-flash)
+[![Functions](https://bytematch.dev/Harskov/redakai-vs-lokar-flash.svg?label=Functions&measure=matched_functions)](https://bytematch.dev/Harskov/redakai-vs-lokar-flash)
 
 A decompilation of Redakai vs Lokar (Adobe Flash, AVM1 (ActionScript 1/2)). It builds the following file:
 
@@ -37,6 +39,8 @@ with AI assistance, and accepted only when the pinned toolchain rebuilt it to ma
 | M8 Behaviour-verified | later | last behaviour compare ok=None at never |
 
 The milestones and why they come in this order: [ROADMAP.md](ROADMAP.md).
+
+The same reports are tracked on [ByteMatch](https://bytematch.dev/Harskov/redakai-vs-lokar-flash): the report workflow uploads it on every push (`swf_report`). Its code sizes count P-code instructions, not bytes.
 
 ## How the source was made, and the AI disclosure
 

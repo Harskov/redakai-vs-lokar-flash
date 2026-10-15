@@ -1,5 +1,5 @@
 {
-  "version": "2",
+  "version": 2,
   "measures": {
     "fuzzy_match_percent": 15.26,
     "total_code": 10936,
@@ -33,7 +33,10 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineButton2_124_BUTTONCONDACTION_on_release",
-        "source_path": "src/DefineButton2_124/BUTTONCONDACTION on(release).as"
+        "source_path": "src/DefineButton2_124/BUTTONCONDACTION on(release).as",
+        "progress_categories": [
+          "ui"
+        ]
       }
     },
     {
@@ -57,7 +60,10 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineButton2_127_BUTTONCONDACTION_on_release",
-        "source_path": "src/DefineButton2_127/BUTTONCONDACTION on(release).as"
+        "source_path": "src/DefineButton2_127/BUTTONCONDACTION on(release).as",
+        "progress_categories": [
+          "ui"
+        ]
       }
     },
     {
@@ -81,7 +87,10 @@
       "metadata": {
         "complete": false,
         "module_name": "DefineButton2_147_BUTTONCONDACTION_on_release",
-        "source_path": "src/DefineButton2_147/BUTTONCONDACTION on(release).as"
+        "source_path": "src/DefineButton2_147/BUTTONCONDACTION on(release).as",
+        "progress_categories": [
+          "ui"
+        ]
       }
     },
     {
@@ -105,7 +114,10 @@
       "metadata": {
         "complete": false,
         "module_name": "DefineButton2_147_BUTTONCONDACTION_on_rollOut",
-        "source_path": "src/DefineButton2_147/BUTTONCONDACTION on(rollOut).as"
+        "source_path": "src/DefineButton2_147/BUTTONCONDACTION on(rollOut).as",
+        "progress_categories": [
+          "ui"
+        ]
       }
     },
     {
@@ -129,7 +141,10 @@
       "metadata": {
         "complete": false,
         "module_name": "DefineButton2_147_BUTTONCONDACTION_on_rollOver",
-        "source_path": "src/DefineButton2_147/BUTTONCONDACTION on(rollOver).as"
+        "source_path": "src/DefineButton2_147/BUTTONCONDACTION on(rollOver).as",
+        "progress_categories": [
+          "ui"
+        ]
       }
     },
     {
@@ -153,7 +168,10 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineButton2_148_BUTTONCONDACTION_on_release",
-        "source_path": "src/DefineButton2_148/BUTTONCONDACTION on(release).as"
+        "source_path": "src/DefineButton2_148/BUTTONCONDACTION on(release).as",
+        "progress_categories": [
+          "ui"
+        ]
       }
     },
     {
@@ -177,7 +195,10 @@
       "metadata": {
         "complete": false,
         "module_name": "DefineButton2_148_BUTTONCONDACTION_on_rollOut",
-        "source_path": "src/DefineButton2_148/BUTTONCONDACTION on(rollOut).as"
+        "source_path": "src/DefineButton2_148/BUTTONCONDACTION on(rollOut).as",
+        "progress_categories": [
+          "ui"
+        ]
       }
     },
     {
@@ -201,7 +222,10 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineButton2_148_BUTTONCONDACTION_on_rollOver",
-        "source_path": "src/DefineButton2_148/BUTTONCONDACTION on(rollOver).as"
+        "source_path": "src/DefineButton2_148/BUTTONCONDACTION on(rollOver).as",
+        "progress_categories": [
+          "ui"
+        ]
       }
     },
     {
@@ -225,7 +249,10 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineButton2_389_BUTTONCONDACTION_on_release",
-        "source_path": "src/DefineButton2_389/BUTTONCONDACTION on(release).as"
+        "source_path": "src/DefineButton2_389/BUTTONCONDACTION on(release).as",
+        "progress_categories": [
+          "ui"
+        ]
       }
     },
     {
@@ -249,7 +276,10 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineButton2_461_BUTTONCONDACTION_on_release",
-        "source_path": "src/DefineButton2_461/BUTTONCONDACTION on(release).as"
+        "source_path": "src/DefineButton2_461/BUTTONCONDACTION on(release).as",
+        "progress_categories": [
+          "ui"
+        ]
       }
     },
     {
@@ -273,7 +303,10 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineButton2_473_BUTTONCONDACTION_on_release",
-        "source_path": "src/DefineButton2_473/BUTTONCONDACTION on(release).as"
+        "source_path": "src/DefineButton2_473/BUTTONCONDACTION on(release).as",
+        "progress_categories": [
+          "ui"
+        ]
       }
     },
     {
@@ -297,7 +330,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_107_frame_1_DoAction",
-        "source_path": "src/DefineSprite_107/frame_1/DoAction.as"
+        "source_path": "src/DefineSprite_107/frame_1/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-logo"
+        ]
       }
     },
     {
@@ -321,7 +358,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_107_frame_2_DoAction",
-        "source_path": "src/DefineSprite_107/frame_2/DoAction.as"
+        "source_path": "src/DefineSprite_107/frame_2/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-logo"
+        ]
       }
     },
     {
@@ -345,7 +386,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_112_frame_1_DoAction",
-        "source_path": "src/DefineSprite_112/frame_1/DoAction.as"
+        "source_path": "src/DefineSprite_112/frame_1/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.lib_forward_wheel"
+        ]
       }
     },
     {
@@ -369,7 +414,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_113_frame_1_DoAction",
-        "source_path": "src/DefineSprite_113/frame_1/DoAction.as"
+        "source_path": "src/DefineSprite_113/frame_1/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.lib_forward_wheel"
+        ]
       }
     },
     {
@@ -393,7 +442,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_12_rocket_id_frame_1_DoAction",
-        "source_path": "src/DefineSprite_12_rocket_id/frame_1/DoAction.as"
+        "source_path": "src/DefineSprite_12_rocket_id/frame_1/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.rocket_id"
+        ]
       }
     },
     {
@@ -417,7 +470,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_12_rocket_id_frame_39_DoAction",
-        "source_path": "src/DefineSprite_12_rocket_id/frame_39/DoAction.as"
+        "source_path": "src/DefineSprite_12_rocket_id/frame_39/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.rocket_id"
+        ]
       }
     },
     {
@@ -441,7 +498,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_150_frame_1_DoAction",
-        "source_path": "src/DefineSprite_150/frame_1/DoAction.as"
+        "source_path": "src/DefineSprite_150/frame_1/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-soundatta"
+        ]
       }
     },
     {
@@ -465,7 +526,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_159_frame_1_DoAction",
-        "source_path": "src/DefineSprite_159/frame_1/DoAction.as"
+        "source_path": "src/DefineSprite_159/frame_1/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -489,7 +554,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_197_frame_1_DoAction",
-        "source_path": "src/DefineSprite_197/frame_1/DoAction.as"
+        "source_path": "src/DefineSprite_197/frame_1/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -513,7 +582,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_197_frame_11_DoAction",
-        "source_path": "src/DefineSprite_197/frame_11/DoAction.as"
+        "source_path": "src/DefineSprite_197/frame_11/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -537,7 +610,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_198_frame_1_DoAction",
-        "source_path": "src/DefineSprite_198/frame_1/DoAction.as"
+        "source_path": "src/DefineSprite_198/frame_1/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -566,7 +643,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_205_frame_1_DoAction",
-        "source_path": "src/DefineSprite_205/frame_1/DoAction.as"
+        "source_path": "src/DefineSprite_205/frame_1/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.205"
+        ]
       }
     },
     {
@@ -595,7 +676,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_205_frame_2_DoAction",
-        "source_path": "src/DefineSprite_205/frame_2/DoAction.as"
+        "source_path": "src/DefineSprite_205/frame_2/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.205"
+        ]
       }
     },
     {
@@ -619,7 +704,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_206_frame_1_DoAction",
-        "source_path": "src/DefineSprite_206/frame_1/DoAction.as"
+        "source_path": "src/DefineSprite_206/frame_1/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -643,7 +732,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_206_frame_2_DoAction",
-        "source_path": "src/DefineSprite_206/frame_2/DoAction.as"
+        "source_path": "src/DefineSprite_206/frame_2/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -667,7 +760,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_20_bullet_id_frame_1_DoAction",
-        "source_path": "src/DefineSprite_20_bullet_id/frame_1/DoAction.as"
+        "source_path": "src/DefineSprite_20_bullet_id/frame_1/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.bullet_id"
+        ]
       }
     },
     {
@@ -691,7 +788,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_20_bullet_id_frame_39_DoAction",
-        "source_path": "src/DefineSprite_20_bullet_id/frame_39/DoAction.as"
+        "source_path": "src/DefineSprite_20_bullet_id/frame_39/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.bullet_id"
+        ]
       }
     },
     {
@@ -715,7 +816,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_218_frame_1_DoAction",
-        "source_path": "src/DefineSprite_218/frame_1/DoAction.as"
+        "source_path": "src/DefineSprite_218/frame_1/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -739,7 +844,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_218_frame_34_DoAction",
-        "source_path": "src/DefineSprite_218/frame_34/DoAction.as"
+        "source_path": "src/DefineSprite_218/frame_34/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -763,7 +872,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_24_frame_1_DoAction",
-        "source_path": "src/DefineSprite_24/frame_1/DoAction.as"
+        "source_path": "src/DefineSprite_24/frame_1/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-1"
+        ]
       }
     },
     {
@@ -787,7 +900,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_358_frame_1_DoAction",
-        "source_path": "src/DefineSprite_358/frame_1/DoAction.as"
+        "source_path": "src/DefineSprite_358/frame_1/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -811,7 +928,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_385_frame_1_DoAction",
-        "source_path": "src/DefineSprite_385/frame_1/DoAction.as"
+        "source_path": "src/DefineSprite_385/frame_1/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -835,7 +956,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_385_frame_5_DoAction",
-        "source_path": "src/DefineSprite_385/frame_5/DoAction.as"
+        "source_path": "src/DefineSprite_385/frame_5/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -864,7 +989,11 @@
       "metadata": {
         "complete": false,
         "module_name": "DefineSprite_399_frame_1_DoAction",
-        "source_path": "src/DefineSprite_399/frame_1/DoAction.as"
+        "source_path": "src/DefineSprite_399/frame_1/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -893,7 +1022,11 @@
       "metadata": {
         "complete": false,
         "module_name": "DefineSprite_399_frame_2_DoAction",
-        "source_path": "src/DefineSprite_399/frame_2/DoAction.as"
+        "source_path": "src/DefineSprite_399/frame_2/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -917,7 +1050,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_408_frame_1_DoAction",
-        "source_path": "src/DefineSprite_408/frame_1/DoAction.as"
+        "source_path": "src/DefineSprite_408/frame_1/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -941,7 +1078,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_408_frame_2_DoAction",
-        "source_path": "src/DefineSprite_408/frame_2/DoAction.as"
+        "source_path": "src/DefineSprite_408/frame_2/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -965,7 +1106,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_408_frame_3_DoAction",
-        "source_path": "src/DefineSprite_408/frame_3/DoAction.as"
+        "source_path": "src/DefineSprite_408/frame_3/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -989,7 +1134,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_408_frame_4_DoAction",
-        "source_path": "src/DefineSprite_408/frame_4/DoAction.as"
+        "source_path": "src/DefineSprite_408/frame_4/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -1013,7 +1162,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_415_frame_1_DoAction",
-        "source_path": "src/DefineSprite_415/frame_1/DoAction.as"
+        "source_path": "src/DefineSprite_415/frame_1/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -1037,7 +1190,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_415_frame_17_DoAction",
-        "source_path": "src/DefineSprite_415/frame_17/DoAction.as"
+        "source_path": "src/DefineSprite_415/frame_17/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -1061,7 +1218,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_415_frame_33_DoAction",
-        "source_path": "src/DefineSprite_415/frame_33/DoAction.as"
+        "source_path": "src/DefineSprite_415/frame_33/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -1085,7 +1246,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_415_frame_50_DoAction",
-        "source_path": "src/DefineSprite_415/frame_50/DoAction.as"
+        "source_path": "src/DefineSprite_415/frame_50/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -1109,7 +1274,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_437_frame_507_DoAction",
-        "source_path": "src/DefineSprite_437/frame_507/DoAction.as"
+        "source_path": "src/DefineSprite_437/frame_507/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -1133,7 +1302,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_440_frame_1_DoAction",
-        "source_path": "src/DefineSprite_440/frame_1/DoAction.as"
+        "source_path": "src/DefineSprite_440/frame_1/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -1157,7 +1330,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_443_frame_1_DoAction",
-        "source_path": "src/DefineSprite_443/frame_1/DoAction.as"
+        "source_path": "src/DefineSprite_443/frame_1/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -1181,7 +1358,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_443_frame_2_DoAction",
-        "source_path": "src/DefineSprite_443/frame_2/DoAction.as"
+        "source_path": "src/DefineSprite_443/frame_2/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -1210,7 +1391,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_443_frame_51_DoAction",
-        "source_path": "src/DefineSprite_443/frame_51/DoAction.as"
+        "source_path": "src/DefineSprite_443/frame_51/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -1234,7 +1419,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_446_frame_1_DoAction",
-        "source_path": "src/DefineSprite_446/frame_1/DoAction.as"
+        "source_path": "src/DefineSprite_446/frame_1/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -1258,7 +1447,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_449_frame_1_DoAction",
-        "source_path": "src/DefineSprite_449/frame_1/DoAction.as"
+        "source_path": "src/DefineSprite_449/frame_1/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -1282,7 +1475,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_453_frame_1_DoAction",
-        "source_path": "src/DefineSprite_453/frame_1/DoAction.as"
+        "source_path": "src/DefineSprite_453/frame_1/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -1306,7 +1503,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_453_frame_5_DoAction",
-        "source_path": "src/DefineSprite_453/frame_5/DoAction.as"
+        "source_path": "src/DefineSprite_453/frame_5/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -1330,7 +1531,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_52_frame_1_DoAction",
-        "source_path": "src/DefineSprite_52/frame_1/DoAction.as"
+        "source_path": "src/DefineSprite_52/frame_1/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.lib_bike_body"
+        ]
       }
     },
     {
@@ -1354,7 +1559,11 @@
       "metadata": {
         "complete": false,
         "module_name": "DefineSprite_52_frame_2_DoAction",
-        "source_path": "src/DefineSprite_52/frame_2/DoAction.as"
+        "source_path": "src/DefineSprite_52/frame_2/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.lib_bike_body"
+        ]
       }
     },
     {
@@ -1378,7 +1587,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_86_frame_1_DoAction",
-        "source_path": "src/DefineSprite_86/frame_1/DoAction.as"
+        "source_path": "src/DefineSprite_86/frame_1/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.lib_bike_body"
+        ]
       }
     },
     {
@@ -1402,7 +1615,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_86_frame_1_PlaceObject2_20_bullet_id_21_CLIPACTIONRECORD_onClipEvent_enterFrame",
-        "source_path": "src/DefineSprite_86/frame_1/PlaceObject2_20_bullet_id_21/CLIPACTIONRECORD onClipEvent(enterFrame).as"
+        "source_path": "src/DefineSprite_86/frame_1/PlaceObject2_20_bullet_id_21/CLIPACTIONRECORD onClipEvent(enterFrame).as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.lib_bike_body"
+        ]
       }
     },
     {
@@ -1426,7 +1643,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_86_frame_1_PlaceObject2_39_23_CLIPACTIONRECORD_onClipEvent_enterFrame",
-        "source_path": "src/DefineSprite_86/frame_1/PlaceObject2_39_23/CLIPACTIONRECORD onClipEvent(enterFrame).as"
+        "source_path": "src/DefineSprite_86/frame_1/PlaceObject2_39_23/CLIPACTIONRECORD onClipEvent(enterFrame).as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.lib_bike_body"
+        ]
       }
     },
     {
@@ -1450,7 +1671,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_86_frame_1_PlaceObject2_39_25_CLIPACTIONRECORD_onClipEvent_enterFrame",
-        "source_path": "src/DefineSprite_86/frame_1/PlaceObject2_39_25/CLIPACTIONRECORD onClipEvent(enterFrame).as"
+        "source_path": "src/DefineSprite_86/frame_1/PlaceObject2_39_25/CLIPACTIONRECORD onClipEvent(enterFrame).as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.lib_bike_body"
+        ]
       }
     },
     {
@@ -1474,7 +1699,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_86_frame_1_PlaceObject2_52_27_CLIPACTIONRECORD_onClipEvent_enterFrame",
-        "source_path": "src/DefineSprite_86/frame_1/PlaceObject2_52_27/CLIPACTIONRECORD onClipEvent(enterFrame).as"
+        "source_path": "src/DefineSprite_86/frame_1/PlaceObject2_52_27/CLIPACTIONRECORD onClipEvent(enterFrame).as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.lib_bike_body"
+        ]
       }
     },
     {
@@ -1498,7 +1727,11 @@
       "metadata": {
         "complete": true,
         "module_name": "DefineSprite_87_frame_1_DoAction",
-        "source_path": "src/DefineSprite_87/frame_1/DoAction.as"
+        "source_path": "src/DefineSprite_87/frame_1/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.lib_bike_body"
+        ]
       }
     },
     {
@@ -1522,7 +1755,11 @@
       "metadata": {
         "complete": false,
         "module_name": "DefineSprite_95_lib_man_frame_1_DoAction",
-        "source_path": "src/DefineSprite_95_lib_man/frame_1/DoAction.as"
+        "source_path": "src/DefineSprite_95_lib_man/frame_1/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.lib_man"
+        ]
       }
     },
     {
@@ -1546,7 +1783,11 @@
       "metadata": {
         "complete": false,
         "module_name": "DefineSprite_97_frame_1_DoAction",
-        "source_path": "src/DefineSprite_97/frame_1/DoAction.as"
+        "source_path": "src/DefineSprite_97/frame_1/DoAction.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.lib_bike_body"
+        ]
       }
     },
     {
@@ -1665,7 +1906,15 @@
       "metadata": {
         "complete": false,
         "module_name": "DoInitAction",
-        "source_path": "src/DoInitAction.as"
+        "source_path": "src/DoInitAction.as",
+        "progress_categories": [
+          "audio",
+          "core",
+          "gameplay",
+          "gameplay.bullet_id",
+          "gameplay.cbikesynchronizer",
+          "ui"
+        ]
       }
     },
     {
@@ -1704,7 +1953,11 @@
       "metadata": {
         "complete": false,
         "module_name": "Packages_CBack",
-        "source_path": "src/__Packages/CBack.as"
+        "source_path": "src/__Packages/CBack.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.cback"
+        ]
       }
     },
     {
@@ -1748,7 +2001,11 @@
       "metadata": {
         "complete": false,
         "module_name": "Packages_CBikeSynchronizer",
-        "source_path": "src/__Packages/CBikeSynchronizer.as"
+        "source_path": "src/__Packages/CBikeSynchronizer.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.cbikesynchronizer"
+        ]
       }
     },
     {
@@ -1787,7 +2044,11 @@
       "metadata": {
         "complete": false,
         "module_name": "Packages_CCamera",
-        "source_path": "src/__Packages/CCamera.as"
+        "source_path": "src/__Packages/CCamera.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.ccamera"
+        ]
       }
     },
     {
@@ -1861,7 +2122,11 @@
       "metadata": {
         "complete": false,
         "module_name": "Packages_CMan",
-        "source_path": "src/__Packages/CMan.as"
+        "source_path": "src/__Packages/CMan.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.cman"
+        ]
       }
     },
     {
@@ -1895,7 +2160,11 @@
       "metadata": {
         "complete": false,
         "module_name": "Packages_CParticle",
-        "source_path": "src/__Packages/CParticle.as"
+        "source_path": "src/__Packages/CParticle.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.cparticle"
+        ]
       }
     },
     {
@@ -1989,7 +2258,11 @@
       "metadata": {
         "complete": false,
         "module_name": "Packages_CParticleEngine",
-        "source_path": "src/__Packages/CParticleEngine.as"
+        "source_path": "src/__Packages/CParticleEngine.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.cparticleengine"
+        ]
       }
     },
     {
@@ -2023,7 +2296,11 @@
       "metadata": {
         "complete": false,
         "module_name": "Packages_CSpringConstraint",
-        "source_path": "src/__Packages/CSpringConstraint.as"
+        "source_path": "src/__Packages/CSpringConstraint.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.cspringconstraint"
+        ]
       }
     },
     {
@@ -2142,7 +2419,11 @@
       "metadata": {
         "complete": false,
         "module_name": "Packages_CVector2D",
-        "source_path": "src/__Packages/CVector2D.as"
+        "source_path": "src/__Packages/CVector2D.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.cvector2d"
+        ]
       }
     },
     {
@@ -2201,7 +2482,11 @@
       "metadata": {
         "complete": false,
         "module_name": "Packages_CWheel",
-        "source_path": "src/__Packages/CWheel.as"
+        "source_path": "src/__Packages/CWheel.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.cwheel"
+        ]
       }
     },
     {
@@ -2230,7 +2515,10 @@
       "metadata": {
         "complete": false,
         "module_name": "frame_1_DoAction",
-        "source_path": "src/frame_1/DoAction.as"
+        "source_path": "src/frame_1/DoAction.as",
+        "progress_categories": [
+          "core"
+        ]
       }
     },
     {
@@ -2254,7 +2542,10 @@
       "metadata": {
         "complete": false,
         "module_name": "frame_10_DoAction",
-        "source_path": "src/frame_10/DoAction.as"
+        "source_path": "src/frame_10/DoAction.as",
+        "progress_categories": [
+          "audio"
+        ]
       }
     },
     {
@@ -2278,7 +2569,10 @@
       "metadata": {
         "complete": true,
         "module_name": "frame_11_DoAction",
-        "source_path": "src/frame_11/DoAction.as"
+        "source_path": "src/frame_11/DoAction.as",
+        "progress_categories": [
+          "platform"
+        ]
       }
     },
     {
@@ -2302,7 +2596,10 @@
       "metadata": {
         "complete": true,
         "module_name": "frame_12_DoAction",
-        "source_path": "src/frame_12/DoAction.as"
+        "source_path": "src/frame_12/DoAction.as",
+        "progress_categories": [
+          "ui"
+        ]
       }
     },
     {
@@ -2326,7 +2623,10 @@
       "metadata": {
         "complete": true,
         "module_name": "frame_13_DoAction",
-        "source_path": "src/frame_13/DoAction.as"
+        "source_path": "src/frame_13/DoAction.as",
+        "progress_categories": [
+          "ui"
+        ]
       }
     },
     {
@@ -2350,7 +2650,10 @@
       "metadata": {
         "complete": true,
         "module_name": "frame_14_DoAction",
-        "source_path": "src/frame_14/DoAction.as"
+        "source_path": "src/frame_14/DoAction.as",
+        "progress_categories": [
+          "ui"
+        ]
       }
     },
     {
@@ -2384,7 +2687,12 @@
       "metadata": {
         "complete": false,
         "module_name": "frame_15_DoAction",
-        "source_path": "src/frame_15/DoAction.as"
+        "source_path": "src/frame_15/DoAction.as",
+        "progress_categories": [
+          "audio",
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -2408,7 +2716,11 @@
       "metadata": {
         "complete": false,
         "module_name": "frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_enterFrame",
-        "source_path": "src/frame_15/PlaceObject2_33_1/CLIPACTIONRECORD onClipEvent(enterFrame).as"
+        "source_path": "src/frame_15/PlaceObject2_33_1/CLIPACTIONRECORD onClipEvent(enterFrame).as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -2432,7 +2744,11 @@
       "metadata": {
         "complete": true,
         "module_name": "frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_keyDown",
-        "source_path": "src/frame_15/PlaceObject2_33_1/CLIPACTIONRECORD onClipEvent(keyDown).as"
+        "source_path": "src/frame_15/PlaceObject2_33_1/CLIPACTIONRECORD onClipEvent(keyDown).as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -2456,7 +2772,11 @@
       "metadata": {
         "complete": true,
         "module_name": "frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_keyDown__2",
-        "source_path": "src/frame_15/PlaceObject2_33_1/CLIPACTIONRECORD onClipEvent(keyDown)_2.as"
+        "source_path": "src/frame_15/PlaceObject2_33_1/CLIPACTIONRECORD onClipEvent(keyDown)_2.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -2480,7 +2800,11 @@
       "metadata": {
         "complete": false,
         "module_name": "frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_load",
-        "source_path": "src/frame_15/PlaceObject2_33_1/CLIPACTIONRECORD onClipEvent(load).as"
+        "source_path": "src/frame_15/PlaceObject2_33_1/CLIPACTIONRECORD onClipEvent(load).as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -2504,7 +2828,11 @@
       "metadata": {
         "complete": false,
         "module_name": "frame_15_PlaceObject2_446_349_CLIPACTIONRECORD_onClipEvent_enterFrame",
-        "source_path": "src/frame_15/PlaceObject2_446_349/CLIPACTIONRECORD onClipEvent(enterFrame).as"
+        "source_path": "src/frame_15/PlaceObject2_446_349/CLIPACTIONRECORD onClipEvent(enterFrame).as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -2528,7 +2856,11 @@
       "metadata": {
         "complete": false,
         "module_name": "frame_15_PlaceObject2_453_353_CLIPACTIONRECORD_onClipEvent_enterFrame",
-        "source_path": "src/frame_15/PlaceObject2_453_353/CLIPACTIONRECORD onClipEvent(enterFrame).as"
+        "source_path": "src/frame_15/PlaceObject2_453_353/CLIPACTIONRECORD onClipEvent(enterFrame).as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -2552,7 +2884,11 @@
       "metadata": {
         "complete": true,
         "module_name": "frame_15_PlaceObject2_453_353_CLIPACTIONRECORD_onClipEvent_load",
-        "source_path": "src/frame_15/PlaceObject2_453_353/CLIPACTIONRECORD onClipEvent(load).as"
+        "source_path": "src/frame_15/PlaceObject2_453_353/CLIPACTIONRECORD onClipEvent(load).as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -2576,7 +2912,11 @@
       "metadata": {
         "complete": false,
         "module_name": "frame_15_PlaceObject2_455_357_CLIPACTIONRECORD_onClipEvent_enterFrame",
-        "source_path": "src/frame_15/PlaceObject2_455_357/CLIPACTIONRECORD onClipEvent(enterFrame).as"
+        "source_path": "src/frame_15/PlaceObject2_455_357/CLIPACTIONRECORD onClipEvent(enterFrame).as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.timeline-game"
+        ]
       }
     },
     {
@@ -2600,7 +2940,10 @@
       "metadata": {
         "complete": false,
         "module_name": "frame_17_DoAction",
-        "source_path": "src/frame_17/DoAction.as"
+        "source_path": "src/frame_17/DoAction.as",
+        "progress_categories": [
+          "ui"
+        ]
       }
     },
     {
@@ -2704,7 +3047,10 @@
       "metadata": {
         "complete": false,
         "module_name": "frame_18_DoAction",
-        "source_path": "src/frame_18/DoAction.as"
+        "source_path": "src/frame_18/DoAction.as",
+        "progress_categories": [
+          "ui"
+        ]
       }
     },
     {
@@ -2728,7 +3074,10 @@
       "metadata": {
         "complete": true,
         "module_name": "frame_19_DoAction",
-        "source_path": "src/frame_19/DoAction.as"
+        "source_path": "src/frame_19/DoAction.as",
+        "progress_categories": [
+          "ui"
+        ]
       }
     },
     {
@@ -2752,7 +3101,10 @@
       "metadata": {
         "complete": true,
         "module_name": "frame_20_DoAction",
-        "source_path": "src/frame_20/DoAction.as"
+        "source_path": "src/frame_20/DoAction.as",
+        "progress_categories": [
+          "ui"
+        ]
       }
     },
     {
@@ -2776,7 +3128,11 @@
       "metadata": {
         "complete": true,
         "module_name": "lib_back_wheel",
-        "source_path": "src/lib_back_wheel.as"
+        "source_path": "src/lib_back_wheel.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.cwheel"
+        ]
       }
     },
     {
@@ -2800,7 +3156,11 @@
       "metadata": {
         "complete": true,
         "module_name": "lib_forward_wheel",
-        "source_path": "src/lib_forward_wheel.as"
+        "source_path": "src/lib_forward_wheel.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.cwheel"
+        ]
       }
     },
     {
@@ -2824,7 +3184,11 @@
       "metadata": {
         "complete": true,
         "module_name": "lib_man",
-        "source_path": "src/lib_man.as"
+        "source_path": "src/lib_man.as",
+        "progress_categories": [
+          "gameplay",
+          "gameplay.cman"
+        ]
       }
     }
   ],
@@ -2856,7 +3220,20 @@
       }
     },
     {
-      "id": "gameplay/205",
+      "id": "gameplay",
+      "name": "gameplay",
+      "measures": {
+        "fuzzy_match_percent": 16.34,
+        "total_code": 7024,
+        "matched_code": 1006,
+        "matched_code_percent": 14.32,
+        "total_functions": 146,
+        "matched_functions": 92,
+        "matched_functions_percent": 63.01
+      }
+    },
+    {
+      "id": "gameplay.205",
       "name": "gameplay/205",
       "measures": {
         "fuzzy_match_percent": 100.0,
@@ -2869,7 +3246,7 @@
       }
     },
     {
-      "id": "gameplay/bullet_id",
+      "id": "gameplay.bullet_id",
       "name": "gameplay/bullet_id",
       "measures": {
         "fuzzy_match_percent": 100.0,
@@ -2882,7 +3259,7 @@
       }
     },
     {
-      "id": "gameplay/cback",
+      "id": "gameplay.cback",
       "name": "gameplay/cback",
       "measures": {
         "fuzzy_match_percent": 13.04,
@@ -2895,7 +3272,7 @@
       }
     },
     {
-      "id": "gameplay/cbikesynchronizer",
+      "id": "gameplay.cbikesynchronizer",
       "name": "gameplay/cbikesynchronizer",
       "measures": {
         "fuzzy_match_percent": 8.2,
@@ -2908,7 +3285,7 @@
       }
     },
     {
-      "id": "gameplay/ccamera",
+      "id": "gameplay.ccamera",
       "name": "gameplay/ccamera",
       "measures": {
         "fuzzy_match_percent": 6.3,
@@ -2921,7 +3298,7 @@
       }
     },
     {
-      "id": "gameplay/cman",
+      "id": "gameplay.cman",
       "name": "gameplay/cman",
       "measures": {
         "fuzzy_match_percent": 6.18,
@@ -2934,7 +3311,7 @@
       }
     },
     {
-      "id": "gameplay/cparticle",
+      "id": "gameplay.cparticle",
       "name": "gameplay/cparticle",
       "measures": {
         "fuzzy_match_percent": 19.46,
@@ -2947,7 +3324,7 @@
       }
     },
     {
-      "id": "gameplay/cparticleengine",
+      "id": "gameplay.cparticleengine",
       "name": "gameplay/cparticleengine",
       "measures": {
         "fuzzy_match_percent": 26.25,
@@ -2960,7 +3337,7 @@
       }
     },
     {
-      "id": "gameplay/cspringconstraint",
+      "id": "gameplay.cspringconstraint",
       "name": "gameplay/cspringconstraint",
       "measures": {
         "fuzzy_match_percent": 10.95,
@@ -2973,7 +3350,7 @@
       }
     },
     {
-      "id": "gameplay/cvector2d",
+      "id": "gameplay.cvector2d",
       "name": "gameplay/cvector2d",
       "measures": {
         "fuzzy_match_percent": 45.06,
@@ -2986,7 +3363,7 @@
       }
     },
     {
-      "id": "gameplay/cwheel",
+      "id": "gameplay.cwheel",
       "name": "gameplay/cwheel",
       "measures": {
         "fuzzy_match_percent": 1.43,
@@ -2999,7 +3376,7 @@
       }
     },
     {
-      "id": "gameplay/lib_bike_body",
+      "id": "gameplay.lib_bike_body",
       "name": "gameplay/lib_bike_body",
       "measures": {
         "fuzzy_match_percent": 100.0,
@@ -3012,7 +3389,7 @@
       }
     },
     {
-      "id": "gameplay/lib_forward_wheel",
+      "id": "gameplay.lib_forward_wheel",
       "name": "gameplay/lib_forward_wheel",
       "measures": {
         "fuzzy_match_percent": 100.0,
@@ -3025,7 +3402,7 @@
       }
     },
     {
-      "id": "gameplay/lib_man",
+      "id": "gameplay.lib_man",
       "name": "gameplay/lib_man",
       "measures": {
         "fuzzy_match_percent": 92.31,
@@ -3038,7 +3415,7 @@
       }
     },
     {
-      "id": "gameplay/rocket_id",
+      "id": "gameplay.rocket_id",
       "name": "gameplay/rocket_id",
       "measures": {
         "fuzzy_match_percent": 100.0,
@@ -3051,7 +3428,7 @@
       }
     },
     {
-      "id": "gameplay/timeline-1",
+      "id": "gameplay.timeline-1",
       "name": "gameplay/timeline-1",
       "measures": {
         "fuzzy_match_percent": 100.0,
@@ -3064,7 +3441,7 @@
       }
     },
     {
-      "id": "gameplay/timeline-game",
+      "id": "gameplay.timeline-game",
       "name": "gameplay/timeline-game",
       "measures": {
         "fuzzy_match_percent": 15.01,
@@ -3077,7 +3454,7 @@
       }
     },
     {
-      "id": "gameplay/timeline-logo",
+      "id": "gameplay.timeline-logo",
       "name": "gameplay/timeline-logo",
       "measures": {
         "fuzzy_match_percent": 100.0,
@@ -3090,7 +3467,7 @@
       }
     },
     {
-      "id": "gameplay/timeline-soundatta",
+      "id": "gameplay.timeline-soundatta",
       "name": "gameplay/timeline-soundatta",
       "measures": {
         "fuzzy_match_percent": 100.0,

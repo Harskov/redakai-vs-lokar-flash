@@ -1,8 +1,9 @@
 name: Progress report
 
-# Validates the committed progress report (progress/report.json, the objdiff report shape) on every push to main. The
-# report is written by the maintainer's pipeline from its match records; nothing from the game is needed here, and
-# nothing is uploaded anywhere.
+# Validates the committed progress reports (progress/report.json, and progress/<VERSION>/report.json for a further release;
+# the objdiff report shape) on every push to main. The reports are written by the maintainer's pipeline from its match
+# records; nothing from the game is needed here.
+# Each report is uploaded as the artifact <VERSION>_report, which ByteMatch (https://bytematch.dev) reads.
 on:
   push:
     branches: [main]
@@ -21,4 +22,20 @@ jobs:
         run: echo "present=$([ -f progress/report.json ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
       - name: Validate the report
         if: steps.report.outputs.present == 'true'
-        run: python3 -c "import json; r=json.load(open('progress/report.json')); print(r['measures'])"
+        run: |
+          python3 - <<'EOF'
+          import json, pathlib
+          for p in sorted(pathlib.Path("progress").rglob("report.json")):
+              r = json.loads(p.read_text(encoding="utf-8"))
+              assert int(r.get("version") or 0) == 2 and isinstance(r.get("measures"), dict), f"{p}: not an objdiff v2 report"
+              m = r["measures"]
+              print(f"{p}: {m.get('matched_functions', 0)}/{m.get('total_functions', 0)} functions, {m.get('matched_code_percent', 0)} % code")
+          EOF
+      - name: Upload the swf report for ByteMatch
+        if: hashFiles('progress/report.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: swf_report
+          path: progress/report.json
+          if-no-files-found: error
+          retention-days: 90

@@ -14,7 +14,7 @@ The workflow .github/workflows/audit.yml runs it on every push and pull request.
   magic     a tracked file whose first bytes are an SWF (FWS/CWS/ZWS), an ELF, a Unix archive, a PE/DOS executable, a PNG,
             a JPEG, a ZIP or an ISO 9660 image
   checksum  a tracked file whose SHA-1 equals a hash recorded in config/*/checksum.sha1 (the original file)
-  size      a tracked file over the ceiling no source file reaches: 1 MiB (16 MiB for progress/report.json)
+  size      a tracked file over the ceiling no source file reaches: 1 MiB (16 MiB for progress/report.json and a release's progress/<VERSION>/report.json)
 Exit 0 when every tracked file passes, 1 on any hit, 2 on usage.
 """
 import argparse
@@ -35,7 +35,7 @@ MAGIC = ((b"FWS", 0, "uncompressed SWF"), (b"CWS", 0, "zlib-compressed SWF"), (b
          (b"\x89PNG", 0, "PNG image"), (b"\xff\xd8\xff", 0, "JPEG image"), (b"PK\x03\x04", 0, "ZIP archive"), (b"CD001", 0x8001, "ISO 9660 disc image"))
 CEILING = 1 << 20
 REPORT_CEILING = 16 << 20
-REPORT_RE = re.compile(r"^progress/report\.json$")
+REPORT_RE = re.compile(r"^progress/(?:[^/]+/)?report\.json$")   # a further release's: progress/<VERSION>/report.json
 SHA1_LINE_RE = re.compile(r"^([0-9a-fA-F]{40})\s+\*?(\S.*)$")
 
 
