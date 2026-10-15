@@ -43,6 +43,23 @@ CCamera.process declares 6 and references up to r3; FFDec's compiler declares 4)
 renumbering. What is lost: a local the author declared and never used compiles to no instruction, so it is not
 recoverable from the bytes either way. v3 equals v2 on every pair v2 equates (the rule only removes information).
 
+Normalizer version 4 (remediation 2026-10-14-remediation-14): (j) a `Push 0.0` (a Double zero) is written `Push 0`. The
+original compiler encoded every zero as a Double: the first target's raw listings push zero as `0.0` 393 times and as the
+integer `0` once (inside an obfuscated stream), while every non-zero integer is an integer (2,557) and no non-zero integral
+Double occurs. The Double form therefore never carried a source distinction — `0` and `0.0` in the author's source compile
+alike — and FFDec's compiler emits the integer for a typed `0`, for the argument count of a call without arguments
+(`f()`, `o.m()`, `new C()`: `Push 0` before the name) and for the zero of a unary minus (`-x` is `Push 0`, `Subtract`), the
+last two with no source lever (run 2026-10-15-015-match-batch F-1 and F-3). The pairs it newly equates: `Push 0.0 /
+Push register1 / Push "replay" / CallMethod` against `Push 0 / …`; `Push 0.0 / Push register1 / Push "x" / GetMember /
+Subtract` against `Push 0 / …`. v4 equals v3 on every pair v3 equates (one token rewritten the same way on both sides).
+A non-zero integral Double (`Push 3.0`) stays what it is.
+
+Register locals (the same round): FFDec's compiler places a local in a register only when it is spelled `_locN_`, and it
+reads N as the slot (`_loc1_` is the preloaded `this`; 7 upward is free of the six preload slots, the parameters take the
+slots left, and rule (b) renumbers); a local with a name compiles to `DefineLocal` and `GetVariable` rows. The accepted source keeps the name and names the local in a `// registers:` comment above the
+function (K1 §4); `map_register_locals` rewrites those identifiers to `_locN_` in the text the compiler sees (the try,
+the build's `as` form, the public `configure.py`), never in the source on disk.
+
 Residual classes (`residual_classes` on raw blocks, `normalized_residuals` on normalized lines — the one calibrate uses):
 `double-literal` (cookbook C2) and `increment` (one register updated in place by `Push 1` + `Add2` where the other side has
 `Increment`, or `Push 1` + `Subtract` against `Decrement`: FFDec's draft prints `x = x + 1` where the bytes say `x++`; cookbook
@@ -54,8 +71,11 @@ import json
 import re
 import sys
 
-NORMALIZER_VERSION = 3
+NORMALIZER_VERSION = 4
 LABEL_RE = re.compile(r"^(\w+):(.*)$")
+REGISTERS_COMMENT_RE = re.compile(r"^[ \t]*//[ \t]*registers?[ \t]*:[ \t]*(.*?)[ \t]*$", re.M)
+IDENT_RE = r"[A-Za-z_$][\w$]*"
+AS_TOKEN_RE = re.compile(r'"(?:[^"\\]|\\.)*"|\'(?:[^\'\\]|\\.)*\'|//[^\n]*|/\*.*?\*/|[A-Za-z_$][\w$]*', re.S)
 UNKNOWN_RE = re.compile(r"^Unknown_[0-9A-Fa-f]+$")
 RESIDUE_NAME_RE = re.compile(r'^"(?:\\x[0-9a-fA-F]{2})+"$')   # a string literal of control-character escapes only, as FFDec prints "\x01"
 NUMBER_RE = re.compile(r"^-?\d+(?:\.\d+)?$")
@@ -319,6 +339,89 @@ def deobfuscator_leftover(text):
     return out
 
 
+def register_locals_of(comment_text):
+    """The identifiers a `// registers:` comment names, in order, from entries separated by commas: `r2 = the alias of
+    this (back)`, `r2 = back`, `back = the alias of this`, `back`. An entry that names no identifier is skipped."""
+    out = []
+    for entry in comment_text.split(","):
+        e = entry.strip()
+        if not e:
+            continue
+        m = re.match(r"^r\d+\s*=\s*(.*)$", e)
+        if m:
+            e = m.group(1).strip()
+        m = re.search(rf"\(({IDENT_RE})\)\s*$", e)
+        name = m.group(1) if m else None
+        if name is None:
+            m = re.match(rf"^({IDENT_RE})(?:\s*=.*)?$", e)
+            name = m.group(1) if m else None
+        if name and name not in out:
+            out.append(name)
+    return out
+
+
+def _function_span(text, start):
+    """(open, close) offsets of the first function body at or after `start`: the brace-matched block that follows the next
+    `function` keyword, braces inside strings and comments ignored. None without one."""
+    m = re.compile(r"\bfunction\b").search(text, start)
+    if not m:
+        return None
+    i = text.find("{", m.end())
+    if i < 0:
+        return None
+    depth, j = 0, i
+    while j < len(text):
+        tok = AS_TOKEN_RE.match(text, j)
+        if tok and tok.group(0)[0] in "\"'/":
+            j = tok.end()
+            continue
+        c = text[j]
+        if c == "{":
+            depth += 1
+        elif c == "}":
+            depth -= 1
+            if depth == 0:
+                return i, j + 1
+        j += 1
+    return None
+
+
+def map_register_locals(text):
+    """The text FFDec's compiler sees for a source that names register locals: every identifier a `// registers:` comment
+    names is rewritten to `_locN_` inside the function body the comment precedes (its brace-matched block), outside strings
+    and comments; the comment line itself and everything else stay as they are. FFDec places a local in a register only
+    under that spelling (whatever N); the source on disk keeps the author's name (K1 §4). A text without such a comment
+    comes back unchanged."""
+    if not REGISTERS_COMMENT_RE.search(text):
+        return text
+    used = {int(n) for n in re.findall(r"\b_loc(\d+)_\b", text)}
+    nxt = max(used | {6}) + 1     # FFDec reads `_locN_` as register N: 1-6 are the preload slots (`_loc1_` is `this` when preloaded)
+    out, pos = [], 0
+    for cm in REGISTERS_COMMENT_RE.finditer(text):
+        names = register_locals_of(cm.group(1))
+        span = _function_span(text, cm.end())
+        if not names or span is None or span[0] < pos:
+            continue
+        open_, close = span
+        mapping = {}
+        for nm in names:
+            mapping[nm] = f"_loc{nxt}_"
+            nxt += 1
+        body = text[open_:close]
+
+        def swap(t):
+            s = t.group(0)
+            if s[0] in "\"'/" or (t.start() > 0 and body[t.start() - 1] == "."):   # a string, a comment, a member name
+                return s
+            return mapping.get(s, s)
+        body = AS_TOKEN_RE.sub(swap, body)
+        out.append(text[pos:open_])
+        out.append(body)
+        pos = close
+    out.append(text[pos:])
+    return "".join(out)
+
+
 def normalize(block, pool, header_info=None, version=NORMALIZER_VERSION):
     """Normalized lines of a cut block (see the module doc). header_info: the parsed header for register naming."""
     lines = [resolve_constants(l, pool) for l in block]
@@ -383,8 +486,9 @@ def normalize(block, pool, header_info=None, version=NORMALIZER_VERSION):
         if t.startswith("Push "):
             # one value per Push: the player runs `Push a, b` and `Push a` + `Push b` identically; FFDec's compiler
             # emits the split form where the original compiler merged (the push-merging residual class)
-            vals = parse_args_list(t[5:])
-            if len(vals) > 1:
+            raw_vals = parse_args_list(t[5:])
+            vals = ["0" if v == "0.0" else v for v in raw_vals] if version >= 4 else raw_vals   # rule (j): one zero
+            if len(vals) > 1 or vals != raw_vals:
                 lab = labels.get(lab) if lab else None
                 out.append((lab + ":" if lab else "") + "Push " + vals[0])
                 out.extend("Push " + v for v in vals[1:])

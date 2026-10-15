@@ -197,9 +197,9 @@ def _cstring(data, pos):
     return data[pos:e].decode("latin-1"), e + 1
 
 
-def place_object_actions(tag, version):
-    """(character id or None, depth, [event name lists per CLIPACTIONRECORD]) of a PlaceObject2/3 tag; the list is empty
-    without clip actions."""
+def _place_object_head(tag):
+    """(character id or None, depth, instance name or None, pos, flags, flags2, po3) of a PlaceObject2/3 tag: the fields
+    up to and including the clip depth, `pos` the offset after them."""
     d = tag.body
     flags = d[0]
     pos = 1
@@ -224,10 +224,41 @@ def place_object_actions(tag, version):
         pos = _skip_cxform(d, pos)
     if flags & 0x10:
         pos += 2
+    name = None
     if flags & 0x20:
-        _n, pos = _cstring(d, pos)
+        name, pos = _cstring(d, pos)
     if flags & 0x40:
         pos += 2
+    return cid, depth, name, pos, flags, flags2, po3
+
+
+def placements(swf):
+    """[{character_id, depth, name, parent, frame}] for every PlaceObject2/3 that places a character, on the main timeline
+    (`parent` None) and inside every DefineSprite (`parent` the sprite id); `name` is the instance name or None. The data
+    behind the label of a sprite without an export name (run 2026-10-14-013-docs-pass F-1)."""
+    out = []
+
+    def walk(tags, parent):
+        frame = 1
+        for t in tags:
+            if t.code == 1:
+                frame += 1
+            elif t.code in (26, 70):
+                cid, depth, name, _pos, _f, _f2, _po3 = _place_object_head(t)
+                if cid is not None:
+                    out.append({"character_id": cid, "depth": depth, "name": name, "parent": parent, "frame": frame})
+            elif t.code == 39 and parent is None:
+                sid, _frames, subtags = sprite_subtags(t)
+                walk(subtags, sid)
+    walk(swf.tags, None)
+    return out
+
+
+def place_object_actions(tag, version):
+    """(character id or None, depth, [event name lists per CLIPACTIONRECORD]) of a PlaceObject2/3 tag; the list is empty
+    without clip actions."""
+    d = tag.body
+    cid, depth, _name, pos, flags, flags2, po3 = _place_object_head(tag)
     if po3 and (flags2 & 0x01):      # filters, blend, bitmap cache: not needed for the script map
         return cid, depth, [] if not (flags & 0x80) else ["?"]
     if po3 and (flags2 & 0x02):

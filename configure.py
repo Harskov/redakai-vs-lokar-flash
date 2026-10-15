@@ -96,10 +96,12 @@ def build():
     if full:
         with tempfile.TemporaryDirectory() as td:
             folder = Path(td) / "import"
+            import pcode
             for script, _m in full:
                 dst = folder / "scripts" / f"{script}.as"
                 dst.parent.mkdir(parents=True, exist_ok=True)
-                shutil.copyfile(HERE / "src" / f"{script}.as", dst)
+                # a local named in a `// registers:` comment is spelled _locN_ for FFDec's compiler (tools/pcode.py)
+                dst.write_text(pcode.map_register_locals((HERE / "src" / f"{script}.as").read_text(encoding="utf-8")), encoding="utf-8")
             out = Path(td) / "out.swf"
             cp = ffdec("-importScript", orig, out, folder)
             if cp.returncode != 0 or not out.is_file():

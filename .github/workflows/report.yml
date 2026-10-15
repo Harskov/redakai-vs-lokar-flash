@@ -1,9 +1,8 @@
 name: Progress report
 
-# Uploads the committed progress report (progress/report.json, the objdiff-report shape decomp.dev reads) as the
-# artifact redakai-vs-lokar-flash_report, only when the repository variable DECOMP_DEV_UPLOAD is 1 (set at registration time; a Flash
-# target generates the report for its README and is not expected to be listed). The report is written by the
-# maintainer's pipeline from its match records; nothing from the game is needed here.
+# Validates the committed progress report (progress/report.json, the objdiff report shape) on every push to main. The
+# report is written by the maintainer's pipeline from its match records; nothing from the game is needed here, and
+# nothing is uploaded anywhere.
 on:
   push:
     branches: [main]
@@ -23,10 +22,3 @@ jobs:
       - name: Validate the report
         if: steps.report.outputs.present == 'true'
         run: python3 -c "import json; r=json.load(open('progress/report.json')); print(r['measures'])"
-      - name: Upload the decomp.dev report
-        if: steps.report.outputs.present == 'true' && vars.DECOMP_DEV_UPLOAD == '1'
-        uses: actions/upload-artifact@v4
-        with:
-          name: redakai-vs-lokar-flash_report
-          path: progress/report.json
-          if-no-files-found: error
