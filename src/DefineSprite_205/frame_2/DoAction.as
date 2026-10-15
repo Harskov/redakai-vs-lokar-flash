@@ -1,5 +1,5 @@
-// frame 2's counterpart: hold this frame once the main timeline's `rotates`
-// reaches 53, else back to frame 1
+// frame 1's counterpart: hold frame 2; the handler goes back to frame 1 once
+// _root.rotates is no longer 53
 stop();
 onEnterFrame = function()
 {

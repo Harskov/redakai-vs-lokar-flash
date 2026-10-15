@@ -1,4 +1,4 @@
-// the reset button: wipe the round's scores, restart the level
+// btn1 on the logo frame: zero both scores and play the game frame (15) from level 1
 on(release){
    _root.tscore = 0;
    _root.mscore = 0;

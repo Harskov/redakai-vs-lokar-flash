@@ -11,4 +11,9 @@ The physics engine: it holds the particles, the wheels and the spring constraint
 | `CParticleEngine()` | yes | initLevel (`engine = new CParticleEngine()`) |
 | `addParticle(p)` | yes | initLevel (three particles) |
 | `start()` | yes | initLevel (`engine.start()`, after the level is built) |
-| `clear`, `setHitMovie`, `addWheel`, `addSpringConstraint`, `computeForces`, `clearForces`, `applyManFrictions`, `verlet`, `checkCollisions`, `checkConstraints`, `process` | no | `process` from processGame; the rest from initLevel or `process` |
+| `addWheel(wheel, p, maxSpeed, radius)` | yes | initLevel (the two wheels) |
+| `addSpringConstraint(p1, p2, koeffStiff1, koeffStiff2)` | yes | initLevel |
+| `applyManFrictions()` | yes | `process` (each wheel's `applyAddedAcc`) |
+| `checkCollisions()` | yes | `process` (each wheel's `checkCollision` against `hit_mc`) |
+| `checkConstraints(dTime)` | yes | `process` (each constraint's `resolve`) |
+| `clear`, `setHitMovie`, `computeForces`, `clearForces`, `verlet`, `process` | no | `process` from processGame; the rest from initLevel or `process` |

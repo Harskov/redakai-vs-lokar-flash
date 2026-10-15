@@ -1,4 +1,5 @@
-// tracks this clip's position on the stage each frame: localToGlobal into _root.mx1/my1
+// the first aim marker's stage position, each frame, as (mx1, my1): where
+// processGame's aim line starts
 onClipEvent(enterFrame)
 {
    var point2 = {x:this._x, y:this._y};

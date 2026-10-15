@@ -27,6 +27,8 @@ function soundOn()
    stopSoundFlag = false;
 }
 // @reference gameStart
+// after level 10 the game starts over (newGame); otherwise the next level, stepping
+// the timeline through "reset" back to "game" as replay does
 function nextLevel()
 {
    stargeted = 0;
@@ -34,7 +36,7 @@ function nextLevel()
    if(level == 10)
    {
       newGame();
-      return undefined;
+      return;
    }
    level++;
    this.gotoAndStop("reset");
@@ -59,7 +61,7 @@ function playSnd(lib_snd)
 // @reference initLevel
 // @reference processGame
 // @reference fire
-// resets the kfire flag after fire() has used it (fire is the sibling that clears it)
+// re-arms the gun: processGame clears kfire when it fires a shot and calls this 290 ms later
 function resetkfire()
 {
    kfire = true;

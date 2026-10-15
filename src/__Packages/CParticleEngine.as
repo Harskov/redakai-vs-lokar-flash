@@ -29,33 +29,29 @@ function start()
 }
 // @reference CParticleEngine.computeForces
 // @reference CParticleEngine.clearForces
-// tells every wheel in w_array to apply its own added friction term, in the order the wheels were added
+// every wheel applies its added acceleration; the method's name calls these the man's frictions
 // registers: r3 = the alias of this (engine), r4 = the number of wheels (count), r2 = the loop counter (i)
 function applyManFrictions()
 {
    var engine = this;
    var count = engine.w_array.length;
    var i;
-   i = 0;
-   while(i < count)
+   for(i = 0; i < count; i++)
    {
       engine.w_array[i].applyAddedAcc();
-      i++;
    }
 }
 // @reference CParticleEngine.verlet
-// each wheel checks its particle against the hit clip on every step
+// every wheel tests itself against the engine's hit clip (hit_mc, set by setHitMovie)
 // registers: r3 = the engine (eng), r2 = the loop counter (i), r4 = the wheel count (count)
 function checkCollisions()
 {
    var eng = this;
    var i;
    var count = eng.w_array.length;
-   i = 0;
-   while(i < count)
+   for(i = 0; i < count; i++)
    {
       eng.w_array[i].checkCollision(eng.hit_mc);
-      i++;
    }
 }
 // resolves every constraint once per step, in array order, with the elapsed time
@@ -65,11 +61,9 @@ function checkConstraints(dTime)
    var engine = this;
    var i;
    var len = engine.c_array.length;
-   i = 0;
-   while(i < len)
+   for(i = 0; i < len; i++)
    {
       engine.c_array[i].resolve(dTime);
-      i++;
    }
 }
 // @reference CParticleEngine.process

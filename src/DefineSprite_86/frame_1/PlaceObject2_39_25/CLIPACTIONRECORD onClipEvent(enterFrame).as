@@ -1,4 +1,5 @@
-// publish this clip's position on the main timeline as _root.mx3/_root.my3
+// the muzzle marker's stage position, each frame, as (mx3, my3): where processGame
+// puts a new shot
 onClipEvent(enterFrame){
    var point3 = {x:this._x, y:this._y};
    this.localToGlobal(point3);

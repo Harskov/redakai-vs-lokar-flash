@@ -1,4 +1,5 @@
-// the results screen: hold the frame, cut the sounds, fill in the final score
+// the gameover frame (20): the gamewin screen again, hold, stop every sound and fill
+// in the two score fields
 stop();
 stopAllSounds();
 txtfinalscore.text = _root.levelscore;

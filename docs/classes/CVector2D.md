@@ -17,4 +17,5 @@ A two-component vector, the physics' value type (`new CVector2D` appears 14 time
 | `scalar(v)` | yes | CWheel.checkCollision |
 | `mult(k)` | yes | CSpringConstraint.resolve |
 | `plusNew(v)` | yes | CWheel.pushOut |
-| `minusNew`, `normalize`, `reverseNew`, `modul`, `reflectFromNormal`, `rotate`, `rotateNew`, `multNew`, `plus`, `getDistanceTo` | no | see `docs/CODE-MAP.md` |
+| `minusNew(v)`, `normalize()`, `reverseNew()`, `reflectFromNormal(n)`, `multNew(k)`, `plus(v)` | yes | see `docs/CODE-MAP.md` |
+| `modul`, `rotate`, `rotateNew`, `getDistanceTo` | no | see `docs/CODE-MAP.md` |

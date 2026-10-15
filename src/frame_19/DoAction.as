@@ -1,4 +1,4 @@
-// the results frame: freeze the timeline, silence the sounds, show the level and total scores
+// the gamewin frame (19): hold, stop every sound and fill in the two score fields
 stop();
 stopAllSounds();
 txtfinalscore.text = _root.levelscore;

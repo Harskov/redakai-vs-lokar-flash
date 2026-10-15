@@ -1,5 +1,5 @@
-// the CSpringConstraint class script: the constructor and resolve are their own records
-// (the obfuscator's residue the draft opens with is not the author's and is never written)
+// the class script for CSpringConstraint: register the class on _global once, then put
+// resolve on its prototype
 class CSpringConstraint
 {
    function CSpringConstraint(p1_, p2_, koeffStiffPress_, koeffStiffStretch_)

@@ -50,8 +50,7 @@ function normalize()
 // a new vector with both components negated
 function reverseNew()
 {
-   // !FAKE: the compiler spells the unary minus as a subtraction from zero, and the bytes push that zero as a Double, so the literal 0.0 - x form is forced
-   return new CVector2D(0.0 - this.x, 0.0 - this.y);
+   return new CVector2D(-this.x, -this.y);
 }
 // the dot product with another vector
 function scalar(v)
