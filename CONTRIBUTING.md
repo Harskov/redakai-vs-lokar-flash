@@ -1,8 +1,10 @@
 # Contributing to Redakai vs Lokar
 
-Pull requests are welcome on `src/` and `docs/`. The maintainer's tooling imports a merged pull request's source at the
-next run, rebuilds it with the pinned toolchain and records a match only when the rebuilt code matches the original under
-the project's criterion (the recompiled P-code must equal the original's listing, both taken with FFDec's AS1/2 deobfuscator on, after a documented normalization (constant-pool resolution, register and jump numbering, one value per push, an obfuscator's two leftover statements)); a function that does not match stays as the reference line.
+Pull requests are welcome on `src/`. The maintainer's tooling imports a merged pull request's source at the next run,
+rebuilds it with the pinned toolchain and records a match only when the rebuilt code matches the original under the
+project's criterion (the recompiled P-code must equal the original's listing, both taken with FFDec's AS1/2 deobfuscator on, after a documented normalization (constant-pool resolution, register and jump numbering, one value per push, an obfuscator's two leftover statements)); a function that does not match stays as the reference line. Everything outside
+`src/` (the documentation, the symbol map, shared headers) is generated from the maintainer's workbench, so a correction
+there is welcome as an issue and is carried over by hand.
 
 ## The toolchain
 
@@ -26,7 +28,7 @@ in `symbols/` carries each name's evidence. Original identifiers kept by the byt
 
 ## Readability
 
-`python3 tools/lint_flash-avm1.py <file>` (the contributor copy of the project's lint) refuses decompiler temporaries and
+`python3 tools/lint_as.py <file>` (the contributor copy of the project's lint) refuses decompiler temporaries and
 artifacts, pipeline comments, debug leftovers, unexplained `!FAKE` markers and placeholders. Comments say why and what is
 uncertain, at most three lines per function; they never narrate the code. One definition per type.
 
