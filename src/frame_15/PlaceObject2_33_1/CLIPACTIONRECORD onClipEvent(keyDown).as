@@ -1,1 +1,4 @@
-// @reference frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_keyDown_main
+onClipEvent(keyDown){
+   this._parent.keyPressed();
+   updateAfterEvent();
+}

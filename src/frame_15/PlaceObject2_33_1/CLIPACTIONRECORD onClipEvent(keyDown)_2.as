@@ -1,1 +1,5 @@
-// @reference frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_keyDown__2_main
+// the key handler lives on the clip but the press is handled one level up, then the display is refreshed
+onClipEvent(keyDown){
+   this._parent.keyPressed();
+   updateAfterEvent();
+}

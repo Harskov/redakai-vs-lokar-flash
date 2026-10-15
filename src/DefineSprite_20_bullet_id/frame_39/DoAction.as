@@ -1,1 +1,2 @@
-// @reference DefineSprite_20_bullet_id_frame_39_DoAction_main
+// the bullet sprite removes itself at the end of its flight (frame 39)
+removeMovieClip(this);

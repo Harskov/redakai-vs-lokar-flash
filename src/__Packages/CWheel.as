@@ -1,5 +1,9 @@
 // @reference Packages_CWheel_main
-// @reference CWheel
+// constructor: nothing of its own to set up, just chains to the base class
+function CWheel()
+{
+   super();
+}
 // @reference CWheel.init
 // @reference CWheel.process
 // @reference CWheel.checkCollision

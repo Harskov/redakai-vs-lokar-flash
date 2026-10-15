@@ -38,15 +38,37 @@ function minusNew(v)
 {
    return new CVector2D(this.x - v.x, this.y - v.y);
 }
-// @reference CVector2D.normalize
-// @reference CVector2D.reverseNew
+// registers: r2 = the alias of this (vec), r3 = the vector's length (len)
+// scales the vector to unit length, in place, by its own length
+function normalize()
+{
+   var vec = this;
+   var len = Math.sqrt(vec.x * vec.x + vec.y * vec.y);
+   vec.x /= len;
+   vec.y /= len;
+}
+// a new vector with both components negated
+function reverseNew()
+{
+   // !FAKE: the compiler spells the unary minus as a subtraction from zero, and the bytes push that zero as a Double, so the literal 0.0 - x form is forced
+   return new CVector2D(0.0 - this.x, 0.0 - this.y);
+}
 // the dot product with another vector
 function scalar(v)
 {
    return this.x * v.x + this.y * v.y;
 }
 // @reference CVector2D.modul
-// @reference CVector2D.reflectFromNormal
+// reflects the vector off a surface with normal n: rotate into the normal's frame, flip the x component, rotate back
+// registers: r2 = the alias of this (v), r3 = the normal's angle from atan2 (a)
+function reflectFromNormal(n)
+{
+   var v = this;
+   var a = Math.atan2(n.y, n.x);
+   v.rotate(-a);
+   v.x = -v.x;
+   v.rotate(a);
+}
 // @reference CVector2D.rotate
 // @reference CVector2D.rotateNew
 // scales both components in place by the caller's factor

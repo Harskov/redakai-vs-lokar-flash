@@ -1,7 +1,16 @@
 // @reference Packages_CMan_main
-// @reference CMan
+// the man character's constructor: clear its stop flag and reset its state
+function CMan()
+{
+   super();
+   this.stopFlag = false;
+   this.state = 0;
+}
 // @reference CMan.stopAnim
-// @reference CMan.stopMCAnim
+function stopMCAnim()
+{
+   this.mc.stop();
+}
 // @reference CMan.startAnim
 // @reference CMan.onEnterFrame
 // @reference CMan.toLeft

@@ -27,7 +27,19 @@ function soundOn()
    stopSoundFlag = false;
 }
 // @reference gameStart
-// @reference nextLevel
+function nextLevel()
+{
+   stargeted = 0;
+   levelTimeCounter = 0;
+   if(level == 10)
+   {
+      newGame();
+      return undefined;
+   }
+   level++;
+   this.gotoAndStop("reset");
+   this.gotoAndStop("game");
+}
 // restart the current level: reset the stargeted count, then step the timeline
 // through "reset" back to "game" (nextLevel does the same after level++)
 function replay()
@@ -37,11 +49,21 @@ function replay()
    this.gotoAndStop("game");
 }
 // @reference newGame
-// @reference playSnd
+// plays a library sound by its linkage name: attach it to a Sound on this timeline and start it
+function playSnd(lib_snd)
+{
+   s = new Sound(this);
+   s.attachSound(lib_snd);
+   s.start();
+}
 // @reference initLevel
 // @reference processGame
 // @reference fire
-// @reference resetkfire
+// resets the kfire flag after fire() has used it (fire is the sibling that clears it)
+function resetkfire()
+{
+   kfire = true;
+}
 // the clock readout: the elapsed game time (timeCounter) formatted into txtTime
 function showTime()
 {
