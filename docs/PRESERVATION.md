@@ -1,4 +1,4 @@
-# Preservation record — Redakai vs Lokar (Flash)
+# Preservation record — Redakai vs Lokar
 
 ## Provenance
 

@@ -1,4 +1,4 @@
-# Contributing to Redakai vs Lokar (Flash)
+# Contributing to Redakai vs Lokar
 
 Pull requests are welcome on `src/` and `docs/`. The maintainer's tooling imports a merged pull request's source at the
 next run, rebuilds it with the pinned toolchain and records a match only when the rebuilt code matches the original under

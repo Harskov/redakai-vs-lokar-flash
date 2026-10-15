@@ -1,4 +1,4 @@
-# Roadmap — Redakai vs Lokar (Flash)
+# Roadmap — Redakai vs Lokar
 
 The project serves four purposes — preservation, recompilation, porting and learning — and orders its milestones by what helps other people soonest. Each milestone's exit is a file or a record, not a judgment. Generated from `config/milestones.json` and the match records; never edited by hand.
 
