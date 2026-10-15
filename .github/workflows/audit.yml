@@ -2,7 +2,7 @@ name: Audit
 
 # Nothing from the game may be tracked here. On every push and every pull request, tools/audit_public.py walks the
 # files git tracks and fails when one is an original, an export, a render, an object or an archive by name or by its
-# first bytes, when its SHA-1 is one recorded in config/flash-avm1/checksum.sha1 (the original file), or when it is larger
+# first bytes, when its SHA-1 is one recorded in config/*/checksum.sha1 (the original file), or when it is larger
 # than any source file can be. The self-test first plants a game-shaped fixture and checks that the audit rejects it.
 on:
   push:
