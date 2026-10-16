@@ -73,7 +73,8 @@ the build's `as` form, the public `configure.py`), never in the source on disk.
 Residual classes (`residual_classes` on raw blocks, `normalized_residuals` on normalized lines — the one calibrate uses):
 `double-literal` (cookbook C2) and `increment` (one register updated in place by `Push 1` + `Add2` where the other side has
 `Increment`, or `Push 1` + `Subtract` against `Decrement`: FFDec's draft prints `x = x + 1` where the bytes say `x++`; cookbook
-C6) are the classes the source reproduces; `push-value` and `other` are not.
+C6) are the classes the source reproduces; `not-not-if` (cookbook C7), `define-kind` (C4) and `uninit-var` (a `var x;` stored as
+undefined on one side) name the known shapes left, and with `push-value` and `other` are not reproducible.
 """
 import argparse
 import difflib
@@ -607,6 +608,46 @@ def _rewrite_increment(lines):
     return out
 
 
+def _rewrite_not_not(lines):
+    """`Not`, `Not`, `If X` -> `If X` (cookbook C7: the original compiler kept the double Not that FFDec's folds)."""
+    out, i = [], 0
+    while i < len(lines):
+        lab, t = NORM_LABEL_RE.match(lines[i]).groups()
+        if t == "Not" and i + 2 < len(lines):
+            lab2, t2 = NORM_LABEL_RE.match(lines[i + 1]).groups()
+            lab3, t3 = NORM_LABEL_RE.match(lines[i + 2]).groups()
+            if t2 == "Not" and not lab2 and not lab3 and t3.startswith("If "):
+                out.append((lab or "") + t3)
+                i += 3
+                continue
+        out.append(lines[i])
+        i += 1
+    return out
+
+
+def _rewrite_define_kind(lines):
+    """A function header's kind, register count and flags dropped, its name and parameters kept (cookbook C4: DefineFunction
+    against DefineFunction2 follows from the parameter list and the preloaded identifiers)."""
+    return [re.sub(r"^((?:L|X)\d+:)?DefineFunction2? (\"[^\"]*\") params=\(([^)]*)\).*$", r"\1Define \2 (\3)", l) for l in lines]
+
+
+def _rewrite_uninit(lines):
+    """`Push undefined`, `StoreRegister R`, `Pop` dropped: a `var x;` stored as undefined on one side only."""
+    out, i = [], 0
+    while i < len(lines):
+        if (NORM_LABEL_RE.match(lines[i]).group(2) == "Push undefined" and i + 2 < len(lines)
+                and re.match(r"^StoreRegister r\d+$", lines[i + 1]) and lines[i + 2] == "Pop"):
+            i += 3
+            continue
+        out.append(lines[i])
+        i += 1
+    return out
+
+
+# named, not reproducible: they say which known shape is left, and none counts toward the pin (calibrate's REPRODUCIBLE)
+DIAGNOSTIC_REWRITES = (("not-not-if", _rewrite_not_not), ("define-kind", _rewrite_define_kind), ("uninit-var", _rewrite_uninit))
+
+
 def _diff_rows(a, b):
     sm = difflib.SequenceMatcher(a=a, b=b, autojunk=False)
     return sum(max(i2 - i1, j2 - j1) for tag, i1, i2, j1, j2 in sm.get_opcodes() if tag != "equal")
@@ -614,15 +655,17 @@ def _diff_rows(a, b):
 
 def normalized_residuals(target, cand):
     """The residual classes of two normalized blocks the normalizer does not equate: the reproducible rewrites
-    (`double-literal`, `increment`) are applied to both sides in turn and a class is reported when its rewrite reduced the
-    differing rows; sides still unequal after every rewrite add `push-value` (only pushed values differ) or `other`. A mix
+    (`double-literal`, `increment`), then the diagnostic ones (`not-not-if`, `define-kind`, `uninit-var`; redakai run
+    2026-10-16-026 F-1: these fell to `other` though the cookbook names them), are applied to both sides in turn and a class is
+    reported when its rewrite reduced the differing rows; sides still unequal after every rewrite add `push-value` (only
+    pushed values differ) or `other`. A mix
     of reproducible classes is classed as such (redakai run 2026-10-14-005-calibrate F-2: CParticle's double-literal rows
     beside a parameter-register order the normalizer absorbs fell to `other` under the raw classifier)."""
     if target == cand:
         return set()
     classes = set()
     t, c = list(target), list(cand)
-    for name, rw in (("double-literal", _rewrite_double), ("increment", _rewrite_increment)):
+    for name, rw in (("double-literal", _rewrite_double), ("increment", _rewrite_increment)) + DIAGNOSTIC_REWRITES:
         t2, c2 = rw(t), rw(c)
         if _diff_rows(t2, c2) < _diff_rows(t, c):
             classes.add(name)
