@@ -401,8 +401,10 @@ def map_register_locals(text):
     """The text FFDec's compiler sees for a source that names register locals: every identifier a `// registers:` comment
     names is rewritten to `_locN_` inside the function body the comment precedes (its brace-matched block), outside strings
     and comments; the comment line itself and everything else stay as they are. FFDec places a local in a register only
-    under that spelling (whatever N); the source on disk keeps the author's name (K1 §4). A text without such a comment
-    comes back unchanged."""
+    under that spelling (whatever N); the source on disk keeps the author's name (K1 §4). The function's own parameters and
+    the preload names (PRELOAD_ORDER) are never mapped: FFDec places those itself, and a comment whose prose named one made
+    it an undeclared variable (redakai run 2026-10-16-031 F-3: `r3 = levelX, then ...` mapped the parameter levelX). A text
+    without such a comment comes back unchanged."""
     if not REGISTERS_COMMENT_RE.search(text):
         return text
     used = {int(n) for n in re.findall(r"\b_loc(\d+)_\b", text)}
@@ -414,6 +416,10 @@ def map_register_locals(text):
         if not names or span is None or span[0] < pos:
             continue
         open_, close = span
+        fm = re.compile(r"\bfunction\b").search(text, cm.end())
+        pm = re.search(r"\(([^)]*)\)", text[fm.end():open_]) if fm else None
+        params = set(re.findall(IDENT_RE, pm.group(1))) if pm else set()
+        names = [nm for nm in names if nm not in params and nm not in PRELOAD_ORDER]
         mapping = {}
         for nm in names:
             mapping[nm] = f"_loc{nxt}_"
