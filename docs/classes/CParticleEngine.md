@@ -16,4 +16,6 @@ The physics engine: it holds the particles, the wheels and the spring constraint
 | `applyManFrictions()` | yes | `process` (each wheel's `applyAddedAcc`) |
 | `checkCollisions()` | yes | `process` (each wheel's `checkCollision` against `hit_mc`) |
 | `checkConstraints(dTime)` | yes | `process` (each constraint's `resolve`) |
-| `clear`, `setHitMovie`, `computeForces`, `clearForces`, `verlet`, `process` | no | `process` from processGame; the rest from initLevel or `process` |
+| `setHitMovie(hit_mc_)` | yes | initLevel (`engine.setHitMovie(mc_level.mc.mc_hit)`) |
+| `clearForces()` | yes | `process`, once its iterations are done (each wheel's `addedAcc` to zero) |
+| `clear`, `computeForces`, `verlet`, `process` | no | `process` from processGame; the rest from initLevel or `process` |

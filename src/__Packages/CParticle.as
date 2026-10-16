@@ -1,6 +1,9 @@
-// the CParticle class script: registers the class, its constructor and verlet on the prototype, and hides the prototype's new members with ASSetPropFlags
+// the class script for CParticle: register the class on _global once, then put
+// verlet on its prototype
 class CParticle
 {
+   // a particle's state: position, previous position for the Verlet step, mass, acceleration and its clip
+   // registers: r2 = the alias of this (me)
    function CParticle(x_, y_, mass_)
    {
    var me = this;

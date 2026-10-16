@@ -10,3 +10,4 @@ A point mass of the physics: the bike body and the two wheel hubs are one partic
 |---|---|---|
 | `CParticle(x_, y_, mass_)` | yes | initLevel (three particles) |
 | `verlet(dTime, koeffDamp)` | no | CParticleEngine.verlet (`koeffDamp` 0.995) |
+| the class script | yes | the player, on frame 1's init action (registers the class on `_global` once) |

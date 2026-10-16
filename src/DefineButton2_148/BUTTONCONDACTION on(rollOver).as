@@ -1,4 +1,4 @@
-// the roll-over reaction on this button: play the clip "hel" from its second frame
+// rolling over plays `hel` from frame 2 (rolling out plays it from frame 11)
 on(rollOver){
    hel.gotoAndPlay(2);
 }

@@ -26,8 +26,9 @@ function soundOn()
    }
    stopSoundFlag = false;
 }
-// the game's starting state: clear the counters, arm life and the sound flag, then
-// start the music loop and step into the first level
+// a new game: zero scores, timeCounter and stargeted, ten lives, the music over to mc_sloop
+// (updateSoundLoop with zastSoundFlag cleared, unless muted), then level 0 so that
+// nextLevel steps into level 1
 function gameStart()
 {
    scores = 0;
@@ -58,7 +59,7 @@ function nextLevel()
 // through "reset" back to "game" (nextLevel does the same after level++)
 function replay()
 {
-   stargeted = 0.0;
+   stargeted = 0;
    this.gotoAndStop("reset");
    this.gotoAndStop("game");
 }
@@ -72,7 +73,7 @@ function playSnd(lib_snd)
 }
 // @reference initLevel
 // @reference processGame
-// fires the shot: the bullet clip for the current kval (bullet_id < kval) plays its firing animation
+// plays the newest shot (bullet_id<kval>, which processGame attached 50 ms earlier) from frame 2
 function fire()
 {
    eval("_root.bullet_id" + kval).gotoAndPlay(2);

@@ -1,5 +1,4 @@
-// the button's rollOut: send the `sta` timeline back to frame 11
-on(rollOut)
-{
+// rolling out plays `sta` from frame 11 (rolling over plays it from frame 2)
+on(rollOut){
    sta.gotoAndPlay(11);
 }

@@ -35,7 +35,7 @@ The rest is frame actions inside sprites, mostly a single `stop()`.
 The init actions sit on three frames (tag positions from the original): the nine class definitions
 on frame 1, before the preloader `frame_1_DoAction_main`; the three `lib_*` registrations
 (`lib_forward_wheel_main`, `lib_back_wheel_main`, `lib_man_main`) on frame 10; the game's own
-`DoInitAction_main` on frame 11. Buttons 124 and 147 jump from frame 10 to 15. Whether the player runs
+`DoInitAction_main` on frame 11. Button 124 jumps from frame 10 to 15, button 147 from frames 11–12. Whether the player runs
 frame 11's init action on that jump isn't settled here; S13's runtime check can answer it. The init
 action declares the globals with their first values: `stopSoundFlag = false`,
 `zastSoundFlag = true`, `life = 10`, `highQuality = true`, and `bikeSync`, `engine`, `objCamera`,

@@ -32,7 +32,7 @@ function start()
    this.prevTime = getTimer();
 }
 // @reference CParticleEngine.computeForces
-// clears every wheel's added acceleration before the step's forces are recomputed
+// zeroes every wheel's added acceleration; process calls it once its iterations are done
 // registers: r2 = the loop counter (i), r3 = the wheel (w), r4 = the wheel count (len)
 function clearForces()
 {

@@ -1,4 +1,4 @@
-// on roll-out, play the `hel` clip from frame 11 (hel is an original identifier)
+// rolling out plays `hel` from frame 11 (rolling over plays it from frame 2)
 on(rollOut){
    hel.gotoAndPlay(11);
 }

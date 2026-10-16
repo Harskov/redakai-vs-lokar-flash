@@ -10,5 +10,6 @@ The rider on the bike: a MovieClip class (`Object.registerClass("lib_man", CMan)
 |---|---|---|
 | `CMan()` | yes | the player, when `lib_man` is placed (registerClass) |
 | `stopMCAnim()` | yes | processGame, loose (after `stopAnim`) |
-| `stopAnim`, `startAnim` | no | processGame, loose, resume, pauseGame |
+| `stopAnim()` | yes | processGame, pauseGame, loose |
+| `startAnim()` | yes | resume |
 | `onEnterFrame`, `toLeft`, `toRight`, `fromLeft`, `fromRight`, `endMove` | no | the player each frame; each other |
