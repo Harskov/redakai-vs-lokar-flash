@@ -2,7 +2,21 @@
 function CParticleEngine()
 {
 }
-// @reference CParticleEngine.clear
+// clears the engine by emptying its particle, wheel and constraint arrays
+// registers: r2 = the alias of this (engine)
+function clear()
+{
+   var engine = this;
+   while(engine.p_array.pop() != undefined)
+   {
+   }
+   while(engine.w_array.pop() != undefined)
+   {
+   }
+   while(engine.c_array.pop() != undefined)
+   {
+   }
+}
 // gives the engine the clip its wheels test against (checkCollisions passes it to each wheel)
 function setHitMovie(hit_mc_)
 {

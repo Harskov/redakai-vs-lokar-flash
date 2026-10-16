@@ -8,7 +8,7 @@
     "sha256": "35f4930eb7c380afe66f2117f90b006deac0631473ad7500bb39c78f68645ecd"
   },
   "match_criterion": "pcode-normalized",
-  "normalizer_version": 4,
+  "normalizer_version": 5,
   "build_strategy": "pcode-splice",
   "original": {
     "file": "Redakai vs Lokar.swf",

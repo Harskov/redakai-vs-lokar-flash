@@ -57,7 +57,14 @@ function scalar(v)
 {
    return this.x * v.x + this.y * v.y;
 }
-// @reference CVector2D.modul
+// the vector's length (Russian "modul")
+// registers: r2 = the alias of this (vec)
+function modul()
+{
+   var vec = this;
+   Math.sqrt(vec.x * vec.x + vec.y * vec.y);
+   return Math.sqrt(vec.x * vec.x + vec.y * vec.y);
+}
 // reflects the vector off a surface with normal n: rotate into the normal's frame, flip the x component, rotate back
 // registers: r2 = the alias of this (v), r3 = the normal's angle from atan2 (a)
 function reflectFromNormal(n)
