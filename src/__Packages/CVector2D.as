@@ -57,7 +57,7 @@ function scalar(v)
 {
    return this.x * v.x + this.y * v.y;
 }
-// the vector's length (Russian "modul")
+// the vector's length (Russian "modul"); the original computes it twice and drops the first result
 // registers: r2 = the alias of this (vec)
 function modul()
 {

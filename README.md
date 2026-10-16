@@ -30,13 +30,13 @@ with AI assistance, and accepted only when the pinned toolchain rebuilt it to ma
 | Milestone | Status | Exit judged on |
 |---|---|---|
 | M1 Contributable | done | public-build.json ok=True; matched outside their unit: 0 |
-| M2 Identified | current | name pass closed: True; unlabelled game functions: 0; review pending: 2 |
+| M2 Identified | done | name pass closed: True; unlabelled game functions: 0; review pending: 0 |
 | M3 Platform boundary | done | 1/1 platform functions matched; PLATFORM.md present |
-| M4 Core | later | 9/13 core functions matched; FORMATS.md missing |
+| M4 Core | current | 9/13 core functions matched; FORMATS.md missing |
 | M5 Gameplay | later | 103/146 gameplay functions matched |
 | M6 Complete | later | 148/202 game functions matched; check ok=True |
 | M7 Documented | later | docs.py check ok=False (2026-10-16T06:37:28Z) |
-| M8 Behaviour-verified | done | last behaviour compare ok=True at 2026-10-16T06:36:49Z; coverage: no input (28 matched input handler(s) unexercised) |
+| M8 Behaviour-verified | later | last behaviour compare ok=True at 2026-10-16T06:36:49Z; coverage: no input (28 matched input handler(s) unexercised) |
 | M9 Reverse-engineered | later | names without checked evidence: 0; matches since the last name pass: 27; named types with two layouts: 0 |
 
 The milestones and why they come in this order: [ROADMAP.md](ROADMAP.md).
