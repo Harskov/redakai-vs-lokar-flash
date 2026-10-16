@@ -1,1 +1,166 @@
-{"schema": 1, "fps": null, "checkpoints": []}
+{
+  "schema": 1,
+  "fps": 35,
+  "checkpoints": [
+    {
+      "name": "frame-1",
+      "frame": 1,
+      "why": "the first frame"
+    },
+    {
+      "name": "label-logo",
+      "frame": 10,
+      "why": "frame label `logo`"
+    },
+    {
+      "name": "label-soundatta",
+      "frame": 11,
+      "why": "frame label `soundatta`"
+    },
+    {
+      "name": "label-main",
+      "frame": 12,
+      "why": "frame label `main`"
+    },
+    {
+      "name": "label-carselection",
+      "frame": 13,
+      "why": "frame label `carselection`"
+    },
+    {
+      "name": "label-help",
+      "frame": 14,
+      "why": "frame label `help`"
+    },
+    {
+      "name": "label-game",
+      "frame": 15,
+      "why": "frame label `game`"
+    },
+    {
+      "name": "label-reset",
+      "frame": 16,
+      "why": "frame label `reset`"
+    },
+    {
+      "name": "label-comple",
+      "frame": 17,
+      "why": "frame label `comple`"
+    },
+    {
+      "name": "label-level_selection",
+      "frame": 18,
+      "why": "frame label `level selection`"
+    },
+    {
+      "name": "label-gamewin",
+      "frame": 19,
+      "why": "frame label `gamewin`"
+    },
+    {
+      "name": "label-gameover",
+      "frame": 20,
+      "why": "frame label `gameover`"
+    },
+    {
+      "name": "t01s-f35",
+      "frame": 35,
+      "why": "every 35th player frame to 20 s"
+    },
+    {
+      "name": "t02s-f70",
+      "frame": 70,
+      "why": "every 35th player frame to 20 s"
+    },
+    {
+      "name": "t03s-f105",
+      "frame": 105,
+      "why": "every 35th player frame to 20 s"
+    },
+    {
+      "name": "t04s-f140",
+      "frame": 140,
+      "why": "every 35th player frame to 20 s"
+    },
+    {
+      "name": "t05s-f175",
+      "frame": 175,
+      "why": "every 35th player frame to 20 s"
+    },
+    {
+      "name": "t06s-f210",
+      "frame": 210,
+      "why": "every 35th player frame to 20 s"
+    },
+    {
+      "name": "t07s-f245",
+      "frame": 245,
+      "why": "every 35th player frame to 20 s"
+    },
+    {
+      "name": "t08s-f280",
+      "frame": 280,
+      "why": "every 35th player frame to 20 s"
+    },
+    {
+      "name": "t09s-f315",
+      "frame": 315,
+      "why": "every 35th player frame to 20 s"
+    },
+    {
+      "name": "t10s-f350",
+      "frame": 350,
+      "why": "every 35th player frame to 20 s"
+    },
+    {
+      "name": "t11s-f385",
+      "frame": 385,
+      "why": "every 35th player frame to 20 s"
+    },
+    {
+      "name": "t12s-f420",
+      "frame": 420,
+      "why": "every 35th player frame to 20 s"
+    },
+    {
+      "name": "t13s-f455",
+      "frame": 455,
+      "why": "every 35th player frame to 20 s"
+    },
+    {
+      "name": "t14s-f490",
+      "frame": 490,
+      "why": "every 35th player frame to 20 s"
+    },
+    {
+      "name": "t15s-f525",
+      "frame": 525,
+      "why": "every 35th player frame to 20 s"
+    },
+    {
+      "name": "t16s-f560",
+      "frame": 560,
+      "why": "every 35th player frame to 20 s"
+    },
+    {
+      "name": "t17s-f595",
+      "frame": 595,
+      "why": "every 35th player frame to 20 s"
+    },
+    {
+      "name": "t18s-f630",
+      "frame": 630,
+      "why": "every 35th player frame to 20 s"
+    },
+    {
+      "name": "t19s-f665",
+      "frame": 665,
+      "why": "every 35th player frame to 20 s"
+    },
+    {
+      "name": "t20s-f700",
+      "frame": 700,
+      "why": "every 35th player frame to 20 s"
+    }
+  ]
+}

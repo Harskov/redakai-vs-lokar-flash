@@ -1,5 +1,6 @@
-// @reference DefineSprite_399_frame_2_DoAction_main
-// the button's press: play the clip from the frame labelled "on"
+// the sound button: stop the clip's timeline and all sounds; the press itself is the onPress record
+stop();
+stopAllSounds();
 btnon.onPress = function()
 {
    gotoAndPlay("on");

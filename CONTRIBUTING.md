@@ -22,9 +22,11 @@ copied here: the work is clean-room from the original file.
 
 ## Naming
 
-A name is written only with cited evidence (a string the function references, a named caller, a frame label, a field it
-reads); without evidence the systematic name stays (it is better to leave it unnamed than name it wrongly). The symbol map
-in `symbols/` carries each name's evidence. Original identifiers kept by the bytecode are names with evidence.
+A name is written only with evidence a script can check (a string the function references, an SDK prototype a value is
+passed to, a library symbol, a checked caller or callee, a member tested against a mask or bounding a loop); without it the
+systematic name stays (it is better to leave it unnamed than name it wrongly). `docs/NAMES.md` lists every name with its
+evidence, and the symbol map in `symbols/` carries it too. Original identifiers kept by the bytecode are names with evidence.
+A pull request that names something states the facts; the maintainer's tooling checks them before the name is written.
 
 ## Readability
 

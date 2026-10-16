@@ -20,7 +20,12 @@ onRelease = function()
    _root.lvls = 10;
    gameStart();
 };
-// @reference frame_18_DoAction.onRelease_11
+// the le11 button: set lvls to 11 and start the game
+onRelease = function()
+{
+   _root.lvls = 11;
+   gameStart();
+};
 // @reference frame_18_DoAction.onRelease_12
 // @reference frame_18_DoAction.onRelease_13
 // @reference frame_18_DoAction.onRelease_14

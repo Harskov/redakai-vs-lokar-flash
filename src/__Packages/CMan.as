@@ -6,12 +6,20 @@ function CMan()
    this.stopFlag = false;
    this.state = 0;
 }
-// @reference CMan.stopAnim
+// stops the man's animation: sets the flag the enterFrame handler checks
+function stopAnim()
+{
+   this.stopFlag = true;
+}
 function stopMCAnim()
 {
    this.mc.stop();
 }
-// @reference CMan.startAnim
+// restart the man's animation: clear the flag that stopAnim set
+function startAnim()
+{
+   this.stopFlag = false;
+}
 // @reference CMan.onEnterFrame
 // @reference CMan.toLeft
 // @reference CMan.toRight

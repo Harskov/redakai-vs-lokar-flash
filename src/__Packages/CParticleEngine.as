@@ -3,7 +3,11 @@ function CParticleEngine()
 {
 }
 // @reference CParticleEngine.clear
-// @reference CParticleEngine.setHitMovie
+// gives the engine the clip its wheels test against (checkCollisions passes it to each wheel)
+function setHitMovie(hit_mc_)
+{
+   this.hit_mc = hit_mc_;
+}
 // the engine keeps its particles in p_array
 function addParticle(p)
 {
@@ -28,7 +32,19 @@ function start()
    this.prevTime = getTimer();
 }
 // @reference CParticleEngine.computeForces
-// @reference CParticleEngine.clearForces
+// clears every wheel's added acceleration before the step's forces are recomputed
+// registers: r2 = the loop counter (i), r3 = the wheel (w), r4 = the wheel count (len)
+function clearForces()
+{
+   var len = this.w_array.length;
+   var i;
+   var w;
+   for(i = 0; i < len; i++)
+   {
+      w = this.w_array[i];
+      w.addedAcc.x = w.addedAcc.y = 0;
+   }
+}
 // every wheel applies its added acceleration; the method's name calls these the man's frictions
 // registers: r3 = the alias of this (engine), r4 = the number of wheels (count), r2 = the loop counter (i)
 function applyManFrictions()

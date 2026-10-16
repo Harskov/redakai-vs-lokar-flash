@@ -25,18 +25,19 @@ with AI assistance, and accepted only when the pinned toolchain rebuilt it to ma
 
 ## Progress
 
-**114 of 202 game functions are matched** (1,318 of 10,936 instructions, 12.05 %). 107 functions carry a name backed by evidence; 202 carry a subsystem label.
+**129 of 202 game functions are matched** (1,507 of 10,936 instructions, 13.78 %). 52 of the matched and 107 of all game functions carry a name whose evidence a script checked; so do 9 of 9 types, 137 of 137 members the matched code reaches; 202 functions carry a subsystem label. Every name and its evidence: [docs/NAMES.md](docs/NAMES.md).
 
 | Milestone | Status | Exit judged on |
 |---|---|---|
 | M1 Contributable | done | public-build.json ok=True; matched outside their unit: 0 |
-| M2 Identified | done | name pass closed: True; unlabelled game functions: 0; review pending: 0 |
+| M2 Identified | current | name pass closed: True; unlabelled game functions: 0; review pending: 15 |
 | M3 Platform boundary | done | 1/1 platform functions matched; PLATFORM.md present |
-| M4 Core | current | 3/13 core functions matched; FORMATS.md missing |
-| M5 Gameplay | later | 92/146 gameplay functions matched |
-| M6 Complete | later | 114/202 game functions matched; check ok=True |
+| M4 Core | later | 4/13 core functions matched; FORMATS.md missing |
+| M5 Gameplay | later | 101/146 gameplay functions matched |
+| M6 Complete | later | 129/202 game functions matched; check ok=True |
 | M7 Documented | done | docs.py check ok=True (2026-10-14T23:34:21Z) |
 | M8 Behaviour-verified | later | last behaviour compare ok=None at never |
+| M9 Reverse-engineered | later | names without checked evidence: 0; matches since the last name pass: 36; named types with two layouts: 0 |
 
 The milestones and why they come in this order: [ROADMAP.md](ROADMAP.md).
 
@@ -48,8 +49,11 @@ The source here was written function by function and accepted only when the pinn
 original under the project's criterion (the recompiled P-code must equal the original's listing, both taken with FFDec's AS1/2 deobfuscator on, after a documented normalization (constant-pool resolution, register and jump numbering, one value per push, an obfuscator's two leftover statements)). Much of it was drafted with AI assistance (Claude, and the
 batch lane's models); every accepted function was rebuilt and compared by the tooling on the maintainer's machine, and
 the commit that adds a function carries a credit line naming who wrote it (`Co-Authored-By: Claude <noreply@anthropic.com>`
-for the operator's model, `Assisted-by: <model> (batch)` for the batch lane). Names are given only with cited evidence (a
-string, a caller, a frame label, a field); otherwise the systematic placeholder stays. A function marked `// !FAKE:` matches
+for the operator's model, `Assisted-by: <model> (batch)` for the batch lane). A name — of a function, a type, a struct member
+or a global — is written only after a script has checked each fact it cites against the code (a string, an SDK prototype, a
+library symbol, a checked caller, what the matched code does with a member) and every word of the name against those facts;
+otherwise the systematic placeholder stays. [docs/NAMES.md](docs/NAMES.md) lists every name with its evidence, so each one can
+be checked again. A function marked `// !FAKE:` matches
 through an implausible form and is listed as readability debt in [ROADMAP.md](ROADMAP.md).
 
 ## Platform: Adobe Flash (AVM1, ActionScript 1/2)
@@ -65,7 +69,7 @@ maintainer's tooling does with a merged pull request.
 ## Layout
 
 `src/` the source in the layout the toolchain consumes (one file per unit; a function not yet accepted is a reference
-line) · `docs/` the architecture, the subsystem pages and the code map · `config/flash-avm1/` the toolchain pin and the
+line) · `docs/` the architecture, the subsystem pages, the code map and `NAMES.md` (every name and its evidence) · `config/flash-avm1/` the toolchain pin and the
 checksum · `symbols/` the symbol map with its evidence · `tools/` the contributor copies of the lint and the check ·
 `progress/report.json` the progress report.
 

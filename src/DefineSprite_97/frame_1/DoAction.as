@@ -1,1 +1,2 @@
-// @reference DefineSprite_97_frame_1_DoAction_main
+// the chosen jeep: send the `jeep` sprite to its selection frame
+jeep.gotoAndStop(_root.jeepselection);

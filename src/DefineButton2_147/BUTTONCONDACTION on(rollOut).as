@@ -1,1 +1,5 @@
-// @reference DefineButton2_147_BUTTONCONDACTION_on_rollOut_main
+// the button's rollOut: send the `sta` timeline back to frame 11
+on(rollOut)
+{
+   sta.gotoAndPlay(11);
+}

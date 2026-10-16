@@ -26,7 +26,19 @@ function soundOn()
    }
    stopSoundFlag = false;
 }
-// @reference gameStart
+// the game's starting state: clear the counters, arm life and the sound flag, then
+// start the music loop and step into the first level
+function gameStart()
+{
+   scores = 0;
+   timeCounter = 0;
+   stargeted = 0;
+   life = 10;
+   zastSoundFlag = false;
+   updateSoundLoop();
+   level = 0;
+   nextLevel();
+}
 // after level 10 the game starts over (newGame); otherwise the next level, stepping
 // the timeline through "reset" back to "game" as replay does
 function nextLevel()
@@ -60,7 +72,11 @@ function playSnd(lib_snd)
 }
 // @reference initLevel
 // @reference processGame
-// @reference fire
+// fires the shot: the bullet clip for the current kval (bullet_id < kval) plays its firing animation
+function fire()
+{
+   eval("_root.bullet_id" + kval).gotoAndPlay(2);
+}
 // re-arms the gun: processGame clears kfire when it fires a shot and calls this 290 ms later
 function resetkfire()
 {
