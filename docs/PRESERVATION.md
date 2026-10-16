@@ -18,3 +18,10 @@ committed (counts and hashes). Assets are inventoried in `assets/MANIFEST.json` 
 ## Runtime notes
 
 Filled at S13 from the behaviour checks (Ruffle renders of the original and the rebuilt file at the recorded checkpoints).
+
+- 2026-10-16, Ruffle's exporter built from the pinned 0.7.1 commit, headless on Mesa's software Vulkan: all 32
+  checkpoints in `tests/behaviour/checkpoints.json` (the first frame, the first frame of each of the 11 main-timeline
+  labels, every 35th frame to 20 s) render pixel-identical for the original and the rebuilt file
+  (`tests/behaviour/hashes.json`).
+- Coverage: the exporter plays the file from its first frame with no mouse or keyboard input, so every checkpoint shows
+  the unattended playback path; game states that depend on player input are not exercised yet.

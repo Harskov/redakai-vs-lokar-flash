@@ -36,7 +36,7 @@ with AI assistance, and accepted only when the pinned toolchain rebuilt it to ma
 | M5 Gameplay | later | 101/146 gameplay functions matched |
 | M6 Complete | later | 146/202 game functions matched; check ok=True |
 | M7 Documented | later | docs.py check ok=False (2026-10-16T02:04:52Z) |
-| M8 Behaviour-verified | later | last behaviour compare ok=None at never |
+| M8 Behaviour-verified | done | last behaviour compare ok=True at 2026-10-16T04:03:21Z |
 | M9 Reverse-engineered | later | names without checked evidence: 0; matches since the last name pass: 25; named types with two layouts: 0 |
 
 The milestones and why they come in this order: [ROADMAP.md](ROADMAP.md).
