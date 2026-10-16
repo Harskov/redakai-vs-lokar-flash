@@ -1,4 +1,4 @@
-// the clip installs its per-frame handler
+// the end of the crash animation: one life fewer, then the level again
 onEnterFrame = function()
 {
    _root.lifee -= 1;

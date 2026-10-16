@@ -1,3 +1,3 @@
 // the crash sound: silence every other sound, then start this one once from the top
 stopAllSounds();
-_root.cra.start(0.0, 1);
+_root.cra.start(0, 1);

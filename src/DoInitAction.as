@@ -1,6 +1,7 @@
 // the game's init script, run once: its functions, then its variables with their starting values
 function updateSoundLoop()
 { /* @reference updateSoundLoop */ }
+// mutes the music: the loop clip in use (mc_sloop_zast while zastSoundFlag is set, else mc_sloop) goes to frame 3
 function soundOff()
 {
    if(zastSoundFlag)
@@ -13,6 +14,7 @@ function soundOff()
    }
    stopSoundFlag = true;
 }
+// unmutes the music: the loop clip in use goes back to frame 2
 function soundOn()
 {
    if(zastSoundFlag)
@@ -25,6 +27,9 @@ function soundOn()
    }
    stopSoundFlag = false;
 }
+// a new game: zero scores, timeCounter and stargeted, ten lives, the music over to mc_sloop
+// (updateSoundLoop with zastSoundFlag cleared, unless muted), then level 0 so that
+// nextLevel steps into level 1
 function gameStart()
 {
    scores = 0;
@@ -36,6 +41,8 @@ function gameStart()
    level = 0;
    nextLevel();
 }
+// after level 10 the game starts over (newGame); otherwise the next level, stepping
+// the timeline through "reset" back to "game" as replay does
 function nextLevel()
 {
    stargeted = 0;
@@ -49,6 +56,8 @@ function nextLevel()
    this.gotoAndStop("reset");
    this.gotoAndStop("game");
 }
+// restart the current level: reset the stargeted count, then step the timeline
+// through "reset" back to "game" (nextLevel does the same after level++)
 function replay()
 {
    stargeted = 0;
@@ -57,6 +66,7 @@ function replay()
 }
 function newGame()
 { /* @reference newGame */ }
+// plays a library sound by its linkage name: attach it to a Sound on this timeline and start it
 function playSnd(lib_snd)
 {
    s = new Sound(this);
@@ -67,20 +77,25 @@ function initLevel()
 { /* @reference initLevel */ }
 function processGame()
 { /* @reference processGame */ }
+// plays the newest shot (bullet_id<kval>, which processGame attached 50 ms earlier) from frame 2
 function fire()
 {
    eval("_root.bullet_id" + kval).gotoAndPlay(2);
 }
+// re-arms the gun: processGame clears kfire when it fires a shot and calls this 290 ms later
 function resetkfire()
 {
    kfire = true;
 }
+// the clock readout: the elapsed game time (timeCounter) formatted into txtTime
 function showTime()
 {
    txtTime = getTimeString(timeCounter);
 }
 function getTimeString(time)
 { /* @reference getTimeString */ }
+// undo pauseGame: clear the message box ("empty"), restart the rider's animation, gameState 0;
+// mc_sloop (probably the looping sound's clip) goes back to frame 2 unless sound is off
 function resume()
 {
    // !FAKE: the author wrote if(!stopSoundFlag); the doubled parentheses keep the double Not before the branch
@@ -93,6 +108,8 @@ function resume()
    bikeSync.mc_bike.mc.mc_body_man.mc.startAnim();
    gameState = 0;
 }
+// pause the game: show the "pause" message, stop the rider's animation, gameState 4;
+// mc_sloop (probably the looping sound's clip) goes to frame 3 unless sound is off
 function pauseGame()
 {
    // !FAKE: the author wrote if(!stopSoundFlag); the doubled parentheses keep the double Not before the branch
@@ -106,6 +123,8 @@ function pauseGame()
 }
 function clearStuff()
 { /* @reference clearStuff */ }
+// a lost life (the author's "loose" for lose): fail sound, one life off, the wheels moved
+// 1000 px right (probably off the stage), the crash clips played, the times and score shown
 function loose()
 {
    clearStuff();

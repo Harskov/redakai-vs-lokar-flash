@@ -6,13 +6,13 @@ class CParticle
    // registers: r2 = the alias of this (me)
    function CParticle(x_, y_, mass_)
    {
-   var me = this;
-   me.pos = new CVector2D(x_, y_);
-   me.prevPos = me.pos.duplicate();
-   me.mass = mass_;
-   me.acc = new CVector2D(0, 0);
-   me.mc = null;
-}
+      var me = this;
+      me.pos = new CVector2D(x_, y_);
+      me.prevPos = me.pos.duplicate();
+      me.mass = mass_;
+      me.acc = new CVector2D(0, 0);
+      me.mc = null;
+   }
    function verlet(dTime, koeffDamp)
    { /* @reference CParticle.verlet */ }
 }
