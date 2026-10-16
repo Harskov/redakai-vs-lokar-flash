@@ -67,7 +67,7 @@ DefineSprite_86_frame_1_PlaceObject2_52_27_CLIPACTIONRECORD_onClipEvent_enterFra
 DefineSprite_87_frame_1_DoAction_main	DefineSprite_87_frame_1_DoAction	main	matched	gameplay/lib_bike_body	code of symbol 87 (sprites/sprite_87/frame_1): symbol 87 placed inside symbol 97 (frame 1) as `jeep`; symbol 97 placed inside symbol lib_bike_body (frame 1) as `mc`
 DefineSprite_95_lib_man_frame_1_DoAction_main	DefineSprite_95_lib_man_frame_1_DoAction	main	wip	gameplay/lib_man	code of symbol lib_man (sprites/lib_man/frame_1)
 DefineSprite_97_frame_1_DoAction_main	DefineSprite_97_frame_1_DoAction	main	matched	gameplay/lib_bike_body	code of symbol 97 (sprites/sprite_97/frame_1): symbol 97 placed inside symbol lib_bike_body (frame 1) as `mc`
-DoInitAction_main	DoInitAction	main	asm	core	initialises the game globals gameState, level, life, scores (tag 304, the init action of character 150)
+DoInitAction_main	DoInitAction	main	matched	core	initialises the game globals gameState, level, life, scores (tag 304, the init action of character 150)
 updateSoundLoop	DoInitAction	function	wip	audio	reads stopSoundFlag, zastSoundFlag; drives mc_sloop, mc_sloop_zast
 soundOff	DoInitAction	function	matched	audio	writes stopSoundFlag; drives the sound-loop clips mc_sloop, mc_sloop_zast
 soundOn	DoInitAction	function	matched	audio	writes stopSoundFlag; drives the sound-loop clips mc_sloop, mc_sloop_zast
@@ -82,10 +82,10 @@ fire	DoInitAction	function	matched	gameplay/bullet_id	gotoAndPlay on _root.bulle
 resetkfire	DoInitAction	function	matched	gameplay/bullet_id	clears kfire, which processGame checks before attaching bullet_id
 showTime	DoInitAction	function	matched	ui	writes the clock text field txtTime
 getTimeString	DoInitAction	function	asm	ui	formats the clock readout with ":" (callers showTime, loose)
-resume	DoInitAction	function	wip	core	writes gameState; restarts bikeSync animation
-pauseGame	DoInitAction	function	wip	core	writes gameState; gotoAndStop("pause") on mc_messageF
-clearStuff	DoInitAction	function	asm	core	resets bulletArray, bomb and helicop state between levels
-loose	DoInitAction	function	asm	core	writes gameState; calls clearStuff, playSnd
+resume	DoInitAction	function	matched	core	writes gameState; restarts bikeSync animation
+pauseGame	DoInitAction	function	matched	core	writes gameState; gotoAndStop("pause") on mc_messageF
+clearStuff	DoInitAction	function	wip	core	resets bulletArray, bomb and helicop state between levels
+loose	DoInitAction	function	matched	core	writes gameState; calls clearStuff, playSnd
 calcBikeNVector	DoInitAction	function	asm	gameplay/cbikesynchronizer	reads bikeSync (a CBikeSynchronizer) wheel particle positions
 Packages_CBack_main	Packages_CBack	main	wip	gameplay/cback	a method of class CBack (__Packages/CBack)
 CBack	Packages_CBack	constructor	matched	gameplay/cback	a method of class CBack (__Packages/CBack)
@@ -161,7 +161,7 @@ CWheel.pushOut	Packages_CWheel	method	asm	gameplay/cwheel	a method of class CWhe
 CWheel.validateRotation	Packages_CWheel	method	asm	gameplay/cwheel	a method of class CWheel (__Packages/CWheel)
 CWheel.applyAddedAcc	Packages_CWheel	method	asm	gameplay/cwheel	a method of class CWheel (__Packages/CWheel)
 frame_1_DoAction_main	frame_1_DoAction	main	matched	core	frame 1 of the main timeline (boot)
-frame_1_DoAction.onEnterFrame	frame_1_DoAction	handler	asm	core	frame 1 of the main timeline (boot)
+frame_1_DoAction.onEnterFrame	frame_1_DoAction	handler	matched	core	frame 1 of the main timeline (boot)
 frame_10_DoAction_main	frame_10_DoAction	main	asm	audio	constructs or drives Sound (Sound, attachSound, start)
 frame_11_DoAction_main	frame_11_DoAction	main	matched	platform	only player API: stop
 frame_12_DoAction_main	frame_12_DoAction	main	matched	ui	frame 12 `main` (a menu or result screen)
@@ -182,20 +182,20 @@ frame_17_DoAction_main	frame_17_DoAction	main	asm	ui	frame 17 `comple` (a menu o
 frame_18_DoAction_main	frame_18_DoAction	main	wip	ui	frame 18 `level selection` (a menu or result screen)
 frame_18_DoAction.onEnterFrame	frame_18_DoAction	handler	asm	ui	frame 18 `level selection` (a menu or result screen)
 frame_18_DoAction.onRelease	frame_18_DoAction	handler	matched	ui	frame 18 `level selection` (a menu or result screen)
-frame_18_DoAction.onRelease_2	frame_18_DoAction	handler	wip	ui	frame 18 `level selection` (a menu or result screen)
-frame_18_DoAction.onRelease_3	frame_18_DoAction	handler	wip	ui	frame 18 `level selection` (a menu or result screen)
-frame_18_DoAction.onRelease_4	frame_18_DoAction	handler	wip	ui	frame 18 `level selection` (a menu or result screen)
-frame_18_DoAction.onRelease_5	frame_18_DoAction	handler	wip	ui	frame 18 `level selection` (a menu or result screen)
-frame_18_DoAction.onRelease_6	frame_18_DoAction	handler	wip	ui	frame 18 `level selection` (a menu or result screen)
-frame_18_DoAction.onRelease_7	frame_18_DoAction	handler	wip	ui	frame 18 `level selection` (a menu or result screen)
-frame_18_DoAction.onRelease_8	frame_18_DoAction	handler	wip	ui	frame 18 `level selection` (a menu or result screen)
-frame_18_DoAction.onRelease_9	frame_18_DoAction	handler	wip	ui	frame 18 `level selection` (a menu or result screen)
+frame_18_DoAction.onRelease_2	frame_18_DoAction	handler	matched	ui	frame 18 `level selection` (a menu or result screen)
+frame_18_DoAction.onRelease_3	frame_18_DoAction	handler	matched	ui	frame 18 `level selection` (a menu or result screen)
+frame_18_DoAction.onRelease_4	frame_18_DoAction	handler	matched	ui	frame 18 `level selection` (a menu or result screen)
+frame_18_DoAction.onRelease_5	frame_18_DoAction	handler	matched	ui	frame 18 `level selection` (a menu or result screen)
+frame_18_DoAction.onRelease_6	frame_18_DoAction	handler	matched	ui	frame 18 `level selection` (a menu or result screen)
+frame_18_DoAction.onRelease_7	frame_18_DoAction	handler	matched	ui	frame 18 `level selection` (a menu or result screen)
+frame_18_DoAction.onRelease_8	frame_18_DoAction	handler	matched	ui	frame 18 `level selection` (a menu or result screen)
+frame_18_DoAction.onRelease_9	frame_18_DoAction	handler	matched	ui	frame 18 `level selection` (a menu or result screen)
 frame_18_DoAction.onRelease_10	frame_18_DoAction	handler	matched	ui	frame 18 `level selection` (a menu or result screen)
 frame_18_DoAction.onRelease_11	frame_18_DoAction	handler	matched	ui	frame 18 `level selection` (a menu or result screen)
-frame_18_DoAction.onRelease_12	frame_18_DoAction	handler	wip	ui	frame 18 `level selection` (a menu or result screen)
-frame_18_DoAction.onRelease_13	frame_18_DoAction	handler	wip	ui	frame 18 `level selection` (a menu or result screen)
-frame_18_DoAction.onRelease_14	frame_18_DoAction	handler	wip	ui	frame 18 `level selection` (a menu or result screen)
-frame_18_DoAction.onRelease_15	frame_18_DoAction	handler	wip	ui	frame 18 `level selection` (a menu or result screen)
+frame_18_DoAction.onRelease_12	frame_18_DoAction	handler	matched	ui	frame 18 `level selection` (a menu or result screen)
+frame_18_DoAction.onRelease_13	frame_18_DoAction	handler	matched	ui	frame 18 `level selection` (a menu or result screen)
+frame_18_DoAction.onRelease_14	frame_18_DoAction	handler	matched	ui	frame 18 `level selection` (a menu or result screen)
+frame_18_DoAction.onRelease_15	frame_18_DoAction	handler	matched	ui	frame 18 `level selection` (a menu or result screen)
 frame_19_DoAction_main	frame_19_DoAction	main	matched	ui	frame 19 `gamewin` (a menu or result screen)
 frame_20_DoAction_main	frame_20_DoAction	main	matched	ui	frame 20 `gameover` (a menu or result screen)
 lib_back_wheel_main	lib_back_wheel	main	matched	gameplay/cwheel	Object.registerClass("lib_back_wheel", CWheel) in the init action of the exported symbol lib_back_wheel

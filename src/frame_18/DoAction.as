@@ -6,14 +6,54 @@ onRelease = function()
    _root.lvls = 1;
    gameStart();
 };
-// @reference frame_18_DoAction.onRelease_2
-// @reference frame_18_DoAction.onRelease_3
-// @reference frame_18_DoAction.onRelease_4
-// @reference frame_18_DoAction.onRelease_5
-// @reference frame_18_DoAction.onRelease_6
-// @reference frame_18_DoAction.onRelease_7
-// @reference frame_18_DoAction.onRelease_8
-// @reference frame_18_DoAction.onRelease_9
+// the le2 button: set lvls to 2 and start the game
+onRelease = function()
+{
+   _root.lvls = 2;
+   gameStart();
+};
+// the le3 button: set lvls to 3 and start the game
+onRelease = function()
+{
+   _root.lvls = 3;
+   gameStart();
+};
+// the le4 button: set lvls to 4 and start the game
+onRelease = function()
+{
+   _root.lvls = 4;
+   gameStart();
+};
+// the le5 button: set lvls to 5 and start the game
+onRelease = function()
+{
+   _root.lvls = 5;
+   gameStart();
+};
+// the le6 button: set lvls to 6 and start the game
+onRelease = function()
+{
+   _root.lvls = 6;
+   gameStart();
+};
+// the le7 button: set lvls to 7 and start the game
+onRelease = function()
+{
+   _root.lvls = 7;
+   gameStart();
+};
+// the le8 button: set lvls to 8 and start the game
+onRelease = function()
+{
+   _root.lvls = 8;
+   gameStart();
+};
+// the le9 button: set lvls to 9 and start the game
+onRelease = function()
+{
+   _root.lvls = 9;
+   gameStart();
+};
 // the le10 button: set lvls to 10 and start the game
 onRelease = function()
 {
@@ -26,7 +66,27 @@ onRelease = function()
    _root.lvls = 11;
    gameStart();
 };
-// @reference frame_18_DoAction.onRelease_12
-// @reference frame_18_DoAction.onRelease_13
-// @reference frame_18_DoAction.onRelease_14
-// @reference frame_18_DoAction.onRelease_15
+// the le12 button: set lvls to 12 and start the game
+onRelease = function()
+{
+   _root.lvls = 12;
+   gameStart();
+};
+// the le13 button: set lvls to 13 and start the game
+onRelease = function()
+{
+   _root.lvls = 13;
+   gameStart();
+};
+// the le14 button: set lvls to 14 and start the game
+onRelease = function()
+{
+   _root.lvls = 14;
+   gameStart();
+};
+// the le15 button: set lvls to 15 and start the game
+onRelease = function()
+{
+   _root.lvls = 15;
+   gameStart();
+};

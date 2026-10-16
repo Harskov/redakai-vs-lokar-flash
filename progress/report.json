@@ -1,15 +1,15 @@
 {
   "version": 2,
   "measures": {
-    "fuzzy_match_percent": 17.66,
+    "fuzzy_match_percent": 22.1,
     "total_code": 10936,
-    "matched_code": 1507,
-    "matched_code_percent": 13.78,
+    "matched_code": 2011,
+    "matched_code_percent": 18.39,
     "total_functions": 202,
-    "matched_functions": 129,
-    "matched_functions_percent": 63.86,
+    "matched_functions": 146,
+    "matched_functions_percent": 72.28,
     "total_units": 95,
-    "complete_units": 73
+    "complete_units": 74
   },
   "units": [
     {
@@ -1793,19 +1793,19 @@
     {
       "name": "init/DoInitAction",
       "measures": {
-        "fuzzy_match_percent": 10.32,
+        "fuzzy_match_percent": 24.61,
         "total_code": 2832,
-        "matched_code": 159,
-        "matched_code_percent": 5.61,
+        "matched_code": 496,
+        "matched_code_percent": 17.51,
         "total_functions": 20,
-        "matched_functions": 9,
-        "matched_functions_percent": 45.0
+        "matched_functions": 13,
+        "matched_functions_percent": 65.0
       },
       "functions": [
         {
           "name": "DoInitAction_main",
           "size": 51,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "updateSoundLoop",
@@ -1880,22 +1880,22 @@
         {
           "name": "resume",
           "size": 45,
-          "fuzzy_match_percent": 96.77
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "pauseGame",
           "size": 38,
-          "fuzzy_match_percent": 97.44
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "clearStuff",
           "size": 184,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 80.57
         },
         {
           "name": "loose",
           "size": 203,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "calcBikeNVector",
@@ -2492,13 +2492,13 @@
     {
       "name": "timeline/frame_1",
       "measures": {
-        "fuzzy_match_percent": 27.55,
+        "fuzzy_match_percent": 100.0,
         "total_code": 98,
-        "matched_code": 27,
-        "matched_code_percent": 27.55,
+        "matched_code": 98,
+        "matched_code_percent": 100.0,
         "total_functions": 2,
-        "matched_functions": 1,
-        "matched_functions_percent": 50.0
+        "matched_functions": 2,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
@@ -2509,11 +2509,11 @@
         {
           "name": "frame_1_DoAction.onEnterFrame",
           "size": 71,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "frame_1_DoAction",
         "source_path": "src/frame_1/DoAction.as",
         "progress_categories": [
@@ -2949,13 +2949,13 @@
     {
       "name": "timeline/frame_18",
       "measures": {
-        "fuzzy_match_percent": 27.06,
+        "fuzzy_match_percent": 29.21,
         "total_code": 445,
-        "matched_code": 24,
-        "matched_code_percent": 5.39,
+        "matched_code": 120,
+        "matched_code_percent": 26.97,
         "total_functions": 17,
-        "matched_functions": 3,
-        "matched_functions_percent": 17.65
+        "matched_functions": 15,
+        "matched_functions_percent": 88.24
       },
       "functions": [
         {
@@ -2976,42 +2976,42 @@
         {
           "name": "frame_18_DoAction.onRelease_2",
           "size": 8,
-          "fuzzy_match_percent": 90.0
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "frame_18_DoAction.onRelease_3",
           "size": 8,
-          "fuzzy_match_percent": 90.0
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "frame_18_DoAction.onRelease_4",
           "size": 8,
-          "fuzzy_match_percent": 90.0
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "frame_18_DoAction.onRelease_5",
           "size": 8,
-          "fuzzy_match_percent": 90.0
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "frame_18_DoAction.onRelease_6",
           "size": 8,
-          "fuzzy_match_percent": 90.0
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "frame_18_DoAction.onRelease_7",
           "size": 8,
-          "fuzzy_match_percent": 90.0
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "frame_18_DoAction.onRelease_8",
           "size": 8,
-          "fuzzy_match_percent": 90.0
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "frame_18_DoAction.onRelease_9",
           "size": 8,
-          "fuzzy_match_percent": 90.0
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "frame_18_DoAction.onRelease_10",
@@ -3026,22 +3026,22 @@
         {
           "name": "frame_18_DoAction.onRelease_12",
           "size": 8,
-          "fuzzy_match_percent": 90.0
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "frame_18_DoAction.onRelease_13",
           "size": 8,
-          "fuzzy_match_percent": 90.0
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "frame_18_DoAction.onRelease_14",
           "size": 8,
-          "fuzzy_match_percent": 90.0
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "frame_18_DoAction.onRelease_15",
           "size": 8,
-          "fuzzy_match_percent": 90.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
@@ -3210,13 +3210,13 @@
       "id": "core",
       "name": "core",
       "measures": {
-        "fuzzy_match_percent": 7.41,
+        "fuzzy_match_percent": 25.15,
         "total_code": 2681,
-        "matched_code": 103,
-        "matched_code_percent": 3.84,
+        "matched_code": 511,
+        "matched_code_percent": 19.06,
         "total_functions": 13,
-        "matched_functions": 4,
-        "matched_functions_percent": 30.77
+        "matched_functions": 9,
+        "matched_functions_percent": 69.23
       }
     },
     {
@@ -3496,13 +3496,13 @@
       "id": "ui",
       "name": "ui",
       "measures": {
-        "fuzzy_match_percent": 39.4,
+        "fuzzy_match_percent": 40.65,
         "total_code": 770,
-        "matched_code": 207,
-        "matched_code_percent": 26.88,
+        "matched_code": 303,
+        "matched_code_percent": 39.35,
         "total_functions": 36,
-        "matched_functions": 20,
-        "matched_functions_percent": 55.56
+        "matched_functions": 32,
+        "matched_functions_percent": 88.89
       }
     }
   ]

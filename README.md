@@ -25,19 +25,19 @@ with AI assistance, and accepted only when the pinned toolchain rebuilt it to ma
 
 ## Progress
 
-**129 of 202 game functions are matched** (1,507 of 10,936 instructions, 13.78 %). 52 of the matched and 107 of all game functions carry a name whose evidence a script checked; so do 9 of 9 types, 137 of 137 members the matched code reaches; 202 functions carry a subsystem label. Every name and its evidence: [docs/NAMES.md](docs/NAMES.md).
+**146 of 202 game functions are matched** (2,011 of 10,936 instructions, 18.39 %). 68 of the matched and 107 of all game functions carry a name whose evidence a script checked; so do 9 of 9 types, 137 of 137 members the matched code reaches; 202 functions carry a subsystem label. Every name and its evidence: [docs/NAMES.md](docs/NAMES.md).
 
 | Milestone | Status | Exit judged on |
 |---|---|---|
 | M1 Contributable | done | public-build.json ok=True; matched outside their unit: 0 |
 | M2 Identified | done | name pass closed: True; unlabelled game functions: 0; review pending: 0 |
 | M3 Platform boundary | done | 1/1 platform functions matched; PLATFORM.md present |
-| M4 Core | current | 4/13 core functions matched; FORMATS.md missing |
+| M4 Core | current | 9/13 core functions matched; FORMATS.md missing |
 | M5 Gameplay | later | 101/146 gameplay functions matched |
-| M6 Complete | later | 129/202 game functions matched; check ok=True |
+| M6 Complete | later | 146/202 game functions matched; check ok=True |
 | M7 Documented | later | docs.py check ok=False (2026-10-16T02:04:52Z) |
 | M8 Behaviour-verified | later | last behaviour compare ok=None at never |
-| M9 Reverse-engineered | later | names without checked evidence: 0; matches since the last name pass: 38; named types with two layouts: 0 |
+| M9 Reverse-engineered | later | names without checked evidence: 0; matches since the last name pass: 55; named types with two layouts: 0 |
 
 The milestones and why they come in this order: [ROADMAP.md](ROADMAP.md).
 
