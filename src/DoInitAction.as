@@ -81,8 +81,14 @@ function replay()
    this.gotoAndStop("reset");
    this.gotoAndStop("game");
 }
+// a new game starts on the `main` frame, with stargeted cleared and the zast sound switched back on
 function newGame()
-{ /* @reference newGame */ }
+{
+   stargeted = 0;
+   zastSoundFlag = true;
+   updateSoundLoop();
+   this.gotoAndStop("main");
+}
 // plays a library sound by its linkage name: attach it to a Sound on this timeline and start it
 function playSnd(lib_snd)
 {
@@ -357,8 +363,36 @@ function showTime()
 {
    txtTime = getTimeString(timeCounter);
 }
+// a time in milliseconds as "mm:ss", each part padded to two digits
+// registers: r1 = whole seconds (secs), r2 = whole minutes (mins), r3 = the minutes text (minText), r4 = the seconds text (secText)
 function getTimeString(time)
-{ /* @reference getTimeString */ }
+{
+   var secs = Math.round(time / 1000);
+   var mins = Math.floor(secs / 60);
+   secs -= mins * 60;
+   var minText;
+   var secText;
+   if(secs < 10)
+   {
+      secText = "0" + secs;
+   }
+   else
+   {
+      secText = "" + secs;
+   }
+   if(mins < 10)
+   {
+      minText = "0" + mins;
+   }
+   else
+   {
+      minText = "" + mins;
+   }
+   // the bytes evaluate the result once and discard it before returning it; probably a
+   // statement whose call was stripped at publish (a trace), uncertain
+   minText + ":" + secText;
+   return minText + ":" + secText;
+}
 // undo pauseGame: clear the message box ("empty"), restart the rider's animation, gameState 0;
 // mc_sloop (probably the looping sound's clip) goes back to frame 2 unless sound is off
 function resume()
@@ -386,8 +420,43 @@ function pauseGame()
    bikeSync.mc_bike.mc.mc_body_man.mc.stopAnim();
    gameState = 4;
 }
+// reset the level's moving parts: remove every clip named in _root.bulletArray, then put the
+// bomb and the helicopter back to their starting state
+// !FAKE: the author wrote _root; eval("_root") keeps the original DefineFunction, which reads _root by name
 function clearStuff()
-{ /* @reference clearStuff */ }
+{
+   eval("_root").arrdeactivate = true;
+   var tlen = eval("_root").bulletArray.length;
+   if(tlen > 0)
+   {
+      j = 0;
+      while(j < tlen)
+      {
+         // !FAKE: the author wrote if(_root.bulletArray[j] != ""); the doubled parentheses keep the double Not before the branch
+         if((eval("_root").bulletArray[j] != ""))
+         {
+            eval("_root." + eval("_root").bulletArray[j])._alpha = 0;
+            eval("_root." + eval("_root").bulletArray[j]).gotoAndStop(39);
+            removeMovieClip(eval("_root." + eval("_root").bulletArray[j]));
+         }
+         j++;
+      }
+   }
+   eval("_root").bulletArray = new Array();
+   eval("_root").arrdeactivate = false;
+   eval("_root").bikedartctr = 0;
+   eval("_root").bomb._alpha = 0;
+   eval("_root").dropbomb = false;
+   eval("_root").bomb.gotoAndStop(1);
+   eval("_root").heliactivate = false;
+   eval("_root").helicounter = 1;
+   eval("_root").helicop._x = 786.4;
+   eval("_root").helicop.rotation = 0;
+   eval("_root").helicop._y = 58.4;
+   eval("_root").setBright(eval("_root").helicop, 0);
+   eval("_root").setBright(eval("_root").bikeSync.mc_bike, 0);
+   eval("_root").helidestroy = false;
+}
 // a lost life (the author's "loose" for lose): fail sound, one life off, the wheels moved
 // 1000 px right (probably off the stage), the crash clips played, the times and score shown
 function loose()

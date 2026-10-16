@@ -74,20 +74,20 @@ soundOn	DoInitAction	function	matched	audio	writes stopSoundFlag; drives the sou
 gameStart	DoInitAction	function	matched	core	writes level, life, scores; called by the level-selection buttons
 nextLevel	DoInitAction	function	matched	core	steps the main timeline through "reset" to "game"; calls newGame
 replay	DoInitAction	function	matched	core	steps the main timeline through "reset" to "game"
-newGame	DoInitAction	function	wip	core	gotoAndStop("main"); calls updateSoundLoop
+newGame	DoInitAction	function	matched	core	gotoAndStop("main"); calls updateSoundLoop
 playSnd	DoInitAction	function	matched	audio	constructs or drives Sound (Sound, attachSound, start)
 initLevel	DoInitAction	function	asm	core	writes gameState; builds engine, bikeSync, objCamera for the level
 processGame	DoInitAction	function	matched	core	reads and writes gameState; the per-frame loop calling showTime, loose, clearStuff
 fire	DoInitAction	function	matched	gameplay/bullet_id	gotoAndPlay on _root.bullet_id
 resetkfire	DoInitAction	function	matched	gameplay/bullet_id	clears kfire, which processGame checks before attaching bullet_id
 showTime	DoInitAction	function	matched	ui	writes the clock text field txtTime
-getTimeString	DoInitAction	function	asm	ui	formats the clock readout with ":" (callers showTime, loose)
+getTimeString	DoInitAction	function	matched	ui	formats the clock readout with ":" (callers showTime, loose)
 resume	DoInitAction	function	matched	core	writes gameState; restarts bikeSync animation
 pauseGame	DoInitAction	function	matched	core	writes gameState; gotoAndStop("pause") on mc_messageF
-clearStuff	DoInitAction	function	wip	core	resets bulletArray, bomb and helicop state between levels
+clearStuff	DoInitAction	function	matched	core	resets bulletArray, bomb and helicop state between levels
 loose	DoInitAction	function	matched	core	writes gameState; calls clearStuff, playSnd
 calcBikeNVector	DoInitAction	function	wip	gameplay/cbikesynchronizer	reads bikeSync (a CBikeSynchronizer) wheel particle positions
-Packages_CBack_main	Packages_CBack	main	wip	gameplay/cback	a method of class CBack (__Packages/CBack)
+Packages_CBack_main	Packages_CBack	main	matched	gameplay/cback	a method of class CBack (__Packages/CBack)
 CBack	Packages_CBack	constructor	matched	gameplay/cback	a method of class CBack (__Packages/CBack)
 CBack.init	Packages_CBack	method	matched	gameplay/cback	a method of class CBack (__Packages/CBack)
 CBack.process	Packages_CBack	method	matched	gameplay/cback	a method of class CBack (__Packages/CBack)
@@ -96,7 +96,7 @@ CBikeSynchronizer	Packages_CBikeSynchronizer	constructor	matched	gameplay/cbikes
 CBikeSynchronizer.init	Packages_CBikeSynchronizer	method	asm	gameplay/cbikesynchronizer	a method of class CBikeSynchronizer (__Packages/CBikeSynchronizer)
 CBikeSynchronizer.setParticles	Packages_CBikeSynchronizer	method	asm	gameplay/cbikesynchronizer	a method of class CBikeSynchronizer (__Packages/CBikeSynchronizer)
 CBikeSynchronizer.process	Packages_CBikeSynchronizer	method	asm	gameplay/cbikesynchronizer	a method of class CBikeSynchronizer (__Packages/CBikeSynchronizer)
-Packages_CCamera_main	Packages_CCamera	main	asm	gameplay/ccamera	a method of class CCamera (__Packages/CCamera)
+Packages_CCamera_main	Packages_CCamera	main	matched	gameplay/ccamera	a method of class CCamera (__Packages/CCamera)
 CCamera	Packages_CCamera	constructor	matched	gameplay/ccamera	a method of class CCamera (__Packages/CCamera)
 CCamera.init	Packages_CCamera	method	matched	gameplay/ccamera	a method of class CCamera (__Packages/CCamera)
 CCamera.process	Packages_CCamera	method	asm	gameplay/ccamera	a method of class CCamera (__Packages/CCamera)
@@ -110,7 +110,7 @@ CMan.toLeft	Packages_CMan	method	asm	gameplay/cman	a method of class CMan (__Pac
 CMan.toRight	Packages_CMan	method	asm	gameplay/cman	a method of class CMan (__Packages/CMan)
 CMan.fromLeft	Packages_CMan	method	matched	gameplay/cman	a method of class CMan (__Packages/CMan)
 CMan.fromRight	Packages_CMan	method	matched	gameplay/cman	a method of class CMan (__Packages/CMan)
-CMan.endMove	Packages_CMan	method	asm	gameplay/cman	a method of class CMan (__Packages/CMan)
+CMan.endMove	Packages_CMan	method	matched	gameplay/cman	a method of class CMan (__Packages/CMan)
 Packages_CParticle_main	Packages_CParticle	main	matched	gameplay/cparticle	a method of class CParticle (__Packages/CParticle)
 CParticle	Packages_CParticle	constructor	matched	gameplay/cparticle	a method of class CParticle (__Packages/CParticle)
 CParticle.verlet	Packages_CParticle	method	asm	gameplay/cparticle	a method of class CParticle (__Packages/CParticle)
@@ -173,12 +173,12 @@ setBright	frame_15_DoAction	function	matched	gameplay/timeline-game	frame 15 `ga
 frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_enterFrame_main	frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_enterFrame	main	matched	gameplay/timeline-game	a clip action placed on frame 15 `game` of the main timeline (PlaceObject2_33_1, character 33)
 frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_keyDown_main	frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_keyDown	main	matched	gameplay/timeline-game	a clip action placed on frame 15 `game` of the main timeline (PlaceObject2_33_1, character 33)
 frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_keyDown__2_main	frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_keyDown__2	main	matched	gameplay/timeline-game	a clip action placed on frame 15 `game` of the main timeline (PlaceObject2_33_1, character 33)
-frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_load_main	frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_load	main	wip	gameplay/timeline-game	a clip action placed on frame 15 `game` of the main timeline (PlaceObject2_33_1, character 33)
+frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_load_main	frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_load	main	matched	gameplay/timeline-game	a clip action placed on frame 15 `game` of the main timeline (PlaceObject2_33_1, character 33)
 frame_15_PlaceObject2_446_349_CLIPACTIONRECORD_onClipEvent_enterFrame_main	frame_15_PlaceObject2_446_349_CLIPACTIONRECORD_onClipEvent_enterFrame	main	asm	gameplay/timeline-game	a clip action placed on frame 15 `game` of the main timeline (PlaceObject2_446_349, character 446)
 frame_15_PlaceObject2_453_353_CLIPACTIONRECORD_onClipEvent_enterFrame_main	frame_15_PlaceObject2_453_353_CLIPACTIONRECORD_onClipEvent_enterFrame	main	asm	gameplay/timeline-game	a clip action placed on frame 15 `game` of the main timeline (PlaceObject2_453_353, character 453)
 frame_15_PlaceObject2_453_353_CLIPACTIONRECORD_onClipEvent_load_main	frame_15_PlaceObject2_453_353_CLIPACTIONRECORD_onClipEvent_load	main	matched	gameplay/timeline-game	a clip action placed on frame 15 `game` of the main timeline (PlaceObject2_453_353, character 453)
 frame_15_PlaceObject2_455_357_CLIPACTIONRECORD_onClipEvent_enterFrame_main	frame_15_PlaceObject2_455_357_CLIPACTIONRECORD_onClipEvent_enterFrame	main	asm	gameplay/timeline-game	a clip action placed on frame 15 `game` of the main timeline (PlaceObject2_455_357, character 455)
-frame_17_DoAction_main	frame_17_DoAction	main	asm	ui	frame 17 `comple` (a menu or result screen)
+frame_17_DoAction_main	frame_17_DoAction	main	matched	ui	frame 17 `comple` (a menu or result screen)
 frame_18_DoAction_main	frame_18_DoAction	main	matched	ui	frame 18 `level selection` (a menu or result screen)
 frame_18_DoAction.onEnterFrame	frame_18_DoAction	handler	asm	ui	frame 18 `level selection` (a menu or result screen)
 frame_18_DoAction.onRelease	frame_18_DoAction	handler	matched	ui	frame 18 `level selection` (a menu or result screen)

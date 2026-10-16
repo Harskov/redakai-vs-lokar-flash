@@ -1,15 +1,15 @@
 {
   "version": 2,
   "measures": {
-    "fuzzy_match_percent": 41.01,
+    "fuzzy_match_percent": 43.97,
     "total_code": 10936,
-    "matched_code": 4237,
-    "matched_code_percent": 38.74,
+    "matched_code": 4776,
+    "matched_code_percent": 43.67,
     "total_functions": 202,
-    "matched_functions": 164,
-    "matched_functions_percent": 81.19,
+    "matched_functions": 172,
+    "matched_functions_percent": 85.15,
     "total_units": 95,
-    "complete_units": 77
+    "complete_units": 80
   },
   "units": [
     {
@@ -1793,13 +1793,13 @@
     {
       "name": "init/DoInitAction",
       "measures": {
-        "fuzzy_match_percent": 79.36,
+        "fuzzy_match_percent": 83.37,
         "total_code": 2832,
-        "matched_code": 2052,
-        "matched_code_percent": 72.46,
+        "matched_code": 2329,
+        "matched_code_percent": 82.24,
         "total_functions": 20,
-        "matched_functions": 15,
-        "matched_functions_percent": 75.0
+        "matched_functions": 18,
+        "matched_functions_percent": 90.0
       },
       "functions": [
         {
@@ -1840,7 +1840,7 @@
         {
           "name": "newGame",
           "size": 16,
-          "fuzzy_match_percent": 94.44
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "playSnd",
@@ -1875,7 +1875,7 @@
         {
           "name": "getTimeString",
           "size": 77,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "resume",
@@ -1890,7 +1890,7 @@
         {
           "name": "clearStuff",
           "size": 184,
-          "fuzzy_match_percent": 80.57
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "loose",
@@ -1922,11 +1922,11 @@
       "measures": {
         "fuzzy_match_percent": 100.0,
         "total_code": 115,
-        "matched_code": 70,
-        "matched_code_percent": 60.87,
+        "matched_code": 115,
+        "matched_code_percent": 100.0,
         "total_functions": 4,
-        "matched_functions": 3,
-        "matched_functions_percent": 75.0
+        "matched_functions": 4,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
@@ -1951,7 +1951,7 @@
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "Packages_CBack",
         "source_path": "src/__Packages/CBack.as",
         "progress_categories": [
@@ -2011,19 +2011,19 @@
     {
       "name": "classes/CCamera",
       "measures": {
-        "fuzzy_match_percent": 6.3,
+        "fuzzy_match_percent": 32.68,
         "total_code": 254,
-        "matched_code": 16,
-        "matched_code_percent": 6.3,
+        "matched_code": 83,
+        "matched_code_percent": 32.68,
         "total_functions": 4,
-        "matched_functions": 2,
-        "matched_functions_percent": 50.0
+        "matched_functions": 3,
+        "matched_functions_percent": 75.0
       },
       "functions": [
         {
           "name": "Packages_CCamera_main",
           "size": 67,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "CCamera",
@@ -2054,13 +2054,13 @@
     {
       "name": "classes/CMan",
       "measures": {
-        "fuzzy_match_percent": 26.44,
+        "fuzzy_match_percent": 39.49,
         "total_code": 590,
-        "matched_code": 156,
-        "matched_code_percent": 26.44,
+        "matched_code": 233,
+        "matched_code_percent": 39.49,
         "total_functions": 11,
-        "matched_functions": 6,
-        "matched_functions_percent": 54.55
+        "matched_functions": 7,
+        "matched_functions_percent": 63.64
       },
       "functions": [
         {
@@ -2116,7 +2116,7 @@
         {
           "name": "CMan.endMove",
           "size": 77,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
@@ -2782,23 +2782,23 @@
     {
       "name": "clip-actions/frame_15/33_1/onClipEvent(load)",
       "measures": {
-        "fuzzy_match_percent": 94.12,
+        "fuzzy_match_percent": 100.0,
         "total_code": 8,
-        "matched_code": 0,
-        "matched_code_percent": 0.0,
+        "matched_code": 8,
+        "matched_code_percent": 100.0,
         "total_functions": 1,
-        "matched_functions": 0,
-        "matched_functions_percent": 0.0
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
           "name": "frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_load_main",
           "size": 8,
-          "fuzzy_match_percent": 94.12
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_load",
         "source_path": "src/frame_15/PlaceObject2_33_1/CLIPACTIONRECORD onClipEvent(load).as",
         "progress_categories": [
@@ -2922,23 +2922,23 @@
     {
       "name": "timeline/frame_17",
       "measures": {
-        "fuzzy_match_percent": 0.0,
+        "fuzzy_match_percent": 100.0,
         "total_code": 65,
-        "matched_code": 0,
-        "matched_code_percent": 0.0,
+        "matched_code": 65,
+        "matched_code_percent": 100.0,
         "total_functions": 1,
-        "matched_functions": 0,
-        "matched_functions_percent": 0.0
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
           "name": "frame_17_DoAction_main",
           "size": 65,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "frame_17_DoAction",
         "source_path": "src/frame_17/DoAction.as",
         "progress_categories": [
@@ -3210,26 +3210,26 @@
       "id": "core",
       "name": "core",
       "measures": {
-        "fuzzy_match_percent": 81.77,
+        "fuzzy_match_percent": 83.14,
         "total_code": 2681,
-        "matched_code": 2029,
-        "matched_code_percent": 75.68,
+        "matched_code": 2229,
+        "matched_code_percent": 83.14,
         "total_functions": 13,
-        "matched_functions": 10,
-        "matched_functions_percent": 76.92
+        "matched_functions": 12,
+        "matched_functions_percent": 92.31
       }
     },
     {
       "id": "gameplay",
       "name": "gameplay",
       "measures": {
-        "fuzzy_match_percent": 26.73,
+        "fuzzy_match_percent": 28.79,
         "total_code": 7024,
-        "matched_code": 1793,
-        "matched_code_percent": 25.53,
+        "matched_code": 1990,
+        "matched_code_percent": 28.33,
         "total_functions": 146,
-        "matched_functions": 116,
-        "matched_functions_percent": 79.45
+        "matched_functions": 120,
+        "matched_functions_percent": 82.19
       }
     },
     {
@@ -3264,11 +3264,11 @@
       "measures": {
         "fuzzy_match_percent": 100.0,
         "total_code": 115,
-        "matched_code": 70,
-        "matched_code_percent": 60.87,
+        "matched_code": 115,
+        "matched_code_percent": 100.0,
         "total_functions": 4,
-        "matched_functions": 3,
-        "matched_functions_percent": 75.0
+        "matched_functions": 4,
+        "matched_functions_percent": 100.0
       }
     },
     {
@@ -3288,26 +3288,26 @@
       "id": "gameplay.ccamera",
       "name": "gameplay/ccamera",
       "measures": {
-        "fuzzy_match_percent": 6.3,
+        "fuzzy_match_percent": 32.68,
         "total_code": 254,
-        "matched_code": 16,
-        "matched_code_percent": 6.3,
+        "matched_code": 83,
+        "matched_code_percent": 32.68,
         "total_functions": 4,
-        "matched_functions": 2,
-        "matched_functions_percent": 50.0
+        "matched_functions": 3,
+        "matched_functions_percent": 75.0
       }
     },
     {
       "id": "gameplay.cman",
       "name": "gameplay/cman",
       "measures": {
-        "fuzzy_match_percent": 27.55,
+        "fuzzy_match_percent": 40.4,
         "total_code": 599,
-        "matched_code": 165,
-        "matched_code_percent": 27.55,
+        "matched_code": 242,
+        "matched_code_percent": 40.4,
         "total_functions": 12,
-        "matched_functions": 7,
-        "matched_functions_percent": 58.33
+        "matched_functions": 8,
+        "matched_functions_percent": 66.67
       }
     },
     {
@@ -3444,13 +3444,13 @@
       "id": "gameplay.timeline-game",
       "name": "gameplay/timeline-game",
       "measures": {
-        "fuzzy_match_percent": 22.11,
+        "fuzzy_match_percent": 22.15,
         "total_code": 1463,
-        "matched_code": 316,
-        "matched_code_percent": 21.6,
+        "matched_code": 324,
+        "matched_code_percent": 22.15,
         "total_functions": 43,
-        "matched_functions": 39,
-        "matched_functions_percent": 90.7
+        "matched_functions": 40,
+        "matched_functions_percent": 93.02
       }
     },
     {
@@ -3496,13 +3496,13 @@
       "id": "ui",
       "name": "ui",
       "measures": {
-        "fuzzy_match_percent": 40.65,
+        "fuzzy_match_percent": 59.09,
         "total_code": 770,
-        "matched_code": 313,
-        "matched_code_percent": 40.65,
+        "matched_code": 455,
+        "matched_code_percent": 59.09,
         "total_functions": 36,
-        "matched_functions": 33,
-        "matched_functions_percent": 91.67
+        "matched_functions": 35,
+        "matched_functions_percent": 97.22
       }
     }
   ]

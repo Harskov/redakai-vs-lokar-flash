@@ -65,4 +65,33 @@ function fromRight()
       man.state = 6;
    }
 }
-// @reference CMan.endMove
+// a move's animation ended: 1 holds at the "left" frame as 2, 4 at "right" as 5, and the
+// returns 3 and 6 go back to state 0 on "stay"
+// registers: r2 = the alias of this (man)
+function endMove()
+{
+   var man = this;
+   if(man.state == 1)
+   {
+      man.gotoAndStop("left");
+      man.state = 2;
+      return;
+   }
+   if(man.state == 3)
+   {
+      man.state = 0;
+      man.gotoAndStop("stay");
+      return;
+   }
+   if(man.state == 4)
+   {
+      man.state = 5;
+      man.gotoAndStop("right");
+      return;
+   }
+   if(man.state == 6)
+   {
+      man.state = 0;
+      man.gotoAndStop("stay");
+   }
+}

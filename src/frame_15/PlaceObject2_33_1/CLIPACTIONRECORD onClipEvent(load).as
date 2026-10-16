@@ -1,1 +1,4 @@
-// @reference frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_load_main
+// asks the parent timeline to set up the level when this clip loads
+onClipEvent(load){
+   this._parent.initLevel();
+}
