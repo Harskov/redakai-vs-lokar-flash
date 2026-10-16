@@ -54,6 +54,16 @@ Push register1 / Push "replay" / CallMethod` against `Push 0 / …`; `Push 0.0 /
 Subtract` against `Push 0 / …`. v4 equals v3 on every pair v3 equates (one token rewritten the same way on both sides).
 A non-zero integral Double (`Push 3.0`) stays what it is.
 
+Normalizer version 5 (remediation 2026-10-16-remediation-24): rule (i) counts as occupied slots only the preload flags
+(`this`, `arguments`, `super`, `_root`, `_parent`, `_global`), never the three suppress flags, which place nothing in a
+register. Before it, a header with suppressSuper, suppressArguments and preloadThis counted three slots for one, so a block
+referencing r1 and r2 read `regs=3<4` where the allocation fits; FFDec's compiler, which places a `// registers:` local at
+`_loc7_`, declares more slots and read `regs=fit`, and the one header row could never be made equal from source
+(CParticleEngine.clear 97.56, CVector2D.modul 97.87, run 2026-10-16-022). The pair it newly equates:
+`DefineFunction2 "", 0, 3, false, false, true, false, true, false, false, true, false` over `Push register1` and
+`StoreRegister 2`, against the same function declared with 8 registers over `StoreRegister 7`. A real header always declares
+at least the registers its block references, so `regs=<n><<needed>` arose only from the over-count.
+
 Register locals (the same round): FFDec's compiler places a local in a register only when it is spelled `_locN_`, and it
 reads N as the slot (`_loc1_` is the preloaded `this`; 7 upward is free of the six preload slots, the parameters take the
 slots left, and rule (b) renumbers); a local with a name compiles to `DefineLocal` and `GetVariable` rows. The accepted source keeps the name and names the local in a `// registers:` comment above the
@@ -71,7 +81,7 @@ import json
 import re
 import sys
 
-NORMALIZER_VERSION = 4
+NORMALIZER_VERSION = 5
 LABEL_RE = re.compile(r"^(\w+):(.*)$")
 REGISTERS_COMMENT_RE = re.compile(r"^[ \t]*//[ \t]*registers?[ \t]*:[ \t]*(.*?)[ \t]*$", re.M)
 IDENT_RE = r"[A-Za-z_$][\w$]*"
@@ -460,7 +470,9 @@ def normalize(block, pool, header_info=None, version=NORMALIZER_VERSION):
         regs_text = str(h["regs"])
         if version >= 3:     # rule (i)
             used = {int(x) for l in lines[1:] for x in re.findall(r"\bregister(\d+)\b|^StoreRegister (\d+)$", split_line(l)[1].strip()) for x in x if x}
-            used |= set((h.get("preg") or {}).keys()) | set(range(1, sum(1 for f in h["flags"] if f) + 1))
+            # v5: only the preload flags occupy a slot (the suppress flags at 2, 4 and 6 place nothing)
+            slots = sum(1 for i in (7, 5, 3, 1, 0, 8) if i < len(h["flags"]) and h["flags"][i]) if version >= 5 else sum(1 for f in h["flags"] if f)
+            used |= set((h.get("preg") or {}).keys()) | set(range(1, slots + 1))
             needed = max(used | {0}) + 1
             regs_text = "fit" if h["regs"] >= needed else f"{h['regs']}<{needed}"
 
