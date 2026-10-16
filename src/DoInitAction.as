@@ -75,8 +75,256 @@ function playSnd(lib_snd)
 }
 function initLevel()
 { /* @reference initLevel */ }
+// the game's per-frame step (the frame-15 clip's enterFrame calls it): while gameState is 0, the clock,
+// the arrow-key tilt, the physics, the pickups, the shots (F, G), the finish and the rider's hit tests
+// !FAKE: the author wrote _root; eval("_root") keeps the original DefineFunction, which reads _root by name
 function processGame()
-{ /* @reference processGame */ }
+{
+   engine.gravity = 4;
+   var _loc7;
+   var _loc6;
+   _loc7 = getTimer();
+   _loc6 = _loc7 - lastTimer;
+   txtFps = 1 / (_loc6 / 1000);
+   lastTimer = _loc7;
+   if(gameState == 0)
+   {
+      timeCounter += _loc6;
+      levelTimeCounter += _loc6;
+      showTime();
+      var _loc9 = 0;
+      var _loc8 = 0;
+      var _loc3;
+      var _loc5;
+      accCounter++;
+      // !FAKE: the author wrote if(!accFlag); the doubled parentheses keep the double Not before the branch
+      if((!accFlag))
+      {
+         // key 38 is the Up arrow
+         accFlag = Key.isDown(38);
+         if(accFlag && accCounter > 10)
+         {
+            accCounter = 0;
+            // !FAKE: the author wrote if(!stopSoundFlag); the doubled parentheses keep the double Not before the branch
+            if((!stopSoundFlag))
+            {
+               mc_gas.gotoAndPlay(2);
+            }
+         }
+      }
+      else
+      {
+         accFlag = Key.isDown(38);
+      }
+      if(Key.isDown(CMan.LEFT_BUTTON))
+      {
+         _loc3 = calcBikeNVector();
+         if(_loc3.y > 0)
+         {
+            _loc5 = Math.abs(_loc3.y) * 0.2 + 0.8;
+            bikeSync.mc_forward_wheel.addedAcc.x -= _loc3.x * engine.gravity / 1.1 * _loc5;
+            bikeSync.mc_forward_wheel.addedAcc.y -= _loc3.y * engine.gravity * 1.3 * _loc5;
+            bikeSync.mc_back_wheel.addedAcc.x += _loc3.x * engine.gravity / 1.5 * _loc5;
+            bikeSync.mc_back_wheel.addedAcc.y += _loc3.y * engine.gravity * _loc5;
+         }
+      }
+      else if(Key.isDown(CMan.RIGHT_BUTTON))
+      {
+         _loc3 = calcBikeNVector();
+         if(_loc3.y > 0)
+         {
+            _loc5 = Math.abs(_loc3.y) * 0.2 + 0.8;
+            bikeSync.mc_forward_wheel.addedAcc.x += _loc3.x * engine.gravity / 1.5 * _loc5;
+            bikeSync.mc_forward_wheel.addedAcc.y += _loc3.y * engine.gravity * _loc5;
+            bikeSync.mc_back_wheel.addedAcc.x -= _loc3.x * engine.gravity / 1.1 * _loc5;
+            bikeSync.mc_back_wheel.addedAcc.y -= _loc3.y * engine.gravity * 1.3 * _loc5;
+         }
+      }
+      engine.process();
+      bikeSync.process();
+      objCamera.process();
+      back1.process(mc_level.mc._x);
+      back2.process(mc_level.mc._x);
+      mc_level.mc.mc_fon._x = -mc_level.mc._x;
+      var _loc1 = 1;
+      while(_loc1 <= 20)
+      {
+         if(mc_level.mc["s" + _loc1]._visible == true && bikeSync.mc_bike.hitTest(mc_level.mc["s" + _loc1]) && !mc_level.mc["s" + _loc1].bikehit)
+         {
+            mc_level.mc["s" + _loc1].bikehit = true;
+            mc_level.mc["s" + _loc1].pio.gotoAndPlay(2);
+         }
+         _loc1++;
+      }
+      // stargeted is forced to 5 every frame, so the stargeted >= 3 tests below always pass
+      // (probably a leftover that switched the target count off)
+      stargeted = 5;
+      if(bikeSync.mc_bike._x + mc_level.mc.mc_bike._x >= mc_level.mc.mc_finish._x - 190 && stargeted >= 3)
+      {
+         if(mc_level.mc.maskman_mc._currentframe == 1)
+         {
+            mc_level.mc.maskman_mc.gotoAndPlay(2);
+            eval("_root").themask_mc.gotoAndStop(508);
+         }
+      }
+      if(kfire == undefined)
+      {
+         kfire = true;
+         eval("_root").bulletArray = new Array();
+      }
+      // keys 71 and 70 are G (a bullet) and F (a rocket)
+      if(Key.isDown(71) && kfire == true || Key.isDown(70) && kfire == true)
+      {
+         if(Key.isDown(70))
+         {
+            weapontype = "rocket";
+         }
+         else
+         {
+            weapontype = "bullet";
+         }
+         eval("_root").kfire = false;
+         var p_a = eval("_root").my2 - eval("_root").my1;
+         var p_b = eval("_root").mx2 - eval("_root").mx1;
+         var p_radians = Math.atan2(p_a, p_b);
+         // 0.01745329 is pi / 180: radians to degrees
+         var degrees = p_radians / 0.01745329;
+         var angle = Math.round(degrees);
+         if(kval == undefined)
+         {
+            kval = 1000;
+         }
+         else
+         {
+            kval++;
+            if(kval > 1100)
+            {
+               kval = 1000;
+            }
+         }
+         if(tcheck == undefined)
+         {
+            tcheck = 1;
+         }
+         else
+         {
+            tcheck++;
+         }
+         if(tcheck > 20)
+         {
+            delete tmparray;
+            tmparray = new Array();
+            var tlen = eval("_root").bulletArray.length;
+            if(tlen > 0)
+            {
+               j = 0;
+               while(j < tlen)
+               {
+                  if(eval("_root").bulletArray[j] != "")
+                  {
+                     tmparray.push(eval("_root").bulletArray[j]);
+                  }
+                  else
+                  {
+                     eval("_root").arrdeactivate = true;
+                  }
+                  j++;
+               }
+               eval("_root").bulletArray = tmparray;
+               eval("_root").arrdeactivate = false;
+            }
+            tcheck = 1;
+         }
+         if(weapontype == "bullet")
+         {
+            eval("_root").attachMovie("bullet_id", "bullet_id" + kval, eval("_root").getNextHighestDepth());
+            eval("_root.bullet_id" + kval)._rotation = angle;
+            eval("_root.bullet_id" + kval).weapontype = weapontype;
+            eval("_root.bullet_id" + kval)._x = eval("_root").mx3;
+            eval("_root.bullet_id" + kval)._y = eval("_root").my3;
+         }
+         else
+         {
+            eval("_root").attachMovie("rocket_id", "bullet_id" + kval, eval("_root").getNextHighestDepth());
+            eval("_root.bullet_id" + kval)._rotation = angle - 40;
+            eval("_root.bullet_id" + kval).weapontype = weapontype;
+            eval("_root.bullet_id" + kval)._x = eval("_root").mx3 - 40;
+            eval("_root.bullet_id" + kval)._y = eval("_root").my3 - 30;
+         }
+         eval("_root").bulletArray.push("bullet_id" + kval);
+         setTimeout(fire, 50);
+         setTimeout(resetkfire, 290);
+      }
+      if(eval("_root").helicounter == undefined)
+      {
+         eval("_root").helicounter = 1;
+      }
+      eval("_root").helicounter += 1;
+      if(eval("_root").helicounter == 200)
+      {
+         eval("_root").helicop._x = 786.4;
+         eval("_root").heliactivate = true;
+         eval("_root").helicop._rotation = 0;
+         setTimeout(eval("_root").firebomb, 1800);
+      }
+      if(bikeSync.mc_bike._x + mc_level.mc.mc_bike._x >= mc_level.mc.mc_finish._x && stargeted >= 3)
+      {
+         // !FAKE: the author wrote if(!stopSoundFlag); the doubled parentheses keep the double Not before the branch
+         if((!stopSoundFlag))
+         {
+            mc_sloop.gotoAndStop(3);
+         }
+         if(level <= 10)
+         {
+            clearStuff();
+            gotoAndStop("comple");
+            gameState = 2;
+         }
+         else
+         {
+            mc_messageF.mc_message.gotoAndStop("gamewin");
+            gameState = 3;
+         }
+         addLevelScores();
+         mc_messageF.mc_message.levelTime = getTimeString(levelTimeCounter);
+         mc_messageF.mc_message.commonTime = getTimeString(timeCounter);
+         mc_messageF.mc_message.scores = scores;
+         bikeSync.mc_bike.mc.mc_body_man.mc.stopAnim();
+         bikeSync.mc_bike.mc.mc_body_man.mc.stopMCAnim();
+         return;
+      }
+      var _loc2 = {x: 0, y: 0};
+      var _loc4 = bikeSync.mc_bike.mc.mc_body_man.mc.mc.h;
+      _loc2.x = _loc4.p._x;
+      _loc2.y = _loc4.p._y;
+      _loc4.localToGlobal(_loc2);
+      if(mc_level.mc.mc_hit.hitTest(_loc2.x, _loc2.y, true))
+      {
+         eval("_root").setBright(eval("_root").bikeSync.mc_bike, 0);
+         loose();
+         return;
+      }
+      _loc4 = bikeSync.mc_bike.mc.mc_body_man.mc.mc.b;
+      _loc2.x = _loc4.p._x;
+      _loc2.y = _loc4.p._y;
+      _loc4.localToGlobal(_loc2);
+      if(mc_level.mc.mc_hit.hitTest(_loc2.x, _loc2.y, true))
+      {
+         eval("_root").setBright(eval("_root").bikeSync.mc_bike, 0);
+         loose();
+         return;
+      }
+      _loc4 = bikeSync.mc_bike.mc.mc_body_man.mc.mc.l;
+      _loc2.x = _loc4.p._x;
+      _loc2.y = _loc4.p._y;
+      _loc4.localToGlobal(_loc2);
+      if(mc_level.mc.mc_hit.hitTest(_loc2.x, _loc2.y, true))
+      {
+         eval("_root").setBright(eval("_root").bikeSync.mc_bike, 0);
+         loose();
+      }
+   }
+}
 // plays the newest shot (bullet_id<kval>, which processGame attached 50 ms earlier) from frame 2
 function fire()
 {

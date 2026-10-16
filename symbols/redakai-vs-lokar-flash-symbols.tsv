@@ -77,7 +77,7 @@ replay	DoInitAction	function	matched	core	steps the main timeline through "reset
 newGame	DoInitAction	function	wip	core	gotoAndStop("main"); calls updateSoundLoop
 playSnd	DoInitAction	function	matched	audio	constructs or drives Sound (Sound, attachSound, start)
 initLevel	DoInitAction	function	asm	core	writes gameState; builds engine, bikeSync, objCamera for the level
-processGame	DoInitAction	function	asm	core	reads and writes gameState; the per-frame loop calling showTime, loose, clearStuff
+processGame	DoInitAction	function	matched	core	reads and writes gameState; the per-frame loop calling showTime, loose, clearStuff
 fire	DoInitAction	function	matched	gameplay/bullet_id	gotoAndPlay on _root.bullet_id
 resetkfire	DoInitAction	function	matched	gameplay/bullet_id	clears kfire, which processGame checks before attaching bullet_id
 showTime	DoInitAction	function	matched	ui	writes the clock text field txtTime
