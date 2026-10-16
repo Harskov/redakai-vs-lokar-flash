@@ -1,1 +1,2 @@
-// @reference DefineSprite_95_lib_man_frame_1_DoAction_main
+// lib_man holds on its first frame until something else moves its timeline
+this.stop();

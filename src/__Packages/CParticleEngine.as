@@ -45,7 +45,19 @@ function start()
 {
    this.prevTime = getTimer();
 }
-// @reference CParticleEngine.computeForces
+// every particle starts the step with no horizontal acceleration and gravity scaled by its mass
+// registers: r3 = the alias of this (engine), r2 = the loop counter (i), r4 = the particle count (len)
+function computeForces()
+{
+   var engine = this;
+   var i;
+   var len = engine.p_array.length;
+   for(i = 0; i < len; i++)
+   {
+      engine.p_array[i].acc.x = 0;
+      engine.p_array[i].acc.y = engine.gravity * engine.p_array[i].mass;
+   }
+}
 // zeroes every wheel's added acceleration; process calls it once its iterations are done
 // registers: r2 = the loop counter (i), r3 = the wheel (w), r4 = the wheel count (len)
 function clearForces()

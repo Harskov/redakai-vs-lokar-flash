@@ -9,4 +9,11 @@ function CWheel()
 // @reference CWheel.checkCollision
 // @reference CWheel.pushOut
 // @reference CWheel.validateRotation
-// @reference CWheel.applyAddedAcc
+// adds addedAcc, scaled by the particle's mass, to the particle's acceleration
+// registers: r2 = the alias of this (wheel)
+function applyAddedAcc()
+{
+   var wheel = this;
+   wheel.particle.acc.x += wheel.addedAcc.x * wheel.particle.mass;
+   wheel.particle.acc.y += wheel.addedAcc.y * wheel.particle.mass;
+}

@@ -1,15 +1,15 @@
 {
   "version": 2,
   "measures": {
-    "fuzzy_match_percent": 36.0,
+    "fuzzy_match_percent": 41.01,
     "total_code": 10936,
-    "matched_code": 3613,
-    "matched_code_percent": 33.04,
+    "matched_code": 4237,
+    "matched_code_percent": 38.74,
     "total_functions": 202,
-    "matched_functions": 149,
-    "matched_functions_percent": 73.76,
+    "matched_functions": 164,
+    "matched_functions_percent": 81.19,
     "total_units": 95,
-    "complete_units": 74
+    "complete_units": 77
   },
   "units": [
     {
@@ -968,11 +968,11 @@
       "measures": {
         "fuzzy_match_percent": 100.0,
         "total_code": 7,
-        "matched_code": 2,
-        "matched_code_percent": 28.57,
+        "matched_code": 7,
+        "matched_code_percent": 100.0,
         "total_functions": 2,
-        "matched_functions": 1,
-        "matched_functions_percent": 50.0
+        "matched_functions": 2,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
@@ -987,7 +987,7 @@
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "DefineSprite_399_frame_1_DoAction",
         "source_path": "src/DefineSprite_399/frame_1/DoAction.as",
         "progress_categories": [
@@ -1737,23 +1737,23 @@
     {
       "name": "sprites/lib_man/frame_1",
       "measures": {
-        "fuzzy_match_percent": 92.31,
+        "fuzzy_match_percent": 100.0,
         "total_code": 6,
-        "matched_code": 0,
-        "matched_code_percent": 0.0,
+        "matched_code": 6,
+        "matched_code_percent": 100.0,
         "total_functions": 1,
-        "matched_functions": 0,
-        "matched_functions_percent": 0.0
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
           "name": "DefineSprite_95_lib_man_frame_1_DoAction_main",
           "size": 6,
-          "fuzzy_match_percent": 92.31
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "DefineSprite_95_lib_man_frame_1_DoAction",
         "source_path": "src/DefineSprite_95_lib_man/frame_1/DoAction.as",
         "progress_categories": [
@@ -1793,13 +1793,13 @@
     {
       "name": "init/DoInitAction",
       "measures": {
-        "fuzzy_match_percent": 78.21,
+        "fuzzy_match_percent": 79.36,
         "total_code": 2832,
-        "matched_code": 2014,
-        "matched_code_percent": 71.12,
+        "matched_code": 2052,
+        "matched_code_percent": 72.46,
         "total_functions": 20,
-        "matched_functions": 14,
-        "matched_functions_percent": 70.0
+        "matched_functions": 15,
+        "matched_functions_percent": 75.0
       },
       "functions": [
         {
@@ -1810,7 +1810,7 @@
         {
           "name": "updateSoundLoop",
           "size": 38,
-          "fuzzy_match_percent": 98.73
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "soundOff",
@@ -1900,7 +1900,7 @@
         {
           "name": "calcBikeNVector",
           "size": 51,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 63.06
         }
       ],
       "metadata": {
@@ -1920,13 +1920,13 @@
     {
       "name": "classes/CBack",
       "measures": {
-        "fuzzy_match_percent": 52.17,
+        "fuzzy_match_percent": 100.0,
         "total_code": 115,
-        "matched_code": 0,
-        "matched_code_percent": 0.0,
+        "matched_code": 70,
+        "matched_code_percent": 60.87,
         "total_functions": 4,
-        "matched_functions": 1,
-        "matched_functions_percent": 25.0
+        "matched_functions": 3,
+        "matched_functions_percent": 75.0
       },
       "functions": [
         {
@@ -1947,7 +1947,7 @@
         {
           "name": "CBack.process",
           "size": 55,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
@@ -1965,11 +1965,11 @@
       "measures": {
         "fuzzy_match_percent": 8.65,
         "total_code": 913,
-        "matched_code": 44,
-        "matched_code_percent": 4.82,
+        "matched_code": 79,
+        "matched_code_percent": 8.65,
         "total_functions": 5,
-        "matched_functions": 1,
-        "matched_functions_percent": 20.0
+        "matched_functions": 2,
+        "matched_functions_percent": 40.0
       },
       "functions": [
         {
@@ -2054,13 +2054,13 @@
     {
       "name": "classes/CMan",
       "measures": {
-        "fuzzy_match_percent": 4.75,
+        "fuzzy_match_percent": 26.44,
         "total_code": 590,
-        "matched_code": 28,
-        "matched_code_percent": 4.75,
+        "matched_code": 156,
+        "matched_code_percent": 26.44,
         "total_functions": 11,
-        "matched_functions": 4,
-        "matched_functions_percent": 36.36
+        "matched_functions": 6,
+        "matched_functions_percent": 54.55
       },
       "functions": [
         {
@@ -2106,12 +2106,12 @@
         {
           "name": "CMan.fromLeft",
           "size": 64,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "CMan.fromRight",
           "size": 64,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "CMan.endMove",
@@ -2170,13 +2170,13 @@
     {
       "name": "classes/CParticleEngine",
       "measures": {
-        "fuzzy_match_percent": 40.37,
+        "fuzzy_match_percent": 49.67,
         "total_code": 602,
-        "matched_code": 243,
-        "matched_code_percent": 40.37,
+        "matched_code": 299,
+        "matched_code_percent": 49.67,
         "total_functions": 15,
-        "matched_functions": 11,
-        "matched_functions_percent": 73.33
+        "matched_functions": 12,
+        "matched_functions_percent": 80.0
       },
       "functions": [
         {
@@ -2222,7 +2222,7 @@
         {
           "name": "CParticleEngine.computeForces",
           "size": 56,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "CParticleEngine.clearForces",
@@ -2268,13 +2268,13 @@
     {
       "name": "classes/CSpringConstraint",
       "measures": {
-        "fuzzy_match_percent": 10.95,
+        "fuzzy_match_percent": 28.53,
         "total_code": 347,
-        "matched_code": 38,
-        "matched_code_percent": 10.95,
+        "matched_code": 99,
+        "matched_code_percent": 28.53,
         "total_functions": 3,
-        "matched_functions": 1,
-        "matched_functions_percent": 33.33
+        "matched_functions": 2,
+        "matched_functions_percent": 66.67
       },
       "functions": [
         {
@@ -2285,7 +2285,7 @@
         {
           "name": "CSpringConstraint",
           "size": 61,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "CSpringConstraint.resolve",
@@ -2306,13 +2306,13 @@
     {
       "name": "classes/CVector2D",
       "measures": {
-        "fuzzy_match_percent": 47.26,
+        "fuzzy_match_percent": 55.79,
         "total_code": 656,
-        "matched_code": 310,
-        "matched_code_percent": 47.26,
+        "matched_code": 366,
+        "matched_code_percent": 55.79,
         "total_functions": 20,
-        "matched_functions": 16,
-        "matched_functions_percent": 80.0
+        "matched_functions": 17,
+        "matched_functions_percent": 85.0
       },
       "functions": [
         {
@@ -2383,7 +2383,7 @@
         {
           "name": "CVector2D.rotate",
           "size": 56,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "CVector2D.rotateNew",
@@ -2429,13 +2429,13 @@
     {
       "name": "classes/CWheel",
       "measures": {
-        "fuzzy_match_percent": 0.31,
+        "fuzzy_match_percent": 3.77,
         "total_code": 1590,
-        "matched_code": 5,
-        "matched_code_percent": 0.31,
+        "matched_code": 60,
+        "matched_code_percent": 3.77,
         "total_functions": 8,
-        "matched_functions": 1,
-        "matched_functions_percent": 12.5
+        "matched_functions": 2,
+        "matched_functions_percent": 25.0
       },
       "functions": [
         {
@@ -2476,7 +2476,7 @@
         {
           "name": "CWheel.applyAddedAcc",
           "size": 55,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
@@ -2659,13 +2659,13 @@
     {
       "name": "timeline/frame_15",
       "measures": {
-        "fuzzy_match_percent": 10.69,
+        "fuzzy_match_percent": 26.01,
         "total_code": 346,
-        "matched_code": 37,
-        "matched_code_percent": 10.69,
+        "matched_code": 90,
+        "matched_code_percent": 26.01,
         "total_functions": 3,
-        "matched_functions": 1,
-        "matched_functions_percent": 33.33
+        "matched_functions": 2,
+        "matched_functions_percent": 66.67
       },
       "functions": [
         {
@@ -2676,7 +2676,7 @@
         {
           "name": "firebomb",
           "size": 53,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "setBright",
@@ -2698,23 +2698,23 @@
     {
       "name": "clip-actions/frame_15/33_1/onClipEvent(enterFrame)",
       "measures": {
-        "fuzzy_match_percent": 0.0,
+        "fuzzy_match_percent": 100.0,
         "total_code": 51,
-        "matched_code": 0,
-        "matched_code_percent": 0.0,
+        "matched_code": 51,
+        "matched_code_percent": 100.0,
         "total_functions": 1,
-        "matched_functions": 0,
-        "matched_functions_percent": 0.0
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
           "name": "frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_enterFrame_main",
           "size": 51,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_enterFrame",
         "source_path": "src/frame_15/PlaceObject2_33_1/CLIPACTIONRECORD onClipEvent(enterFrame).as",
         "progress_categories": [
@@ -2951,11 +2951,11 @@
       "measures": {
         "fuzzy_match_percent": 29.21,
         "total_code": 445,
-        "matched_code": 120,
-        "matched_code_percent": 26.97,
+        "matched_code": 130,
+        "matched_code_percent": 29.21,
         "total_functions": 17,
-        "matched_functions": 15,
-        "matched_functions_percent": 88.24
+        "matched_functions": 16,
+        "matched_functions_percent": 94.12
       },
       "functions": [
         {
@@ -3197,13 +3197,13 @@
       "id": "audio",
       "name": "audio",
       "measures": {
-        "fuzzy_match_percent": 21.85,
+        "fuzzy_match_percent": 21.96,
         "total_code": 460,
-        "matched_code": 63,
-        "matched_code_percent": 13.7,
+        "matched_code": 101,
+        "matched_code_percent": 21.96,
         "total_functions": 6,
-        "matched_functions": 3,
-        "matched_functions_percent": 50.0
+        "matched_functions": 4,
+        "matched_functions_percent": 66.67
       }
     },
     {
@@ -3223,13 +3223,13 @@
       "id": "gameplay",
       "name": "gameplay",
       "measures": {
-        "fuzzy_match_percent": 18.94,
+        "fuzzy_match_percent": 26.73,
         "total_code": 7024,
-        "matched_code": 1217,
-        "matched_code_percent": 17.33,
+        "matched_code": 1793,
+        "matched_code_percent": 25.53,
         "total_functions": 146,
-        "matched_functions": 103,
-        "matched_functions_percent": 70.55
+        "matched_functions": 116,
+        "matched_functions_percent": 79.45
       }
     },
     {
@@ -3262,26 +3262,26 @@
       "id": "gameplay.cback",
       "name": "gameplay/cback",
       "measures": {
-        "fuzzy_match_percent": 52.17,
+        "fuzzy_match_percent": 100.0,
         "total_code": 115,
-        "matched_code": 0,
-        "matched_code_percent": 0.0,
+        "matched_code": 70,
+        "matched_code_percent": 60.87,
         "total_functions": 4,
-        "matched_functions": 1,
-        "matched_functions_percent": 25.0
+        "matched_functions": 3,
+        "matched_functions_percent": 75.0
       }
     },
     {
       "id": "gameplay.cbikesynchronizer",
       "name": "gameplay/cbikesynchronizer",
       "measures": {
-        "fuzzy_match_percent": 8.2,
+        "fuzzy_match_percent": 11.53,
         "total_code": 964,
-        "matched_code": 44,
-        "matched_code_percent": 4.56,
+        "matched_code": 79,
+        "matched_code_percent": 8.2,
         "total_functions": 6,
-        "matched_functions": 1,
-        "matched_functions_percent": 16.67
+        "matched_functions": 2,
+        "matched_functions_percent": 33.33
       }
     },
     {
@@ -3301,13 +3301,13 @@
       "id": "gameplay.cman",
       "name": "gameplay/cman",
       "measures": {
-        "fuzzy_match_percent": 6.18,
+        "fuzzy_match_percent": 27.55,
         "total_code": 599,
-        "matched_code": 37,
-        "matched_code_percent": 6.18,
+        "matched_code": 165,
+        "matched_code_percent": 27.55,
         "total_functions": 12,
-        "matched_functions": 5,
-        "matched_functions_percent": 41.67
+        "matched_functions": 7,
+        "matched_functions_percent": 58.33
       }
     },
     {
@@ -3327,52 +3327,52 @@
       "id": "gameplay.cparticleengine",
       "name": "gameplay/cparticleengine",
       "measures": {
-        "fuzzy_match_percent": 40.37,
+        "fuzzy_match_percent": 49.67,
         "total_code": 602,
-        "matched_code": 243,
-        "matched_code_percent": 40.37,
+        "matched_code": 299,
+        "matched_code_percent": 49.67,
         "total_functions": 15,
-        "matched_functions": 11,
-        "matched_functions_percent": 73.33
+        "matched_functions": 12,
+        "matched_functions_percent": 80.0
       }
     },
     {
       "id": "gameplay.cspringconstraint",
       "name": "gameplay/cspringconstraint",
       "measures": {
-        "fuzzy_match_percent": 10.95,
+        "fuzzy_match_percent": 28.53,
         "total_code": 347,
-        "matched_code": 38,
-        "matched_code_percent": 10.95,
+        "matched_code": 99,
+        "matched_code_percent": 28.53,
         "total_functions": 3,
-        "matched_functions": 1,
-        "matched_functions_percent": 33.33
+        "matched_functions": 2,
+        "matched_functions_percent": 66.67
       }
     },
     {
       "id": "gameplay.cvector2d",
       "name": "gameplay/cvector2d",
       "measures": {
-        "fuzzy_match_percent": 47.26,
+        "fuzzy_match_percent": 55.79,
         "total_code": 656,
-        "matched_code": 310,
-        "matched_code_percent": 47.26,
+        "matched_code": 366,
+        "matched_code_percent": 55.79,
         "total_functions": 20,
-        "matched_functions": 16,
-        "matched_functions_percent": 80.0
+        "matched_functions": 17,
+        "matched_functions_percent": 85.0
       }
     },
     {
       "id": "gameplay.cwheel",
       "name": "gameplay/cwheel",
       "measures": {
-        "fuzzy_match_percent": 1.43,
+        "fuzzy_match_percent": 4.85,
         "total_code": 1608,
-        "matched_code": 23,
-        "matched_code_percent": 1.43,
+        "matched_code": 78,
+        "matched_code_percent": 4.85,
         "total_functions": 10,
-        "matched_functions": 3,
-        "matched_functions_percent": 30.0
+        "matched_functions": 4,
+        "matched_functions_percent": 40.0
       }
     },
     {
@@ -3405,13 +3405,13 @@
       "id": "gameplay.lib_man",
       "name": "gameplay/lib_man",
       "measures": {
-        "fuzzy_match_percent": 92.31,
+        "fuzzy_match_percent": 100.0,
         "total_code": 6,
-        "matched_code": 0,
-        "matched_code_percent": 0.0,
+        "matched_code": 6,
+        "matched_code_percent": 100.0,
         "total_functions": 1,
-        "matched_functions": 0,
-        "matched_functions_percent": 0.0
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0
       }
     },
     {
@@ -3444,13 +3444,13 @@
       "id": "gameplay.timeline-game",
       "name": "gameplay/timeline-game",
       "measures": {
-        "fuzzy_match_percent": 15.01,
+        "fuzzy_match_percent": 22.11,
         "total_code": 1463,
-        "matched_code": 207,
-        "matched_code_percent": 14.15,
+        "matched_code": 316,
+        "matched_code_percent": 21.6,
         "total_functions": 43,
-        "matched_functions": 36,
-        "matched_functions_percent": 83.72
+        "matched_functions": 39,
+        "matched_functions_percent": 90.7
       }
     },
     {
@@ -3498,11 +3498,11 @@
       "measures": {
         "fuzzy_match_percent": 40.65,
         "total_code": 770,
-        "matched_code": 303,
-        "matched_code_percent": 39.35,
+        "matched_code": 313,
+        "matched_code_percent": 40.65,
         "total_functions": 36,
-        "matched_functions": 32,
-        "matched_functions_percent": 88.89
+        "matched_functions": 33,
+        "matched_functions_percent": 91.67
       }
     }
   ]

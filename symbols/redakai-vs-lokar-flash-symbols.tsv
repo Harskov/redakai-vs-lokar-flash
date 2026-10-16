@@ -35,7 +35,7 @@ DefineSprite_24_frame_1_DoAction_main	DefineSprite_24_frame_1_DoAction	main	matc
 DefineSprite_358_frame_1_DoAction_main	DefineSprite_358_frame_1_DoAction	main	matched	gameplay/timeline-game	code of symbol 358 (sprites/sprite_358/frame_1): symbol 358 placed inside symbol 367 (frame 1) as `mc_fon`; symbol 367 placed inside symbol 387 (frame 3) as `mc`; symbol 387 placed on frame 15 `game` of the main timeline as `mc_level`
 DefineSprite_385_frame_1_DoAction_main	DefineSprite_385_frame_1_DoAction	main	matched	gameplay/timeline-game	code of symbol 385 (sprites/sprite_385/frame_1): symbol 385 placed inside symbol 386 (frame 1) as `maskman_mc`; symbol 386 placed inside symbol 387 (frame 6) as `mc`; symbol 387 placed on frame 15 `game` of the main timeline as `mc_level`
 DefineSprite_385_frame_5_DoAction_main	DefineSprite_385_frame_5_DoAction	main	matched	gameplay/timeline-game	code of symbol 385 (sprites/sprite_385/frame_5): symbol 385 placed inside symbol 386 (frame 1) as `maskman_mc`; symbol 386 placed inside symbol 387 (frame 6) as `mc`; symbol 387 placed on frame 15 `game` of the main timeline as `mc_level`
-DefineSprite_399_frame_1_DoAction_main	DefineSprite_399_frame_1_DoAction	main	wip	gameplay/timeline-game	code of symbol 399 (sprites/sprite_399/frame_1): symbol 399 placed on frame 15 `game` of the main timeline
+DefineSprite_399_frame_1_DoAction_main	DefineSprite_399_frame_1_DoAction	main	matched	gameplay/timeline-game	code of symbol 399 (sprites/sprite_399/frame_1): symbol 399 placed on frame 15 `game` of the main timeline
 DefineSprite_399_frame_1_DoAction.onPress	DefineSprite_399_frame_1_DoAction	handler	matched	gameplay/timeline-game	code of symbol 399 (sprites/sprite_399/frame_1): symbol 399 placed on frame 15 `game` of the main timeline
 DefineSprite_399_frame_2_DoAction_main	DefineSprite_399_frame_2_DoAction	main	matched	gameplay/timeline-game	code of symbol 399 (sprites/sprite_399/frame_2): symbol 399 placed on frame 15 `game` of the main timeline
 DefineSprite_399_frame_2_DoAction.onPress	DefineSprite_399_frame_2_DoAction	handler	matched	gameplay/timeline-game	code of symbol 399 (sprites/sprite_399/frame_2): symbol 399 placed on frame 15 `game` of the main timeline
@@ -65,10 +65,10 @@ DefineSprite_86_frame_1_PlaceObject2_39_23_CLIPACTIONRECORD_onClipEvent_enterFra
 DefineSprite_86_frame_1_PlaceObject2_39_25_CLIPACTIONRECORD_onClipEvent_enterFrame_main	DefineSprite_86_frame_1_PlaceObject2_39_25_CLIPACTIONRECORD_onClipEvent_enterFrame	main	matched	gameplay/lib_bike_body	a clip action inside symbol 86 (sprites/sprite_86/frame_1/clip-actions/PlaceObject2_39_25/CLIPACTIONRECORD onClipEvent(enterFrame)): symbol 86 placed inside symbol 87 (frame 1) as `car1`; symbol 87 placed inside symbol 97 (frame 1) as `jeep`; symbol 97 placed inside symbol lib_bike_body (frame 1) as `mc`
 DefineSprite_86_frame_1_PlaceObject2_52_27_CLIPACTIONRECORD_onClipEvent_enterFrame_main	DefineSprite_86_frame_1_PlaceObject2_52_27_CLIPACTIONRECORD_onClipEvent_enterFrame	main	matched	gameplay/lib_bike_body	a clip action inside symbol 86 (sprites/sprite_86/frame_1/clip-actions/PlaceObject2_52_27/CLIPACTIONRECORD onClipEvent(enterFrame)): symbol 86 placed inside symbol 87 (frame 1) as `car1`; symbol 87 placed inside symbol 97 (frame 1) as `jeep`; symbol 97 placed inside symbol lib_bike_body (frame 1) as `mc`
 DefineSprite_87_frame_1_DoAction_main	DefineSprite_87_frame_1_DoAction	main	matched	gameplay/lib_bike_body	code of symbol 87 (sprites/sprite_87/frame_1): symbol 87 placed inside symbol 97 (frame 1) as `jeep`; symbol 97 placed inside symbol lib_bike_body (frame 1) as `mc`
-DefineSprite_95_lib_man_frame_1_DoAction_main	DefineSprite_95_lib_man_frame_1_DoAction	main	wip	gameplay/lib_man	code of symbol lib_man (sprites/lib_man/frame_1)
+DefineSprite_95_lib_man_frame_1_DoAction_main	DefineSprite_95_lib_man_frame_1_DoAction	main	matched	gameplay/lib_man	code of symbol lib_man (sprites/lib_man/frame_1)
 DefineSprite_97_frame_1_DoAction_main	DefineSprite_97_frame_1_DoAction	main	matched	gameplay/lib_bike_body	code of symbol 97 (sprites/sprite_97/frame_1): symbol 97 placed inside symbol lib_bike_body (frame 1) as `mc`
 DoInitAction_main	DoInitAction	main	matched	core	initialises the game globals gameState, level, life, scores (tag 304, the init action of character 150)
-updateSoundLoop	DoInitAction	function	wip	audio	reads stopSoundFlag, zastSoundFlag; drives mc_sloop, mc_sloop_zast
+updateSoundLoop	DoInitAction	function	matched	audio	reads stopSoundFlag, zastSoundFlag; drives mc_sloop, mc_sloop_zast
 soundOff	DoInitAction	function	matched	audio	writes stopSoundFlag; drives the sound-loop clips mc_sloop, mc_sloop_zast
 soundOn	DoInitAction	function	matched	audio	writes stopSoundFlag; drives the sound-loop clips mc_sloop, mc_sloop_zast
 gameStart	DoInitAction	function	matched	core	writes level, life, scores; called by the level-selection buttons
@@ -86,13 +86,13 @@ resume	DoInitAction	function	matched	core	writes gameState; restarts bikeSync an
 pauseGame	DoInitAction	function	matched	core	writes gameState; gotoAndStop("pause") on mc_messageF
 clearStuff	DoInitAction	function	wip	core	resets bulletArray, bomb and helicop state between levels
 loose	DoInitAction	function	matched	core	writes gameState; calls clearStuff, playSnd
-calcBikeNVector	DoInitAction	function	asm	gameplay/cbikesynchronizer	reads bikeSync (a CBikeSynchronizer) wheel particle positions
+calcBikeNVector	DoInitAction	function	wip	gameplay/cbikesynchronizer	reads bikeSync (a CBikeSynchronizer) wheel particle positions
 Packages_CBack_main	Packages_CBack	main	wip	gameplay/cback	a method of class CBack (__Packages/CBack)
 CBack	Packages_CBack	constructor	matched	gameplay/cback	a method of class CBack (__Packages/CBack)
-CBack.init	Packages_CBack	method	wip	gameplay/cback	a method of class CBack (__Packages/CBack)
-CBack.process	Packages_CBack	method	asm	gameplay/cback	a method of class CBack (__Packages/CBack)
+CBack.init	Packages_CBack	method	matched	gameplay/cback	a method of class CBack (__Packages/CBack)
+CBack.process	Packages_CBack	method	matched	gameplay/cback	a method of class CBack (__Packages/CBack)
 Packages_CBikeSynchronizer_main	Packages_CBikeSynchronizer	main	matched	gameplay/cbikesynchronizer	a method of class CBikeSynchronizer (__Packages/CBikeSynchronizer)
-CBikeSynchronizer	Packages_CBikeSynchronizer	constructor	wip	gameplay/cbikesynchronizer	a method of class CBikeSynchronizer (__Packages/CBikeSynchronizer)
+CBikeSynchronizer	Packages_CBikeSynchronizer	constructor	matched	gameplay/cbikesynchronizer	a method of class CBikeSynchronizer (__Packages/CBikeSynchronizer)
 CBikeSynchronizer.init	Packages_CBikeSynchronizer	method	asm	gameplay/cbikesynchronizer	a method of class CBikeSynchronizer (__Packages/CBikeSynchronizer)
 CBikeSynchronizer.setParticles	Packages_CBikeSynchronizer	method	asm	gameplay/cbikesynchronizer	a method of class CBikeSynchronizer (__Packages/CBikeSynchronizer)
 CBikeSynchronizer.process	Packages_CBikeSynchronizer	method	asm	gameplay/cbikesynchronizer	a method of class CBikeSynchronizer (__Packages/CBikeSynchronizer)
@@ -108,8 +108,8 @@ CMan.startAnim	Packages_CMan	method	matched	gameplay/cman	a method of class CMan
 CMan.onEnterFrame	Packages_CMan	method	asm	gameplay/cman	a method of class CMan (__Packages/CMan)
 CMan.toLeft	Packages_CMan	method	asm	gameplay/cman	a method of class CMan (__Packages/CMan)
 CMan.toRight	Packages_CMan	method	asm	gameplay/cman	a method of class CMan (__Packages/CMan)
-CMan.fromLeft	Packages_CMan	method	asm	gameplay/cman	a method of class CMan (__Packages/CMan)
-CMan.fromRight	Packages_CMan	method	asm	gameplay/cman	a method of class CMan (__Packages/CMan)
+CMan.fromLeft	Packages_CMan	method	matched	gameplay/cman	a method of class CMan (__Packages/CMan)
+CMan.fromRight	Packages_CMan	method	matched	gameplay/cman	a method of class CMan (__Packages/CMan)
 CMan.endMove	Packages_CMan	method	asm	gameplay/cman	a method of class CMan (__Packages/CMan)
 Packages_CParticle_main	Packages_CParticle	main	matched	gameplay/cparticle	a method of class CParticle (__Packages/CParticle)
 CParticle	Packages_CParticle	constructor	matched	gameplay/cparticle	a method of class CParticle (__Packages/CParticle)
@@ -122,7 +122,7 @@ CParticleEngine.addParticle	Packages_CParticleEngine	method	matched	gameplay/cpa
 CParticleEngine.addWheel	Packages_CParticleEngine	method	matched	gameplay/cparticleengine	a method of class CParticleEngine (__Packages/CParticleEngine)
 CParticleEngine.addSpringConstraint	Packages_CParticleEngine	method	matched	gameplay/cparticleengine	a method of class CParticleEngine (__Packages/CParticleEngine)
 CParticleEngine.start	Packages_CParticleEngine	method	matched	gameplay/cparticleengine	a method of class CParticleEngine (__Packages/CParticleEngine)
-CParticleEngine.computeForces	Packages_CParticleEngine	method	asm	gameplay/cparticleengine	a method of class CParticleEngine (__Packages/CParticleEngine)
+CParticleEngine.computeForces	Packages_CParticleEngine	method	matched	gameplay/cparticleengine	a method of class CParticleEngine (__Packages/CParticleEngine)
 CParticleEngine.clearForces	Packages_CParticleEngine	method	matched	gameplay/cparticleengine	a method of class CParticleEngine (__Packages/CParticleEngine)
 CParticleEngine.applyManFrictions	Packages_CParticleEngine	method	matched	gameplay/cparticleengine	a method of class CParticleEngine (__Packages/CParticleEngine)
 CParticleEngine.verlet	Packages_CParticleEngine	method	asm	gameplay/cparticleengine	a method of class CParticleEngine (__Packages/CParticleEngine)
@@ -130,7 +130,7 @@ CParticleEngine.checkCollisions	Packages_CParticleEngine	method	matched	gameplay
 CParticleEngine.checkConstraints	Packages_CParticleEngine	method	matched	gameplay/cparticleengine	a method of class CParticleEngine (__Packages/CParticleEngine)
 CParticleEngine.process	Packages_CParticleEngine	method	asm	gameplay/cparticleengine	a method of class CParticleEngine (__Packages/CParticleEngine)
 Packages_CSpringConstraint_main	Packages_CSpringConstraint	main	matched	gameplay/cspringconstraint	a method of class CSpringConstraint (__Packages/CSpringConstraint)
-CSpringConstraint	Packages_CSpringConstraint	constructor	asm	gameplay/cspringconstraint	a method of class CSpringConstraint (__Packages/CSpringConstraint)
+CSpringConstraint	Packages_CSpringConstraint	constructor	matched	gameplay/cspringconstraint	a method of class CSpringConstraint (__Packages/CSpringConstraint)
 CSpringConstraint.resolve	Packages_CSpringConstraint	method	asm	gameplay/cspringconstraint	a method of class CSpringConstraint (__Packages/CSpringConstraint)
 Packages_CVector2D_main	Packages_CVector2D	main	asm	gameplay/cvector2d	a method of class CVector2D (__Packages/CVector2D)
 CVector2D	Packages_CVector2D	constructor	matched	gameplay/cvector2d	a method of class CVector2D (__Packages/CVector2D)
@@ -145,7 +145,7 @@ CVector2D.reverseNew	Packages_CVector2D	method	matched	gameplay/cvector2d	a meth
 CVector2D.scalar	Packages_CVector2D	method	matched	gameplay/cvector2d	a method of class CVector2D (__Packages/CVector2D)
 CVector2D.modul	Packages_CVector2D	method	matched	gameplay/cvector2d	a method of class CVector2D (__Packages/CVector2D)
 CVector2D.reflectFromNormal	Packages_CVector2D	method	matched	gameplay/cvector2d	a method of class CVector2D (__Packages/CVector2D)
-CVector2D.rotate	Packages_CVector2D	method	asm	gameplay/cvector2d	a method of class CVector2D (__Packages/CVector2D)
+CVector2D.rotate	Packages_CVector2D	method	matched	gameplay/cvector2d	a method of class CVector2D (__Packages/CVector2D)
 CVector2D.rotateNew	Packages_CVector2D	method	asm	gameplay/cvector2d	a method of class CVector2D (__Packages/CVector2D)
 CVector2D.mult	Packages_CVector2D	method	matched	gameplay/cvector2d	a method of class CVector2D (__Packages/CVector2D)
 CVector2D.multNew	Packages_CVector2D	method	matched	gameplay/cvector2d	a method of class CVector2D (__Packages/CVector2D)
@@ -159,7 +159,7 @@ CWheel.process	Packages_CWheel	method	asm	gameplay/cwheel	a method of class CWhe
 CWheel.checkCollision	Packages_CWheel	method	asm	gameplay/cwheel	a method of class CWheel (__Packages/CWheel)
 CWheel.pushOut	Packages_CWheel	method	asm	gameplay/cwheel	a method of class CWheel (__Packages/CWheel)
 CWheel.validateRotation	Packages_CWheel	method	asm	gameplay/cwheel	a method of class CWheel (__Packages/CWheel)
-CWheel.applyAddedAcc	Packages_CWheel	method	asm	gameplay/cwheel	a method of class CWheel (__Packages/CWheel)
+CWheel.applyAddedAcc	Packages_CWheel	method	matched	gameplay/cwheel	a method of class CWheel (__Packages/CWheel)
 frame_1_DoAction_main	frame_1_DoAction	main	matched	core	frame 1 of the main timeline (boot)
 frame_1_DoAction.onEnterFrame	frame_1_DoAction	handler	matched	core	frame 1 of the main timeline (boot)
 frame_10_DoAction_main	frame_10_DoAction	main	asm	audio	constructs or drives Sound (Sound, attachSound, start)
@@ -168,9 +168,9 @@ frame_12_DoAction_main	frame_12_DoAction	main	matched	ui	frame 12 `main` (a menu
 frame_13_DoAction_main	frame_13_DoAction	main	matched	ui	frame 13 `carselection` (a menu or result screen)
 frame_14_DoAction_main	frame_14_DoAction	main	matched	ui	frame 14 `help` (a menu or result screen)
 frame_15_DoAction_main	frame_15_DoAction	main	asm	audio	constructs or drives Sound (Sound, attachSound, setVolume, start, stopAllSounds)
-firebomb	frame_15_DoAction	function	asm	gameplay/timeline-game	frame 15 `game`
+firebomb	frame_15_DoAction	function	matched	gameplay/timeline-game	frame 15 `game`
 setBright	frame_15_DoAction	function	matched	gameplay/timeline-game	frame 15 `game`
-frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_enterFrame_main	frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_enterFrame	main	asm	gameplay/timeline-game	a clip action placed on frame 15 `game` of the main timeline (PlaceObject2_33_1, character 33)
+frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_enterFrame_main	frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_enterFrame	main	matched	gameplay/timeline-game	a clip action placed on frame 15 `game` of the main timeline (PlaceObject2_33_1, character 33)
 frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_keyDown_main	frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_keyDown	main	matched	gameplay/timeline-game	a clip action placed on frame 15 `game` of the main timeline (PlaceObject2_33_1, character 33)
 frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_keyDown__2_main	frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_keyDown__2	main	matched	gameplay/timeline-game	a clip action placed on frame 15 `game` of the main timeline (PlaceObject2_33_1, character 33)
 frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_load_main	frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_load	main	wip	gameplay/timeline-game	a clip action placed on frame 15 `game` of the main timeline (PlaceObject2_33_1, character 33)
@@ -179,7 +179,7 @@ frame_15_PlaceObject2_453_353_CLIPACTIONRECORD_onClipEvent_enterFrame_main	frame
 frame_15_PlaceObject2_453_353_CLIPACTIONRECORD_onClipEvent_load_main	frame_15_PlaceObject2_453_353_CLIPACTIONRECORD_onClipEvent_load	main	matched	gameplay/timeline-game	a clip action placed on frame 15 `game` of the main timeline (PlaceObject2_453_353, character 453)
 frame_15_PlaceObject2_455_357_CLIPACTIONRECORD_onClipEvent_enterFrame_main	frame_15_PlaceObject2_455_357_CLIPACTIONRECORD_onClipEvent_enterFrame	main	asm	gameplay/timeline-game	a clip action placed on frame 15 `game` of the main timeline (PlaceObject2_455_357, character 455)
 frame_17_DoAction_main	frame_17_DoAction	main	asm	ui	frame 17 `comple` (a menu or result screen)
-frame_18_DoAction_main	frame_18_DoAction	main	wip	ui	frame 18 `level selection` (a menu or result screen)
+frame_18_DoAction_main	frame_18_DoAction	main	matched	ui	frame 18 `level selection` (a menu or result screen)
 frame_18_DoAction.onEnterFrame	frame_18_DoAction	handler	asm	ui	frame 18 `level selection` (a menu or result screen)
 frame_18_DoAction.onRelease	frame_18_DoAction	handler	matched	ui	frame 18 `level selection` (a menu or result screen)
 frame_18_DoAction.onRelease_2	frame_18_DoAction	handler	matched	ui	frame 18 `level selection` (a menu or result screen)

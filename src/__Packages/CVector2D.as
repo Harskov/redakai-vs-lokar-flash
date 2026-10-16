@@ -75,7 +75,17 @@ function reflectFromNormal(n)
    v.x = -v.x;
    v.rotate(a);
 }
-// @reference CVector2D.rotate
+// rotates the vector in place by the angle u, in radians (the angle goes to Math.cos and Math.sin)
+// registers: r2 = the angle (a), r3 = the alias of this (vec), r4 = the old x (oldX), r5 = the old y (oldY)
+function rotate(u)
+{
+   var a = u;
+   var vec = this;
+   var oldX = vec.x;
+   var oldY = vec.y;
+   vec.x = oldX * Math.cos(a) - oldY * Math.sin(a);
+   vec.y = oldX * Math.sin(a) + oldY * Math.cos(a);
+}
 // @reference CVector2D.rotateNew
 // scales both components in place by the caller's factor
 function mult(k)

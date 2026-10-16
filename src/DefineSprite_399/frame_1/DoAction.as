@@ -1,4 +1,5 @@
-// @reference DefineSprite_399_frame_1_DoAction_main
+// the press handler: play from the frame labelled "off"
+stop();
 // the press while on: play from the frame labelled "off"
 btnon.onPress = function()
 {

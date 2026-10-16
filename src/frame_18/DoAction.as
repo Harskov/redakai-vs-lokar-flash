@@ -1,5 +1,8 @@
-// @reference frame_18_DoAction_main
-// @reference frame_18_DoAction.onEnterFrame
+// the level screen's start-up: silence the timeline and install the enter-frame handler that drives it
+stop();
+stopAllSounds();
+onEnterFrame = function()
+{ /* @reference frame_18_DoAction.onEnterFrame */ };
 // le1, enabled once lvls reaches 1: a new game at level 1 (frame 15 builds the level from lvls)
 onRelease = function()
 {

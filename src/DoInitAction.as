@@ -1,6 +1,23 @@
 // the game's init script, run once: its functions, then its variables with their starting values
+// keeps the music loop in step with the mute state: with the sound on, the loop in use
+// (mc_sloop_zast while zastSoundFlag is set, else mc_sloop) plays at frame 2 and the other sits at 3
 function updateSoundLoop()
-{ /* @reference updateSoundLoop */ }
+{
+   // !FAKE: the author wrote if(!stopSoundFlag); the doubled parentheses keep the double Not before the branch
+   if((!stopSoundFlag))
+   {
+      if(zastSoundFlag)
+      {
+         mc_sloop.gotoAndStop(3);
+         mc_sloop_zast.gotoAndStop(2);
+      }
+      else
+      {
+         mc_sloop.gotoAndStop(2);
+         mc_sloop_zast.gotoAndStop(3);
+      }
+   }
+}
 // mutes the music: the loop clip in use (mc_sloop_zast while zastSoundFlag is set, else mc_sloop) goes to frame 3
 function soundOff()
 {
