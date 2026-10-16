@@ -20,8 +20,13 @@ committed (counts and hashes). Assets are inventoried in `assets/MANIFEST.json` 
 Filled at S13 from the behaviour checks (Ruffle renders of the original and the rebuilt file at the recorded checkpoints).
 
 - 2026-10-16, Ruffle's exporter built from the pinned 0.7.1 commit, headless on Mesa's software Vulkan: all 32
-  checkpoints in `tests/behaviour/checkpoints.json` (the first frame, the first frame of each of the 11 main-timeline
-  labels, every 35th frame to 20 s) render pixel-identical for the original and the rebuilt file
-  (`tests/behaviour/hashes.json`).
+  checkpoints in `tests/behaviour/checkpoints.json` (the first frame, the tick at which each of the 11 main-timeline
+  labels' frames would start, every 35th tick to 20 s) render pixel-identical for the original and the rebuilt file
+  (`tests/behaviour/hashes.json`); re-checked the same day against the rebuilt tree, again 32 of 32 identical.
+- What the renders show: two states only. The first frame shows the loader ("Loading Game" and its bar); every other
+  checkpoint shows the title menu (the Start Game and More Games buttons beside the control instructions), its animated
+  background differing from checkpoint to checkpoint. Playback stops on the menu, so a label's checkpoint (`carselection`,
+  `game`, `gameover` and the rest) shows the menu, not the frame the label names.
 - Coverage: the exporter plays the file from its first frame with no mouse or keyboard input, so every checkpoint shows
-  the unattended playback path; game states that depend on player input are not exercised yet.
+  the unattended playback path; the 28 matched input handlers run in no checkpoint, and car selection, the levels,
+  winning and losing are not exercised.
