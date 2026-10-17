@@ -39,8 +39,28 @@ class CBikeSynchronizer
       sync.mc_forward_wheel._x = pt.x;
       sync.mc_forward_wheel._y = pt.y;
    }
+   // keeps the three particles and takes the body clip's geometry once, from its marker clips:
+   // the front fork's direction and where it crosses the clip's y = 0, and the top of the back
+   // spring, in mc_body_man's and mc's space
+   // registers: r2 = the alias of this (sync)
    function setParticles(pBody_, pBWheel_, pFWheel_)
-   { /* @reference CBikeSynchronizer.setParticles */ }
+   {
+      var sync = this;
+      sync.pBody = pBody_;
+      sync.pBWheel = pBWheel_;
+      sync.pFWheel = pFWheel_;
+      sync.fdir.reinit(sync.mc_bike.mc.mc_f_point._x - sync.mc_bike.mc.mc_s_wheel_forward._x, sync.mc_bike.mc.mc_f_point._y - sync.mc_bike.mc.mc_s_wheel_forward._y);
+      sync.fdir.normalize();
+      sync.fpos.x = sync.mc_bike.mc.mc_f_spring._x + sync.fdir.x * (-sync.mc_bike.mc.mc_f_spring._y) / sync.fdir.y;
+      sync.fpos.x -= sync.mc_bike.mc.mc_body_man._x;
+      sync.bpos.reinit(sync.mc_bike.mc.mc_b_spring.mc_top._x, sync.mc_bike.mc.mc_b_spring.mc_top._y);
+      sync.mc_bike.mc.mc_b_spring.localToGlobal(sync.bpos);
+      sync.bdir.reinit(sync.bpos.x, sync.bpos.y);
+      sync.mc_bike.mc.mc_body_man.globalToLocal(sync.bpos);
+      sync.mc_bike.mc.globalToLocal(sync.bdir);
+      sync.bdir.x -= sync.mc_bike.mc.mc_b_spring._x;
+      sync.bdir.y -= sync.mc_bike.mc.mc_b_spring._y;
+   }
    function process()
    { /* @reference CBikeSynchronizer.process */ }
 }

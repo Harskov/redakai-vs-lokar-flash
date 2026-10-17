@@ -15,6 +15,29 @@ class CSpringConstraint
       var d = new CVector2D(spring.p1.pos.x - spring.p2.pos.x, spring.p1.pos.y - spring.p2.pos.y);
       spring.relaxLen = d.modul();
    }
+   // pull p1 and p2 back toward relaxLen along the line between them; each moves by half of
+   // (1 + the other's share of the total mass), so the lighter one moves further; stretch and
+   // compression have their own stiffness, and dTime is not read
+   // registers: r2 = the alias of this (spring), r3 = the vector from p2 to p1 (d), r5 = its length (len), r6 = the relative error to relaxLen (diff), r4 = the stiffness that applies (stiff)
    function resolve(dTime)
-   { /* @reference CSpringConstraint.resolve */ }
+   {
+      var spring = this;
+      var d = new CVector2D(spring.p1.pos.x - spring.p2.pos.x, spring.p1.pos.y - spring.p2.pos.y);
+      var len = d.modul();
+      var diff = (spring.relaxLen - len) / len;
+      d.mult(diff);
+      var stiff;
+      if(len > spring.relaxLen)
+      {
+         stiff = spring.koeffStiffStretch;
+      }
+      else
+      {
+         stiff = spring.koeffStiffPress;
+      }
+      spring.p2.pos.x -= d.x * (spring.p1.mass / (spring.p1.mass + spring.p2.mass) + 1) / 2 * stiff;
+      spring.p2.pos.y -= d.y * (spring.p1.mass / (spring.p1.mass + spring.p2.mass) + 1) / 2 * stiff;
+      spring.p1.pos.x += d.x * (spring.p2.mass / (spring.p1.mass + spring.p2.mass) + 1) / 2 * stiff;
+      spring.p1.pos.y += d.y * (spring.p2.mass / (spring.p1.mass + spring.p2.mass) + 1) / 2 * stiff;
+   }
 }

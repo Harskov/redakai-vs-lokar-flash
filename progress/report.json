@@ -1,15 +1,15 @@
 {
   "version": 2,
   "measures": {
-    "fuzzy_match_percent": 68.35,
+    "fuzzy_match_percent": 73.08,
     "total_code": 10936,
-    "matched_code": 7037,
-    "matched_code_percent": 64.35,
+    "matched_code": 7536,
+    "matched_code_percent": 68.91,
     "total_functions": 202,
-    "matched_functions": 191,
-    "matched_functions_percent": 94.55,
+    "matched_functions": 193,
+    "matched_functions_percent": 95.54,
     "total_units": 95,
-    "complete_units": 87
+    "complete_units": 88
   },
   "units": [
     {
@@ -1793,7 +1793,7 @@
     {
       "name": "init/DoInitAction",
       "measures": {
-        "fuzzy_match_percent": 97.71,
+        "fuzzy_match_percent": 98.34,
         "total_code": 2832,
         "matched_code": 2329,
         "matched_code_percent": 82.24,
@@ -1900,7 +1900,7 @@
         {
           "name": "calcBikeNVector",
           "size": 51,
-          "fuzzy_match_percent": 63.06
+          "fuzzy_match_percent": 98.11
         }
       ],
       "metadata": {
@@ -1963,13 +1963,13 @@
     {
       "name": "classes/CBikeSynchronizer",
       "measures": {
-        "fuzzy_match_percent": 28.37,
+        "fuzzy_match_percent": 55.86,
         "total_code": 913,
-        "matched_code": 259,
-        "matched_code_percent": 28.37,
+        "matched_code": 510,
+        "matched_code_percent": 55.86,
         "total_functions": 5,
-        "matched_functions": 3,
-        "matched_functions_percent": 60.0
+        "matched_functions": 4,
+        "matched_functions_percent": 80.0
       },
       "functions": [
         {
@@ -1990,7 +1990,7 @@
         {
           "name": "CBikeSynchronizer.setParticles",
           "size": 251,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "CBikeSynchronizer.process",
@@ -2268,13 +2268,13 @@
     {
       "name": "classes/CSpringConstraint",
       "measures": {
-        "fuzzy_match_percent": 28.53,
+        "fuzzy_match_percent": 100.0,
         "total_code": 347,
-        "matched_code": 99,
-        "matched_code_percent": 28.53,
+        "matched_code": 347,
+        "matched_code_percent": 100.0,
         "total_functions": 3,
-        "matched_functions": 2,
-        "matched_functions_percent": 66.67
+        "matched_functions": 3,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
@@ -2290,11 +2290,11 @@
         {
           "name": "CSpringConstraint.resolve",
           "size": 248,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "Packages_CSpringConstraint",
         "source_path": "src/__Packages/CSpringConstraint.as",
         "progress_categories": [
@@ -3223,13 +3223,13 @@
       "id": "gameplay",
       "name": "gameplay",
       "measures": {
-        "fuzzy_match_percent": 59.51,
+        "fuzzy_match_percent": 66.87,
         "total_code": 7024,
-        "matched_code": 4148,
-        "matched_code_percent": 59.05,
+        "matched_code": 4647,
+        "matched_code_percent": 66.16,
         "total_functions": 146,
-        "matched_functions": 138,
-        "matched_functions_percent": 94.52
+        "matched_functions": 140,
+        "matched_functions_percent": 95.89
       }
     },
     {
@@ -3275,13 +3275,13 @@
       "id": "gameplay.cbikesynchronizer",
       "name": "gameplay/cbikesynchronizer",
       "measures": {
-        "fuzzy_match_percent": 30.2,
+        "fuzzy_match_percent": 58.1,
         "total_code": 964,
-        "matched_code": 259,
-        "matched_code_percent": 26.87,
+        "matched_code": 510,
+        "matched_code_percent": 52.9,
         "total_functions": 6,
-        "matched_functions": 3,
-        "matched_functions_percent": 50.0
+        "matched_functions": 4,
+        "matched_functions_percent": 66.67
       }
     },
     {
@@ -3340,13 +3340,13 @@
       "id": "gameplay.cspringconstraint",
       "name": "gameplay/cspringconstraint",
       "measures": {
-        "fuzzy_match_percent": 28.53,
+        "fuzzy_match_percent": 100.0,
         "total_code": 347,
-        "matched_code": 99,
-        "matched_code_percent": 28.53,
+        "matched_code": 347,
+        "matched_code_percent": 100.0,
         "total_functions": 3,
-        "matched_functions": 2,
-        "matched_functions_percent": 66.67
+        "matched_functions": 3,
+        "matched_functions_percent": 100.0
       }
     },
     {

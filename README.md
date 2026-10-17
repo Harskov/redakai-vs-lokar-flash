@@ -25,7 +25,7 @@ with AI assistance, and accepted only when the pinned toolchain rebuilt it to ma
 
 ## Progress
 
-**191 of 202 game functions are matched** (7,037 of 10,936 instructions, 64.35 %). 99 of the matched and 107 of all game functions carry a name whose evidence a script checked; so do 9 of 9 types, 137 of 137 members the matched code reaches; 202 functions carry a subsystem label. Every name and its evidence: [docs/NAMES.md](docs/NAMES.md).
+**193 of 202 game functions are matched** (7,536 of 10,936 instructions, 68.91 %). 101 of the matched and 107 of all game functions carry a name whose evidence a script checked; so do 9 of 9 types, 68 of 68 members the matched code reaches; 202 functions carry a subsystem label. Every name and its evidence: [docs/NAMES.md](docs/NAMES.md).
 
 | Milestone | Status | Exit judged on |
 |---|---|---|
@@ -33,11 +33,11 @@ with AI assistance, and accepted only when the pinned toolchain rebuilt it to ma
 | M2 Identified | done | name pass closed: True; unlabelled game functions: 0; review pending: 0 |
 | M3 Platform boundary | done | 1/1 platform functions matched; PLATFORM.md present |
 | M4 Core | current | 12/13 core functions matched; FORMATS.md present |
-| M5 Gameplay | later | 138/146 gameplay functions matched |
-| M6 Complete | later | 191/202 game functions matched; check ok=True |
+| M5 Gameplay | later | 140/146 gameplay functions matched |
+| M6 Complete | later | 193/202 game functions matched; check ok=True |
 | M7 Documented | done | docs.py check ok=True (2026-10-17T07:18:09Z) |
 | M8 Behaviour-verified | later | last behaviour compare ok=True at 2026-10-17T06:16:26Z; coverage: no input (28 matched input handler(s) unexercised) |
-| M9 Reverse-engineered | later | names without checked evidence: 0; matches since the last name pass: 12; named types with two layouts: 0 |
+| M9 Reverse-engineered | later | names without checked evidence: 0; matches since the last name pass: 14; named types with two layouts: 0 |
 
 The milestones and why they come in this order: [ROADMAP.md](ROADMAP.md).
 

@@ -8,11 +8,11 @@ The project serves four purposes — preservation, recompilation, porting and le
 | M2 | Identified | done | name pass closed: True; unlabelled game functions: 0; review pending: 0 |
 | M3 | Platform boundary | done | 1/1 platform functions matched; PLATFORM.md present |
 | M4 | Core | current | 12/13 core functions matched; FORMATS.md present |
-| M5 | Gameplay | later | 138/146 gameplay functions matched |
-| M6 | Complete | later | 191/202 game functions matched; check ok=True |
+| M5 | Gameplay | later | 140/146 gameplay functions matched |
+| M6 | Complete | later | 193/202 game functions matched; check ok=True |
 | M7 | Documented | done | docs.py check ok=True (2026-10-17T07:18:09Z) |
 | M8 | Behaviour-verified | later | last behaviour compare ok=True at 2026-10-17T06:16:26Z; coverage: no input (28 matched input handler(s) unexercised) |
-| M9 | Reverse-engineered | later | names without checked evidence: 0; matches since the last name pass: 12; named types with two layouts: 0 |
+| M9 | Reverse-engineered | later | names without checked evidence: 0; matches since the last name pass: 14; named types with two layouts: 0 |
 
 Readability debt: 12 function(s) carry a `// !FAKE:` body and 0 carry a lint finding (see CONTRIBUTING.md); a pull request that replaces one with plain source that still matches is welcome.
 
