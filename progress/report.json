@@ -1,13 +1,13 @@
 {
   "version": 2,
   "measures": {
-    "fuzzy_match_percent": 63.03,
+    "fuzzy_match_percent": 68.35,
     "total_code": 10936,
-    "matched_code": 6455,
-    "matched_code_percent": 59.03,
+    "matched_code": 7037,
+    "matched_code_percent": 64.35,
     "total_functions": 202,
-    "matched_functions": 188,
-    "matched_functions_percent": 93.07,
+    "matched_functions": 191,
+    "matched_functions_percent": 94.55,
     "total_units": 95,
     "complete_units": 87
   },
@@ -1963,13 +1963,13 @@
     {
       "name": "classes/CBikeSynchronizer",
       "measures": {
-        "fuzzy_match_percent": 8.65,
+        "fuzzy_match_percent": 28.37,
         "total_code": 913,
-        "matched_code": 79,
-        "matched_code_percent": 8.65,
+        "matched_code": 259,
+        "matched_code_percent": 28.37,
         "total_functions": 5,
-        "matched_functions": 2,
-        "matched_functions_percent": 40.0
+        "matched_functions": 3,
+        "matched_functions_percent": 60.0
       },
       "functions": [
         {
@@ -1985,7 +1985,7 @@
         {
           "name": "CBikeSynchronizer.init",
           "size": 180,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "CBikeSynchronizer.setParticles",
@@ -2429,13 +2429,13 @@
     {
       "name": "classes/CWheel",
       "measures": {
-        "fuzzy_match_percent": 15.6,
+        "fuzzy_match_percent": 40.88,
         "total_code": 1590,
-        "matched_code": 248,
-        "matched_code_percent": 15.6,
+        "matched_code": 650,
+        "matched_code_percent": 40.88,
         "total_functions": 8,
-        "matched_functions": 4,
-        "matched_functions_percent": 50.0
+        "matched_functions": 6,
+        "matched_functions_percent": 75.0
       },
       "functions": [
         {
@@ -2451,7 +2451,7 @@
         {
           "name": "CWheel.init",
           "size": 179,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "CWheel.process",
@@ -2471,7 +2471,7 @@
         {
           "name": "CWheel.validateRotation",
           "size": 223,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "CWheel.applyAddedAcc",
@@ -3223,13 +3223,13 @@
       "id": "gameplay",
       "name": "gameplay",
       "measures": {
-        "fuzzy_match_percent": 51.23,
+        "fuzzy_match_percent": 59.51,
         "total_code": 7024,
-        "matched_code": 3566,
-        "matched_code_percent": 50.77,
+        "matched_code": 4148,
+        "matched_code_percent": 59.05,
         "total_functions": 146,
-        "matched_functions": 135,
-        "matched_functions_percent": 92.47
+        "matched_functions": 138,
+        "matched_functions_percent": 94.52
       }
     },
     {
@@ -3275,13 +3275,13 @@
       "id": "gameplay.cbikesynchronizer",
       "name": "gameplay/cbikesynchronizer",
       "measures": {
-        "fuzzy_match_percent": 11.53,
+        "fuzzy_match_percent": 30.2,
         "total_code": 964,
-        "matched_code": 79,
-        "matched_code_percent": 8.2,
+        "matched_code": 259,
+        "matched_code_percent": 26.87,
         "total_functions": 6,
-        "matched_functions": 2,
-        "matched_functions_percent": 33.33
+        "matched_functions": 3,
+        "matched_functions_percent": 50.0
       }
     },
     {
@@ -3366,13 +3366,13 @@
       "id": "gameplay.cwheel",
       "name": "gameplay/cwheel",
       "measures": {
-        "fuzzy_match_percent": 16.54,
+        "fuzzy_match_percent": 41.54,
         "total_code": 1608,
-        "matched_code": 266,
-        "matched_code_percent": 16.54,
+        "matched_code": 668,
+        "matched_code_percent": 41.54,
         "total_functions": 10,
-        "matched_functions": 6,
-        "matched_functions_percent": 60.0
+        "matched_functions": 8,
+        "matched_functions_percent": 80.0
       }
     },
     {
