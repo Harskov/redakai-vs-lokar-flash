@@ -1,7 +1,7 @@
 {
   "version": 2,
   "measures": {
-    "fuzzy_match_percent": 49.61,
+    "fuzzy_match_percent": 53.32,
     "total_code": 10936,
     "matched_code": 5393,
     "matched_code_percent": 49.31,
@@ -1793,7 +1793,7 @@
     {
       "name": "init/DoInitAction",
       "measures": {
-        "fuzzy_match_percent": 83.37,
+        "fuzzy_match_percent": 97.71,
         "total_code": 2832,
         "matched_code": 2329,
         "matched_code_percent": 82.24,
@@ -1850,7 +1850,7 @@
         {
           "name": "initLevel",
           "size": 452,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 89.8
         },
         {
           "name": "processGame",
@@ -3210,7 +3210,7 @@
       "id": "core",
       "name": "core",
       "measures": {
-        "fuzzy_match_percent": 83.14,
+        "fuzzy_match_percent": 98.28,
         "total_code": 2681,
         "matched_code": 2229,
         "matched_code_percent": 83.14,
