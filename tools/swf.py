@@ -283,6 +283,36 @@ def place_object_actions(tag, version):
     return cid, depth, events
 
 
+def static_content(tag):
+    """What a tag holds besides its scripts, to compare a replaced tag's non-script content (remediation 2026-10-17-remediation-34,
+    flash-batch-qa-20): a DoAction nothing; a DoInitAction its sprite id; a DefineButton2 its records before the actions; a
+    PlaceObject2/3 its fields before the clip actions; a DefineSprite its id, frame count and every subtag's own static content;
+    any other tag its whole body."""
+    d = tag.body
+    if tag.code == 12:
+        return b""
+    if tag.code == 59:
+        return d[:2]
+    if tag.code == 34:
+        off = struct.unpack_from("<H", d, 3)[0] if len(d) >= 5 else 0
+        return d[:3 + off] if off else d
+    if tag.code in (26, 70):
+        _cid, _depth, _name, pos, flags, flags2, po3 = _place_object_head(tag)
+        if not flags & 0x80:
+            return d
+        if po3 and (flags2 & 0x01):
+            return d                       # filters before the actions: not parsed here, compared whole
+        if po3 and (flags2 & 0x02):
+            pos += 1
+        if po3 and (flags2 & 0x04):
+            pos += 1
+        return d[:pos]
+    if tag.code == 39:
+        sid, frames, subtags = sprite_subtags(tag)
+        return (sid, frames, tuple((t.code, static_content(t)) for t in subtags))
+    return d
+
+
 def button_actions(tag):
     """(button id, [event name lists per BUTTONCONDACTION]) of a DefineButton2 tag."""
     d = tag.body

@@ -70,6 +70,9 @@ def main():
         if i not in claimed:
             first = first or {"unit": None, "function": None, "row": f"tag {i} ({o.tags[i].name}) holds no script and differs"}
             continue
+        if swfmod.static_content(o.tags[i]) != swfmod.static_content(b.tags[i]):
+            # what a replaced tag holds besides its scripts is the original's (the pack's check.py; remediation-34)
+            first = first or {"unit": None, "function": None, "row": f"tag {i} ({o.tags[i].name}): its non-script content differs"}
         for script in claimed[i]:
             a, c = ref.get(script), new.get(script)
             if a is None or c is None:
@@ -80,10 +83,13 @@ def main():
             ok, detail = True, f"every function equal under {crit}"
             if len(fa) != len(fc):
                 ok, detail = False, f"function count {len(fa)} -> {len(fc)}"
+            # a script FFDec's deobfuscator changed never passes a bytes criterion: its bytes carry what the listings no longer
+            # show (the pack's check.py since remediation-5; this copy since remediation 2026-10-17-remediation-34, flash-batch-qa-19)
+            deob = bool((smap.get(script) or {}).get("deobfuscated"))
             for f, g in ([(None, None)] + list(zip(fa, fc))) if ok else []:
                 x, y = pcode.cut(a, f, fa), pcode.cut(c, g, fc)
                 if crit.endswith("-bytes"):
-                    same = [pcode.split_line(l)[1].strip() for l in x] == [pcode.split_line(l)[1].strip() for l in y]
+                    same = not deob and [pcode.split_line(l)[1].strip() for l in x] == [pcode.split_line(l)[1].strip() for l in y]
                 else:
                     same = pcode.normalize(x, pcode.pool_of(a), pcode.parse_header(f.header) if f else None) == pcode.normalize(y, pcode.pool_of(c), pcode.parse_header(g.header) if g else None)
                 if not same:

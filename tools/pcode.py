@@ -64,6 +64,11 @@ referencing r1 and r2 read `regs=3<4` where the allocation fits; FFDec's compile
 `StoreRegister 2`, against the same function declared with 8 registers over `StoreRegister 7`. A real header always declares
 at least the registers its block references, so `regs=<n><<needed>` arose only from the over-count.
 
+String literals (remediation 2026-10-17-remediation-34, under every version): the rules rewrite the code around a literal,
+never its text (`outside_strings`): a whitespace run, a `loc…` label word, `registerN` and `constantN` inside quotes are the
+program's data. A fix rather than a rule, so no version: it separates only pairs the old reading wrongly equated (`Push
+"Score:  "` against `Push "Score: "`), and measured on Redakai it changes none of 202 reference and 189 compiled blocks.
+
 Register locals (the same round): FFDec's compiler places a local in a register only when it is spelled `_locN_`, and it
 reads N as the slot (`_loc1_` is the preloaded `this`; 7 upward is free of the six preload slots, the parameters take the
 slots left, and rule (b) renumbers); a local with a name compiles to `DefineLocal` and `GetVariable` rows. The accepted source keeps the name and names the local in a `// registers:` comment above the
@@ -251,11 +256,32 @@ def pool_of(text):
     return []
 
 
+STRING_LIT = re.compile(r'"(?:[^"\\]|\\.)*"')
+
+
+def outside_strings(text, fn):
+    """`fn` applied to the parts of a P-code line outside its string literals: a literal's text is the program's data, which
+    no rewrite of the normalizer touches (remediation 2026-10-17-remediation-34, flash-batch-qa-1: `Push "Score:  "` and
+    `Push "Score: "`, `"loc1"` and `"locbeef"`, `"register3"` and `"register9"` normalized equal)."""
+    out, pos = [], 0
+    for m in STRING_LIT.finditer(text):
+        out.append(fn(text[pos:m.start()]))
+        out.append(m.group(0))
+        pos = m.end()
+    out.append(fn(text[pos:]))
+    return "".join(out)
+
+
+def code_text(text):
+    """A line's text with its string literals blanked to `""`: what the label and register scans read."""
+    return STRING_LIT.sub('""', text)
+
+
 def resolve_constants(line, pool):
     def sub(m):
         i = int(m.group(1))
         return '"' + pool[i] + '"' if i < len(pool) else m.group(0)
-    return re.sub(r"\bconstant(\d+)\b", sub, line)
+    return outside_strings(line, lambda s: re.sub(r"\bconstant(\d+)\b", sub, s))
 
 
 def cut(text, fn=None, fns=None, unit="unit", class_name=None, keep_pool=False):
@@ -448,14 +474,14 @@ def normalize(block, pool, header_info=None, version=NORMALIZER_VERSION):
     labels = {}
     referenced = set()
     for l in lines:
-        referenced.update(re.findall(LABEL_REF, split_line(l)[1]))
+        referenced.update(re.findall(LABEL_REF, code_text(split_line(l)[1])))
     for l in lines:
         lab, _t = split_line(l)
         if lab and lab not in labels and lab in referenced:   # a label nothing in the block jumps to is dropped
             labels[lab] = f"L{len(labels) + 1}"
     ext = 0
     for l in lines:   # a jump out of the block (to the line after its `}`) names a label the block never defines
-        for ref in re.findall(LABEL_REF, split_line(l)[1]):
+        for ref in re.findall(LABEL_REF, code_text(split_line(l)[1])):
             if ref not in labels:
                 ext += 1
                 labels[ref] = f"X{ext}"
@@ -476,7 +502,7 @@ def normalize(block, pool, header_info=None, version=NORMALIZER_VERSION):
     if h and h.get("flags") is not None:
         regs_text = str(h["regs"])
         if version >= 3:     # rule (i)
-            used = {int(x) for l in lines[1:] for x in re.findall(r"\bregister(\d+)\b|^StoreRegister (\d+)$", split_line(l)[1].strip()) for x in x if x}
+            used = {int(x) for l in lines[1:] for x in re.findall(r"\bregister(\d+)\b|^StoreRegister (\d+)$", code_text(split_line(l)[1].strip())) for x in x if x}
             # v5: only the preload flags occupy a slot (the suppress flags at 2, 4 and 6 place nothing)
             slots = sum(1 for i in (7, 5, 3, 1, 0, 8) if i < len(h["flags"]) and h["flags"][i]) if version >= 5 else sum(1 for f in h["flags"] if f)
             used |= set((h.get("preg") or {}).keys()) | set(range(1, slots + 1))
@@ -495,12 +521,12 @@ def normalize(block, pool, header_info=None, version=NORMALIZER_VERSION):
         t = t.strip()
         if not t or t.startswith(";") or t.startswith("//"):
             continue
-        t = re.sub(r"\s+", " ", t)
+        t = outside_strings(t, lambda s: re.sub(r"\s+", " ", s))
         if i == 0 and h and HDR_RE.match(t):
             t = f"{h['kind']} \"{h['name']}\" params=({','.join(h['params'])}) regs={regs_text if regs_text is not None else h['regs']} flags={''.join('1' if x else '0' for x in (h['flags'] or []))}"
         else:
-            t = re.sub(LABEL_REF, lambda m: labels.get(m.group(0), m.group(0)), t)
-            t = re.sub(r"\bregister(\d+)\b", lambda m: regname(m.group(1)), t)
+            t = outside_strings(t, lambda s: re.sub(LABEL_REF, lambda m: labels.get(m.group(0), m.group(0)), s))
+            t = outside_strings(t, lambda s: re.sub(r"\bregister(\d+)\b", lambda m: regname(m.group(1)), s))
             t = re.sub(r"^StoreRegister (\d+)$", lambda m: "StoreRegister " + regname(m.group(1)), t)
         if t.startswith("Push "):
             # one value per Push: the player runs `Push a, b` and `Push a` + `Push b` identically; FFDec's compiler

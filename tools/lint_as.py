@@ -50,7 +50,10 @@ except ImportError:            # the contributor copy under a public repository'
 
 REGISTER = re.compile(r"\b(_loc\d+_|__reg\d+|_temp_?\d+)\b")
 ARTIFACT = re.compile(r"§§|//\s*unresolved|^\s*loop\d+:|\baddr\d+\b|^\s*undefined;\s*$|\\x[0-9a-fA-F]{2}|ÿ|\(not compilable\)|^\s*§")
-PROCESS = re.compile(r"\b(run \d{4}-\d{2}-\d{2}|score \d+|\d{1,3}(\.\d+)? ?%|F-\d+\b|K[1-9]-|round [A-Z]-?\d|FFDec|ffdec|normalizer|attempt-\d|ledger|batch|campaign)\b", re.I)
+# a match percentage outside the word boundaries: `\b` after `%` needs a word character, so `97.5%` never matched (remediation
+# 2026-10-17-remediation-34, flash-batch-qa-8); a game's own percentage (`a 50% chance`) is no narration
+PROCESS = re.compile(r"\b(run \d{4}-\d{2}-\d{2}|score:? \d+|F-\d+\b|K[1-9]-|round [A-Z]-?\d|FFDec|ffdec|normalizer|attempt-\d|ledger|batch|campaign)\b"
+                     r"|\bmatch\w*\s+(?:at\s+)?\d{1,3}(?:\.\d+)?\s?%|\b\d{1,3}(?:\.\d+)?\s?%\s+match", re.I)
 PLACEHOLDER = re.compile(r"\b(TODO|FIXME|XXX)\b|\?\?\?")
 FAKE = re.compile(r"!FAKE(\s*:\s*(\S.*))?")
 DYNAMIC = re.compile(r"\beval\s*\(|\bthis\s*\[\s*\"|_root\s*\[\s*\"|_global\s*\[\s*\"")
@@ -81,6 +84,40 @@ REFERENCE = re.compile(r"^\s*//\s*@reference\s|/\*\s*@reference\s")
 
 def strip_strings(line):
     return re.sub(r'"(?:[^"\\]|\\.)*"|\'(?:[^\'\\]|\\.)*\'', '""', line)
+
+
+STRING_AT = re.compile(r'"(?:[^"\\]|\\.)*"|\'(?:[^\'\\]|\\.)*\'')
+
+
+def code_and_comments(lines):
+    """[(code, comment text)] per line: the code with its string literals emptied and its comments out, and the text of every
+    comment on the line — a `//` outside a string, each `/* */` part, and the inner lines of a block comment that spans
+    several (remediation 2026-10-17-remediation-34, flash-batch-qa-9: a URL's `//` was read as a comment, and a block
+    comment's second line was read as code)."""
+    out, in_block = [], False
+    for raw in lines:
+        code, com, i, n = [], [], 0, len(raw)
+        while i < n:
+            if in_block:
+                j = raw.find("*/", i)
+                com.append(raw[i:] if j < 0 else raw[i:j])
+                i, in_block = (n, True) if j < 0 else (j + 2, False)
+                continue
+            if raw[i] in "\"'":
+                m = STRING_AT.match(raw, i)
+                code.append('""' if m else raw[i:])
+                i = m.end() if m else n
+                continue
+            if raw.startswith("//", i):
+                com.append(raw[i + 2:])
+                break
+            if raw.startswith("/*", i):
+                in_block, i = True, i + 2
+                continue
+            code.append(raw[i])
+            i += 1
+        out.append(("".join(code), " ".join(c for c in com if c.strip())))
+    return out
 
 
 def draft_text(repo, path):
@@ -199,14 +236,13 @@ def lint_file(repo, path, known_globals):
     depth = 0
     fn_start = None
     rel = script_rel(repo, path)
-    bare = root_writes([("" if REFERENCE.search(r) else COMMENT.sub("", strip_strings(r))) for r in lines]) \
+    cc = code_and_comments(lines)
+    bare = root_writes([("" if REFERENCE.search(r) else cc[k][0]) for k, r in enumerate(lines)]) \
         if rel and ROOT_SCOPE.match(rel) else {}
     for i, raw in enumerate(lines, 1):
         if REFERENCE.search(raw):
             continue
-        code = COMMENT.sub("", strip_strings(raw))
-        comment = COMMENT.search(raw)
-        ctext = (comment.group(1) or comment.group(2) or "") if comment else ""
+        code, ctext = cc[i - 1]
         if REGISTER.search(code):
             add(i, "register-name", "error", raw)
         if ARTIFACT.search(raw):
