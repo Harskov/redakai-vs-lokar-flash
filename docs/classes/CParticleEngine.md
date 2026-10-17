@@ -19,4 +19,5 @@ The physics engine: it holds the particles, the wheels and the spring constraint
 | `setHitMovie(hit_mc_)` | yes | initLevel (`engine.setHitMovie(mc_level.mc.mc_hit)`) |
 | `clearForces()` | yes | `process`, once its iterations are done (each wheel's `addedAcc` to zero) |
 | `clear()` | yes | initLevel (pops each of the three arrays until it is empty) |
-| `computeForces`, `verlet`, `process` | no | `process` from processGame; the rest from `process` |
+| `computeForces`, `process` | yes | `process` from processGame; `computeForces` from `process` |
+| `verlet` | no | `process` |

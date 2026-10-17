@@ -7,5 +7,5 @@ A scrolling background layer made of two clips; `initLevel` creates two (`back1`
 | Method | Accepted | Callers (confirmed in the scripts) |
 |---|---|---|
 | `CBack()` | yes | initLevel (`back1`, `back2`) |
-| `init(mc1_, mc2_, scaleFactor_)` | no | initLevel |
-| `process(levelX)` | no | processGame (`back1.process(mc_level.mc._x)`, `back2.…`) |
+| `init(mc1_, mc2_, scaleFactor_)` | yes | initLevel |
+| `process(levelX)` | yes | processGame (`back1.process(mc_level.mc._x)`, `back2.…`) |

@@ -10,4 +10,5 @@ A bike wheel: a MovieClip class registered for both wheel symbols (`Object.regis
 |---|---|---|
 | `CWheel()` | yes | the player, when a wheel symbol is attached (registerClass) |
 | `init(particle_, maxAccSpeed_, rad_)` | no | CParticleEngine.addWheel |
-| `process`, `checkCollision`, `pushOut`, `validateRotation`, `applyAddedAcc` | no | CParticleEngine (`checkCollisions`, `applyManFrictions`, `process`); each other |
+| `applyAddedAcc()` | yes | CParticleEngine.applyManFrictions |
+| `process`, `checkCollision`, `pushOut`, `validateRotation` | no | CParticleEngine (`checkCollisions`, `process`); each other |
