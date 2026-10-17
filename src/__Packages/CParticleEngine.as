@@ -1,133 +1,172 @@
-// @reference Packages_CParticleEngine_main
-function CParticleEngine()
+// the physics engine: particles, wheels and spring constraints, stepped by process in steps of t
+// seconds (at most maxSteps a frame) under a constant gravity
+class CParticleEngine
 {
-}
-// clears the engine by emptying its particle, wheel and constraint arrays
-// registers: r2 = the alias of this (engine)
-function clear()
-{
-   var engine = this;
-   while(engine.p_array.pop() != undefined)
+   var hit_mc;
+   var prevTime;
+   var p_array = new Array();
+   var w_array = new Array();
+   var c_array = new Array();
+   var t = 0.02;
+   var maxSteps = 2;
+   var gravity = 3.15;
+   function CParticleEngine()
    {
    }
-   while(engine.w_array.pop() != undefined)
+   // clears the engine by emptying its particle, wheel and constraint arrays
+   // registers: r2 = the alias of this (engine)
+   function clear()
    {
+      var engine = this;
+      while(engine.p_array.pop() != undefined)
+      {
+      }
+      while(engine.w_array.pop() != undefined)
+      {
+      }
+      while(engine.c_array.pop() != undefined)
+      {
+      }
    }
-   while(engine.c_array.pop() != undefined)
+   // gives the engine the clip its wheels test against (checkCollisions passes it to each wheel)
+   function setHitMovie(hit_mc_)
    {
+      this.hit_mc = hit_mc_;
    }
-}
-// gives the engine the clip its wheels test against (checkCollisions passes it to each wheel)
-function setHitMovie(hit_mc_)
-{
-   this.hit_mc = hit_mc_;
-}
-// the engine keeps its particles in p_array
-function addParticle(p)
-{
-   this.p_array.push(p);
-}
-// sets the wheel up with its particle, top speed and radius, then adds it to the engine's wheels
-function addWheel(wheel, p, maxSpeed, radius)
-{
-   wheel.init(p, maxSpeed, radius);
-   this.w_array.push(wheel);
-}
-// springs two particles together with the given stiffnesses and files the constraint with the engine
-// registers: r2 = the new CSpringConstraint (constraint)
-function addSpringConstraint(p1, p2, koeffStiff1, koeffStiff2)
-{
-   var constraint = new CSpringConstraint(p1, p2, koeffStiff1, koeffStiff2);
-   this.c_array.push(constraint);
-}
-// stamps the engine's `prevTime` with the current timer reading, the baseline the next step measures against
-function start()
-{
-   this.prevTime = getTimer();
-}
-// every particle starts the step with no horizontal acceleration and gravity scaled by its mass
-// registers: r3 = the alias of this (engine), r2 = the loop counter (i), r4 = the particle count (len)
-function computeForces()
-{
-   var engine = this;
-   var i;
-   var len = engine.p_array.length;
-   for(i = 0; i < len; i++)
+   // the engine keeps its particles in p_array
+   function addParticle(p)
    {
-      engine.p_array[i].acc.x = 0;
-      engine.p_array[i].acc.y = engine.gravity * engine.p_array[i].mass;
+      this.p_array.push(p);
    }
-}
-// zeroes every wheel's added acceleration; process calls it once its iterations are done
-// registers: r2 = the loop counter (i), r3 = the wheel (w), r4 = the wheel count (len)
-function clearForces()
-{
-   var len = this.w_array.length;
-   var i;
-   var w;
-   for(i = 0; i < len; i++)
+   // sets the wheel up with its particle, top speed and radius, then adds it to the engine's wheels
+   function addWheel(wheel, p, maxSpeed, radius)
    {
-      w = this.w_array[i];
-      w.addedAcc.x = w.addedAcc.y = 0;
+      wheel.init(p, maxSpeed, radius);
+      this.w_array.push(wheel);
    }
-}
-// every wheel applies its added acceleration; the method's name calls these the man's frictions
-// registers: r3 = the alias of this (engine), r4 = the number of wheels (count), r2 = the loop counter (i)
-function applyManFrictions()
-{
-   var engine = this;
-   var count = engine.w_array.length;
-   var i;
-   for(i = 0; i < count; i++)
+   // springs two particles together with the given stiffnesses and files the constraint with the engine
+   // registers: r2 = the new CSpringConstraint (constraint)
+   function addSpringConstraint(p1, p2, koeffStiff1, koeffStiff2)
    {
-      engine.w_array[i].applyAddedAcc();
+      var constraint = new CSpringConstraint(p1, p2, koeffStiff1, koeffStiff2);
+      this.c_array.push(constraint);
    }
-}
-// @reference CParticleEngine.verlet
-// every wheel tests itself against the engine's hit clip (hit_mc, set by setHitMovie)
-// registers: r3 = the engine (eng), r2 = the loop counter (i), r4 = the wheel count (count)
-function checkCollisions()
-{
-   var eng = this;
-   var i;
-   var count = eng.w_array.length;
-   for(i = 0; i < count; i++)
+   // stamps the engine's `prevTime` with the current timer reading, the baseline the next step measures against
+   function start()
    {
-      eng.w_array[i].checkCollision(eng.hit_mc);
+      this.prevTime = getTimer();
    }
-}
-// resolves every constraint once per step, in array order, with the elapsed time
-// registers: r3 = the alias of this (engine), r2 = the loop counter (i), r4 = the constraint count (len)
-function checkConstraints(dTime)
-{
-   var engine = this;
-   var i;
-   var len = engine.c_array.length;
-   for(i = 0; i < len; i++)
+   // every particle starts the step with no horizontal acceleration and gravity scaled by its mass
+   // registers: r3 = the alias of this (engine), r2 = the loop counter (i), r4 = the particle count (len)
+   function computeForces()
    {
-      engine.c_array[i].resolve(dTime);
+      var engine = this;
+      var i;
+      var len = engine.p_array.length;
+      for(i = 0; i < len; i++)
+      {
+         engine.p_array[i].acc.x = 0;
+         engine.p_array[i].acc.y = engine.gravity * engine.p_array[i].mass;
+      }
    }
-}
-// one frame of the simulation: the seconds since prevTime, cut into steps of t (at most
-// maxSteps), each step forces, frictions, verlet, constraints and collisions; then forces cleared
-// registers: r2 = the alias of this (engine), r5 = the timer reading (now), r6 = the seconds elapsed (elapsed), r3 = the loop counter (i), r4 = the step count (steps)
-function process()
-{
-   var engine = this;
-   var now = getTimer();
-   var elapsed = (now - engine.prevTime) / 1000;
-   engine.prevTime = now;
-   var i;
-   var steps = Math.min(Math.round(elapsed / engine.t), engine.maxSteps);
-   i = 0;
-   while(i < steps)
+   // zeroes every wheel's added acceleration; process calls it once its iterations are done
+   // registers: r2 = the loop counter (i), r3 = the wheel (w), r4 = the wheel count (len)
+   function clearForces()
    {
-      engine.computeForces();
-      engine.applyManFrictions();
-      engine.verlet(engine.t);
-      engine.checkConstraints(engine.t);
-      engine.checkCollisions();
-      i++;
+      var len = this.w_array.length;
+      var i;
+      var w;
+      for(i = 0; i < len; i++)
+      {
+         w = this.w_array[i];
+         w.addedAcc.x = w.addedAcc.y = 0;
+      }
    }
-   engine.clearForces();
+   // every wheel applies its added acceleration; the method's name calls these the man's frictions
+   // registers: r3 = the alias of this (engine), r4 = the number of wheels (count), r2 = the loop counter (i)
+   function applyManFrictions()
+   {
+      var engine = this;
+      var count = engine.w_array.length;
+      var i;
+      for(i = 0; i < count; i++)
+      {
+         engine.w_array[i].applyAddedAcc();
+      }
+   }
+   // moves every particle by one verlet step, damped by 0.995, then processes every wheel with an
+   // acceleration of its maxAccSpeed / 3.2 times -0.6 while the down arrow (key 40) is held, 1 for the up arrow (38), else 0
+   // registers: r3 = the alias of this (engine), r7 = the particles' damping (koeffDamp), r2 = the loop counter (i), r4 = the array's length (len), r6 = the arrow keys' share of maxAccSpeed (keyFactor)
+   function verlet(dTime)
+   {
+      var engine = this;
+      var koeffDamp = 0.995;
+      var i;
+      var len = engine.p_array.length;
+      for(i = 0; i < len; i++)
+      {
+         engine.p_array[i].verlet(dTime, koeffDamp);
+      }
+      len = engine.w_array.length;
+      var keyFactor = 0;
+      if(Key.isDown(40))
+      {
+         keyFactor = -0.6;
+      }
+      else if(Key.isDown(38))
+      {
+         keyFactor = 1;
+      }
+      for(i = 0; i < len; i++)
+      {
+         engine.w_array[i].process(dTime, engine.w_array[i].maxAccSpeed * keyFactor / 3.2, 0.99);
+      }
+   }
+   // every wheel tests itself against the engine's hit clip (hit_mc, set by setHitMovie)
+   // registers: r3 = the engine (eng), r2 = the loop counter (i), r4 = the wheel count (count)
+   function checkCollisions()
+   {
+      var eng = this;
+      var i;
+      var count = eng.w_array.length;
+      for(i = 0; i < count; i++)
+      {
+         eng.w_array[i].checkCollision(eng.hit_mc);
+      }
+   }
+   // resolves every constraint once per step, in array order, with the elapsed time
+   // registers: r3 = the alias of this (engine), r2 = the loop counter (i), r4 = the constraint count (len)
+   function checkConstraints(dTime)
+   {
+      var engine = this;
+      var i;
+      var len = engine.c_array.length;
+      for(i = 0; i < len; i++)
+      {
+         engine.c_array[i].resolve(dTime);
+      }
+   }
+   // one frame of the simulation: the seconds since prevTime, cut into steps of t (at most
+   // maxSteps), each step forces, frictions, verlet, constraints and collisions; then forces cleared
+   // registers: r2 = the alias of this (engine), r5 = the timer reading (now), r6 = the seconds elapsed (elapsed), r3 = the loop counter (i), r4 = the step count (steps)
+   function process()
+   {
+      var engine = this;
+      var now = getTimer();
+      var elapsed = (now - engine.prevTime) / 1000;
+      engine.prevTime = now;
+      var i;
+      var steps = Math.min(Math.round(elapsed / engine.t), engine.maxSteps);
+      i = 0;
+      while(i < steps)
+      {
+         engine.computeForces();
+         engine.applyManFrictions();
+         engine.verlet(engine.t);
+         engine.checkConstraints(engine.t);
+         engine.checkCollisions();
+         i++;
+      }
+      engine.clearForces();
+   }
 }

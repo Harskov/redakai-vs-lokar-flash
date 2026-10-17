@@ -91,8 +91,15 @@ class CVector2D
       vec.x = oldX * Math.cos(a) - oldY * Math.sin(a);
       vec.y = oldX * Math.sin(a) + oldY * Math.cos(a);
    }
+   // a new vector: this one rotated by the angle u, in radians; the original builds it twice and drops the first
+   // registers: r2 = the angle (a), r3 = the alias of this (vec)
    function rotateNew(u)
-   { /* @reference CVector2D.rotateNew */ }
+   {
+      var a = u;
+      var vec = this;
+      new CVector2D(vec.x * Math.cos(a) - vec.y * Math.sin(a), vec.x * Math.sin(a) + vec.y * Math.cos(a));
+      return new CVector2D(vec.x * Math.cos(a) - vec.y * Math.sin(a), vec.x * Math.sin(a) + vec.y * Math.cos(a));
+   }
    // scales both components in place by the caller's factor
    function mult(k)
    {
@@ -115,6 +122,20 @@ class CVector2D
    {
       return new CVector2D(this.x + v.x, this.y + v.y);
    }
+   // the signed distance from this point to the line through p1 and p2: the line as a*x + b*y + c,
+   // scaled by the length of (a, b); the original computes the result twice and drops the first
+   // registers: r4 = the alias of p1 (q), r3 = the line's x coefficient (a), r2 = the line's y coefficient (b), r5 = the line's constant (c), r6 = the length of (a and b) (len)
    function getDistanceTo(p1, p2)
-   { /* @reference CVector2D.getDistanceTo */ }
+   {
+      var q = p1;
+      var a = q.y - p2.y;
+      var b = p2.x - q.x;
+      var c = q.x * (p2.y - q.y) - q.y * (p2.x - q.x);
+      var len = Math.sqrt(a * a + b * b);
+      a /= len;
+      b /= len;
+      c /= len;
+      a * this.x + b * this.y + c;
+      return a * this.x + b * this.y + c;
+   }
 }
