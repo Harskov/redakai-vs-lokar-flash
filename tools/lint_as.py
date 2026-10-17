@@ -9,7 +9,10 @@ process-comment (a comment naming a run, a score, a tool, a friction id, a K-fil
 draft under reference/as did not have), fake-body-unexplained (`!FAKE` without a reason), placeholder-left (`TODO`, `FIXME`,
 `XXX`, `???`). Advisories: goto-emulation (a labelled loop with a multi-level break or continue the draft did not have),
 magic-number (a numeric literal other than 0, 1, -1, 2 with no named constant or comment within three lines), dynamic-ref
-(`eval(`, `this["…" + …]`, `_root["…"]`), global-write (an assignment to `_root.x` or `_global.x` not listed in docs/globals.md),
+(`eval(`, `this["…" + …]`, `_root["…"]`), global-write (an assignment to `_root.x`, `_global.x` or `eval("_root").x`, and in a
+script that runs on the main timeline — src/frame_<n>/DoAction*.as, src/DoInitAction*.as — a bare write no enclosing function
+declares and a `var` outside every function, not listed in docs/globals.md), globals-stale (a whole-tree run with the ledger: a
+docs/globals.md row whose "not yet accepted" clause names a matched function),
 long-function (> 150 lines), nested-depth (> 5), fake-body (the marker with its reason). Reference lines (`// @reference`) and
 body markers are not findings. Prints `path:line: rule: text`; the JSON line carries {findings: [{path, line, rule, level, text}],
 errors, readability_debt}. Writes nothing. Exit 0 clean, 1 error findings, 2 usage.
@@ -52,6 +55,23 @@ PLACEHOLDER = re.compile(r"\b(TODO|FIXME|XXX)\b|\?\?\?")
 FAKE = re.compile(r"!FAKE(\s*:\s*(\S.*))?")
 DYNAMIC = re.compile(r"\beval\s*\(|\bthis\s*\[\s*\"|_root\s*\[\s*\"|_global\s*\[\s*\"")
 GLOBAL_WRITE = re.compile(r"\b(_root|_global)\.([A-Za-z_$][\w$]*)\s*(=(?!=)|\+=|-=|\*=|/=|\+\+|--)")
+# the same write through `eval("_root")` (cookbook C8's spelling, which keeps the original DefineFunction), read before the
+# strings are emptied (redakai run 2026-10-17-034 F-1: clearStuff and processGame wrote 11 globals this way, none advised)
+EVAL_WRITE = re.compile(r"\beval\s*\(\s*([\"'])(_root|_global)\1\s*\)\s*\.\s*([A-Za-z_$][\w$]*)\s*(=(?!=)|\+=|-=|\*=|/=|\+\+|--)")
+# a bare write: an identifier that is no member, assigned or stepped; in a script that runs on the main timeline it lands on _root
+BARE_WRITE = re.compile(r"(?<![\w$.])([A-Za-z_$][\w$]*)\s*(?:=(?!=)|\+=|-=|\*=|/=|%=|\+\+|--)|(?:\+\+|--)\s*([A-Za-z_$][\w$]*)(?![\w$.(\[])")
+VAR_DECL = re.compile(r"\bvar\s+([A-Za-z_$][\w$]*)")
+FUNCTION = re.compile(r"\bfunction\b\s*(?:[A-Za-z_$][\w$]*)?\s*\(([^)]*)\)")
+AS_WORDS = {"var", "this", "super", "arguments", "true", "false", "null", "undefined", "new", "return", "typeof", "delete", "in",
+            "instanceof", "void", "function", "if", "else", "for", "while", "do", "switch", "case", "default", "break", "continue",
+            "with", "try", "catch", "finally", "throw", "_root", "_global", "_parent"}
+# a timeline's own event handlers: installing one is no game state (redakai's frame 18 installs fifteen)
+CLIP_EVENTS = {"onEnterFrame", "onLoad", "onUnload", "onData", "onPress", "onRelease", "onReleaseOutside", "onRollOver",
+               "onRollOut", "onDragOver", "onDragOut", "onKeyDown", "onKeyUp", "onMouseDown", "onMouseUp", "onMouseMove",
+               "onSetFocus", "onKillFocus"}
+# the scripts that run with `this` as _root: the main timeline's frames and the root DoInitAction (its functions name the main
+# timeline's frame labels; redakai's docs/globals.md): src/frame_<n>/DoAction*.as, src/DoInitAction*.as
+ROOT_SCOPE = re.compile(r"^(?:frame_\d+/DoAction[^/]*|DoInitAction[^/]*)\.as$")
 NUMBER = re.compile(r"(?<![\w.$])-?\d+(\.\d+)?(?![\w.])")
 LABELLED_LOOP = re.compile(r"^\s*[A-Za-z_$][\w$]*\s*:\s*(for|while|do)\b")
 MULTI_BREAK = re.compile(r"\b(break|continue)\s+[A-Za-z_$][\w$]*\s*;")
@@ -78,6 +98,86 @@ def draft_text(repo, path):
     return C.ref_as_text(repo, str(rel)[:-3])
 
 
+def script_rel(repo, path):
+    """The file's path under src/ ('frame_15/DoAction.as'), an attempt file's by its function's script, or None."""
+    try:
+        return str(Path(path).resolve().relative_to((repo / "src").resolve())).replace("\\", "/")
+    except ValueError:
+        m = re.search(r"wip/([^/]+)/", str(path))
+        rec = C.record(repo, m.group(1)) if m else None
+        script = (rec.get("pack") or {}).get("script") if rec else None
+        return f"{script}.as" if script else None
+
+
+def scopes(code_lines):
+    """[(first line, last line, names)] per function: its parameters and every `var` inside it (hoisted, so a write before
+    the declaration is the function's own too; an inner function's vars are counted for the outer as well)."""
+    frames, stack, pending, depth = [], [], None, 0
+    for i, code in enumerate(code_lines, 1):
+        fm = FUNCTION.search(code)
+        if fm:
+            pending = {p.strip() for p in fm.group(1).split(",") if p.strip()}
+        for ch in code:
+            if ch == "{":
+                if pending is not None:
+                    stack.append([i, None, set(pending), depth])
+                    pending = None
+                depth += 1
+            elif ch == "}":
+                depth -= 1
+                if stack and stack[-1][3] == depth:
+                    f = stack.pop()
+                    f[1] = i
+                    frames.append(f)
+    for f in stack:
+        f[1] = len(code_lines)
+        frames.append(f)
+    for f in frames:
+        for code in code_lines[f[0] - 1:f[1]]:
+            f[2].update(VAR_DECL.findall(code))
+    return [(a, b, names) for a, b, names, _d in frames]
+
+
+def root_writes(code_lines):
+    """{line: [names]} of the main-timeline variables a root-scope script writes: a bare write no enclosing function declares,
+    and a `var` outside every function."""
+    frames = scopes(code_lines)
+    out = {}
+    for i, code in enumerate(code_lines, 1):
+        inside = [names for a, b, names in frames if a <= i <= b]
+        declared = set().union(*inside) if inside else set()
+        found = []
+        if not inside:
+            found += VAR_DECL.findall(code)
+        for m in BARE_WRITE.finditer(code):
+            n = m.group(1) or m.group(2)
+            pre = code[:m.start()].rstrip()
+            if n in AS_WORDS or n in CLIP_EVENTS or REGISTER.match(n) or n in declared or (pre.endswith("var") and inside):
+                continue
+            found.append(n)
+        if found:
+            out[i] = list(dict.fromkeys(found))
+    return out
+
+
+def globals_stale(repo):
+    """docs/globals.md rows whose "not yet accepted" clause names a function the ledger has matched: [(line, [names])]. Workbench
+    only (a contributor copy has no ledger); redakai run 2026-10-17-034 F-2: 14 rows went stale with no signal."""
+    p = repo / "docs" / "globals.md"
+    led = getattr(C, "ledger", None)
+    if not p.is_file() or led is None:
+        return []
+    matched = {r.get("name") for r in led(repo) if r.get("status") == "matched"}
+    out = []
+    for i, line in enumerate(p.read_text(encoding="utf-8").split("\n"), 1):
+        for clause in re.findall(r"not yet accepted:([^|]*)", line):
+            plain = re.sub(r"`[^`]*`", "", clause)
+            names = [n for n in re.findall(r"[A-Za-z_$][\w$]*", plain) if n in matched]
+            if names:
+                out.append((i, list(dict.fromkeys(names))))
+    return out
+
+
 def globals_known(repo):
     p = repo / "docs" / "globals.md"
     if not p.is_file():
@@ -98,6 +198,9 @@ def lint_file(repo, path, known_globals):
     traces = 0
     depth = 0
     fn_start = None
+    rel = script_rel(repo, path)
+    bare = root_writes([("" if REFERENCE.search(r) else COMMENT.sub("", strip_strings(r))) for r in lines]) \
+        if rel and ROOT_SCOPE.match(rel) else {}
     for i, raw in enumerate(lines, 1):
         if REFERENCE.search(raw):
             continue
@@ -124,8 +227,9 @@ def lint_file(repo, path, known_globals):
             add(i, "placeholder-left", "error", raw)
         if DYNAMIC.search(code):
             add(i, "dynamic-ref", "advisory", raw)
-        gm = GLOBAL_WRITE.search(code)
-        if gm and gm.group(2) not in known_globals:
+        written = [m.group(2) for m in GLOBAL_WRITE.finditer(code)] + [m.group(3) for m in EVAL_WRITE.finditer(COMMENT.sub("", raw))] \
+            + bare.get(i, [])
+        if any(n not in known_globals for n in written):
             add(i, "global-write", "advisory", raw)
         if LABELLED_LOOP.search(code) or MULTI_BREAK.search(code):
             if not draft_labelled:
@@ -181,6 +285,10 @@ def main():
             print(f"{f}: not found", file=sys.stderr)
             return 2
         findings += lint_file(repo, f, known)
+    if not a.files:
+        for line, names in globals_stale(repo):
+            findings.append({"path": str(repo / "docs" / "globals.md"), "line": line, "rule": "globals-stale", "level": "advisory",
+                             "text": f"'not yet accepted' names matched function(s): {', '.join(names)}"})
     for f in sorted(findings, key=lambda f: (f["level"] != "error", f["path"], f["line"])):
         print(f"{f['path']}:{f['line']}: {f['rule']}{' (advisory)' if f['level'] == 'advisory' else ''}: {f['text']}")
     errs = sum(1 for f in findings if f["level"] == "error")
