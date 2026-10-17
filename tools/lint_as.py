@@ -5,14 +5,14 @@
 
 Without files: every src/**/*.as. Errors: register-name (`_locN_`, `__regN`, `_tempN` in accepted source), ffdec-artifact
 (`§§`, `// unresolved`, `loopN:` labels and `addrN` targets, a bare `undefined;` statement, `ÿ`-escaped or `\\xNN` identifiers),
-process-comment (a comment naming a run, a score, a tool, a friction id, a K-file or a round), trace-leftover (a `trace(` the
-draft under reference/as did not have), fake-body-unexplained (`!FAKE` without a reason), placeholder-left (`TODO`, `FIXME`,
-`XXX`, `???`). Advisories: goto-emulation (a labelled loop with a multi-level break or continue the draft did not have),
-magic-number (a numeric literal other than 0, 1, -1, 2 with no named constant or comment within three lines), dynamic-ref
-(`eval(`, `this["…" + …]`, `_root["…"]`), global-write (an assignment to `_root.x`, `_global.x` or `eval("_root").x`, and in a
-script that runs on the main timeline — src/frame_<n>/DoAction*.as, src/DoInitAction*.as — a bare write no enclosing function
-declares and a `var` outside every function, not listed in docs/globals.md), globals-stale (a whole-tree run with the ledger: a
-docs/globals.md row whose "not yet accepted" clause names a matched function),
+process-comment (a comment naming a run, an attempt, a score, a tool, a friction id, a K-file or a round, or saying `matched` or
+`normalizer`), trace-leftover (a `trace(` the draft under reference/as did not have), fake-body-unexplained (`!FAKE` without a
+reason), placeholder-left (`TODO`, `FIXME`, `XXX`, `???`). Advisories: goto-emulation (a labelled loop with a multi-level break
+or continue the draft did not have), magic-number (a numeric literal other than 0, 1, -1, 2 with no named constant or comment
+within three lines), dynamic-ref (`eval(`, `this["…" + …]`, `_root["…"]`), global-write (an assignment to `_root.x`, `_global.x`
+or `eval("_root").x`, and in a script that runs on the main timeline — src/frame_<n>/DoAction*.as, src/DoInitAction*.as — a bare
+write no enclosing function declares and a `var` outside every function, not listed in docs/globals.md), globals-stale (a
+whole-tree run with the ledger: a docs/globals.md row whose "not yet accepted" clause names a matched function),
 long-function (> 150 lines), nested-depth (> 5), fake-body (the marker with its reason). Reference lines (`// @reference`) and
 body markers are not findings. Prints `path:line: rule: text`; the JSON line carries {findings: [{path, line, rule, level, text}],
 errors, readability_debt}. Writes nothing. Exit 0 clean, 1 error findings, 2 usage.
@@ -51,8 +51,12 @@ except ImportError:            # the contributor copy under a public repository'
 REGISTER = re.compile(r"\b(_loc\d+_|__reg\d+|_temp_?\d+)\b")
 ARTIFACT = re.compile(r"§§|//\s*unresolved|^\s*loop\d+:|\baddr\d+\b|^\s*undefined;\s*$|\\x[0-9a-fA-F]{2}|ÿ|\(not compilable\)|^\s*§")
 # a match percentage outside the word boundaries: `\b` after `%` needs a word character, so `97.5%` never matched (remediation
-# 2026-10-17-remediation-34, flash-batch-qa-8); a game's own percentage (`a 50% chance`) is no narration
-PROCESS = re.compile(r"\b(run \d{4}-\d{2}-\d{2}|score:? \d+|F-\d+\b|K[1-9]-|round [A-Z]-?\d|FFDec|ffdec|normalizer|attempt-\d|ledger|batch|campaign)\b"
+# 2026-10-17-remediation-34, flash-batch-qa-8); a game's own percentage (`a 50% chance`) is no narration. Also on K1 §6's list:
+# `matched`, a K-file by its section (`K1 §6`), an attempt by its number (`attempt 2`, `attempt 12`), a round (`remediation`) and
+# `normalizers`; `unmatched` and `matching` stay the game's words (remediation 2026-10-17-remediation-37, redakai run
+# 2026-10-17-043 F-3: a comment saying `process is not matched yet` linted clean)
+PROCESS = re.compile(r"\b(run \d{4}-\d{2}-\d{2}|score:? \d+|F-\d+\b|K[1-9]-|K[1-9]\s*§\s*\d+|round [A-Z]-?\d|remediation|FFDec|ffdec"
+                     r"|normali[sz]ers?|matched|attempt[- ]#?\d+|ledger|batch|campaign)\b"
                      r"|\bmatch\w*\s+(?:at\s+)?\d{1,3}(?:\.\d+)?\s?%|\b\d{1,3}(?:\.\d+)?\s?%\s+match", re.I)
 PLACEHOLDER = re.compile(r"\b(TODO|FIXME|XXX)\b|\?\?\?")
 FAKE = re.compile(r"!FAKE(\s*:\s*(\S.*))?")
