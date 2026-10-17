@@ -1,15 +1,15 @@
 {
   "version": 2,
   "measures": {
-    "fuzzy_match_percent": 43.97,
+    "fuzzy_match_percent": 49.61,
     "total_code": 10936,
-    "matched_code": 4776,
-    "matched_code_percent": 43.67,
+    "matched_code": 5393,
+    "matched_code_percent": 49.31,
     "total_functions": 202,
-    "matched_functions": 172,
-    "matched_functions_percent": 85.15,
+    "matched_functions": 179,
+    "matched_functions_percent": 88.61,
     "total_units": 95,
-    "complete_units": 80
+    "complete_units": 81
   },
   "units": [
     {
@@ -2054,19 +2054,19 @@
     {
       "name": "classes/CMan",
       "measures": {
-        "fuzzy_match_percent": 39.49,
+        "fuzzy_match_percent": 100.0,
         "total_code": 590,
-        "matched_code": 233,
-        "matched_code_percent": 39.49,
+        "matched_code": 590,
+        "matched_code_percent": 100.0,
         "total_functions": 11,
-        "matched_functions": 7,
-        "matched_functions_percent": 63.64
+        "matched_functions": 11,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
           "name": "Packages_CMan_main",
           "size": 81,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "CMan",
@@ -2091,17 +2091,17 @@
         {
           "name": "CMan.onEnterFrame",
           "size": 88,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "CMan.toLeft",
           "size": 94,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "CMan.toRight",
           "size": 94,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "CMan.fromLeft",
@@ -2120,7 +2120,7 @@
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "Packages_CMan",
         "source_path": "src/__Packages/CMan.as",
         "progress_categories": [
@@ -2170,13 +2170,13 @@
     {
       "name": "classes/CParticleEngine",
       "measures": {
-        "fuzzy_match_percent": 49.67,
+        "fuzzy_match_percent": 64.78,
         "total_code": 602,
-        "matched_code": 299,
-        "matched_code_percent": 49.67,
+        "matched_code": 390,
+        "matched_code_percent": 64.78,
         "total_functions": 15,
-        "matched_functions": 12,
-        "matched_functions_percent": 80.0
+        "matched_functions": 13,
+        "matched_functions_percent": 86.67
       },
       "functions": [
         {
@@ -2252,7 +2252,7 @@
         {
           "name": "CParticleEngine.process",
           "size": 91,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
@@ -2306,19 +2306,19 @@
     {
       "name": "classes/CVector2D",
       "measures": {
-        "fuzzy_match_percent": 55.79,
+        "fuzzy_match_percent": 69.36,
         "total_code": 656,
-        "matched_code": 366,
-        "matched_code_percent": 55.79,
+        "matched_code": 455,
+        "matched_code_percent": 69.36,
         "total_functions": 20,
-        "matched_functions": 17,
-        "matched_functions_percent": 85.0
+        "matched_functions": 18,
+        "matched_functions_percent": 90.0
       },
       "functions": [
         {
           "name": "Packages_CVector2D_main",
           "size": 89,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "CVector2D",
@@ -2429,19 +2429,19 @@
     {
       "name": "classes/CWheel",
       "measures": {
-        "fuzzy_match_percent": 3.77,
+        "fuzzy_match_percent": 8.81,
         "total_code": 1590,
-        "matched_code": 60,
-        "matched_code_percent": 3.77,
+        "matched_code": 140,
+        "matched_code_percent": 8.81,
         "total_functions": 8,
-        "matched_functions": 2,
-        "matched_functions_percent": 25.0
+        "matched_functions": 3,
+        "matched_functions_percent": 37.5
       },
       "functions": [
         {
           "name": "Packages_CWheel_main",
           "size": 80,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "CWheel",
@@ -3223,13 +3223,13 @@
       "id": "gameplay",
       "name": "gameplay",
       "measures": {
-        "fuzzy_match_percent": 28.79,
+        "fuzzy_match_percent": 37.57,
         "total_code": 7024,
-        "matched_code": 1990,
-        "matched_code_percent": 28.33,
+        "matched_code": 2607,
+        "matched_code_percent": 37.12,
         "total_functions": 146,
-        "matched_functions": 120,
-        "matched_functions_percent": 82.19
+        "matched_functions": 127,
+        "matched_functions_percent": 86.99
       }
     },
     {
@@ -3301,13 +3301,13 @@
       "id": "gameplay.cman",
       "name": "gameplay/cman",
       "measures": {
-        "fuzzy_match_percent": 40.4,
+        "fuzzy_match_percent": 100.0,
         "total_code": 599,
-        "matched_code": 242,
-        "matched_code_percent": 40.4,
+        "matched_code": 599,
+        "matched_code_percent": 100.0,
         "total_functions": 12,
-        "matched_functions": 8,
-        "matched_functions_percent": 66.67
+        "matched_functions": 12,
+        "matched_functions_percent": 100.0
       }
     },
     {
@@ -3327,13 +3327,13 @@
       "id": "gameplay.cparticleengine",
       "name": "gameplay/cparticleengine",
       "measures": {
-        "fuzzy_match_percent": 49.67,
+        "fuzzy_match_percent": 64.78,
         "total_code": 602,
-        "matched_code": 299,
-        "matched_code_percent": 49.67,
+        "matched_code": 390,
+        "matched_code_percent": 64.78,
         "total_functions": 15,
-        "matched_functions": 12,
-        "matched_functions_percent": 80.0
+        "matched_functions": 13,
+        "matched_functions_percent": 86.67
       }
     },
     {
@@ -3353,26 +3353,26 @@
       "id": "gameplay.cvector2d",
       "name": "gameplay/cvector2d",
       "measures": {
-        "fuzzy_match_percent": 55.79,
+        "fuzzy_match_percent": 69.36,
         "total_code": 656,
-        "matched_code": 366,
-        "matched_code_percent": 55.79,
+        "matched_code": 455,
+        "matched_code_percent": 69.36,
         "total_functions": 20,
-        "matched_functions": 17,
-        "matched_functions_percent": 85.0
+        "matched_functions": 18,
+        "matched_functions_percent": 90.0
       }
     },
     {
       "id": "gameplay.cwheel",
       "name": "gameplay/cwheel",
       "measures": {
-        "fuzzy_match_percent": 4.85,
+        "fuzzy_match_percent": 9.83,
         "total_code": 1608,
-        "matched_code": 78,
-        "matched_code_percent": 4.85,
+        "matched_code": 158,
+        "matched_code_percent": 9.83,
         "total_functions": 10,
-        "matched_functions": 4,
-        "matched_functions_percent": 40.0
+        "matched_functions": 5,
+        "matched_functions_percent": 50.0
       }
     },
     {

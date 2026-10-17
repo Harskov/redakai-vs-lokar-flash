@@ -108,4 +108,26 @@ function checkConstraints(dTime)
       engine.c_array[i].resolve(dTime);
    }
 }
-// @reference CParticleEngine.process
+// one frame of the simulation: the seconds since prevTime, cut into steps of t (at most
+// maxSteps), each step forces, frictions, verlet, constraints and collisions; then forces cleared
+// registers: r2 = the alias of this (engine), r5 = the timer reading (now), r6 = the seconds elapsed (elapsed), r3 = the loop counter (i), r4 = the step count (steps)
+function process()
+{
+   var engine = this;
+   var now = getTimer();
+   var elapsed = (now - engine.prevTime) / 1000;
+   engine.prevTime = now;
+   var i;
+   var steps = Math.min(Math.round(elapsed / engine.t), engine.maxSteps);
+   i = 0;
+   while(i < steps)
+   {
+      engine.computeForces();
+      engine.applyManFrictions();
+      engine.verlet(engine.t);
+      engine.checkConstraints(engine.t);
+      engine.checkCollisions();
+      i++;
+   }
+   engine.clearForces();
+}
