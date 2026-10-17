@@ -1,203 +1,203 @@
 name	label	purpose	evidence
-DefineButton2_124_BUTTONCONDACTION_on_release_main	ui		a button action (buttons/124/on(release))
+DefineButton2_124_BUTTONCONDACTION_on_release_main	ui	btn1 on the logo frame: zeroes tscore and mscore, plays the game frame (15), lvls 1	a button action (buttons/124/on(release))
 DefineButton2_127_BUTTONCONDACTION_on_release_main	ui	button 127 (btn2 on frames 10 logo, 17 comple, 19 gamewin, 20 gameover): opens http://www.jeuxredakai.com/ in a new window	a button action (buttons/127/on(release))
-DefineButton2_147_BUTTONCONDACTION_on_release_main	ui		a button action (buttons/147/on(release))
-DefineButton2_147_BUTTONCONDACTION_on_rollOut_main	ui		a button action (buttons/147/on(rollOut))
-DefineButton2_147_BUTTONCONDACTION_on_rollOver_main	ui		a button action (buttons/147/on(rollOver))
+DefineButton2_147_BUTTONCONDACTION_on_release_main	ui	the play button on frames 11-12: plays the game frame (15) at lvls 1, leaving tscore and mscore as they are	a button action (buttons/147/on(release))
+DefineButton2_147_BUTTONCONDACTION_on_rollOut_main	ui	the play button's roll-out: plays its sta clip from frame 11	a button action (buttons/147/on(rollOut))
+DefineButton2_147_BUTTONCONDACTION_on_rollOver_main	ui	the play button's roll-over: plays its sta clip from frame 2	a button action (buttons/147/on(rollOver))
 DefineButton2_148_BUTTONCONDACTION_on_release_main	ui	the help button (on frames 11-12): sends the main timeline to its `help` frame (14)	a button action (buttons/148/on(release))
-DefineButton2_148_BUTTONCONDACTION_on_rollOut_main	ui		a button action (buttons/148/on(rollOut))
+DefineButton2_148_BUTTONCONDACTION_on_rollOut_main	ui	the help button's roll-out: plays its hel clip from frame 11	a button action (buttons/148/on(rollOut))
 DefineButton2_148_BUTTONCONDACTION_on_rollOver_main	ui	the help button's roll-over: plays its `hel` clip from frame 2 (the roll-out plays it from 11)	a button action (buttons/148/on(rollOver))
 DefineButton2_389_BUTTONCONDACTION_on_release_main	ui	button 389 (btn2 on frame 15 game): opens http://www.jeuxredakai.com in a new window	a button action (buttons/389/on(release))
-DefineButton2_461_BUTTONCONDACTION_on_release_main	ui		a button action (buttons/461/on(release))
-DefineButton2_473_BUTTONCONDACTION_on_release_main	ui		a button action (buttons/473/on(release))
-DefineSprite_107_frame_1_DoAction_main	gameplay/107	holds sprite 107 on frame 1; 107 sits in sprite 108 on the root frames 10-12, 17 and 19; what the clip shows is not established	code of symbol 107 (sprites/sprite_107/frame_1)
-DefineSprite_107_frame_2_DoAction_main	gameplay/107	holds sprite 107 on frame 2; no script sends it there, so its trigger is not known	code of symbol 107 (sprites/sprite_107/frame_2)
-DefineSprite_112_frame_1_DoAction_main	gameplay/112	holds the wheel's `tyre` clip (112, in sprite 113) on frame 1 until sprite 113 picks the selected frame	code of symbol 112 (sprites/sprite_112/frame_1)
-DefineSprite_113_frame_1_DoAction_main	gameplay/113	the wheel rim (`mc_rim` of lib_forward_wheel and lib_back_wheel): sets its `tyre` to the frame _root.jeepselection names; no script writes jeepselection	code of symbol 113 (sprites/sprite_113/frame_1)
+DefineButton2_461_BUTTONCONDACTION_on_release_main	ui	btn2 on comple: carries mscore into tscore, then gameStart (frame 17 has already raised lvls)	a button action (buttons/461/on(release))
+DefineButton2_473_BUTTONCONDACTION_on_release_main	ui	btn0 on gamewin and gameover: zeroes tscore and mscore and sends the main timeline to the logo frame (10)	a button action (buttons/473/on(release))
+DefineSprite_107_frame_1_DoAction_main	gameplay/timeline-logo	holds sprite 107 on frame 1; 107 sits in sprite 108 on the root frames 10-12, 17 and 19; what the clip shows is not established	code of symbol 107 (sprites/sprite_107/frame_1): symbol 107 placed inside symbol 108 (frame 1); symbol 108 placed on frame 10 `logo` of the main timeline
+DefineSprite_107_frame_2_DoAction_main	gameplay/timeline-logo	holds sprite 107 on frame 2; no script sends it there, so its trigger is not known	code of symbol 107 (sprites/sprite_107/frame_2): symbol 107 placed inside symbol 108 (frame 1); symbol 108 placed on frame 10 `logo` of the main timeline
+DefineSprite_112_frame_1_DoAction_main	gameplay/lib_forward_wheel	holds the wheel's `tyre` clip (112, in sprite 113) on frame 1 until sprite 113 picks the selected frame	code of symbol 112 (sprites/sprite_112/frame_1): symbol 112 placed inside symbol 113 (frame 1) as `tyre`; symbol 113 placed inside symbol 114 (frame 1) as `mc_rim`; symbol 114 placed inside symbol lib_forward_wheel (frame 1) as `mc`
+DefineSprite_113_frame_1_DoAction_main	gameplay/lib_forward_wheel	the wheel rim (`mc_rim` of lib_forward_wheel and lib_back_wheel): sets its `tyre` to the frame _root.jeepselection names; no script writes jeepselection	code of symbol 113 (sprites/sprite_113/frame_1): symbol 113 placed inside symbol 114 (frame 1) as `mc_rim`; symbol 114 placed inside symbol lib_forward_wheel (frame 1) as `mc`
 DefineSprite_12_rocket_id_frame_1_DoAction_main	gameplay/rocket_id	holds the rocket (export rocket_id) on frame 1 until fire() plays it from frame 2	code of symbol rocket_id (sprites/rocket_id/frame_1)
 DefineSprite_12_rocket_id_frame_39_DoAction_main	gameplay/rocket_id	the rocket removes itself on frame 39, the frame clearStuff and the bullet checker also send spent shots to	code of symbol rocket_id (sprites/rocket_id/frame_39)
-DefineSprite_150_frame_1_DoAction_main	gameplay/150	an empty frame action (the reference has no statement); sprite 150 sits on frame 11 soundatta	code of symbol 150 (sprites/sprite_150/frame_1)
-DefineSprite_159_frame_1_DoAction_main	gameplay/159		code of symbol 159 (sprites/sprite_159/frame_1)
-DefineSprite_197_frame_1_DoAction_main	gameplay/197	the destructible box (box1-box7 in the level sprites) waits on frame 1; the bullet checker plays it on a bullet hit; the doubled stop() is in the original	code of symbol 197 (sprites/sprite_197/frame_1)
-DefineSprite_197_frame_11_DoAction_main	gameplay/197	the box's last frame: holds after the destruction animation	code of symbol 197 (sprites/sprite_197/frame_11)
-DefineSprite_198_frame_1_DoAction_main	gameplay/198	holds the box mask (198: mask_mc in level 1, mask_hit_mc in the hit map) on frame 1; its box6 and box7 children play with the boxes	code of symbol 198 (sprites/sprite_198/frame_1)
-DefineSprite_205_frame_1_DoAction_main	gameplay/205		code of symbol 205 (sprites/sprite_205/frame_1)
+DefineSprite_150_frame_1_DoAction_main	gameplay/timeline-soundatta	an empty frame action (the reference has no statement); sprite 150 sits on frame 11 soundatta	code of symbol 150 (sprites/sprite_150/frame_1): symbol 150 placed on frame 11 `soundatta` of the main timeline
+DefineSprite_159_frame_1_DoAction_main	gameplay/timeline-game	a level background (mc_fon in levels 1, 2, 4, 5, 6): shows one of five backgrounds at random on its bg clip	code of symbol 159 (sprites/sprite_159/frame_1): symbol 159 placed inside symbol 219 (frame 1) as `mc_fon`; symbol 219 placed inside symbol 387 (frame 1) as `mc`; symbol 387 placed on frame 15 `game` of the main timeline as `mc_level`
+DefineSprite_197_frame_1_DoAction_main	gameplay/timeline-game	the destructible box (box1-box7 in the level sprites) waits on frame 1; the bullet checker plays it on a bullet hit; the doubled stop() is in the original	code of symbol 197 (sprites/sprite_197/frame_1): symbol 197 placed inside symbol 198 (frame 1) as `box6`; symbol 198 placed inside symbol 219 (frame 1) as `mask_mc`; symbol 219 placed inside symbol 387 (frame 1) as `mc`; symbol 387 placed on frame 15 `game` of the main timeline as `mc_level`
+DefineSprite_197_frame_11_DoAction_main	gameplay/timeline-game	the box's last frame: holds after the destruction animation	code of symbol 197 (sprites/sprite_197/frame_11): symbol 197 placed inside symbol 198 (frame 1) as `box6`; symbol 198 placed inside symbol 219 (frame 1) as `mask_mc`; symbol 219 placed inside symbol 387 (frame 1) as `mc`; symbol 387 placed on frame 15 `game` of the main timeline as `mc_level`
+DefineSprite_198_frame_1_DoAction_main	gameplay/timeline-game	holds the box mask (198: mask_mc in level 1, mask_hit_mc in the hit map) on frame 1; its box6 and box7 children play with the boxes	code of symbol 198 (sprites/sprite_198/frame_1): symbol 198 placed inside symbol 202 (frame 1) as `mask_hit_mc`; symbol 202 placed inside symbol 219 (frame 1) as `mc_hit`; symbol 219 placed inside symbol 387 (frame 1) as `mc`; symbol 387 placed on frame 15 `game` of the main timeline as `mc_level`
+DefineSprite_205_frame_1_DoAction_main	gameplay/205	holds sprite 205 (thingsin in every level's hoterelement) on frame 1 and installs the handler that moves it to frame 2 when _root.rotates is 53	code of symbol 205 (sprites/sprite_205/frame_1)
 DefineSprite_205_frame_1_DoAction.onEnterFrame	gameplay/205	per frame: moves to frame 2 when _root.rotates is 53, else holds; no script writes rotates, so the trigger is not known	code of symbol 205 (sprites/sprite_205/frame_1)
-DefineSprite_205_frame_2_DoAction_main	gameplay/205		code of symbol 205 (sprites/sprite_205/frame_2)
+DefineSprite_205_frame_2_DoAction_main	gameplay/205	holds sprite 205 on frame 2 and installs the handler that returns it to frame 1 unless _root.rotates is 53; no script writes rotates	code of symbol 205 (sprites/sprite_205/frame_2)
 DefineSprite_205_frame_2_DoAction.onEnterFrame	gameplay/205	per frame: holds while _root.rotates is 53, else returns to frame 1 (frame 1's counterpart)	code of symbol 205 (sprites/sprite_205/frame_2)
-DefineSprite_206_frame_1_DoAction_main	gameplay/206	holds sprite 206 (things53 inside the hoterelement clip of every level) on frame 1	code of symbol 206 (sprites/sprite_206/frame_1)
-DefineSprite_206_frame_2_DoAction_main	gameplay/206	holds sprite 206 on frame 2; no script sends it there	code of symbol 206 (sprites/sprite_206/frame_2)
+DefineSprite_206_frame_1_DoAction_main	gameplay/timeline-game	holds sprite 206 (things53 inside the hoterelement clip of every level) on frame 1	code of symbol 206 (sprites/sprite_206/frame_1): symbol 206 placed inside symbol 207 (frame 1) as `things53`; symbol 207 placed inside symbol 219 (frame 1) as `hoterelement`; symbol 219 placed inside symbol 387 (frame 1) as `mc`; symbol 387 placed on frame 15 `game` of the main timeline as `mc_level`
+DefineSprite_206_frame_2_DoAction_main	gameplay/timeline-game	holds sprite 206 on frame 2; no script sends it there	code of symbol 206 (sprites/sprite_206/frame_2): symbol 206 placed inside symbol 207 (frame 1) as `things53`; symbol 207 placed inside symbol 219 (frame 1) as `hoterelement`; symbol 219 placed inside symbol 387 (frame 1) as `mc`; symbol 387 placed on frame 15 `game` of the main timeline as `mc_level`
 DefineSprite_20_bullet_id_frame_1_DoAction_main	gameplay/bullet_id	holds the bullet (export bullet_id) on frame 1 until fire() plays it from frame 2	code of symbol bullet_id (sprites/bullet_id/frame_1)
-DefineSprite_20_bullet_id_frame_39_DoAction_main	gameplay/bullet_id		code of symbol bullet_id (sprites/bullet_id/frame_39)
-DefineSprite_218_frame_1_DoAction_main	gameplay/218	holds maskman_mc (218, in levels 1-5) on frame 1 until processGame plays it near the finish line	code of symbol 218 (sprites/sprite_218/frame_1)
-DefineSprite_218_frame_34_DoAction_main	gameplay/218	holds maskman_mc at the end of its animation (frame 34)	code of symbol 218 (sprites/sprite_218/frame_34)
-DefineSprite_24_frame_1_DoAction_main	gameplay/24	holds mc_gas (24, root frames 1-12) on frame 1; processGame plays it from frame 2 when the up key starts an acceleration	code of symbol 24 (sprites/sprite_24/frame_1)
-DefineSprite_358_frame_1_DoAction_main	gameplay/358		code of symbol 358 (sprites/sprite_358/frame_1)
-DefineSprite_385_frame_1_DoAction_main	gameplay/385	holds level 6's maskman_mc (385, in sprite 386) on frame 1	code of symbol 385 (sprites/sprite_385/frame_1)
-DefineSprite_385_frame_5_DoAction_main	gameplay/385	holds level 6's maskman_mc on frame 5, the end of its animation	code of symbol 385 (sprites/sprite_385/frame_5)
-DefineSprite_399_frame_1_DoAction_main	gameplay/399		code of symbol 399 (sprites/sprite_399/frame_1)
-DefineSprite_399_frame_1_DoAction.onPress	gameplay/399	the on/off switch on frame 15 (labels on, off): a press while on plays from `off`, whose frame stops every sound; probably the sound switch (unverified)	code of symbol 399 (sprites/sprite_399/frame_1)
-DefineSprite_399_frame_2_DoAction_main	gameplay/399		code of symbol 399 (sprites/sprite_399/frame_2)
-DefineSprite_399_frame_2_DoAction.onPress	gameplay/399	the on/off switch's press while off: plays from `on`	code of symbol 399 (sprites/sprite_399/frame_2)
-DefineSprite_408_frame_1_DoAction_main	gameplay/408	the health meter (health_mc) holds frame 1, full health; a bomb hit advances it with nextFrame	code of symbol 408 (sprites/sprite_408/frame_1)
-DefineSprite_408_frame_2_DoAction_main	gameplay/408	the health meter holds frame 2 after the first bomb hit	code of symbol 408 (sprites/sprite_408/frame_2)
-DefineSprite_408_frame_3_DoAction_main	gameplay/408	the health meter holds frame 3 after the second bomb hit	code of symbol 408 (sprites/sprite_408/frame_3)
-DefineSprite_408_frame_4_DoAction_main	gameplay/408	the health meter holds frame 4; the bomb's handler calls loose() when the meter reaches it	code of symbol 408 (sprites/sprite_408/frame_4)
-DefineSprite_415_frame_1_DoAction_main	gameplay/415	the score pop-up (score_mc) holds frame 1, empty, between pop-ups	code of symbol 415 (sprites/sprite_415/frame_1)
-DefineSprite_415_frame_17_DoAction_main	gameplay/415	ends the +10 pop-up the bullet checker starts at frame 2 for a box	code of symbol 415 (sprites/sprite_415/frame_17)
-DefineSprite_415_frame_33_DoAction_main	gameplay/415	ends the +50 pop-up the bullet checker starts at frame 18 for the helicopter	code of symbol 415 (sprites/sprite_415/frame_33)
-DefineSprite_415_frame_50_DoAction_main	gameplay/415	ends the -50 pop-up the bomb's handler starts at frame 34	code of symbol 415 (sprites/sprite_415/frame_50)
-DefineSprite_437_frame_507_DoAction_main	gameplay/437	themask_mc's loop: back to frame 1 and play; processGame parks it on frame 508 when the maskman starts	code of symbol 437 (sprites/sprite_437/frame_507)
-DefineSprite_440_frame_1_DoAction_main	gameplay/440	holds sd1 (440, frame 15) on frame 1; no script names sd1, so its role is not known	code of symbol 440 (sprites/sprite_440/frame_1)
-DefineSprite_443_frame_1_DoAction_main	gameplay/443	holds the crash clip (crash, frame 15) on frame 1 until loose() plays it	code of symbol 443 (sprites/sprite_443/frame_1)
-DefineSprite_443_frame_2_DoAction_main	gameplay/443	the crash clip's first frame: silences every sound and plays the crash sound cra once	code of symbol 443 (sprites/sprite_443/frame_2)
-DefineSprite_443_frame_51_DoAction_main	gameplay/443	the crash clip's frame 51 installs the handler that takes a life (lifee) and replays the level	code of symbol 443 (sprites/sprite_443/frame_51)
-DefineSprite_443_frame_51_DoAction.onEnterFrame	gameplay/443		code of symbol 443 (sprites/sprite_443/frame_51)
-DefineSprite_446_frame_1_DoAction_main	gameplay/446	the helicopter (helicop) holds frame 1 with its brightness restored (offset 0; -150 is the destroyed look)	code of symbol 446 (sprites/sprite_446/frame_1)
-DefineSprite_449_frame_1_DoAction_main	gameplay/449	holds explode_mc on frame 1 until the bullet checker plays it at the helicopter's position	code of symbol 449 (sprites/sprite_449/frame_1)
-DefineSprite_453_frame_1_DoAction_main	gameplay/453	the bomb holds frame 1, the frame firebomb() resets it to before a drop	code of symbol 453 (sprites/sprite_453/frame_1)
-DefineSprite_453_frame_5_DoAction_main	gameplay/453	the bomb holds frame 5, the end of its explosion	code of symbol 453 (sprites/sprite_453/frame_5)
-DefineSprite_52_frame_1_DoAction_main	gameplay/52	holds sprite 52 (inside car1) on frame 1 until its clip action sees _root.bexplode; frame 2 clears the flag	code of symbol 52 (sprites/sprite_52/frame_1)
-DefineSprite_52_frame_2_DoAction_main	gameplay/52		code of symbol 52 (sprites/sprite_52/frame_2)
-DefineSprite_86_frame_1_DoAction_main	gameplay/86	holds car1 (sprite 86 inside the jeep) on frame 1 until loose() plays it from frame 2	code of symbol 86 (sprites/sprite_86/frame_1)
-DefineSprite_86_frame_1_PlaceObject2_20_bullet_id_21_CLIPACTIONRECORD_onClipEvent_enterFrame_main	gameplay/86		code of symbol 86 (sprites/sprite_86/frame_1/clip-actions/PlaceObject2_20_bullet_id_21/CLIPACTIONRECORD onClipEvent(enterFrame))
-DefineSprite_86_frame_1_PlaceObject2_39_23_CLIPACTIONRECORD_onClipEvent_enterFrame_main	gameplay/86		code of symbol 86 (sprites/sprite_86/frame_1/clip-actions/PlaceObject2_39_23/CLIPACTIONRECORD onClipEvent(enterFrame))
-DefineSprite_86_frame_1_PlaceObject2_39_25_CLIPACTIONRECORD_onClipEvent_enterFrame_main	gameplay/86		code of symbol 86 (sprites/sprite_86/frame_1/clip-actions/PlaceObject2_39_25/CLIPACTIONRECORD onClipEvent(enterFrame))
-DefineSprite_86_frame_1_PlaceObject2_52_27_CLIPACTIONRECORD_onClipEvent_enterFrame_main	gameplay/86		code of symbol 86 (sprites/sprite_86/frame_1/clip-actions/PlaceObject2_52_27/CLIPACTIONRECORD onClipEvent(enterFrame))
-DefineSprite_87_frame_1_DoAction_main	gameplay/87	holds the jeep clip (87, in sprite 97) on frame 1; sprite 97 then picks the selected jeep frame	code of symbol 87 (sprites/sprite_87/frame_1)
-DefineSprite_95_lib_man_frame_1_DoAction_main	gameplay/lib_man		code of symbol lib_man (sprites/lib_man/frame_1)
-DefineSprite_97_frame_1_DoAction_main	gameplay/97		code of symbol 97 (sprites/sprite_97/frame_1)
-DoInitAction_main	core		initialises the game globals gameState, level, life, scores (tag 304, the init action of character 150)
-updateSoundLoop	audio		reads stopSoundFlag, zastSoundFlag; drives mc_sloop, mc_sloop_zast
-soundOff	audio		writes stopSoundFlag; drives the sound-loop clips mc_sloop, mc_sloop_zast
-soundOn	audio		writes stopSoundFlag; drives the sound-loop clips mc_sloop, mc_sloop_zast
-gameStart	core		writes level, life, scores; called by the level-selection buttons
-nextLevel	core		steps the main timeline through "reset" to "game"; calls newGame
+DefineSprite_20_bullet_id_frame_39_DoAction_main	gameplay/bullet_id	the bullet (export bullet_id) removes itself on frame 39, the end of its flight	code of symbol bullet_id (sprites/bullet_id/frame_39)
+DefineSprite_218_frame_1_DoAction_main	gameplay/timeline-game	holds maskman_mc (218, in levels 1-5) on frame 1 until processGame plays it near the finish line	code of symbol 218 (sprites/sprite_218/frame_1): symbol 218 placed inside symbol 219 (frame 1) as `maskman_mc`; symbol 219 placed inside symbol 387 (frame 1) as `mc`; symbol 387 placed on frame 15 `game` of the main timeline as `mc_level`
+DefineSprite_218_frame_34_DoAction_main	gameplay/timeline-game	holds maskman_mc at the end of its animation (frame 34)	code of symbol 218 (sprites/sprite_218/frame_34): symbol 218 placed inside symbol 219 (frame 1) as `maskman_mc`; symbol 219 placed inside symbol 387 (frame 1) as `mc`; symbol 387 placed on frame 15 `game` of the main timeline as `mc_level`
+DefineSprite_24_frame_1_DoAction_main	gameplay/timeline-1	holds mc_gas (24, root frames 1-12) on frame 1; processGame plays it from frame 2 when the up key starts an acceleration	code of symbol 24 (sprites/sprite_24/frame_1): symbol 24 placed on frame 1 of the main timeline as `mc_gas`
+DefineSprite_358_frame_1_DoAction_main	gameplay/timeline-game	level 3's background (mc_fon in sprite 367): the same random pick of five as sprite 159	code of symbol 358 (sprites/sprite_358/frame_1): symbol 358 placed inside symbol 367 (frame 1) as `mc_fon`; symbol 367 placed inside symbol 387 (frame 3) as `mc`; symbol 387 placed on frame 15 `game` of the main timeline as `mc_level`
+DefineSprite_385_frame_1_DoAction_main	gameplay/timeline-game	holds level 6's maskman_mc (385, in sprite 386) on frame 1	code of symbol 385 (sprites/sprite_385/frame_1): symbol 385 placed inside symbol 386 (frame 1) as `maskman_mc`; symbol 386 placed inside symbol 387 (frame 6) as `mc`; symbol 387 placed on frame 15 `game` of the main timeline as `mc_level`
+DefineSprite_385_frame_5_DoAction_main	gameplay/timeline-game	holds level 6's maskman_mc on frame 5, the end of its animation	code of symbol 385 (sprites/sprite_385/frame_5): symbol 385 placed inside symbol 386 (frame 1) as `maskman_mc`; symbol 386 placed inside symbol 387 (frame 6) as `mc`; symbol 387 placed on frame 15 `game` of the main timeline as `mc_level`
+DefineSprite_399_frame_1_DoAction_main	gameplay/timeline-game	the on/off switch on frame 15 (label on): holds and points btnon's press to the off frame; probably the sound switch (unverified)	code of symbol 399 (sprites/sprite_399/frame_1): symbol 399 placed on frame 15 `game` of the main timeline
+DefineSprite_399_frame_1_DoAction.onPress	gameplay/timeline-game	the on/off switch on frame 15 (labels on, off): a press while on plays from `off`, whose frame stops every sound; probably the sound switch (unverified)	code of symbol 399 (sprites/sprite_399/frame_1): symbol 399 placed on frame 15 `game` of the main timeline
+DefineSprite_399_frame_2_DoAction_main	gameplay/timeline-game	the switch's off frame: holds, stops every sound and points btnon's press back to on	code of symbol 399 (sprites/sprite_399/frame_2): symbol 399 placed on frame 15 `game` of the main timeline
+DefineSprite_399_frame_2_DoAction.onPress	gameplay/timeline-game	the on/off switch's press while off: plays from `on`	code of symbol 399 (sprites/sprite_399/frame_2): symbol 399 placed on frame 15 `game` of the main timeline
+DefineSprite_408_frame_1_DoAction_main	gameplay/timeline-game	the health meter (health_mc) holds frame 1, full health; a bomb hit advances it with nextFrame	code of symbol 408 (sprites/sprite_408/frame_1): symbol 408 placed on frame 15 `game` of the main timeline as `health_mc`
+DefineSprite_408_frame_2_DoAction_main	gameplay/timeline-game	the health meter holds frame 2 after the first bomb hit	code of symbol 408 (sprites/sprite_408/frame_2): symbol 408 placed on frame 15 `game` of the main timeline as `health_mc`
+DefineSprite_408_frame_3_DoAction_main	gameplay/timeline-game	the health meter holds frame 3 after the second bomb hit	code of symbol 408 (sprites/sprite_408/frame_3): symbol 408 placed on frame 15 `game` of the main timeline as `health_mc`
+DefineSprite_408_frame_4_DoAction_main	gameplay/timeline-game	the health meter holds frame 4; the bomb's handler calls loose() when the meter reaches it	code of symbol 408 (sprites/sprite_408/frame_4): symbol 408 placed on frame 15 `game` of the main timeline as `health_mc`
+DefineSprite_415_frame_1_DoAction_main	gameplay/timeline-game	the score pop-up (score_mc) holds frame 1, empty, between pop-ups	code of symbol 415 (sprites/sprite_415/frame_1): symbol 415 placed on frame 15 `game` of the main timeline as `score_mc`
+DefineSprite_415_frame_17_DoAction_main	gameplay/timeline-game	ends the +10 pop-up the bullet checker starts at frame 2 for a box	code of symbol 415 (sprites/sprite_415/frame_17): symbol 415 placed on frame 15 `game` of the main timeline as `score_mc`
+DefineSprite_415_frame_33_DoAction_main	gameplay/timeline-game	ends the +50 pop-up the bullet checker starts at frame 18 for the helicopter	code of symbol 415 (sprites/sprite_415/frame_33): symbol 415 placed on frame 15 `game` of the main timeline as `score_mc`
+DefineSprite_415_frame_50_DoAction_main	gameplay/timeline-game	ends the -50 pop-up the bomb's handler starts at frame 34	code of symbol 415 (sprites/sprite_415/frame_50): symbol 415 placed on frame 15 `game` of the main timeline as `score_mc`
+DefineSprite_437_frame_507_DoAction_main	gameplay/timeline-game	themask_mc's loop: back to frame 1 and play; processGame parks it on frame 508 when the maskman starts	code of symbol 437 (sprites/sprite_437/frame_507): symbol 437 placed on frame 15 `game` of the main timeline as `themask_mc`
+DefineSprite_440_frame_1_DoAction_main	gameplay/timeline-game	holds sd1 (440, frame 15) on frame 1; no script names sd1, so its role is not known	code of symbol 440 (sprites/sprite_440/frame_1): symbol 440 placed on frame 15 `game` of the main timeline as `sd1`
+DefineSprite_443_frame_1_DoAction_main	gameplay/timeline-game	holds the crash clip (crash, frame 15) on frame 1 until loose() plays it	code of symbol 443 (sprites/sprite_443/frame_1): symbol 443 placed on frame 15 `game` of the main timeline as `crash`
+DefineSprite_443_frame_2_DoAction_main	gameplay/timeline-game	the crash clip's first frame: silences every sound and plays the crash sound cra once	code of symbol 443 (sprites/sprite_443/frame_2): symbol 443 placed on frame 15 `game` of the main timeline as `crash`
+DefineSprite_443_frame_51_DoAction_main	gameplay/timeline-game	the crash clip's frame 51 installs the handler that takes a life (lifee) and replays the level	code of symbol 443 (sprites/sprite_443/frame_51): symbol 443 placed on frame 15 `game` of the main timeline as `crash`
+DefineSprite_443_frame_51_DoAction.onEnterFrame	gameplay/timeline-game	the end of the crash animation: one life off (lifee) and _root.replay() restarts the level	code of symbol 443 (sprites/sprite_443/frame_51): symbol 443 placed on frame 15 `game` of the main timeline as `crash`
+DefineSprite_446_frame_1_DoAction_main	gameplay/timeline-game	the helicopter (helicop) holds frame 1 with its brightness restored (offset 0; -150 is the destroyed look)	code of symbol 446 (sprites/sprite_446/frame_1): symbol 446 placed on frame 15 `game` of the main timeline as `helicop`
+DefineSprite_449_frame_1_DoAction_main	gameplay/timeline-game	holds explode_mc on frame 1 until the bullet checker plays it at the helicopter's position	code of symbol 449 (sprites/sprite_449/frame_1): symbol 449 placed on frame 15 `game` of the main timeline as `explode_mc`
+DefineSprite_453_frame_1_DoAction_main	gameplay/timeline-game	the bomb holds frame 1, the frame firebomb() resets it to before a drop	code of symbol 453 (sprites/sprite_453/frame_1): symbol 453 placed on frame 15 `game` of the main timeline as `bomb`
+DefineSprite_453_frame_5_DoAction_main	gameplay/timeline-game	the bomb holds frame 5, the end of its explosion	code of symbol 453 (sprites/sprite_453/frame_5): symbol 453 placed on frame 15 `game` of the main timeline as `bomb`
+DefineSprite_52_frame_1_DoAction_main	gameplay/lib_bike_body	holds sprite 52 (inside car1) on frame 1 until its clip action sees _root.bexplode; frame 2 clears the flag	code of symbol 52 (sprites/sprite_52/frame_1): symbol 52 placed inside symbol 86 (frame 1); symbol 86 placed inside symbol 87 (frame 1) as `car1`; symbol 87 placed inside symbol 97 (frame 1) as `jeep`; symbol 97 placed inside symbol lib_bike_body (frame 1) as `mc`
+DefineSprite_52_frame_2_DoAction_main	gameplay/lib_bike_body	clears _root.bexplode, the flag the bomb's hit sets and car1's clip action plays sprite 52 on	code of symbol 52 (sprites/sprite_52/frame_2): symbol 52 placed inside symbol 86 (frame 1); symbol 86 placed inside symbol 87 (frame 1) as `car1`; symbol 87 placed inside symbol 97 (frame 1) as `jeep`; symbol 97 placed inside symbol lib_bike_body (frame 1) as `mc`
+DefineSprite_86_frame_1_DoAction_main	gameplay/lib_bike_body	holds car1 (sprite 86 inside the jeep) on frame 1 until loose() plays it from frame 2	code of symbol 86 (sprites/sprite_86/frame_1): symbol 86 placed inside symbol 87 (frame 1) as `car1`; symbol 87 placed inside symbol 97 (frame 1) as `jeep`; symbol 97 placed inside symbol lib_bike_body (frame 1) as `mc`
+DefineSprite_86_frame_1_PlaceObject2_20_bullet_id_21_CLIPACTIONRECORD_onClipEvent_enterFrame_main	gameplay/lib_bike_body	each frame, bullet_mc's stage position into (mx2, my2), the far end of processGame's aim line	a clip action inside symbol 86 (sprites/sprite_86/frame_1/clip-actions/PlaceObject2_20_bullet_id_21/CLIPACTIONRECORD onClipEvent(enterFrame)): symbol 86 placed inside symbol 87 (frame 1) as `car1`; symbol 87 placed inside symbol 97 (frame 1) as `jeep`; symbol 97 placed inside symbol lib_bike_body (frame 1) as `mc`
+DefineSprite_86_frame_1_PlaceObject2_39_23_CLIPACTIONRECORD_onClipEvent_enterFrame_main	gameplay/lib_bike_body	each frame, the first aim marker's stage position into (mx1, my1), the start of processGame's aim line	a clip action inside symbol 86 (sprites/sprite_86/frame_1/clip-actions/PlaceObject2_39_23/CLIPACTIONRECORD onClipEvent(enterFrame)): symbol 86 placed inside symbol 87 (frame 1) as `car1`; symbol 87 placed inside symbol 97 (frame 1) as `jeep`; symbol 97 placed inside symbol lib_bike_body (frame 1) as `mc`
+DefineSprite_86_frame_1_PlaceObject2_39_25_CLIPACTIONRECORD_onClipEvent_enterFrame_main	gameplay/lib_bike_body	each frame, the muzzle marker's stage position into (mx3, my3), where processGame puts a new shot	a clip action inside symbol 86 (sprites/sprite_86/frame_1/clip-actions/PlaceObject2_39_25/CLIPACTIONRECORD onClipEvent(enterFrame)): symbol 86 placed inside symbol 87 (frame 1) as `car1`; symbol 87 placed inside symbol 97 (frame 1) as `jeep`; symbol 97 placed inside symbol lib_bike_body (frame 1) as `mc`
+DefineSprite_86_frame_1_PlaceObject2_52_27_CLIPACTIONRECORD_onClipEvent_enterFrame_main	gameplay/lib_bike_body	plays sprite 52 (inside car1) while _root.bexplode is set	a clip action inside symbol 86 (sprites/sprite_86/frame_1/clip-actions/PlaceObject2_52_27/CLIPACTIONRECORD onClipEvent(enterFrame)): symbol 86 placed inside symbol 87 (frame 1) as `car1`; symbol 87 placed inside symbol 97 (frame 1) as `jeep`; symbol 97 placed inside symbol lib_bike_body (frame 1) as `mc`
+DefineSprite_87_frame_1_DoAction_main	gameplay/lib_bike_body	holds the jeep clip (87, in sprite 97) on frame 1; sprite 97 then picks the selected jeep frame	code of symbol 87 (sprites/sprite_87/frame_1): symbol 87 placed inside symbol 97 (frame 1) as `jeep`; symbol 97 placed inside symbol lib_bike_body (frame 1) as `mc`
+DefineSprite_95_lib_man_frame_1_DoAction_main	gameplay/lib_man	the rider sprite (export lib_man) holds its first frame, labelled stay	code of symbol lib_man (sprites/lib_man/frame_1)
+DefineSprite_97_frame_1_DoAction_main	gameplay/lib_bike_body	the bike body's inner clip: sends jeep to the frame _root.jeepselection names; no script writes jeepselection	code of symbol 97 (sprites/sprite_97/frame_1): symbol 97 placed inside symbol lib_bike_body (frame 1) as `mc`
+DoInitAction_main	core	the init action's own statements: declares the game's globals with their first values (stopSoundFlag false, zastSoundFlag true, highQuality true, life 10; bikeSync, engine, objCamera, back1, back2 null)	initialises the game globals gameState, level, life, scores (tag 304, the init action of character 150)
+updateSoundLoop	audio	unless muted (stopSoundFlag), plays the music loop zastSoundFlag selects (mc_sloop_zast or mc_sloop, frame 2) and parks the other on frame 3; called by gameStart and newGame	reads stopSoundFlag, zastSoundFlag; drives mc_sloop, mc_sloop_zast
+soundOff	audio	mutes the music: the loop in use goes to frame 3 and stopSoundFlag is set; no script calls it	writes stopSoundFlag; drives the sound-loop clips mc_sloop, mc_sloop_zast
+soundOn	audio	unmutes the music: the loop in use goes back to frame 2 and stopSoundFlag is cleared; no script calls it	writes stopSoundFlag; drives the sound-loop clips mc_sloop, mc_sloop_zast
+gameStart	core	a new run: scores, timeCounter and stargeted 0, life 10, the in-game music (zastSoundFlag cleared), level 0, then nextLevel to enter level 1; called by the level buttons and button 461	writes level, life, scores; called by the level-selection buttons
+nextLevel	core	the next level: stargeted and levelTimeCounter cleared, level++ and the timeline stepped through reset back to game; at level 10 it calls newGame instead	steps the main timeline through "reset" to "game"; calls newGame
 replay	core	restarts the current level: clears stargeted and steps the timeline through reset back to game; called by the crash clip	steps the main timeline through "reset" to "game"
-newGame	core		gotoAndStop("main"); calls updateSoundLoop
-playSnd	audio		constructs or drives Sound (Sound, attachSound, start)
+newGame	core	back to the main frame with stargeted cleared and the menu music (zastSoundFlag set)	gotoAndStop("main"); calls updateSoundLoop
+playSnd	audio	plays a library sound once by its linkage name from a new Sound on this timeline; loose plays lib_snd_fail, a name the file does not export	constructs or drives Sound (Sound, attachSound, start)
 initLevel	core		writes gameState; builds engine, bikeSync, objCamera for the level
-processGame	core		reads and writes gameState; the per-frame loop calling showTime, loose, clearStuff
-fire	gameplay/bullet_id		gotoAndPlay on _root.bullet_id
-resetkfire	gameplay/bullet_id		clears kfire, which processGame checks before attaching bullet_id
+processGame	core	the per-frame step while gameState is 0, called by mc_control's enterFrame: clock, up-key gas, arrow-key tilt, physics, camera, parallax, pickups s1-s20, shots on G and F, the helicopter at helicounter 200, the finish line and the rider's ground tests	reads and writes gameState; the per-frame loop calling showTime, loose, clearStuff
+fire	gameplay/bullet_id	plays the newest shot (bullet_id<kval>) from frame 2; processGame schedules it 50 ms after attaching the shot	gotoAndPlay on _root.bullet_id
+resetkfire	gameplay/bullet_id	re-arms the gun (kfire true); processGame schedules it 290 ms after a shot	clears kfire, which processGame checks before attaching bullet_id
 showTime	ui	formats the elapsed game time (timeCounter, in ms) into the txtTime readout; called by processGame every frame	writes the clock text field txtTime
-getTimeString	ui		formats the clock readout with ":" (callers showTime, loose)
-resume	core		writes gameState; restarts bikeSync animation
-pauseGame	core		writes gameState; gotoAndStop("pause") on mc_messageF
-clearStuff	core		resets bulletArray, bomb and helicop state between levels
-loose	core		writes gameState; calls clearStuff, playSnd
+getTimeString	ui	a time in milliseconds as mm:ss, each part zero-padded; used by showTime, loose and processGame's finish	formats the clock readout with ":" (callers showTime, loose)
+resume	core	undoes pauseGame: the music back unless muted, the message clip cleared to empty, the rider's animation restarted, gameState 0; no script calls it	writes gameState; restarts bikeSync animation
+pauseGame	core	pauses: the pause message, the music stopped unless muted, the rider's animation frozen, gameState 4; no script calls it	writes gameState; gotoAndStop("pause") on mc_messageF
+clearStuff	core	clears the attempt's moving parts: every shot in bulletArray hidden, sent to 39 and removed, the list emptied, the bomb and helicopter back to their start, both brightnesses reset; called by loose and processGame's finish	resets bulletArray, bomb and helicop state between levels
+loose	core	a lost attempt (the author's spelling of lose): clearStuff, tscore into mscore and txtscore, the fail sound, life--, the wheels moved 1000 px right, the jeep parts and the crash clip played, the times and score shown, gameState 1	writes gameState; calls clearStuff, playSnd
 calcBikeNVector	gameplay/cbikesynchronizer		reads bikeSync (a CBikeSynchronizer) wheel particle positions
-Packages_CBack_main	gameplay/cback		a method of class CBack (__Packages)
-CBack	gameplay/cback	the parallax layer's constructor; init() supplies the two tiles and the scale factor	a method of class CBack (__Packages)
-CBack.init	gameplay/cback		a method of class CBack (__Packages)
-CBack.process	gameplay/cback		a method of class CBack (__Packages)
-Packages_CBikeSynchronizer_main	gameplay/cbikesynchronizer		a method of class CBikeSynchronizer (__Packages)
-CBikeSynchronizer	gameplay/cbikesynchronizer		a method of class CBikeSynchronizer (__Packages)
-CBikeSynchronizer.init	gameplay/cbikesynchronizer		a method of class CBikeSynchronizer (__Packages)
-CBikeSynchronizer.setParticles	gameplay/cbikesynchronizer		a method of class CBikeSynchronizer (__Packages)
-CBikeSynchronizer.process	gameplay/cbikesynchronizer		a method of class CBikeSynchronizer (__Packages)
-Packages_CCamera_main	gameplay/ccamera		a method of class CCamera (__Packages)
-CCamera	gameplay/ccamera	the camera's constructor; init() supplies the followed clip and the level clip	a method of class CCamera (__Packages)
-CCamera.init	gameplay/ccamera		a method of class CCamera (__Packages)
-CCamera.process	gameplay/ccamera		a method of class CCamera (__Packages)
-Packages_CMan_main	gameplay/cman		a method of class CMan (__Packages)
-CMan	gameplay/cman		a method of class CMan (__Packages)
-CMan.stopAnim	gameplay/cman		a method of class CMan (__Packages)
-CMan.stopMCAnim	gameplay/cman		a method of class CMan (__Packages)
-CMan.startAnim	gameplay/cman		a method of class CMan (__Packages)
-CMan.onEnterFrame	gameplay/cman		a method of class CMan (__Packages)
-CMan.toLeft	gameplay/cman		a method of class CMan (__Packages)
-CMan.toRight	gameplay/cman		a method of class CMan (__Packages)
-CMan.fromLeft	gameplay/cman		a method of class CMan (__Packages)
-CMan.fromRight	gameplay/cman		a method of class CMan (__Packages)
-CMan.endMove	gameplay/cman		a method of class CMan (__Packages)
-Packages_CParticle_main	gameplay/cparticle		a method of class CParticle (__Packages)
-CParticle	gameplay/cparticle		a method of class CParticle (__Packages)
-CParticle.verlet	gameplay/cparticle		a method of class CParticle (__Packages)
-Packages_CParticleEngine_main	gameplay/cparticleengine		a method of class CParticleEngine (__Packages)
-CParticleEngine	gameplay/cparticleengine	the physics engine's constructor; the particle, wheel and constraint arrays and the step constants are class initialisers	a method of class CParticleEngine (__Packages)
-CParticleEngine.clear	gameplay/cparticleengine		a method of class CParticleEngine (__Packages)
-CParticleEngine.setHitMovie	gameplay/cparticleengine		a method of class CParticleEngine (__Packages)
-CParticleEngine.addParticle	gameplay/cparticleengine	adds a particle to the engine's list p_array	a method of class CParticleEngine (__Packages)
-CParticleEngine.addWheel	gameplay/cparticleengine		a method of class CParticleEngine (__Packages)
-CParticleEngine.addSpringConstraint	gameplay/cparticleengine		a method of class CParticleEngine (__Packages)
-CParticleEngine.start	gameplay/cparticleengine	stamps prevTime with getTimer(), the baseline process() measures the first step against	a method of class CParticleEngine (__Packages)
-CParticleEngine.computeForces	gameplay/cparticleengine		a method of class CParticleEngine (__Packages)
-CParticleEngine.clearForces	gameplay/cparticleengine		a method of class CParticleEngine (__Packages)
-CParticleEngine.applyManFrictions	gameplay/cparticleengine		a method of class CParticleEngine (__Packages)
-CParticleEngine.verlet	gameplay/cparticleengine		a method of class CParticleEngine (__Packages)
-CParticleEngine.checkCollisions	gameplay/cparticleengine		a method of class CParticleEngine (__Packages)
-CParticleEngine.checkConstraints	gameplay/cparticleengine		a method of class CParticleEngine (__Packages)
-CParticleEngine.process	gameplay/cparticleengine		a method of class CParticleEngine (__Packages)
-Packages_CSpringConstraint_main	gameplay/cspringconstraint		a method of class CSpringConstraint (__Packages)
-CSpringConstraint	gameplay/cspringconstraint		a method of class CSpringConstraint (__Packages)
-CSpringConstraint.resolve	gameplay/cspringconstraint		a method of class CSpringConstraint (__Packages)
-Packages_CVector2D_main	gameplay/cvector2d		a method of class CVector2D (__Packages)
-CVector2D	gameplay/cvector2d	the vector's constructor: stores x_ and y_ as x and y	a method of class CVector2D (__Packages)
-CVector2D.reinit	gameplay/cvector2d	sets both components in place	a method of class CVector2D (__Packages)
-CVector2D.getUgol	gameplay/cvector2d	the vector's angle in radians (atan2 of y, x); ugol is Russian for angle	a method of class CVector2D (__Packages)
-CVector2D.duplicate	gameplay/cvector2d	a new vector with this one's components	a method of class CVector2D (__Packages)
-CVector2D.copyTo	gameplay/cvector2d	copies this vector's components into v	a method of class CVector2D (__Packages)
-CVector2D.minus	gameplay/cvector2d	subtracts v from this vector in place	a method of class CVector2D (__Packages)
-CVector2D.minusNew	gameplay/cvector2d		a method of class CVector2D (__Packages)
-CVector2D.normalize	gameplay/cvector2d		a method of class CVector2D (__Packages)
-CVector2D.reverseNew	gameplay/cvector2d		a method of class CVector2D (__Packages)
-CVector2D.scalar	gameplay/cvector2d	the dot product with v	a method of class CVector2D (__Packages)
-CVector2D.modul	gameplay/cvector2d		a method of class CVector2D (__Packages)
-CVector2D.reflectFromNormal	gameplay/cvector2d		a method of class CVector2D (__Packages)
-CVector2D.rotate	gameplay/cvector2d		a method of class CVector2D (__Packages)
-CVector2D.rotateNew	gameplay/cvector2d		a method of class CVector2D (__Packages)
-CVector2D.mult	gameplay/cvector2d	scales this vector in place by k	a method of class CVector2D (__Packages)
-CVector2D.multNew	gameplay/cvector2d		a method of class CVector2D (__Packages)
-CVector2D.plus	gameplay/cvector2d		a method of class CVector2D (__Packages)
-CVector2D.plusNew	gameplay/cvector2d	the sum of this vector and v, as a new vector	a method of class CVector2D (__Packages)
-CVector2D.getDistanceTo	gameplay/cvector2d		a method of class CVector2D (__Packages)
-Packages_CWheel_main	gameplay/cwheel		a method of class CWheel (__Packages)
-CWheel	gameplay/cwheel		a method of class CWheel (__Packages)
-CWheel.init	gameplay/cwheel		a method of class CWheel (__Packages)
-CWheel.process	gameplay/cwheel		a method of class CWheel (__Packages)
-CWheel.checkCollision	gameplay/cwheel		a method of class CWheel (__Packages)
-CWheel.pushOut	gameplay/cwheel		a method of class CWheel (__Packages)
-CWheel.validateRotation	gameplay/cwheel		a method of class CWheel (__Packages)
-CWheel.applyAddedAcc	gameplay/cwheel		a method of class CWheel (__Packages)
-frame_1_DoAction_main	core		frame 1 of the main timeline (boot)
-frame_1_DoAction.onEnterFrame	core		frame 1 of the main timeline (boot)
+Packages_CBack_main	gameplay/cback	the CBack class script: registers the class on _global with SCREEN_WIDTH 500 and puts init and process on its prototype	a method of class CBack (__Packages/CBack)
+CBack	gameplay/cback	the parallax layer's constructor; init() supplies the two tiles and the scale factor	a method of class CBack (__Packages/CBack)
+CBack.init	gameplay/cback	stores the backdrop's two tiles (mc1, mc2) and its scale factor; initLevel gives back1 the grass tiles at 1 and back2 the hill tiles at 2	a method of class CBack (__Packages/CBack)
+CBack.process	gameplay/cback	scrolls the two tiles against the level's x: the offset is levelX over scaleFactor wrapped to mc1's width; mc2 follows mc1 one pixel overlapped	a method of class CBack (__Packages/CBack)
+Packages_CBikeSynchronizer_main	gameplay/cbikesynchronizer	the CBikeSynchronizer class script: registers the class on _global and puts init, setParticles and process on its prototype	a method of class CBikeSynchronizer (__Packages/CBikeSynchronizer)
+CBikeSynchronizer	gameplay/cbikesynchronizer	the constructor: four zero CVector2D, fdir, fpos, bdir and bpos (probably the front and back wheels' direction and position)	a method of class CBikeSynchronizer (__Packages/CBikeSynchronizer)
+CBikeSynchronizer.init	gameplay/cbikesynchronizer		a method of class CBikeSynchronizer (__Packages/CBikeSynchronizer)
+CBikeSynchronizer.setParticles	gameplay/cbikesynchronizer		a method of class CBikeSynchronizer (__Packages/CBikeSynchronizer)
+CBikeSynchronizer.process	gameplay/cbikesynchronizer		a method of class CBikeSynchronizer (__Packages/CBikeSynchronizer)
+Packages_CCamera_main	gameplay/ccamera	the CCamera class script: registers the class with the 500 x 400 view (SCREEN_WIDTH, SCREEN_HEIGHT and their halves) and puts init and process on its prototype	a method of class CCamera (__Packages/CCamera)
+CCamera	gameplay/ccamera	the camera's constructor; init() supplies the followed clip and the level clip	a method of class CCamera (__Packages/CCamera)
+CCamera.init	gameplay/ccamera	stores the followed clip and the level clip, then positions the view once; initLevel passes bikeSync.mc_bike and mc_level.mc	a method of class CCamera (__Packages/CCamera)
+CCamera.process	gameplay/ccamera		a method of class CCamera (__Packages/CCamera)
+Packages_CMan_main	gameplay/cman	the CMan class script: registers the rider class (a MovieClip subclass) with LEFT_BUTTON 37, RIGHT_BUTTON 39, ANIM_FRAMES 7 and puts its methods on the prototype	a method of class CMan (__Packages/CMan)
+CMan	gameplay/cman	the rider's constructor: super(), stopFlag false, state 0 (upright)	a method of class CMan (__Packages/CMan)
+CMan.stopAnim	gameplay/cman	freezes the rider's lean state machine (stopFlag set); called by processGame at the finish, pauseGame and loose	a method of class CMan (__Packages/CMan)
+CMan.stopMCAnim	gameplay/cman	stops the rider's inner animation clip mc; called by processGame at the finish and by loose	a method of class CMan (__Packages/CMan)
+CMan.startAnim	gameplay/cman	lets the lean state machine run again (stopFlag cleared); called by resume	a method of class CMan (__Packages/CMan)
+CMan.onEnterFrame	gameplay/cman	each frame unless stopped: a held left or right arrow calls toLeft or toRight; with neither held, a left lean (1, 2) or right lean (4, 5) starts its return	a method of class CMan (__Packages/CMan)
+CMan.toLeft	gameplay/cman	the left key held: from upright starts the left lean (1); from the left return (3) restarts the lean at the mirrored frame; from a right lean starts the right return (6)	a method of class CMan (__Packages/CMan)
+CMan.toRight	gameplay/cman	the right key held: the mirror of toLeft (lean 4, mirrored restart from 6, left return 3 from a left lean)	a method of class CMan (__Packages/CMan)
+CMan.fromLeft	gameplay/cman	starts the return from a left lean (state 3), at the mirrored frame when the lean was still playing (state 1)	a method of class CMan (__Packages/CMan)
+CMan.fromRight	gameplay/cman	starts the return from a right lean (state 6), at the mirrored frame when the lean was still playing (state 4)	a method of class CMan (__Packages/CMan)
+CMan.endMove	gameplay/cman	an animation's end: lean 1 holds as 2 on left, lean 4 as 5 on right, returns 3 and 6 go to 0 on stay; no script calls it, so states 2 and 5 are not reached from the code	a method of class CMan (__Packages/CMan)
+Packages_CParticle_main	gameplay/cparticle	the CParticle class script: registers the point-mass class on _global and puts verlet on its prototype	a method of class CParticle (__Packages/CParticle)
+CParticle	gameplay/cparticle	the point mass's constructor: pos at (x, y), prevPos a copy of it, the mass, zero acc, no clip	a method of class CParticle (__Packages/CParticle)
+CParticle.verlet	gameplay/cparticle		a method of class CParticle (__Packages/CParticle)
+Packages_CParticleEngine_main	gameplay/cparticleengine		a method of class CParticleEngine (__Packages/CParticleEngine)
+CParticleEngine	gameplay/cparticleengine	the physics engine's constructor; the particle, wheel and constraint arrays and the step constants are class initialisers	a method of class CParticleEngine (__Packages/CParticleEngine)
+CParticleEngine.clear	gameplay/cparticleengine	empties the engine's particle, wheel and constraint arrays	a method of class CParticleEngine (__Packages/CParticleEngine)
+CParticleEngine.setHitMovie	gameplay/cparticleengine	stores the ground clip (hit_mc) checkCollisions passes to each wheel	a method of class CParticleEngine (__Packages/CParticleEngine)
+CParticleEngine.addParticle	gameplay/cparticleengine	adds a particle to the engine's list p_array	a method of class CParticleEngine (__Packages/CParticleEngine)
+CParticleEngine.addWheel	gameplay/cparticleengine	initialises a wheel with its particle, top speed and radius and adds it to the wheel list	a method of class CParticleEngine (__Packages/CParticleEngine)
+CParticleEngine.addSpringConstraint	gameplay/cparticleengine	springs two particles together with the given compression and stretch stiffnesses and adds the constraint	a method of class CParticleEngine (__Packages/CParticleEngine)
+CParticleEngine.start	gameplay/cparticleengine	stamps prevTime with getTimer(), the baseline process() measures the first step against	a method of class CParticleEngine (__Packages/CParticleEngine)
+CParticleEngine.computeForces	gameplay/cparticleengine	each particle's acceleration for the step: 0 across, gravity times its mass down	a method of class CParticleEngine (__Packages/CParticleEngine)
+CParticleEngine.clearForces	gameplay/cparticleengine	zeroes every wheel's addedAcc after process's steps	a method of class CParticleEngine (__Packages/CParticleEngine)
+CParticleEngine.applyManFrictions	gameplay/cparticleengine	each wheel adds its addedAcc (the rider's lean, set by processGame) to its particle	a method of class CParticleEngine (__Packages/CParticleEngine)
+CParticleEngine.verlet	gameplay/cparticleengine		a method of class CParticleEngine (__Packages/CParticleEngine)
+CParticleEngine.checkCollisions	gameplay/cparticleengine	each wheel tests itself against the ground clip hit_mc	a method of class CParticleEngine (__Packages/CParticleEngine)
+CParticleEngine.checkConstraints	gameplay/cparticleengine	resolves every spring once, in list order, with the step time	a method of class CParticleEngine (__Packages/CParticleEngine)
+CParticleEngine.process	gameplay/cparticleengine	one frame of physics: the seconds since the last call cut into up to maxSteps steps of t, each forces, lean, verlet, springs, collisions; then the lean forces cleared	a method of class CParticleEngine (__Packages/CParticleEngine)
+Packages_CSpringConstraint_main	gameplay/cspringconstraint	the CSpringConstraint class script: registers the spring class on _global and puts resolve on its prototype	a method of class CSpringConstraint (__Packages/CSpringConstraint)
+CSpringConstraint	gameplay/cspringconstraint	a spring between two particles with a compression and a stretch stiffness; its rest length relaxLen is their distance at creation	a method of class CSpringConstraint (__Packages/CSpringConstraint)
+CSpringConstraint.resolve	gameplay/cspringconstraint		a method of class CSpringConstraint (__Packages/CSpringConstraint)
+Packages_CVector2D_main	gameplay/cvector2d	the CVector2D class script: registers the vector class on _global and puts its arithmetic on the prototype	a method of class CVector2D (__Packages/CVector2D)
+CVector2D	gameplay/cvector2d	the vector's constructor: stores x_ and y_ as x and y	a method of class CVector2D (__Packages/CVector2D)
+CVector2D.reinit	gameplay/cvector2d	sets both components in place	a method of class CVector2D (__Packages/CVector2D)
+CVector2D.getUgol	gameplay/cvector2d	the vector's angle in radians (atan2 of y, x); ugol is Russian for angle	a method of class CVector2D (__Packages/CVector2D)
+CVector2D.duplicate	gameplay/cvector2d	a new vector with this one's components	a method of class CVector2D (__Packages/CVector2D)
+CVector2D.copyTo	gameplay/cvector2d	copies this vector's components into v	a method of class CVector2D (__Packages/CVector2D)
+CVector2D.minus	gameplay/cvector2d	subtracts v from this vector in place	a method of class CVector2D (__Packages/CVector2D)
+CVector2D.minusNew	gameplay/cvector2d	this vector minus v, as a new vector	a method of class CVector2D (__Packages/CVector2D)
+CVector2D.normalize	gameplay/cvector2d	scales the vector to unit length in place	a method of class CVector2D (__Packages/CVector2D)
+CVector2D.reverseNew	gameplay/cvector2d	the negated vector, as a new vector	a method of class CVector2D (__Packages/CVector2D)
+CVector2D.scalar	gameplay/cvector2d	the dot product with v	a method of class CVector2D (__Packages/CVector2D)
+CVector2D.modul	gameplay/cvector2d	the vector's length (Russian modul); the bytes compute it twice and drop the first	a method of class CVector2D (__Packages/CVector2D)
+CVector2D.reflectFromNormal	gameplay/cvector2d	reflects the vector in place off a surface with normal n: rotate into the normal's frame, negate x, rotate back	a method of class CVector2D (__Packages/CVector2D)
+CVector2D.rotate	gameplay/cvector2d	rotates the vector in place by u radians	a method of class CVector2D (__Packages/CVector2D)
+CVector2D.rotateNew	gameplay/cvector2d		a method of class CVector2D (__Packages/CVector2D)
+CVector2D.mult	gameplay/cvector2d	scales this vector in place by k	a method of class CVector2D (__Packages/CVector2D)
+CVector2D.multNew	gameplay/cvector2d	the vector scaled by k, as a new vector	a method of class CVector2D (__Packages/CVector2D)
+CVector2D.plus	gameplay/cvector2d	adds v to this vector in place	a method of class CVector2D (__Packages/CVector2D)
+CVector2D.plusNew	gameplay/cvector2d	the sum of this vector and v, as a new vector	a method of class CVector2D (__Packages/CVector2D)
+CVector2D.getDistanceTo	gameplay/cvector2d		a method of class CVector2D (__Packages/CVector2D)
+Packages_CWheel_main	gameplay/cwheel	the CWheel class script: registers the wheel class (a MovieClip subclass) with its field initialisers (maxSpeed 800, koeffSpring 0.05, koeffSlip 0.15, koeffFriction 0.97, hitCount 32) and its methods	a method of class CWheel (__Packages/CWheel)
+CWheel	gameplay/cwheel	the wheel's constructor: super() only; the fields come from the class initialisers and init	a method of class CWheel (__Packages/CWheel)
+CWheel.init	gameplay/cwheel		a method of class CWheel (__Packages/CWheel)
+CWheel.process	gameplay/cwheel		a method of class CWheel (__Packages/CWheel)
+CWheel.checkCollision	gameplay/cwheel		a method of class CWheel (__Packages/CWheel)
+CWheel.pushOut	gameplay/cwheel		a method of class CWheel (__Packages/CWheel)
+CWheel.validateRotation	gameplay/cwheel		a method of class CWheel (__Packages/CWheel)
+CWheel.applyAddedAcc	gameplay/cwheel	adds the wheel's addedAcc times its particle's mass to the particle's acceleration	a method of class CWheel (__Packages/CWheel)
+frame_1_DoAction_main	core	the preloader frame: holds, empties the bar (preloader width 0), shows bar and background, and installs the bar's per-frame handler	frame 1 of the main timeline (boot)
+frame_1_DoAction.onEnterFrame	core	the preloader bar: width and text follow the percent loaded (getBytesLoaded over getBytesTotal); at 100% it hides both, removes itself and plays from frame 10	frame 1 of the main timeline (boot)
 frame_10_DoAction_main	audio		constructs or drives Sound (Sound, attachSound, start)
 frame_11_DoAction_main	platform	holds the main timeline on frame 11 soundatta; no script jumps here, so how it is reached is not known	only player API: stop
 frame_12_DoAction_main	ui	the main frame (12): holds and sets the starting state lvls 1, scores 0, lifee 5, totascores 0	frame 12 `main` (a menu or result screen)
 frame_13_DoAction_main	ui	the carselection frame (13): stops every sound	frame 13 `carselection` (a menu or result screen)
 frame_14_DoAction_main	ui	the help frame (14): stops every sound	frame 14 `help` (a menu or result screen)
 frame_15_DoAction_main	audio		constructs or drives Sound (Sound, attachSound, setVolume, start, stopAllSounds)
-firebomb	gameplay/timeline-game		frame 15 `game`
-setBright	gameplay/timeline-game		frame 15 `game`
-frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_enterFrame_main	gameplay/timeline-game		clip action placed on frame 15 `game` of the main timeline (PlaceObject2_33_1)
-frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_keyDown_main	gameplay/timeline-game		clip action placed on frame 15 `game` of the main timeline (PlaceObject2_33_1)
-frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_keyDown__2_main	gameplay/timeline-game		clip action placed on frame 15 `game` of the main timeline (PlaceObject2_33_1)
-frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_load_main	gameplay/timeline-game		clip action placed on frame 15 `game` of the main timeline (PlaceObject2_33_1)
-frame_15_PlaceObject2_446_349_CLIPACTIONRECORD_onClipEvent_enterFrame_main	gameplay/timeline-game		clip action placed on frame 15 `game` of the main timeline (PlaceObject2_446_349)
-frame_15_PlaceObject2_453_353_CLIPACTIONRECORD_onClipEvent_enterFrame_main	gameplay/timeline-game		clip action placed on frame 15 `game` of the main timeline (PlaceObject2_453_353)
-frame_15_PlaceObject2_453_353_CLIPACTIONRECORD_onClipEvent_load_main	gameplay/timeline-game		clip action placed on frame 15 `game` of the main timeline (PlaceObject2_453_353)
-frame_15_PlaceObject2_455_357_CLIPACTIONRECORD_onClipEvent_enterFrame_main	gameplay/timeline-game		clip action placed on frame 15 `game` of the main timeline (PlaceObject2_455_357)
-frame_17_DoAction_main	ui		frame 17 `comple` (a menu or result screen)
-frame_18_DoAction_main	ui		frame 18 `level selection` (a menu or result screen)
+firebomb	gameplay/timeline-game	while the helicopter is active: the bomb to its release point under helicop (34.6 down, 10.1 left), frame 1, opaque, and dropbomb starts its fall; processGame schedules it 1.8 s after the helicopter enters, and the helicopter's clip action calls it again	frame 15 `game`
+setBright	gameplay/timeline-game	sets a clip's brightness: a ColorMatrixFilter that adds newVal to red, green and blue (150 hit, -150 destroyed, 0 normal in the callers)	frame 15 `game`
+frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_enterFrame_main	gameplay/timeline-game	mc_control each frame: _parent.processGame(), and accSnd started once per press of the up key (_accSnd remembers it)	a clip action placed on frame 15 `game` of the main timeline (PlaceObject2_33_1, character 33)
+frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_keyDown_main	gameplay/timeline-game	mc_control's key handler: _parent.keyPressed(), which no script defines, then updateAfterEvent()	a clip action placed on frame 15 `game` of the main timeline (PlaceObject2_33_1, character 33)
+frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_keyDown__2_main	gameplay/timeline-game	mc_control's second key handler, identical to the first: _parent.keyPressed() then updateAfterEvent()	a clip action placed on frame 15 `game` of the main timeline (PlaceObject2_33_1, character 33)
+frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_load_main	gameplay/timeline-game	mc_control's load: _parent.initLevel() builds the attempt each time frame 15 places the clip	a clip action placed on frame 15 `game` of the main timeline (PlaceObject2_33_1, character 33)
+frame_15_PlaceObject2_446_349_CLIPACTIONRECORD_onClipEvent_enterFrame_main	gameplay/timeline-game		a clip action placed on frame 15 `game` of the main timeline (PlaceObject2_446_349, character 446)
+frame_15_PlaceObject2_453_353_CLIPACTIONRECORD_onClipEvent_enterFrame_main	gameplay/timeline-game		a clip action placed on frame 15 `game` of the main timeline (PlaceObject2_453_353, character 453)
+frame_15_PlaceObject2_453_353_CLIPACTIONRECORD_onClipEvent_load_main	gameplay/timeline-game	the bomb's heading on load: rotation 220 and degrees set to that angle in radians (despite its name)	a clip action placed on frame 15 `game` of the main timeline (PlaceObject2_453_353, character 453)
+frame_15_PlaceObject2_455_357_CLIPACTIONRECORD_onClipEvent_enterFrame_main	gameplay/timeline-game		a clip action placed on frame 15 `game` of the main timeline (PlaceObject2_455_357, character 455)
+frame_17_DoAction_main	ui	the comple frame: holds, silences, lvls++, scorecard + 100 into txtlevel, the running total into txtscore and levelscore, gamewin once lvls is 7	frame 17 `comple` (a menu or result screen)
+frame_18_DoAction_main	ui	the level selection frame: holds, silences and installs the per-frame handler that unlocks the level buttons	frame 18 `level selection` (a menu or result screen)
 frame_18_DoAction.onEnterFrame	ui		frame 18 `level selection` (a menu or result screen)
-frame_18_DoAction.onRelease	ui		frame 18 `level selection` (a menu or result screen)
-frame_18_DoAction.onRelease_2	ui		frame 18 `level selection` (a menu or result screen)
-frame_18_DoAction.onRelease_3	ui		frame 18 `level selection` (a menu or result screen)
-frame_18_DoAction.onRelease_4	ui		frame 18 `level selection` (a menu or result screen)
-frame_18_DoAction.onRelease_5	ui		frame 18 `level selection` (a menu or result screen)
-frame_18_DoAction.onRelease_6	ui		frame 18 `level selection` (a menu or result screen)
-frame_18_DoAction.onRelease_7	ui		frame 18 `level selection` (a menu or result screen)
-frame_18_DoAction.onRelease_8	ui		frame 18 `level selection` (a menu or result screen)
-frame_18_DoAction.onRelease_9	ui		frame 18 `level selection` (a menu or result screen)
-frame_18_DoAction.onRelease_10	ui		frame 18 `level selection` (a menu or result screen)
-frame_18_DoAction.onRelease_11	ui		frame 18 `level selection` (a menu or result screen)
-frame_18_DoAction.onRelease_12	ui		frame 18 `level selection` (a menu or result screen)
-frame_18_DoAction.onRelease_13	ui		frame 18 `level selection` (a menu or result screen)
-frame_18_DoAction.onRelease_14	ui		frame 18 `level selection` (a menu or result screen)
-frame_18_DoAction.onRelease_15	ui		frame 18 `level selection` (a menu or result screen)
-frame_19_DoAction_main	ui		frame 19 `gamewin` (a menu or result screen)
-frame_20_DoAction_main	ui		frame 20 `gameover` (a menu or result screen)
-lib_back_wheel_main	gameplay/cwheel	links the exported symbol lib_back_wheel (sprite 116) to CWheel, so CBikeSynchronizer.init's attachMovie builds a CWheel	Object.registerClass("lib_back_wheel", CWheel)
-lib_forward_wheel_main	gameplay/cwheel	links the exported symbol lib_forward_wheel (sprite 115) to CWheel	Object.registerClass("lib_forward_wheel", CWheel)
-lib_man_main	gameplay/cman	links the exported symbol lib_man (sprite 95, the rider) to CMan	Object.registerClass("lib_man", CMan)
+frame_18_DoAction.onRelease	ui	le1's press: lvls 1 and gameStart	frame 18 `level selection` (a menu or result screen)
+frame_18_DoAction.onRelease_2	ui	le2's press: lvls 2 and gameStart	frame 18 `level selection` (a menu or result screen)
+frame_18_DoAction.onRelease_3	ui	le3's press: lvls 3 and gameStart	frame 18 `level selection` (a menu or result screen)
+frame_18_DoAction.onRelease_4	ui	le4's press: lvls 4 and gameStart	frame 18 `level selection` (a menu or result screen)
+frame_18_DoAction.onRelease_5	ui	le5's press: lvls 5 and gameStart	frame 18 `level selection` (a menu or result screen)
+frame_18_DoAction.onRelease_6	ui	le6's press: lvls 6 and gameStart	frame 18 `level selection` (a menu or result screen)
+frame_18_DoAction.onRelease_7	ui	le7's press: lvls 7 and gameStart	frame 18 `level selection` (a menu or result screen)
+frame_18_DoAction.onRelease_8	ui	le8's press: lvls 8 and gameStart	frame 18 `level selection` (a menu or result screen)
+frame_18_DoAction.onRelease_9	ui	le9's press: lvls 9 and gameStart	frame 18 `level selection` (a menu or result screen)
+frame_18_DoAction.onRelease_10	ui	le10's press: lvls 10 and gameStart	frame 18 `level selection` (a menu or result screen)
+frame_18_DoAction.onRelease_11	ui	le11's press: lvls 11 and gameStart	frame 18 `level selection` (a menu or result screen)
+frame_18_DoAction.onRelease_12	ui	le12's press: lvls 12 and gameStart	frame 18 `level selection` (a menu or result screen)
+frame_18_DoAction.onRelease_13	ui	le13's press: lvls 13 and gameStart	frame 18 `level selection` (a menu or result screen)
+frame_18_DoAction.onRelease_14	ui	le14's press: lvls 14 and gameStart	frame 18 `level selection` (a menu or result screen)
+frame_18_DoAction.onRelease_15	ui	le15's press: lvls 15 and gameStart	frame 18 `level selection` (a menu or result screen)
+frame_19_DoAction_main	ui	the gamewin frame: holds, silences, levelscore into txtfinalscore and mscore + " points" into txtscore2	frame 19 `gamewin` (a menu or result screen)
+frame_20_DoAction_main	ui	the gameover frame: the same as gamewin, levelscore and mscore + " points" into the two readouts	frame 20 `gameover` (a menu or result screen)
+lib_back_wheel_main	gameplay/cwheel	links the exported symbol lib_back_wheel (sprite 116) to CWheel, so CBikeSynchronizer.init's attachMovie builds a CWheel	Object.registerClass("lib_back_wheel", CWheel) in the init action of the exported symbol lib_back_wheel
+lib_forward_wheel_main	gameplay/cwheel	links the exported symbol lib_forward_wheel (sprite 115) to CWheel	Object.registerClass("lib_forward_wheel", CWheel) in the init action of the exported symbol lib_forward_wheel
+lib_man_main	gameplay/cman	links the exported symbol lib_man (sprite 95, the rider) to CMan	Object.registerClass("lib_man", CMan) in the init action of the exported symbol lib_man

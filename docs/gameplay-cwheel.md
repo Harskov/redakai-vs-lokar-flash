@@ -4,14 +4,14 @@ A wheel: a MovieClip subclass linked to `lib_back_wheel` and `lib_forward_wheel`
 
 ## Functions
 
-- `Packages_CWheel_main` (not yet matched) — the class definition script
-- `CWheel` (not yet matched) — the constructor (super()); field initialisers maxSpeed 800, koeffSpring 0.05, koeffSlip 0.15, koeffFriction 0.97, hitCount 32
+- `Packages_CWheel_main` (matched) — the CWheel class script: registers the wheel class (a MovieClip subclass) with its field initialisers (maxSpeed 800, koeffSpring 0.05, koeffSlip 0.15, koeffFriction 0.97, hitCount 32) and its methods
+- `CWheel` (matched) — the wheel's constructor: super() only; the fields come from the class initialisers and init
 - `CWheel.init` (not yet matched) — particle, radius, maxAccSpeed x 4, the rim points and their normals
 - `CWheel.process` (not yet matched) — integrates the drive and turns the rim clip mc.mc_rim
 - `CWheel.checkCollision` (not yet matched) — samples the rim against the hit clip, groups contiguous hits, bounces, pushes out, then validateRotation; all 32 points inside: steps back 70%
 - `CWheel.pushOut` (not yet matched) — moves the particle out along the contact normal
 - `CWheel.validateRotation` (not yet matched) — turns the contact into rolling speed, with slip and friction
-- `CWheel.applyAddedAcc` (not yet matched) — adds the lean acceleration x mass to the particle
+- `CWheel.applyAddedAcc` (matched) — adds the wheel's addedAcc times its particle's mass to the particle's acceleration
 - `lib_back_wheel_main` (matched) — links the exported symbol lib_back_wheel (sprite 116) to CWheel, so CBikeSynchronizer.init's attachMovie builds a CWheel
 - `lib_forward_wheel_main` (matched) — links the exported symbol lib_forward_wheel (sprite 115) to CWheel
 

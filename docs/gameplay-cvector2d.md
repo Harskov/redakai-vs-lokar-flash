@@ -4,24 +4,24 @@ The 2D vector value type of the physics. Methods ending in `New` return a new ve
 
 ## Functions
 
-- `Packages_CVector2D_main` (not yet matched) — the class definition script
+- `Packages_CVector2D_main` (matched) — the CVector2D class script: registers the vector class on _global and puts its arithmetic on the prototype
 - `CVector2D` (matched) — the vector's constructor: stores x_ and y_ as x and y
 - `CVector2D.reinit` (matched) — sets both components in place
 - `CVector2D.getUgol` (matched) — the vector's angle in radians (atan2 of y, x); ugol is Russian for angle
 - `CVector2D.duplicate` (matched) — a new vector with this one's components
 - `CVector2D.copyTo` (matched) — copies this vector's components into v
 - `CVector2D.minus` (matched) — subtracts v from this vector in place
-- `CVector2D.minusNew` (not yet matched) — this minus v, as a new vector
-- `CVector2D.normalize` (not yet matched) — to unit length, in place
-- `CVector2D.reverseNew` (not yet matched) — the negated vector
+- `CVector2D.minusNew` (matched) — this vector minus v, as a new vector
+- `CVector2D.normalize` (matched) — scales the vector to unit length in place
+- `CVector2D.reverseNew` (matched) — the negated vector, as a new vector
 - `CVector2D.scalar` (matched) — the dot product with v
-- `CVector2D.modul` (not yet matched) — the length (Russian modul)
-- `CVector2D.reflectFromNormal` (not yet matched) — reflects in place about the normal n
-- `CVector2D.rotate` (not yet matched) — rotates in place by u radians
+- `CVector2D.modul` (matched) — the vector's length (Russian modul); the bytes compute it twice and drop the first
+- `CVector2D.reflectFromNormal` (matched) — reflects the vector in place off a surface with normal n: rotate into the normal's frame, negate x, rotate back
+- `CVector2D.rotate` (matched) — rotates the vector in place by u radians
 - `CVector2D.rotateNew` (not yet matched) — the vector rotated by u radians
 - `CVector2D.mult` (matched) — scales this vector in place by k
-- `CVector2D.multNew` (not yet matched) — the vector scaled by k
-- `CVector2D.plus` (not yet matched) — adds v in place
+- `CVector2D.multNew` (matched) — the vector scaled by k, as a new vector
+- `CVector2D.plus` (matched) — adds v to this vector in place
 - `CVector2D.plusNew` (matched) — the sum of this vector and v, as a new vector
 - `CVector2D.getDistanceTo` (not yet matched) — the signed distance from this point to the line through p1 and p2
 

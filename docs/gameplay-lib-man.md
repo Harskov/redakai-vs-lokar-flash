@@ -4,7 +4,7 @@ The rider sprite's own frame action (sprite 95, export `lib_man`): `this.stop()`
 
 ## Functions
 
-- `DefineSprite_95_lib_man_frame_1_DoAction_main` (not yet matched) — holds the rider on frame 1, `stay`
+- `DefineSprite_95_lib_man_frame_1_DoAction_main` (matched) — the rider sprite (export lib_man) holds its first frame, labelled stay
 
 ## Evidence
 

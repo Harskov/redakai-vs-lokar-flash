@@ -1,6 +1,7 @@
-# gameplay/107
+# gameplay/timeline-logo
 
-Sprite 107, a two-frame clip inside sprite 108, which sits on the menu frames 10-12, 17 and 19. Each frame holds.
+Sprite 107, a two-frame clip inside sprite 108, which sits on the menu frames 10 `logo`, 11, 12, 17 and 19.
+Each frame holds; no script sends it to frame 2.
 
 ## Functions
 

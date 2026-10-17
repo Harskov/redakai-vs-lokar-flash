@@ -5,8 +5,8 @@ Joins the physics to the graphics. `init` attaches the back wheel, front wheel a
 ## Functions
 
 - `calcBikeNVector` (not yet matched) — the bike's normal: the back-to-front wheel vector, normalised and turned 90 degrees; processGame tilts the bike along it
-- `Packages_CBikeSynchronizer_main` (not yet matched) — the class definition script
-- `CBikeSynchronizer` (not yet matched) — the constructor: four CVector2D, fdir, fpos, bdir, bpos
+- `Packages_CBikeSynchronizer_main` (matched) — the CBikeSynchronizer class script: registers the class on _global and puts init, setParticles and process on its prototype
+- `CBikeSynchronizer` (matched) — the constructor: four zero CVector2D, fdir, fpos, bdir and bpos (probably the front and back wheels' direction and position)
 - `CBikeSynchronizer.init` (not yet matched) — attaches back_w (depth 2), forward_w (1) and body (3) and places the wheels
 - `CBikeSynchronizer.setParticles` (not yet matched) — stores pBody, pBWheel, pFWheel and the front fork direction and back spring geometry
 - `CBikeSynchronizer.process` (not yet matched) — body position and rotation from the particles; front spring, rider offset and back spring rotation

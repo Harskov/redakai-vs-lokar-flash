@@ -4,8 +4,8 @@ A spring between two particles, with one stiffness for compression (`koeffStiffP
 
 ## Functions
 
-- `Packages_CSpringConstraint_main` (not yet matched) — the class definition script
-- `CSpringConstraint` (not yet matched) — the constructor: the two particles, both stiffnesses, relaxLen from modul()
+- `Packages_CSpringConstraint_main` (matched) — the CSpringConstraint class script: registers the spring class on _global and puts resolve on its prototype
+- `CSpringConstraint` (matched) — a spring between two particles with a compression and a stretch stiffness; its rest length relaxLen is their distance at creation
 - `CSpringConstraint.resolve` (not yet matched) — the correction toward relaxLen
 
 ## Evidence

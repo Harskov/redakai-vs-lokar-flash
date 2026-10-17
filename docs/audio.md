@@ -4,10 +4,10 @@ Music and sound effects. The music is two looping clips, `mc_sloop` and `mc_sloo
 
 ## Functions
 
-- `updateSoundLoop` (not yet matched) — unless stopSoundFlag: plays the loop zastSoundFlag selects and silences the other
-- `soundOff` (not yet matched) — silences the active loop and sets stopSoundFlag
-- `soundOn` (not yet matched) — plays the active loop and clears stopSoundFlag
-- `playSnd` (not yet matched) — plays a library sound once from a new Sound on this clip (loose plays lib_snd_fail)
+- `updateSoundLoop` (matched) — unless muted (stopSoundFlag), plays the music loop zastSoundFlag selects (mc_sloop_zast or mc_sloop, frame 2) and parks the other on frame 3; called by gameStart and newGame
+- `soundOff` (matched) — mutes the music: the loop in use goes to frame 3 and stopSoundFlag is set; no script calls it
+- `soundOn` (matched) — unmutes the music: the loop in use goes back to frame 2 and stopSoundFlag is cleared; no script calls it
+- `playSnd` (matched) — plays a library sound once by its linkage name from a new Sound on this timeline; loose plays lib_snd_fail, a name the file does not export
 - `frame_10_DoAction_main` (not yet matched) — the logo frame: Sound objects intro (bat_sound, looped), accSnd, accLoop, pb (play bg1), cra (crashbike); scorecard, scorecard2, levelscore 0, lifee 5
 - `frame_15_DoAction_main` (not yet matched) — the game frame: defines firebomb and setBright, restarts intro, loops btnon at volume 5, maps lvls to level, gameover when lifee is 0
 

@@ -4,9 +4,9 @@ Keeps the bike in view: each frame `process` shifts the level clip so the target
 
 ## Functions
 
-- `Packages_CCamera_main` (not yet matched) — the class definition script, with the four statics
+- `Packages_CCamera_main` (matched) — the CCamera class script: registers the class with the 500 x 400 view (SCREEN_WIDTH, SCREEN_HEIGHT and their halves) and puts init and process on its prototype
 - `CCamera` (matched) — the camera's constructor; init() supplies the followed clip and the level clip
-- `CCamera.init` (not yet matched) — stores the followed clip and the level clip, then positions once
+- `CCamera.init` (matched) — stores the followed clip and the level clip, then positions the view once; initLevel passes bikeSync.mc_bike and mc_level.mc
 - `CCamera.process` (not yet matched) — the shift, the rounding and the clamps
 
 ## Not known

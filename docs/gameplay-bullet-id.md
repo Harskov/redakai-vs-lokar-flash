@@ -1,13 +1,13 @@
 # gameplay/bullet_id
 
-The gun's shots. `processGame` attaches a `bullet_id` clip (G, key 71) or a `rocket_id` clip (F, key 70) as `bullet_id<kval>` (kval cycles 1000-1100) at the muzzle point (mx3, my3), turned to the angle from (mx1, my1) to (mx2, my2), and lists it in `_root.bulletArray`; `fire` plays it 50 ms later and `resetkfire` re-arms the gun after 290 ms. The aim points come from sprite 86 (gameplay-86.md).
+The gun's shots. `processGame` attaches a `bullet_id` clip (G, key 71) or a `rocket_id` clip (F, key 70) as `bullet_id<kval>` (kval cycles 1000-1100) at the muzzle point (mx3, my3), turned to the angle from (mx1, my1) to (mx2, my2), and lists it in `_root.bulletArray`; `fire` plays it 50 ms later and `resetkfire` re-arms the gun after 290 ms. The aim points come from sprite 86 (gameplay-lib-bike-body.md).
 
 ## Functions
 
 - `DefineSprite_20_bullet_id_frame_1_DoAction_main` (matched) — holds the bullet (export bullet_id) on frame 1 until fire() plays it from frame 2
-- `DefineSprite_20_bullet_id_frame_39_DoAction_main` (not yet matched) — the bullet removes itself on frame 39
-- `fire` (not yet matched) — plays the newest shot (bullet_id<kval>) from frame 2
-- `resetkfire` (not yet matched) — sets kfire, re-arming the gun
+- `DefineSprite_20_bullet_id_frame_39_DoAction_main` (matched) — the bullet (export bullet_id) removes itself on frame 39, the end of its flight
+- `fire` (matched) — plays the newest shot (bullet_id<kval>) from frame 2; processGame schedules it 50 ms after attaching the shot
+- `resetkfire` (matched) — re-arms the gun (kfire true); processGame schedules it 290 ms after a shot
 
 ## Evidence
 

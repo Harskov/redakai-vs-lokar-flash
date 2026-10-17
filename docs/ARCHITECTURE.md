@@ -56,7 +56,8 @@ standard Flash timeline behaviour; the scripts don't state it.
 - `processGame` runs every frame. While `gameState == 0` it adds the frame time to `timeCounter`,
   calls `showTime`, tilts the bike with the arrow keys (`CMan.LEFT_BUTTON` 37, `RIGHT_BUTTON` 39) along
   `calcBikeNVector`, steps `engine.process()`, `bikeSync.process()`, `objCamera.process()` and the two
-  parallax layers, fires on the G and F keys (key codes 71, 70), brings the helicopter in when
+  parallax layers, plays the `pio` clip of each visible level clip `s1`…`s20` the bike touches (once,
+  marked `bikehit`; what they are is not known), fires on the G and F keys (key codes 71, 70), brings the helicopter in when
   `helicounter` reaches 200, ends the level at `mc_finish`, and calls `loose` when the rider's head,
   body or leg point (`h`, `b`, `l`) hits the ground map.
 
@@ -100,32 +101,7 @@ unverified; nothing in the file names an author.
 
 - [audio](audio.md) — 6 function(s)
 - [core](core.md) — 13 function(s)
-- [gameplay/107](gameplay-107.md) — 2 function(s)
-- [gameplay/112](gameplay-112.md) — 1 function(s)
-- [gameplay/113](gameplay-113.md) — 1 function(s)
-- [gameplay/150](gameplay-150.md) — 1 function(s)
-- [gameplay/159](gameplay-159.md) — 1 function(s)
-- [gameplay/197](gameplay-197.md) — 2 function(s)
-- [gameplay/198](gameplay-198.md) — 1 function(s)
 - [gameplay/205](gameplay-205.md) — 4 function(s)
-- [gameplay/206](gameplay-206.md) — 2 function(s)
-- [gameplay/218](gameplay-218.md) — 2 function(s)
-- [gameplay/24](gameplay-24.md) — 1 function(s)
-- [gameplay/358](gameplay-358.md) — 1 function(s)
-- [gameplay/385](gameplay-385.md) — 2 function(s)
-- [gameplay/399](gameplay-399.md) — 4 function(s)
-- [gameplay/408](gameplay-408.md) — 4 function(s)
-- [gameplay/415](gameplay-415.md) — 4 function(s)
-- [gameplay/437](gameplay-437.md) — 1 function(s)
-- [gameplay/440](gameplay-440.md) — 1 function(s)
-- [gameplay/443](gameplay-443.md) — 4 function(s)
-- [gameplay/446](gameplay-446.md) — 1 function(s)
-- [gameplay/449](gameplay-449.md) — 1 function(s)
-- [gameplay/453](gameplay-453.md) — 2 function(s)
-- [gameplay/52](gameplay-52.md) — 2 function(s)
-- [gameplay/86](gameplay-86.md) — 5 function(s)
-- [gameplay/87](gameplay-87.md) — 1 function(s)
-- [gameplay/97](gameplay-97.md) — 1 function(s)
 - [gameplay/bullet_id](gameplay-bullet-id.md) — 4 function(s)
 - [gameplay/cback](gameplay-cback.md) — 4 function(s)
 - [gameplay/cbikesynchronizer](gameplay-cbikesynchronizer.md) — 6 function(s)
@@ -136,8 +112,13 @@ unverified; nothing in the file names an author.
 - [gameplay/cspringconstraint](gameplay-cspringconstraint.md) — 3 function(s)
 - [gameplay/cvector2d](gameplay-cvector2d.md) — 20 function(s)
 - [gameplay/cwheel](gameplay-cwheel.md) — 10 function(s)
+- [gameplay/lib_bike_body](gameplay-lib-bike-body.md) — 9 function(s)
+- [gameplay/lib_forward_wheel](gameplay-lib-forward-wheel.md) — 2 function(s)
 - [gameplay/lib_man](gameplay-lib-man.md) — 1 function(s)
 - [gameplay/rocket_id](gameplay-rocket-id.md) — 2 function(s)
-- [gameplay/timeline-game](gameplay-timeline-game.md) — 10 function(s)
+- [gameplay/timeline-1](gameplay-timeline-1.md) — 1 function(s)
+- [gameplay/timeline-game](gameplay-timeline-game.md) — 43 function(s)
+- [gameplay/timeline-logo](gameplay-timeline-logo.md) — 2 function(s)
+- [gameplay/timeline-soundatta](gameplay-timeline-soundatta.md) — 1 function(s)
 - [platform](platform.md) — 1 function(s)
 - [ui](ui.md) — 36 function(s)

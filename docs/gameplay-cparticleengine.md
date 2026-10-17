@@ -6,19 +6,19 @@ The physics step, described in `ARCHITECTURE.md` (The physics). Fields and calle
 
 - `Packages_CParticleEngine_main` (not yet matched) — the class definition script
 - `CParticleEngine` (matched) — the physics engine's constructor; the particle, wheel and constraint arrays and the step constants are class initialisers
-- `CParticleEngine.clear` (not yet matched) — empties the particle, wheel and constraint arrays
-- `CParticleEngine.setHitMovie` (not yet matched) — stores the ground clip the wheels collide with
+- `CParticleEngine.clear` (matched) — empties the engine's particle, wheel and constraint arrays
+- `CParticleEngine.setHitMovie` (matched) — stores the ground clip (hit_mc) checkCollisions passes to each wheel
 - `CParticleEngine.addParticle` (matched) — adds a particle to the engine's list p_array
-- `CParticleEngine.addWheel` (not yet matched) — initialises the wheel with its particle, max speed and radius, and adds it
-- `CParticleEngine.addSpringConstraint` (not yet matched) — adds a new CSpringConstraint
+- `CParticleEngine.addWheel` (matched) — initialises a wheel with its particle, top speed and radius and adds it to the wheel list
+- `CParticleEngine.addSpringConstraint` (matched) — springs two particles together with the given compression and stretch stiffnesses and adds the constraint
 - `CParticleEngine.start` (matched) — stamps prevTime with getTimer(), the baseline process() measures the first step against
-- `CParticleEngine.computeForces` (not yet matched) — each particle's acc = (0, gravity x mass)
-- `CParticleEngine.clearForces` (not yet matched) — zeroes each wheel's addedAcc
-- `CParticleEngine.applyManFrictions` (not yet matched) — each wheel's applyAddedAcc (the rider's lean)
+- `CParticleEngine.computeForces` (matched) — each particle's acceleration for the step: 0 across, gravity times its mass down
+- `CParticleEngine.clearForces` (matched) — zeroes every wheel's addedAcc after process's steps
+- `CParticleEngine.applyManFrictions` (matched) — each wheel adds its addedAcc (the rider's lean, set by processGame) to its particle
 - `CParticleEngine.verlet` (not yet matched) — the particles' Verlet step, then the wheels' drive: down key -0.6, up key 1, x maxAccSpeed / 3.2
-- `CParticleEngine.checkCollisions` (not yet matched) — each wheel against the hit clip
-- `CParticleEngine.checkConstraints` (not yet matched) — resolves each spring
-- `CParticleEngine.process` (not yet matched) — up to maxSteps fixed steps of t for the time since the last call
+- `CParticleEngine.checkCollisions` (matched) — each wheel tests itself against the ground clip hit_mc
+- `CParticleEngine.checkConstraints` (matched) — resolves every spring once, in list order, with the step time
+- `CParticleEngine.process` (matched) — one frame of physics: the seconds since the last call cut into up to maxSteps steps of t, each forces, lean, verlet, springs, collisions; then the lean forces cleared
 
 ## Not known
 

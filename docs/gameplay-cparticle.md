@@ -4,8 +4,8 @@ A point mass: `pos`, `prevPos`, `mass`, `acc` and an optional clip `mc`. `verlet
 
 ## Functions
 
-- `Packages_CParticle_main` (not yet matched) — the class definition script
-- `CParticle` (not yet matched) — the constructor: position, a copy as prevPos, mass, zero acc, no clip
+- `Packages_CParticle_main` (matched) — the CParticle class script: registers the point-mass class on _global and puts verlet on its prototype
+- `CParticle` (matched) — the point mass's constructor: pos at (x, y), prevPos a copy of it, the mass, zero acc, no clip
 - `CParticle.verlet` (not yet matched) — one Verlet step with the given damping
 
 ## Evidence

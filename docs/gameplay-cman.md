@@ -4,17 +4,17 @@ The rider (sprite 95, export `lib_man`, linked to CMan by `lib_man_main`): a Mov
 
 ## Functions
 
-- `Packages_CMan_main` (not yet matched) — the class definition script, with LEFT_BUTTON 37, RIGHT_BUTTON 39, ANIM_FRAMES 7
-- `CMan` (not yet matched) — the constructor: super(), stopFlag false, state 0
-- `CMan.stopAnim` (not yet matched) — sets stopFlag, freezing the state machine
-- `CMan.stopMCAnim` (not yet matched) — stops the inner clip mc
-- `CMan.startAnim` (not yet matched) — clears stopFlag
-- `CMan.onEnterFrame` (not yet matched) — left or right key held: toLeft / toRight; otherwise a lean returns
-- `CMan.toLeft` (not yet matched) — starts the left lean, or reverses a return from the right at the mirrored frame
-- `CMan.toRight` (not yet matched) — the mirror of toLeft
-- `CMan.fromLeft` (not yet matched) — starts the return from a left lean
-- `CMan.fromRight` (not yet matched) — starts the return from a right lean
-- `CMan.endMove` (not yet matched) — an animation's end: 1 to 2, 3 to 0, 4 to 5, 6 to 0
+- `Packages_CMan_main` (matched) — the CMan class script: registers the rider class (a MovieClip subclass) with LEFT_BUTTON 37, RIGHT_BUTTON 39, ANIM_FRAMES 7 and puts its methods on the prototype
+- `CMan` (matched) — the rider's constructor: super(), stopFlag false, state 0 (upright)
+- `CMan.stopAnim` (matched) — freezes the rider's lean state machine (stopFlag set); called by processGame at the finish, pauseGame and loose
+- `CMan.stopMCAnim` (matched) — stops the rider's inner animation clip mc; called by processGame at the finish and by loose
+- `CMan.startAnim` (matched) — lets the lean state machine run again (stopFlag cleared); called by resume
+- `CMan.onEnterFrame` (matched) — each frame unless stopped: a held left or right arrow calls toLeft or toRight; with neither held, a left lean (1, 2) or right lean (4, 5) starts its return
+- `CMan.toLeft` (matched) — the left key held: from upright starts the left lean (1); from the left return (3) restarts the lean at the mirrored frame; from a right lean starts the right return (6)
+- `CMan.toRight` (matched) — the right key held: the mirror of toLeft (lean 4, mirrored restart from 6, left return 3 from a left lean)
+- `CMan.fromLeft` (matched) — starts the return from a left lean (state 3), at the mirrored frame when the lean was still playing (state 1)
+- `CMan.fromRight` (matched) — starts the return from a right lean (state 6), at the mirrored frame when the lean was still playing (state 4)
+- `CMan.endMove` (matched) — an animation's end: lean 1 holds as 2 on left, lean 4 as 5 on right, returns 3 and 6 go to 0 on stay; no script calls it, so states 2 and 5 are not reached from the code
 - `lib_man_main` (matched) — links the exported symbol lib_man (sprite 95, the rider) to CMan
 
 ## Not known
