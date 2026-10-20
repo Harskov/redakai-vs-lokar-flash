@@ -64,6 +64,23 @@ referencing r1 and r2 read `regs=3<4` where the allocation fits; FFDec's compile
 `StoreRegister 2`, against the same function declared with 8 registers over `StoreRegister 7`. A real header always declares
 at least the registers its block references, so `regs=<n><<needed>` arose only from the over-count.
 
+Normalizer version 6 (remediation 2026-10-20-remediation-38): (k) a `DefineFunction2` parameter declared in slot 0 is not in
+a register (slot 0 means "on the stack by name"), so register 0 beside it is a register like any other, renumbered by rule
+(b); before it, `parse_header` kept the slot and `normalize` named register 0 `p:<name>`, and a chained assignment's temp
+in register 0 against a compile that placed the parameter in a register scored 81.82 for identical instructions
+(`| StoreRegister p:dTime | StoreRegister r1`: CSpringConstraint.resolve's `0, "dTime"` header; remediation-37 F-7). The pair it
+newly equates: `DefineFunction2 "", 1, 7, …, 0, "dTime"` over `StoreRegister 0` / `Push register0` against the same body under
+`…, 2, "dTime"` with the temp in another register. (l) A loop's exit test written as a branch around a jump, `If A` / `Jump B` /
+`A:` (A defined on the very next line), is read as the inverted branch `Not` / `If B`: FFDec's compiler emits the trampoline
+for `if (!test) break;` inside `while (true)` and `for (;;)` where the original compiler emitted the inverted branch itself,
+the shape of a `while` condition, and no source reaches the original's rows through FFDec (CWheel.pushOut 98.34 under
+`while (true)` and under `for (;;)` alike, run 2026-10-20-044 F-1; cookbook C9's comma-condition `!FAKE` is what the rule
+retires). The label A keeps its place only while another line still jumps to it. The pair it newly equates: `Push "hitTest"
+/ CallMethod / If loc03a2 / Jump loc045a / loc03a2:Push register12` against `Push "hitTest" / CallMethod / Not / If loc14e1 /
+Push register6`. Both rules rewrite each side the same way, so v6 equals v5 on every pair v5 equates; measured on Redakai
+(the round's record), the reference blocks the trampoline rule rewrites are counted there, and every matched function
+checks under v6 (`build.py` check, the pin moved by the S2 re-pin the record names).
+
 String literals (remediation 2026-10-17-remediation-34, under every version): the rules rewrite the code around a literal,
 never its text (`outside_strings`): a whitespace run, a `loc…` label word, `registerN` and `constantN` inside quotes are the
 program's data. A fix rather than a rule, so no version: it separates only pairs the old reading wrongly equated (`Push
@@ -82,12 +99,13 @@ C6) are the classes the source reproduces; `not-not-if` (cookbook C7), `define-k
 undefined on one side) name the known shapes left, and with `push-value` and `other` are not reproducible.
 """
 import argparse
+import collections
 import difflib
 import json
 import re
 import sys
 
-NORMALIZER_VERSION = 5
+NORMALIZER_VERSION = 6
 LABEL_RE = re.compile(r"^(\w+):(.*)$")
 REGISTERS_COMMENT_RE = re.compile(r"^[ \t]*//[ \t]*registers?[ \t]*:[ \t]*(.*?)[ \t]*$", re.M)
 IDENT_RE = r"[A-Za-z_$][\w$]*"
@@ -465,12 +483,41 @@ def map_register_locals(text):
     return "".join(out)
 
 
+def fold_trampolines(lines):
+    """Rule (l): `If A` / `Jump B` / `A:` (A defined on the very next line, B another label) is `Not` / `If B`; the label of the
+    `If` line stays on the `Not`, and A stays on the line that follows only while another line still jumps to it."""
+    refs = collections.Counter(r for l in lines for r in re.findall(LABEL_REF, code_text(split_line(l)[1])))
+    out, i = [], 0
+    while i < len(lines):
+        lab, t = split_line(lines[i])
+        m = re.match(r"^If (\w+)$", t.strip())
+        if m and i + 2 < len(lines):
+            a = m.group(1)
+            l1, t1 = split_line(lines[i + 1])
+            l2, t2 = split_line(lines[i + 2])
+            m1 = re.match(r"^Jump (\w+)$", t1.strip())
+            if m1 and not l1 and l2 == a and m1.group(1) != a:
+                out.append((lab + ":" if lab else "") + "Not")
+                out.append("If " + m1.group(1))
+                if refs[a] > 1:
+                    out.append(lines[i + 2])
+                elif t2.strip():
+                    out.append(t2.strip())
+                i += 3
+                continue
+        out.append(lines[i])
+        i += 1
+    return out
+
+
 def normalize(block, pool, header_info=None, version=NORMALIZER_VERSION):
     """Normalized lines of a cut block (see the module doc). header_info: the parsed header for register naming."""
     lines = [resolve_constants(l, pool) for l in block]
     if version >= 2:
         lines = drop_residue(split_pushes(lines))
     lines = [l for l in lines if not split_line(l)[1].startswith("ConstantPool")]
+    if version >= 6:     # rule (l)
+        lines = fold_trampolines(lines)
     labels = {}
     referenced = set()
     for l in lines:
@@ -496,6 +543,8 @@ def normalize(block, pool, header_info=None, version=NORMALIZER_VERSION):
                 regmap[r] = nm
                 r += 1
         for reg, pname in (h.get("preg") or {}).items():
+            if version >= 6 and not reg:
+                continue           # rule (k): a slot-0 parameter is on the stack by name, not in register 0
             regmap[reg] = f"p:{pname}"
     nxt = [1]
     regs_text = None
