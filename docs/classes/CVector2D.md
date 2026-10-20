@@ -20,4 +20,4 @@ A two-component vector, the physics' value type (`new CVector2D` appears 14 time
 | `modul()` | yes | CSpringConstraint (constructor), CSpringConstraint.resolve |
 | `minusNew(v)`, `normalize()`, `reverseNew()`, `reflectFromNormal(n)`, `multNew(k)`, `plus(v)` | yes | see `docs/CODE-MAP.md` |
 | `rotate` | yes | see `docs/CODE-MAP.md` |
-| `rotateNew`, `getDistanceTo` | no | see `docs/CODE-MAP.md` |
+| `rotateNew`, `getDistanceTo` | yes | see `docs/CODE-MAP.md` |

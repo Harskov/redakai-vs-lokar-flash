@@ -7,4 +7,4 @@ A spring between two particles of the physics engine: `CParticleEngine.addSpring
 | Method | Accepted | Callers (confirmed in the scripts) |
 |---|---|---|
 | `CSpringConstraint(p1_, p2_, koeffStiffPress_, koeffStiffStretch_)` | yes | CParticleEngine.addSpringConstraint |
-| `resolve(dTime)` | no | CParticleEngine.checkConstraints |
+| `resolve(dTime)` | yes | CParticleEngine.checkConstraints |

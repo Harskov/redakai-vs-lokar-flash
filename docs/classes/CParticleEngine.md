@@ -20,4 +20,4 @@ The physics engine: it holds the particles, the wheels and the spring constraint
 | `clearForces()` | yes | `process`, once its iterations are done (each wheel's `addedAcc` to zero) |
 | `clear()` | yes | initLevel (pops each of the three arrays until it is empty) |
 | `computeForces`, `process` | yes | `process` from processGame; `computeForces` from `process` |
-| `verlet` | no | `process` |
+| `verlet` | yes | `process` |

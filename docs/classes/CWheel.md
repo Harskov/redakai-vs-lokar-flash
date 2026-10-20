@@ -9,6 +9,7 @@ A bike wheel: a MovieClip class registered for both wheel symbols (`Object.regis
 | Method | Accepted | Callers (confirmed in the scripts) |
 |---|---|---|
 | `CWheel()` | yes | the player, when a wheel symbol is attached (registerClass) |
-| `init(particle_, maxAccSpeed_, rad_)` | no | CParticleEngine.addWheel |
+| `init(particle_, maxAccSpeed_, rad_)` | yes | CParticleEngine.addWheel |
 | `applyAddedAcc()` | yes | CParticleEngine.applyManFrictions |
-| `process`, `checkCollision`, `pushOut`, `validateRotation` | no | CParticleEngine (`checkCollisions`, `process`); each other |
+| `process`, `pushOut`, `validateRotation` | yes | CParticleEngine (`checkCollisions`, `process`); each other |
+| `checkCollision` | no | CParticleEngine.checkCollisions |

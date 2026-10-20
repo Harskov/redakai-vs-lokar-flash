@@ -8,4 +8,4 @@ The camera: it moves the level clip so that the target clip (the bike) stays in 
 |---|---|---|
 | `CCamera()` | yes | initLevel (`objCamera = new CCamera()`) |
 | `init(targetMovie_, levelMovie_)` | yes | initLevel (`objCamera.init(bikeSync.mc_bike, mc_level.mc)`) |
-| `process()` | no | processGame |
+| `process()` | yes | processGame |
