@@ -58,8 +58,42 @@ class CWheel extends MovieClip
    }
    function checkCollision(hit_mc)
    { /* @reference CWheel.checkCollision */ }
+   // pushes the wheel out of hit_mc along the normals of rim points k1 and k2: two points push by the
+   // overlap along their summed normal; one point steps the particle along its normal by 0.03 until
+   // the rim point opposite it no longer hits, then steps back once and moves prevPos along
+   // registers: r2 = the alias of this (wheel), r3 = the push direction (n), r8 = the overlap (dist), r7 = the rim point opposite n (rimPoint), r5 = rimPoint in global coordinates (pt), r6 = the steps taken (steps), r4 = the step length (stepLen)
    function pushOut(k1, k2, hit_mc)
-   { /* @reference CWheel.pushOut */ }
+   {
+      var wheel = this;
+      var n;
+      if(k1 != k2)
+      {
+         n = wheel.normalArray[k1].plusNew(wheel.normalArray[k2]);
+         n.normalize();
+         var dist = new CVector2D(0, 0).getDistanceTo(wheel.hitPointArray[k1], wheel.hitPointArray[k2]);
+         dist = wheel.rad - Math.abs(dist);
+         wheel.particle.pos.plus(n.multNew(dist));
+         wheel.particle.prevPos.plus(n.multNew(dist));
+         return;
+      }
+      n = wheel.normalArray[k1];
+      var rimPoint = n.multNew(- wheel.rad);
+      var pt = new CVector2D(0, 0);
+      var steps = 0;
+      var stepLen = 0.03;
+      // !FAKE: the author wrote while(true) with if(!hit_mc.hitTest(...)) break; after the two calls; the comma condition keeps the original's single Not before the exit branch
+      while(rimPoint.copyTo(pt), wheel.localToGlobal(pt), hit_mc.hitTest(pt.x, pt.y, true))
+      {
+         steps++;
+         wheel._x = wheel.particle.pos.x += n.x * stepLen;
+         wheel._y = wheel.particle.pos.y += n.y * stepLen;
+      }
+      steps--;
+      wheel.particle.pos.x -= n.x * stepLen;
+      wheel.particle.pos.y -= n.y * stepLen;
+      wheel.particle.prevPos.plus(n.multNew(stepLen * steps));
+      return;
+   }
    // while intersectionFlag is clear (probably off the ground), accSpeed snaps to zero or to 0.02 of
    // maxAccSpeed by its sign; then the particle's move since oldPos is kept only along the line
    // perpendicular to n, and the particle is pushed along it by accSpeed and held back by koeffFriction

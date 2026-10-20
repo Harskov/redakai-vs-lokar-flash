@@ -1,15 +1,15 @@
 {
   "version": 2,
   "measures": {
-    "fuzzy_match_percent": 73.08,
+    "fuzzy_match_percent": 77.86,
     "total_code": 10936,
-    "matched_code": 7536,
-    "matched_code_percent": 68.91,
+    "matched_code": 8059,
+    "matched_code_percent": 73.69,
     "total_functions": 202,
-    "matched_functions": 193,
-    "matched_functions_percent": 95.54,
+    "matched_functions": 195,
+    "matched_functions_percent": 96.53,
     "total_units": 95,
-    "complete_units": 88
+    "complete_units": 89
   },
   "units": [
     {
@@ -2429,13 +2429,13 @@
     {
       "name": "classes/CWheel",
       "measures": {
-        "fuzzy_match_percent": 40.88,
+        "fuzzy_match_percent": 57.67,
         "total_code": 1590,
-        "matched_code": 650,
-        "matched_code_percent": 40.88,
+        "matched_code": 917,
+        "matched_code_percent": 57.67,
         "total_functions": 8,
-        "matched_functions": 6,
-        "matched_functions_percent": 75.0
+        "matched_functions": 7,
+        "matched_functions_percent": 87.5
       },
       "functions": [
         {
@@ -2466,7 +2466,7 @@
         {
           "name": "CWheel.pushOut",
           "size": 267,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "CWheel.validateRotation",
@@ -2659,19 +2659,19 @@
     {
       "name": "timeline/frame_15",
       "measures": {
-        "fuzzy_match_percent": 26.01,
+        "fuzzy_match_percent": 100.0,
         "total_code": 346,
-        "matched_code": 90,
-        "matched_code_percent": 26.01,
+        "matched_code": 346,
+        "matched_code_percent": 100.0,
         "total_functions": 3,
-        "matched_functions": 2,
-        "matched_functions_percent": 66.67
+        "matched_functions": 3,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
           "name": "frame_15_DoAction_main",
           "size": 256,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "firebomb",
@@ -2685,7 +2685,7 @@
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "frame_15_DoAction",
         "source_path": "src/frame_15/DoAction.as",
         "progress_categories": [
@@ -3197,13 +3197,13 @@
       "id": "audio",
       "name": "audio",
       "measures": {
-        "fuzzy_match_percent": 44.35,
+        "fuzzy_match_percent": 100.0,
         "total_code": 460,
-        "matched_code": 204,
-        "matched_code_percent": 44.35,
+        "matched_code": 460,
+        "matched_code_percent": 100.0,
         "total_functions": 6,
-        "matched_functions": 5,
-        "matched_functions_percent": 83.33
+        "matched_functions": 6,
+        "matched_functions_percent": 100.0
       }
     },
     {
@@ -3223,13 +3223,13 @@
       "id": "gameplay",
       "name": "gameplay",
       "measures": {
-        "fuzzy_match_percent": 66.87,
+        "fuzzy_match_percent": 70.67,
         "total_code": 7024,
-        "matched_code": 4647,
-        "matched_code_percent": 66.16,
+        "matched_code": 4914,
+        "matched_code_percent": 69.96,
         "total_functions": 146,
-        "matched_functions": 140,
-        "matched_functions_percent": 95.89
+        "matched_functions": 141,
+        "matched_functions_percent": 96.58
       }
     },
     {
@@ -3366,13 +3366,13 @@
       "id": "gameplay.cwheel",
       "name": "gameplay/cwheel",
       "measures": {
-        "fuzzy_match_percent": 41.54,
+        "fuzzy_match_percent": 58.15,
         "total_code": 1608,
-        "matched_code": 668,
-        "matched_code_percent": 41.54,
+        "matched_code": 935,
+        "matched_code_percent": 58.15,
         "total_functions": 10,
-        "matched_functions": 8,
-        "matched_functions_percent": 80.0
+        "matched_functions": 9,
+        "matched_functions_percent": 90.0
       }
     },
     {

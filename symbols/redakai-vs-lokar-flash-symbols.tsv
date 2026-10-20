@@ -157,7 +157,7 @@ CWheel	Packages_CWheel	constructor	matched	gameplay/cwheel	a method of class CWh
 CWheel.init	Packages_CWheel	method	matched	gameplay/cwheel	a method of class CWheel (__Packages/CWheel)
 CWheel.process	Packages_CWheel	method	matched	gameplay/cwheel	a method of class CWheel (__Packages/CWheel)
 CWheel.checkCollision	Packages_CWheel	method	asm	gameplay/cwheel	a method of class CWheel (__Packages/CWheel)
-CWheel.pushOut	Packages_CWheel	method	asm	gameplay/cwheel	a method of class CWheel (__Packages/CWheel)
+CWheel.pushOut	Packages_CWheel	method	matched	gameplay/cwheel	a method of class CWheel (__Packages/CWheel)
 CWheel.validateRotation	Packages_CWheel	method	matched	gameplay/cwheel	a method of class CWheel (__Packages/CWheel)
 CWheel.applyAddedAcc	Packages_CWheel	method	matched	gameplay/cwheel	a method of class CWheel (__Packages/CWheel)
 frame_1_DoAction_main	frame_1_DoAction	main	matched	core	frame 1 of the main timeline (boot)
@@ -167,7 +167,7 @@ frame_11_DoAction_main	frame_11_DoAction	main	matched	platform	only player API: 
 frame_12_DoAction_main	frame_12_DoAction	main	matched	ui	frame 12 `main` (a menu or result screen)
 frame_13_DoAction_main	frame_13_DoAction	main	matched	ui	frame 13 `carselection` (a menu or result screen)
 frame_14_DoAction_main	frame_14_DoAction	main	matched	ui	frame 14 `help` (a menu or result screen)
-frame_15_DoAction_main	frame_15_DoAction	main	asm	audio	constructs or drives Sound (Sound, attachSound, setVolume, start, stopAllSounds)
+frame_15_DoAction_main	frame_15_DoAction	main	matched	audio	constructs or drives Sound (Sound, attachSound, setVolume, start, stopAllSounds)
 firebomb	frame_15_DoAction	function	matched	gameplay/timeline-game	frame 15 `game`
 setBright	frame_15_DoAction	function	matched	gameplay/timeline-game	frame 15 `game`
 frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_enterFrame_main	frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_enterFrame	main	matched	gameplay/timeline-game	a clip action placed on frame 15 `game` of the main timeline (PlaceObject2_33_1, character 33)
