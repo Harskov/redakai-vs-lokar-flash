@@ -45,7 +45,8 @@ Filled at S13 from the behaviour checks (Ruffle renders of the original and the 
   One session of each file, 83 checkpoints (the 32 unattended ones, which all fall before the first input at tick 705,
   then 51 along the timeline): 83 of 83 pixel-identical; two runs of the session give the same bytes. Re-checked the
   same day after `processGame` and `clearStuff` were rewritten to read `_root` plainly: 83 of 83 identical, every render
-  byte-identical to the previous check's, the same 25 handlers run at the same ticks.
+  byte-identical to the previous check's, the same 25 handlers run at the same ticks; compared once more with the five
+  handlers no input reaches classified unreachable: 83 of 83 identical, the renders unchanged.
 - What the renders show. Without input (the first 32 checkpoints): the loader on the first frame, then the title menu
   (Start Game and More Games beside the control instructions) on every other checkpoint, its background animated;
   playback stops there, so a label's checkpoint shows the menu, not the frame the label names. Along the timeline: the
@@ -59,7 +60,9 @@ Filled at S13 from the behaviour checks (Ruffle renders of the original and the 
 - Coverage: in the rebuilt file's session 25 of the 30 matched input handlers run, each listed with the tick it first
   ran in `tests/behaviour/last-compare.json`: the buttons' releases, rollOvers and rollOuts, the speaker's two presses,
   the two key handlers of the game frame and frame 18's level buttons le1 to le10. The five that do not run, frame 18's
-  `onRelease_11` to `onRelease_15`, are assigned to the clips `le11` to `le15`, which the movie never places (frame 18
-  places `le1` to `le10` only), so no input reaches them in the original either. Frames 13 and 18 are reached with the
+  `onRelease_11` to `onRelease_15`, are classified unreachable there, each with its fact: it is stored into `_root.le11`
+  to `_root.le15`, which no PlaceObject places (frame 18 places `le1` to `le10` only) and neither any of the movie's 7
+  clip-creating calls nor any assignment names, so no input runs them in the original either. No matched input handler is
+  left unexercised. Frames 13 and 18 are reached with the
   Flash Player's own context menu (Forward and Back), which the game leaves on: no code of the game goes there. `le5` and
   `le10` lie right of the 700-pixel stage and are clicked there.
