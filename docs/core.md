@@ -9,7 +9,7 @@ The game's control functions: the init action of sprite 150 (`DoInitAction`, fra
 - `nextLevel` (matched) — the next level: stargeted and levelTimeCounter cleared, level++ and the timeline stepped through reset back to game; at level 10 it calls newGame instead
 - `replay` (matched) — restarts the current level: clears stargeted and steps the timeline through reset back to game; called by the crash clip
 - `newGame` (matched) — back to the main frame with stargeted cleared and the menu music (zastSoundFlag set)
-- `initLevel` (not yet matched) — builds one attempt at the current level: the level frame, the minimap, the physics objects, gameState 0
+- `initLevel` (not yet matched) — builds one attempt at the current level: the level frame, the minimap, the physics objects, gameState 0; unmatched because its header, a DefineFunction2 with no parameter or preload, is one the pinned compiler emits only for a function nested in another
 - `processGame` (matched) — the per-frame step while gameState is 0, called by mc_control's enterFrame: clock, up-key gas, arrow-key tilt, physics, camera, parallax, pickups s1-s20, shots on G and F, the helicopter at helicounter 200, the finish line and the rider's ground tests
 - `resume` (matched) — undoes pauseGame: the music back unless muted, the message clip cleared to empty, the rider's animation restarted, gameState 0; no script calls it
 - `pauseGame` (matched) — pauses: the pause message, the music stopped unless muted, the rider's animation frozen, gameState 4; no script calls it

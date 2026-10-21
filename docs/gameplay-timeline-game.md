@@ -63,10 +63,10 @@ Inside the levels (`mc_level`, sprite 387, frames `level1`...`level6`):
 - `frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_keyDown_main` (matched) — mc_control's key handler: _parent.keyPressed(), which no script defines, then updateAfterEvent()
 - `frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_keyDown__2_main` (matched) — mc_control's second key handler, identical to the first: _parent.keyPressed() then updateAfterEvent()
 - `frame_15_PlaceObject2_33_1_CLIPACTIONRECORD_onClipEvent_load_main` (matched) — mc_control's load: _parent.initLevel() builds the attempt each time frame 15 places the clip
-- `frame_15_PlaceObject2_446_349_CLIPACTIONRECORD_onClipEvent_enterFrame_main` (not yet matched) — the helicopter: 4 px left a frame while active, off past x -270; destroyed, it falls 12 px a frame at brightness -150 and comes back at (1006.4, 58.4), firing again
-- `frame_15_PlaceObject2_453_353_CLIPACTIONRECORD_onClipEvent_enterFrame_main` (not yet matched) — the bomb's flight, 22 px a frame along `degrees`: a hit on the bike costs 50 mscore and one health frame (loose at frame 4); the ground mask or y > 500 ends it
+- `frame_15_PlaceObject2_446_349_CLIPACTIONRECORD_onClipEvent_enterFrame_main` (matched) — the helicopter: 4 px left a frame while active, off past x -270; destroyed, it falls 12 px a frame at brightness -150 and comes back at (1006.4, 58.4), firing again
+- `frame_15_PlaceObject2_453_353_CLIPACTIONRECORD_onClipEvent_enterFrame_main` (matched) — the bomb's flight, 22 px a frame along `degrees`: a hit on the bike costs 50 mscore and one health frame (loose at frame 4); the ground mask or y > 500 ends it
 - `frame_15_PlaceObject2_453_353_CLIPACTIONRECORD_onClipEvent_load_main` (matched) — the bomb's heading on load: rotation 220 and degrees set to that angle in radians (despite its name)
-- `frame_15_PlaceObject2_455_357_CLIPACTIONRECORD_onClipEvent_enterFrame_main` (not yet matched) — the shot checker: bullets against boxes 1-7 (+10), any shot against the helicopter (6 bullets or 1 rocket destroy it, +50)
+- `frame_15_PlaceObject2_455_357_CLIPACTIONRECORD_onClipEvent_enterFrame_main` (matched) — the shot checker: bullets against boxes 1-7 (+10), any shot against the helicopter (6 bullets or 1 rocket destroy it, +50)
 
 ## Not known
 

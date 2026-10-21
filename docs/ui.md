@@ -22,7 +22,7 @@ The menus, the buttons and the readouts: the main-timeline frames 12-20, the but
 - `frame_14_DoAction_main` (matched) — the help frame (14): stops every sound
 - `frame_17_DoAction_main` (matched) — the comple frame: holds, silences, lvls++, scorecard + 100 into txtlevel, the running total into txtscore and levelscore, gamewin once lvls is 7
 - `frame_18_DoAction_main` (matched) — the level selection frame: holds, silences and installs the per-frame handler that unlocks the level buttons
-- `frame_18_DoAction.onEnterFrame` (not yet matched) — each frame: buttons le1 ... le15 up to lvls go to their frame 2 and get their press handler
+- `frame_18_DoAction.onEnterFrame` (matched) — each frame: buttons le1 ... le15 up to lvls go to their frame 2 and get their press handler
 - `frame_18_DoAction.onRelease` (matched) — le1's press: lvls 1 and gameStart
 - `frame_18_DoAction.onRelease_2` (matched) — le2's press: lvls 2 and gameStart
 - `frame_18_DoAction.onRelease_3` (matched) — le3's press: lvls 3 and gameStart

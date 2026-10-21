@@ -18,12 +18,12 @@ The 2D vector value type of the physics. Methods ending in `New` return a new ve
 - `CVector2D.modul` (matched) — the vector's length (Russian modul); the bytes compute it twice and drop the first
 - `CVector2D.reflectFromNormal` (matched) — reflects the vector in place off a surface with normal n: rotate into the normal's frame, negate x, rotate back
 - `CVector2D.rotate` (matched) — rotates the vector in place by u radians
-- `CVector2D.rotateNew` (not yet matched) — the vector rotated by u radians
+- `CVector2D.rotateNew` (matched) — the vector rotated by u radians
 - `CVector2D.mult` (matched) — scales this vector in place by k
 - `CVector2D.multNew` (matched) — the vector scaled by k, as a new vector
 - `CVector2D.plus` (matched) — adds v to this vector in place
 - `CVector2D.plusNew` (matched) — the sum of this vector and v, as a new vector
-- `CVector2D.getDistanceTo` (not yet matched) — the signed distance from this point to the line through p1 and p2
+- `CVector2D.getDistanceTo` (matched) — the signed distance from this point to the line through p1 and p2
 
 ## Evidence
 

@@ -4,7 +4,7 @@ The physics step, described in `ARCHITECTURE.md` (The physics). Fields and calle
 
 ## Functions
 
-- `Packages_CParticleEngine_main` (not yet matched) — the class definition script
+- `Packages_CParticleEngine_main` (matched) — the class definition script
 - `CParticleEngine` (matched) — the physics engine's constructor; the particle, wheel and constraint arrays and the step constants are class initialisers
 - `CParticleEngine.clear` (matched) — empties the engine's particle, wheel and constraint arrays
 - `CParticleEngine.setHitMovie` (matched) — stores the ground clip (hit_mc) checkCollisions passes to each wheel
@@ -15,7 +15,7 @@ The physics step, described in `ARCHITECTURE.md` (The physics). Fields and calle
 - `CParticleEngine.computeForces` (matched) — each particle's acceleration for the step: 0 across, gravity times its mass down
 - `CParticleEngine.clearForces` (matched) — zeroes every wheel's addedAcc after process's steps
 - `CParticleEngine.applyManFrictions` (matched) — each wheel adds its addedAcc (the rider's lean, set by processGame) to its particle
-- `CParticleEngine.verlet` (not yet matched) — the particles' Verlet step, then the wheels' drive: down key -0.6, up key 1, x maxAccSpeed / 3.2
+- `CParticleEngine.verlet` (matched) — the particles' Verlet step, then the wheels' drive: down key -0.6, up key 1, x maxAccSpeed / 3.2
 - `CParticleEngine.checkCollisions` (matched) — each wheel tests itself against the ground clip hit_mc
 - `CParticleEngine.checkConstraints` (matched) — resolves every spring once, in list order, with the step time
 - `CParticleEngine.process` (matched) — one frame of physics: the seconds since the last call cut into up to maxSteps steps of t, each forces, lean, verlet, springs, collisions; then the lean forces cleared
