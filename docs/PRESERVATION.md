@@ -28,10 +28,26 @@ Filled at S13 from the behaviour checks (Ruffle renders of the original and the 
 - 2026-10-21, re-checked with 200 of 202 functions matched (94 of 95 scripts rebuilt from source): 32 of 32
   identical, every render byte-identical to the previous check's; re-checked the same day after three sources were
   rewritten without their `!FAKE` markers, again 32 of 32 identical and the renders unchanged.
-- What the renders show: two states only. The first frame shows the loader ("Loading Game" and its bar); every other
-  checkpoint shows the title menu (the Start Game and More Games buttons beside the control instructions), its animated
-  background differing from checkpoint to checkpoint. Playback stops on the menu, so a label's checkpoint (`carselection`,
-  `game`, `gameover` and the rest) shows the menu, not the frame the label names.
-- Coverage: the exporter plays the file from its first frame with no mouse or keyboard input, so every checkpoint shows
-  the unattended playback path; the 28 matched input handlers run in no checkpoint, and car selection, the levels,
-  winning and losing are not exercised.
+- 2026-10-21, re-checked with 202 of 202 functions matched (95 of 95 scripts rebuilt from source) and an input timeline:
+  Ruffle's exporter built from the pinned commit with the project's patch, which runs one session of a file from scripted
+  input (mouse moves, presses and releases at stage pixels, keys, the player's context-menu items, per tick), with
+  `getTimer` and the timers on a virtual clock advanced by 1000/35 ms a tick and `Math.random` seeded from a fixed clock.
+  One session of each file, 83 checkpoints (the 32 unattended ones, which all fall before the first input at tick 705,
+  then 51 along the timeline): 83 of 83 pixel-identical; two runs of the session give the same bytes.
+- What the renders show. Without input (the first 32 checkpoints): the loader on the first frame, then the title menu
+  (Start Game and More Games beside the control instructions) on every other checkpoint, its background animated;
+  playback stops there, so a label's checkpoint shows the menu, not the frame the label names. Along the timeline: the
+  menu frames 11 and 12 with the start and help buttons' hover animations; frame 13 `carselection` and frame 14 `help`,
+  each an unfinished panel; level 1 ridden with Up held, a missile (F) and compact rockets (G) fired, the speaker toggled
+  off and on, the enemy attacking, crashes ("R.I.P!!") and replays taking a life each until game over ("You lost him");
+  Play Again back to the logo frame and a new game; the completion screen ("Well played!! But Lokar got away") and its
+  Pursue Him button into level 2; the level-selection panel (frame 18, most of it right of the stage); the gamewin
+  screen ("You saved the world"); and a game started from each level button, le10 down to le1 (levels 7 to 10 read
+  "Level n/6": the game defines six).
+- Coverage: in the rebuilt file's session 25 of the 30 matched input handlers run, each listed with the tick it first
+  ran in `tests/behaviour/last-compare.json`: the buttons' releases, rollOvers and rollOuts, the speaker's two presses,
+  the two key handlers of the game frame and frame 18's level buttons le1 to le10. The five that do not run, frame 18's
+  `onRelease_11` to `onRelease_15`, are assigned to the clips `le11` to `le15`, which the movie never places (frame 18
+  places `le1` to `le10` only), so no input reaches them in the original either. Frames 13 and 18 are reached with the
+  Flash Player's own context menu (Forward and Back), which the game leaves on: no code of the game goes there. `le5` and
+  `le10` lie right of the 700-pixel stage and are clicked there.
