@@ -25,6 +25,8 @@ Filled at S13 from the behaviour checks (Ruffle renders of the original and the 
   (`tests/behaviour/hashes.json`); re-checked the same day against the rebuilt tree, again 32 of 32 identical.
 - 2026-10-17, re-checked with 179 of 202 functions matched (81 of 95 scripts rebuilt from source): 32 of 32
   identical, every render byte-identical to the previous check's.
+- 2026-10-21, re-checked with 200 of 202 functions matched (94 of 95 scripts rebuilt from source): 32 of 32
+  identical, every render byte-identical to the previous check's.
 - What the renders show: two states only. The first frame shows the loader ("Loading Game" and its bar); every other
   checkpoint shows the title menu (the Start Game and More Games buttons beside the control instructions), its animated
   background differing from checkpoint to checkpoint. Playback stops on the menu, so a label's checkpoint (`carselection`,
