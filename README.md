@@ -19,7 +19,7 @@ with AI assistance, and accepted only when the pinned toolchain rebuilt it to ma
 
 1. Clone this repository.
 2. Put your own copy of the game at `orig/Redakai vs Lokar.swf` (its SHA-1 must be the one above).
-3. `python3 configure.py` downloads the pinned toolchain (JPEXS Free Flash Decompiler 26.3.0) into `tools/`, rebuilds from `src/` and runs
+3. `python3 configure.py` downloads the pinned toolchain (JPEXS Free Flash Decompiler 26.3.0, compiled with `ffdec-26.3.0+define-kind-1`) into `tools/`, rebuilds from `src/` and runs
    `tools/check.py`, which compares the rebuilt artifact with your original under the project's criterion and prints
    `check: OK` when they agree.
 

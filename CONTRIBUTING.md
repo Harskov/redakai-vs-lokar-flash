@@ -8,7 +8,7 @@ there is welcome as an issue and is carried over by hand.
 
 ## The toolchain
 
-JPEXS Free Flash Decompiler 26.3.0; criterion `pcode-normalized`. `python3 configure.py` installs it from the pinned release into `tools/` and
+JPEXS Free Flash Decompiler 26.3.0, compiled with `ffdec-26.3.0+define-kind-1`; criterion `pcode-normalized`. `python3 configure.py` installs it from the pinned release into `tools/` and
 `tools/check.py` compares the rebuilt artifact with your own original. No scratch from decomp.me or any other site is
 copied here: the work is clean-room from the original file.
 

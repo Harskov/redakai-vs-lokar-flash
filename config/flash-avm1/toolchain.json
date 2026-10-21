@@ -16,5 +16,23 @@
     "size": 1542563
   },
   "flags": "-config autoDeobfuscate=1 -cli -onerror abort -timeout 600 -exportTimeout 600 (headless)",
-  "ffdec_config": "autoDeobfuscate=1"
+  "ffdec_config": "autoDeobfuscate=1",
+  "compiler": "ffdec-26.3.0+define-kind-1",
+  "compiler_patches": [
+    {
+      "id": "define-kind-1",
+      "source": {
+        "url": "https://raw.githubusercontent.com/jindrapetrik/jpexs-decompiler/version26.3.0/libsrc/ffdec_lib/src/com/jpexs/decompiler/flash/action/model/FunctionActionItem.java",
+        "sha256": "dafa5810c102475e0bbbb5c5f5472a1b7dbfd55c25af3372d4c62415046580ea",
+        "file": "FunctionActionItem.java",
+        "note": "compiled as it is, its bytecode equals the class in lib/ffdec_lib.jar but for javac-version artefacts (remediation 2026-10-20-remediation-42, orig-vs-jar.diff)"
+      },
+      "patch": "tools/ffdec-26.3.0-define-kind-1.patch",
+      "patch_sha256": "0fa0f8064c94d6486c6c28fc7dfc17d174347f4b5dc953eb1df67c37519342a7",
+      "patched_sha256": "e391b93e8b3697a27fe9ea3fdabf6dd0183846872e5c3ad7c0c40cff2e91587d",
+      "agent": "tools/ClassOverlayAgent.java",
+      "path": "tools/ffdec-patch/define-kind-1",
+      "license": "LGPL-3.0, the licence of FFDec's library file the patch modifies; the agent is the project's own (CC0)"
+    }
+  ]
 }
