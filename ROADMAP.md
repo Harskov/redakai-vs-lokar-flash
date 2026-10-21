@@ -12,7 +12,7 @@ The project serves four purposes — preservation, recompilation, porting and le
 | M6 | Complete | later | 200/202 game functions matched; check ok=True |
 | M7 | Documented | done | docs.py check ok=True (2026-10-21T02:39:06Z) |
 | M8 | Behaviour-verified | later | last behaviour compare ok=True at 2026-10-17T06:16:26Z; coverage: no input (28 matched input handler(s) unexercised) |
-| M9 | Reverse-engineered | later | names without checked evidence: 0; matches since the last name pass: 21; named types with two layouts: 0 |
+| M9 | Reverse-engineered | done | names without checked evidence: 0; matches since the last name pass: 0; named types with two layouts: 0 |
 
 Readability debt: 15 function(s) carry a `// !FAKE:` body and 0 carry a lint finding (see CONTRIBUTING.md); a pull request that replaces one with plain source that still matches is welcome.
 
