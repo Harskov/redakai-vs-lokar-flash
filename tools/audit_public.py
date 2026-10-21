@@ -10,10 +10,11 @@ The workflow .github/workflows/audit.yml runs it on every push and pull request.
 `<rule>  <path>  <why>` on a hit:
   path      a tracked file under orig/ (except orig/.gitkeep and orig/<release>/.gitkeep), reference/, build/, asm/, wip/, renders/ or tests/behaviour/renders/,
             or with an original, export, object, archive or render extension (.swf .fla .xfl .pcode .o .obj .a .elf .exe .dll
-            .so .iso .bin .img .png .jpg .jpeg .mp3 .wav .flv .s .S .asm .pyc .lock .zip .tar.gz); an extension a pack names
+            .so .iso .bin .img .png .jpg .jpeg .mp3 .wav .flv .s .S .asm .pyc .lock .zip .tar.gz, the disc dumps .gdi .cdi .chd
+            .cue); an extension a pack names
             in config/<pack>/source-ext is its own source under src/ and include/
   magic     a tracked file whose first bytes are an SWF (FWS/CWS/ZWS), an ELF, a Unix archive, a PE/DOS executable, a PNG,
-            a JPEG, a ZIP or an ISO 9660 image
+            a JPEG, a ZIP, an ISO 9660 image, a Dreamcast IP.BIN or a raw disc sector
   checksum  a tracked file whose SHA-1 equals a hash recorded in config/*/checksum.sha1 (the original file)
   size      a tracked file over the ceiling no source file reaches: 1 MiB (16 MiB for progress/report.json and a release's progress/<VERSION>/report.json)
 Exit 0 when every tracked file passes, 1 on any hit, 2 on usage.
@@ -30,14 +31,16 @@ from pathlib import Path
 IGNORED_DIRS = ("orig/", "reference/", "build/", "asm/", "wip/", "renders/", "tests/behaviour/renders/")
 IGNORED_EXT = {".swf", ".fla", ".xfl", ".pcode", ".o", ".obj", ".a", ".elf", ".exe", ".dll", ".so", ".iso", ".bin", ".img",
                ".png", ".jpg", ".jpeg", ".mp3", ".wav", ".flv", ".s", ".S", ".asm", ".pyc", ".lock", ".zip", ".gz",
-               ".gmd", ".gm6", ".gmk", ".bmp", ".mid", ".midi", ".ico", ".a52", ".a26", ".car", ".rom"}
+               ".gmd", ".gm6", ".gmk", ".bmp", ".mid", ".midi", ".ico", ".a52", ".a26", ".car", ".rom", ".gdi", ".cdi", ".chd", ".cue"}
 GITKEEP_RE = re.compile(r"^orig/(?:[^/]+/)?\.gitkeep$")   # orig/<SERIAL>/.gitkeep: a PS2 target keeps one folder per release
 MAGIC = ((b"FWS", 0, "uncompressed SWF"), (b"CWS", 0, "zlib-compressed SWF"), (b"ZWS", 0, "LZMA-compressed SWF"),
          (b"\x7fELF", 0, "ELF executable or object"), (b"!<arch>\n", 0, "Unix archive"), (b"MZ", 0, "PE/DOS executable"),
          (b"\x89PNG", 0, "PNG image"), (b"\xff\xd8\xff", 0, "JPEG image"), (b"PK\x03\x04", 0, "ZIP archive"), (b"CD001", 0x8001, "ISO 9660 disc image"),
          (b"\xa4\xc6\x12\x00", 0, "Game Maker 5 game data"), (b"\x91\xd5\x12\x00\xbc\x02\x00\x00", 0, "Game Maker 7 game data"),
          (b"\x91\xd5\x12\x00\x58\x02\x00\x00", 0, "Game Maker 6 game data"),
-         (b"RIFF", 0, "RIFF media (WAV, AVI)"), (b"MThd", 0, "MIDI file"), (b"CART", 0, "Atari cartridge image with an emulator header"))
+         (b"RIFF", 0, "RIFF media (WAV, AVI)"), (b"MThd", 0, "MIDI file"), (b"CART", 0, "Atari cartridge image with an emulator header"),
+         (b"SEGA SEGAKATANA ", 0, "Dreamcast IP.BIN or the start of a GD-ROM data track"),
+         (b"\x00" + b"\xff" * 10 + b"\x00", 0, "raw 2,352-byte disc sector (a CD or GD-ROM track dump)"))
 CEILING = 1 << 20
 REPORT_CEILING = 16 << 20
 REPORT_RE = re.compile(r"^progress/(?:[^/]+/)?report\.json$")   # a further release's: progress/<VERSION>/report.json
