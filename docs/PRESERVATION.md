@@ -43,7 +43,9 @@ Filled at S13 from the behaviour checks (Ruffle renders of the original and the 
   input (mouse moves, presses and releases at stage pixels, keys, the player's context-menu items, per tick), with
   `getTimer` and the timers on a virtual clock advanced by 1000/35 ms a tick and `Math.random` seeded from a fixed clock.
   One session of each file, 83 checkpoints (the 32 unattended ones, which all fall before the first input at tick 705,
-  then 51 along the timeline): 83 of 83 pixel-identical; two runs of the session give the same bytes.
+  then 51 along the timeline): 83 of 83 pixel-identical; two runs of the session give the same bytes. Re-checked the
+  same day after `processGame` and `clearStuff` were rewritten to read `_root` plainly: 83 of 83 identical, every render
+  byte-identical to the previous check's, the same 25 handlers run at the same ticks.
 - What the renders show. Without input (the first 32 checkpoints): the loader on the first frame, then the title menu
   (Start Game and More Games beside the control instructions) on every other checkpoint, its background animated;
   playback stops there, so a label's checkpoint shows the menu, not the frame the label names. Along the timeline: the
