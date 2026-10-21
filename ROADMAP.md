@@ -14,6 +14,6 @@ The project serves four purposes — preservation, recompilation, porting and le
 | M8 | Behaviour-verified | later | last behaviour compare ok=True at 2026-10-17T06:16:26Z; coverage: no input (28 matched input handler(s) unexercised) |
 | M9 | Reverse-engineered | later | names without checked evidence: 0; matches since the last name pass: 17; named types with two layouts: 0 |
 
-Readability debt: 13 function(s) carry a `// !FAKE:` body and 0 carry a lint finding (see CONTRIBUTING.md); a pull request that replaces one with plain source that still matches is welcome.
+Readability debt: 12 function(s) carry a `// !FAKE:` body and 0 carry a lint finding (see CONTRIBUTING.md); a pull request that replaces one with plain source that still matches is welcome.
 
 Reverse-engineering debt: 0 name(s) wait for a fact a script can check (M9); [docs/NAMES.md](docs/NAMES.md) lists every name with its evidence.

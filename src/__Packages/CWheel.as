@@ -81,9 +81,14 @@ class CWheel extends MovieClip
       var pt = new CVector2D(0, 0);
       var steps = 0;
       var stepLen = 0.03;
-      // !FAKE: the author wrote while(true) with if(!hit_mc.hitTest(...)) break; after the two calls; the comma condition keeps the original's single Not before the exit branch
-      while(rimPoint.copyTo(pt), wheel.localToGlobal(pt), hit_mc.hitTest(pt.x, pt.y, true))
+      while(true)
       {
+         rimPoint.copyTo(pt);
+         wheel.localToGlobal(pt);
+         if(!hit_mc.hitTest(pt.x, pt.y, true))
+         {
+            break;
+         }
          steps++;
          wheel._x = wheel.particle.pos.x += n.x * stepLen;
          wheel._y = wheel.particle.pos.y += n.y * stepLen;
