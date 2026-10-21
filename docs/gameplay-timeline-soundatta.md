@@ -10,7 +10,7 @@ the reference too.
 
 ## Not known
 
-- no script jumps to frame 11, so how the timeline reaches it (and so when the init action runs) is not settled
+- no script jumps to frame 11 and frame 10 stops, so a script never brings the timeline here; the behaviour check's scripted session reaches it with the player's context-menu Forward (`docs/PRESERVATION.md`). Whether a jump from frame 10 to 15 runs this init action is not settled
 
 ## Evidence
 

@@ -33,11 +33,11 @@ The menus, the buttons and the readouts: the main-timeline frames 12-20, the but
 - `frame_18_DoAction.onRelease_8` (matched) — le8's press: lvls 8 and gameStart
 - `frame_18_DoAction.onRelease_9` (matched) — le9's press: lvls 9 and gameStart
 - `frame_18_DoAction.onRelease_10` (matched) — le10's press: lvls 10 and gameStart
-- `frame_18_DoAction.onRelease_11` (matched) — le11's press: lvls 11 and gameStart
-- `frame_18_DoAction.onRelease_12` (matched) — le12's press: lvls 12 and gameStart
-- `frame_18_DoAction.onRelease_13` (matched) — le13's press: lvls 13 and gameStart
-- `frame_18_DoAction.onRelease_14` (matched) — le14's press: lvls 14 and gameStart
-- `frame_18_DoAction.onRelease_15` (matched) — le15's press: lvls 15 and gameStart
+- `frame_18_DoAction.onRelease_11` (matched) — le11's press: lvls 11 and gameStart; never runs: frame 18 places le1 to le10 only
+- `frame_18_DoAction.onRelease_12` (matched) — le12's press: lvls 12 and gameStart; never runs: frame 18 places le1 to le10 only
+- `frame_18_DoAction.onRelease_13` (matched) — le13's press: lvls 13 and gameStart; never runs: frame 18 places le1 to le10 only
+- `frame_18_DoAction.onRelease_14` (matched) — le14's press: lvls 14 and gameStart; never runs: frame 18 places le1 to le10 only
+- `frame_18_DoAction.onRelease_15` (matched) — le15's press: lvls 15 and gameStart; never runs: frame 18 places le1 to le10 only
 - `frame_19_DoAction_main` (matched) — the gamewin frame: holds, silences, levelscore into txtfinalscore and mscore + " points" into txtscore2
 - `frame_20_DoAction_main` (matched) — the gameover frame: the same as gamewin, levelscore and mscore + " points" into the two readouts
 

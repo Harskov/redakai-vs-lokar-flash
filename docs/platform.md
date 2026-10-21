@@ -4,11 +4,11 @@ The one function whose code touches only the player: the hold on frame 11 `sound
 
 ## Functions
 
-- `frame_11_DoAction_main` (matched) — holds the main timeline on frame 11 soundatta; no script jumps here, so how it is reached is not known
+- `frame_11_DoAction_main` (matched) — holds the main timeline on frame 11 soundatta; no script jumps here (the behaviour session reaches it with the player's context-menu Forward from frame 10)
 
 ## Not known
 
-- how frame 11 is reached: no script jumps to it
+- how frame 11 is reached in play: no script jumps to it and frame 10 stops; only the player's context menu was seen to reach it (`docs/PRESERVATION.md`)
 
 ## Evidence
 

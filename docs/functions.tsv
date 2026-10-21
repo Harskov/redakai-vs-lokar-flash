@@ -76,7 +76,7 @@ nextLevel	core	the next level: stargeted and levelTimeCounter cleared, level++ a
 replay	core	restarts the current level: clears stargeted and steps the timeline through reset back to game; called by the crash clip	steps the main timeline through "reset" to "game"
 newGame	core	back to the main frame with stargeted cleared and the menu music (zastSoundFlag set)	gotoAndStop("main"); calls updateSoundLoop
 playSnd	audio	plays a library sound once by its linkage name from a new Sound on this timeline; loose plays lib_snd_fail, a name the file does not export	constructs or drives Sound (Sound, attachSound, start)
-initLevel	core		writes gameState; builds engine, bikeSync, objCamera for the level
+initLevel	core	sets up one attempt at the current level (mc_control's load on frame 15 calls it): the minimap's stage and level marks, mc_level at frame level, the bike's three particles (mass 3) with two wheels and three springs, the camera and the hit clip, the gas counter, the sound loop unless muted, the message cleared, gameState 0, and the level clip's s1 to s10 each sent to a random frame 1 to 3; the engine, bikeSync, objCamera and both backdrops are created on the first call and the engine cleared on later ones	writes gameState; builds engine, bikeSync, objCamera for the level
 processGame	core	the per-frame step while gameState is 0, called by mc_control's enterFrame: clock, up-key gas, arrow-key tilt, physics, camera, parallax, pickups s1-s20, shots on G and F, the helicopter at helicounter 200, the finish line and the rider's ground tests	reads and writes gameState; the per-frame loop calling showTime, loose, clearStuff
 fire	gameplay/bullet_id	plays the newest shot (bullet_id<kval>) from frame 2; processGame schedules it 50 ms after attaching the shot	gotoAndPlay on _root.bullet_id
 resetkfire	gameplay/bullet_id	re-arms the gun (kfire true); processGame schedules it 290 ms after a shot	clears kfire, which processGame checks before attaching bullet_id
@@ -86,15 +86,15 @@ resume	core	undoes pauseGame: the music back unless muted, the message clip clea
 pauseGame	core	pauses: the pause message, the music stopped unless muted, the rider's animation frozen, gameState 4; no script calls it	writes gameState; gotoAndStop("pause") on mc_messageF
 clearStuff	core	clears the attempt's moving parts: every shot in bulletArray hidden, sent to 39 and removed, the list emptied, the bomb and helicopter back to their start, both brightnesses reset; called by loose and processGame's finish	resets bulletArray, bomb and helicop state between levels
 loose	core	a lost attempt (the author's spelling of lose): clearStuff, tscore into mscore and txtscore, the fail sound, life--, the wheels moved 1000 px right, the jeep parts and the crash clip played, the times and score shown, gameState 1	writes gameState; calls clearStuff, playSnd
-calcBikeNVector	gameplay/cbikesynchronizer		reads bikeSync (a CBikeSynchronizer) wheel particle positions
+calcBikeNVector	gameplay/cbikesynchronizer	the unit normal to the line through the bike's wheels: the back-to-front wheel vector from their particles, normalised and turned a quarter turn to (-y, x); processGame reads it under CMan.LEFT_BUTTON or RIGHT_BUTTON and leans the bike only while its y is positive	reads bikeSync (a CBikeSynchronizer) wheel particle positions
 Packages_CBack_main	gameplay/cback	the CBack class script: registers the class on _global with SCREEN_WIDTH 500 and puts init and process on its prototype	a method of class CBack (__Packages/CBack)
 CBack	gameplay/cback	the parallax layer's constructor; init() supplies the two tiles and the scale factor	a method of class CBack (__Packages/CBack)
 CBack.init	gameplay/cback	stores the backdrop's two tiles (mc1, mc2) and its scale factor; initLevel gives back1 the grass tiles at 1 and back2 the hill tiles at 2	a method of class CBack (__Packages/CBack)
 CBack.process	gameplay/cback	scrolls the two tiles against the level's x: the offset is levelX over scaleFactor wrapped to mc1's width; mc2 follows mc1 one pixel overlapped	a method of class CBack (__Packages/CBack)
 Packages_CBikeSynchronizer_main	gameplay/cbikesynchronizer	the CBikeSynchronizer class script: registers the class on _global and puts init, setParticles and process on its prototype	a method of class CBikeSynchronizer (__Packages/CBikeSynchronizer)
 CBikeSynchronizer	gameplay/cbikesynchronizer	the constructor: four zero CVector2D, fdir, fpos, bdir and bpos (probably the front and back wheels' direction and position)	a method of class CBikeSynchronizer (__Packages/CBikeSynchronizer)
-CBikeSynchronizer.init	gameplay/cbikesynchronizer		a method of class CBikeSynchronizer (__Packages/CBikeSynchronizer)
-CBikeSynchronizer.setParticles	gameplay/cbikesynchronizer		a method of class CBikeSynchronizer (__Packages/CBikeSynchronizer)
+CBikeSynchronizer.init	gameplay/cbikesynchronizer	attaches the back wheel, forward wheel and body clips to mc_container, puts the body at (sX, sY) and each wheel 10 pixels out from its mc_s_wheel_* marker, in the container's space	a method of class CBikeSynchronizer (__Packages/CBikeSynchronizer)
+CBikeSynchronizer.setParticles	gameplay/cbikesynchronizer	keeps the body and wheel particles and reads the body clip's geometry once: the front fork's direction (fdir) and where it crosses y = 0 (fpos), and the back spring's top (bpos, bdir)	a method of class CBikeSynchronizer (__Packages/CBikeSynchronizer)
 CBikeSynchronizer.process	gameplay/cbikesynchronizer	puts mc_bike on the particles: at pBody turned along the wheelbase; the front spring clip on the front wheel with mc_body_man slid along x; the back spring clip on the back wheel turned from bdir toward bpos	a method of class CBikeSynchronizer (__Packages/CBikeSynchronizer)
 Packages_CCamera_main	gameplay/ccamera	the CCamera class script: registers the class with the 500 x 400 view (SCREEN_WIDTH, SCREEN_HEIGHT and their halves) and puts init and process on its prototype	a method of class CCamera (__Packages/CCamera)
 CCamera	gameplay/ccamera	the camera's constructor; init() supplies the followed clip and the level clip	a method of class CCamera (__Packages/CCamera)
@@ -125,13 +125,13 @@ CParticleEngine.start	gameplay/cparticleengine	stamps prevTime with getTimer(), 
 CParticleEngine.computeForces	gameplay/cparticleengine	each particle's acceleration for the step: 0 across, gravity times its mass down	a method of class CParticleEngine (__Packages/CParticleEngine)
 CParticleEngine.clearForces	gameplay/cparticleengine	zeroes every wheel's addedAcc after process's steps	a method of class CParticleEngine (__Packages/CParticleEngine)
 CParticleEngine.applyManFrictions	gameplay/cparticleengine	each wheel adds its addedAcc (the rider's lean, set by processGame) to its particle	a method of class CParticleEngine (__Packages/CParticleEngine)
-CParticleEngine.verlet	gameplay/cparticleengine		a method of class CParticleEngine (__Packages/CParticleEngine)
+CParticleEngine.verlet	gameplay/cparticleengine	one verlet step for every particle (damped by 0.995), then every wheel processed with maxAccSpeed / 3.2 times -0.6 under the down arrow (key 40), 1 under the up arrow (38), else 0	a method of class CParticleEngine (__Packages/CParticleEngine)
 CParticleEngine.checkCollisions	gameplay/cparticleengine	each wheel tests itself against the ground clip hit_mc	a method of class CParticleEngine (__Packages/CParticleEngine)
 CParticleEngine.checkConstraints	gameplay/cparticleengine	resolves every spring once, in list order, with the step time	a method of class CParticleEngine (__Packages/CParticleEngine)
 CParticleEngine.process	gameplay/cparticleengine	one frame of physics: the seconds since the last call cut into up to maxSteps steps of t, each forces, lean, verlet, springs, collisions; then the lean forces cleared	a method of class CParticleEngine (__Packages/CParticleEngine)
 Packages_CSpringConstraint_main	gameplay/cspringconstraint	the CSpringConstraint class script: registers the spring class on _global and puts resolve on its prototype	a method of class CSpringConstraint (__Packages/CSpringConstraint)
 CSpringConstraint	gameplay/cspringconstraint	a spring between two particles with a compression and a stretch stiffness; its rest length relaxLen is their distance at creation	a method of class CSpringConstraint (__Packages/CSpringConstraint)
-CSpringConstraint.resolve	gameplay/cspringconstraint		a method of class CSpringConstraint (__Packages/CSpringConstraint)
+CSpringConstraint.resolve	gameplay/cspringconstraint	pulls p1 and p2 back toward relaxLen along the line between them, each by its share of the total mass, with separate stiffness for stretch and compression; dTime is not read	a method of class CSpringConstraint (__Packages/CSpringConstraint)
 Packages_CVector2D_main	gameplay/cvector2d	the CVector2D class script: registers the vector class on _global and puts its arithmetic on the prototype	a method of class CVector2D (__Packages/CVector2D)
 CVector2D	gameplay/cvector2d	the vector's constructor: stores x_ and y_ as x and y	a method of class CVector2D (__Packages/CVector2D)
 CVector2D.reinit	gameplay/cvector2d	sets both components in place	a method of class CVector2D (__Packages/CVector2D)
@@ -146,19 +146,19 @@ CVector2D.scalar	gameplay/cvector2d	the dot product with v	a method of class CVe
 CVector2D.modul	gameplay/cvector2d	the vector's length (Russian modul); the bytes compute it twice and drop the first	a method of class CVector2D (__Packages/CVector2D)
 CVector2D.reflectFromNormal	gameplay/cvector2d	reflects the vector in place off a surface with normal n: rotate into the normal's frame, negate x, rotate back	a method of class CVector2D (__Packages/CVector2D)
 CVector2D.rotate	gameplay/cvector2d	rotates the vector in place by u radians	a method of class CVector2D (__Packages/CVector2D)
-CVector2D.rotateNew	gameplay/cvector2d		a method of class CVector2D (__Packages/CVector2D)
+CVector2D.rotateNew	gameplay/cvector2d	a new vector, this one rotated by u radians (the original builds it twice and returns the second)	a method of class CVector2D (__Packages/CVector2D)
 CVector2D.mult	gameplay/cvector2d	scales this vector in place by k	a method of class CVector2D (__Packages/CVector2D)
 CVector2D.multNew	gameplay/cvector2d	the vector scaled by k, as a new vector	a method of class CVector2D (__Packages/CVector2D)
 CVector2D.plus	gameplay/cvector2d	adds v to this vector in place	a method of class CVector2D (__Packages/CVector2D)
 CVector2D.plusNew	gameplay/cvector2d	the sum of this vector and v, as a new vector	a method of class CVector2D (__Packages/CVector2D)
-CVector2D.getDistanceTo	gameplay/cvector2d		a method of class CVector2D (__Packages/CVector2D)
+CVector2D.getDistanceTo	gameplay/cvector2d	the signed distance from this point to the line through p1 and p2 (a*x + b*y + c over the length of (a, b)); the original computes it twice	a method of class CVector2D (__Packages/CVector2D)
 Packages_CWheel_main	gameplay/cwheel	the CWheel class script: registers the wheel class (a MovieClip subclass) with its field initialisers (maxSpeed 800, koeffSpring 0.05, koeffSlip 0.15, koeffFriction 0.97, hitCount 32) and its methods	a method of class CWheel (__Packages/CWheel)
 CWheel	gameplay/cwheel	the wheel's constructor: super() only; the fields come from the class initialisers and init	a method of class CWheel (__Packages/CWheel)
-CWheel.init	gameplay/cwheel		a method of class CWheel (__Packages/CWheel)
+CWheel.init	gameplay/cwheel	binds the wheel to its particle and radius and lays out hitCount rim points evenly around the circle, each with its normal pointing back to the centre	a method of class CWheel (__Packages/CWheel)
 CWheel.process	gameplay/cwheel	one step of the wheel's roll: clamps accSpeed and speed (scaled by dTime, damped by koeffDamp), rotates rot by speed / rad and turns mc_rim to rot's angle	a method of class CWheel (__Packages/CWheel)
 CWheel.checkCollision	gameplay/cwheel	tests the rim points against hit_mc; all inside keeps 0.3 of the step, otherwise each touching run is pushed out, a move against n is reflected by koeffSpring, and lastN keeps n	a method of class CWheel (__Packages/CWheel)
 CWheel.pushOut	gameplay/cwheel	pushes the wheel out of hit_mc: two rim points by the overlap along their summed normal, one point by 0.03 steps along its normal until the opposite rim point is clear	a method of class CWheel (__Packages/CWheel)
-CWheel.validateRotation	gameplay/cwheel		a method of class CWheel (__Packages/CWheel)
+CWheel.validateRotation	gameplay/cwheel	off contact (intersectionFlag clear) accSpeed snaps to 0 or 0.02 of maxAccSpeed by its sign; the particle's move since oldPos is kept along the perpendicular to n, pushed by accSpeed and damped by koeffFriction	a method of class CWheel (__Packages/CWheel)
 CWheel.applyAddedAcc	gameplay/cwheel	adds the wheel's addedAcc times its particle's mass to the particle's acceleration	a method of class CWheel (__Packages/CWheel)
 frame_1_DoAction_main	core	the preloader frame: holds, empties the bar (preloader width 0), shows bar and background, and installs the bar's per-frame handler	frame 1 of the main timeline (boot)
 frame_1_DoAction.onEnterFrame	core	the preloader bar: width and text follow the percent loaded (getBytesLoaded over getBytesTotal); at 100% it hides both, removes itself and plays from frame 10	frame 1 of the main timeline (boot)
@@ -180,7 +180,7 @@ frame_15_PlaceObject2_453_353_CLIPACTIONRECORD_onClipEvent_load_main	gameplay/ti
 frame_15_PlaceObject2_455_357_CLIPACTIONRECORD_onClipEvent_enterFrame_main	gameplay/timeline-game	the bullets' hits each frame: a shown bullet left of x 710 plays a box 1-7 of mc_level still on frame 1 (bullets only, 10 points), else hits the level helicopter left of x 650 (6 hits or a rocket: 50); hidden or far bullets are cleared	a clip action placed on frame 15 `game` of the main timeline (PlaceObject2_455_357, character 455)
 frame_17_DoAction_main	ui	the comple frame: holds, silences, lvls++, scorecard + 100 into txtlevel, the running total into txtscore and levelscore, gamewin once lvls is 7	frame 17 `comple` (a menu or result screen)
 frame_18_DoAction_main	ui	the level selection frame: holds, silences and installs the per-frame handler that unlocks the level buttons	frame 18 `level selection` (a menu or result screen)
-frame_18_DoAction.onEnterFrame	ui		frame 18 `level selection` (a menu or result screen)
+frame_18_DoAction.onEnterFrame	ui	each frame, every level button up to lvls (le1 to le15) shows its second frame and gets the onRelease that starts a game at that level	frame 18 `level selection` (a menu or result screen)
 frame_18_DoAction.onRelease	ui	le1's press: lvls 1 and gameStart	frame 18 `level selection` (a menu or result screen)
 frame_18_DoAction.onRelease_2	ui	le2's press: lvls 2 and gameStart	frame 18 `level selection` (a menu or result screen)
 frame_18_DoAction.onRelease_3	ui	le3's press: lvls 3 and gameStart	frame 18 `level selection` (a menu or result screen)

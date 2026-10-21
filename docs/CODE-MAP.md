@@ -71,12 +71,12 @@
 | `DefineSprite_95_lib_man_frame_1_DoAction_main` | `src/DefineSprite_95_lib_man/frame_1/DoAction.as` | DefineSprite_95_lib_man_frame_1_DoAction | sprites | matched | gameplay/lib_man |
 | `DefineSprite_97_frame_1_DoAction_main` | `src/DefineSprite_97/frame_1/DoAction.as` | DefineSprite_97_frame_1_DoAction | sprites | matched | gameplay/lib_bike_body |
 | `DoInitAction_main` | `src/DoInitAction.as` | DoInitAction | classes | matched | core |
-| `calcBikeNVector` | `src/DoInitAction.as` | DoInitAction | classes | wip | gameplay/cbikesynchronizer |
+| `calcBikeNVector` | `src/DoInitAction.as` | DoInitAction | classes | matched | gameplay/cbikesynchronizer |
 | `clearStuff` | `src/DoInitAction.as` | DoInitAction | classes | matched | core |
 | `fire` | `src/DoInitAction.as` | DoInitAction | classes | matched | gameplay/bullet_id |
 | `gameStart` | `src/DoInitAction.as` | DoInitAction | classes | matched | core |
 | `getTimeString` | `src/DoInitAction.as` | DoInitAction | classes | matched | ui |
-| `initLevel` | `src/DoInitAction.as` | DoInitAction | classes | wip | core |
+| `initLevel` | `src/DoInitAction.as` | DoInitAction | classes | matched | core |
 | `loose` | `src/DoInitAction.as` | DoInitAction | classes | matched | core |
 | `newGame` | `src/DoInitAction.as` | DoInitAction | classes | matched | core |
 | `nextLevel` | `src/DoInitAction.as` | DoInitAction | classes | matched | core |

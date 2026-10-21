@@ -15,6 +15,16 @@ timeline, 857 top-level tags, 95 scripts (AVM1).
 FFDec (JPEXS Free Flash Decompiler v.26.3.0) P-code and ActionScript exports under `reference/` (gitignored) with `reference/MANIFEST.json`
 committed (counts and hashes). Assets are inventoried in `assets/MANIFEST.json` at S7 without their content.
 
+## The rebuild
+
+Every one of the 95 scripts is compiled from `src/` and compared with the original under the pinned criterion,
+normalized P-code equality (`build/check.json`). The compiler is FFDec 26.3.0 with one patch,
+`tools/ffdec-26.3.0-define-kind-1.patch`: the original compiler's choice of function header (`DefineFunction` for a
+body that calls `eval` or `set`; `DefineFunction2` for a parameter, a register local, a preloadable identifier or an
+enclosing function; `DefineFunction` otherwise), which reproduces the header of every function the original defines.
+`configure.py` downloads FFDec's release and the one source file the patch changes, applies the patch and builds that
+class; a Java agent loads it beside the unmodified jar, so a clean clone builds what the workbench builds.
+
 ## Runtime notes
 
 Filled at S13 from the behaviour checks (Ruffle renders of the original and the rebuilt file at the recorded checkpoints).

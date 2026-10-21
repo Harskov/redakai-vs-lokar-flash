@@ -20,14 +20,14 @@ The rest is frame actions inside sprites, mostly a single `stop()`.
 |---|---|---|
 | 1 | — | the preloader: `frame_1_DoAction.onEnterFrame` sizes the bar from `getBytesLoaded()`; at 100% it plays from frame 10 |
 | 10 | `logo` | `frame_10_DoAction_main` creates the sounds (`intro`, `accSnd`, `accLoop`, `pb`, `cra`) and `lifee = 5`; button 124 (`btn1`) zeroes `tscore`/`mscore`, sets `lvls = 1` and plays from 15 |
-| 11 | `soundatta` | `frame_11_DoAction_main` holds; no script jumps here, so the way in is not known |
+| 11 | `soundatta` | `frame_11_DoAction_main` holds; no script jumps here: frame 10 stops (`frame_10_DoAction_main`), and the behaviour check's scripted session reaches 11 with the player's context-menu Forward (`docs/PRESERVATION.md`) |
 | 12 | `main` | `frame_12_DoAction_main` sets `lvls = 1`, `scores`, `lifee = 5`, `totascores`; buttons 147 (play, from 15) and 148 (help) sit on 11–12 |
 | 13 | `carselection` | `frame_13_DoAction_main` stops every sound; nothing in the scripts writes `jeepselection`, the variable the jeep and tyre sprites read |
 | 14 | `help` | `frame_14_DoAction_main` stops every sound; reached from button 148 |
 | 15 | `game` | the level: `frame_15_DoAction_main` defines `firebomb` and `setBright`, maps `lvls` to `level`, sends the timeline to `gameover` when `lifee == 0` |
 | 16 | `reset` | no script; `nextLevel` and `replay` stop here and go straight back to `game` |
 | 17 | `comple` | `frame_17_DoAction_main`: `lvls++`, 100 points to `scorecard`, `gamewin` when `lvls == 7`; button 461 restarts through `gameStart` |
-| 18 | `level selection` | `frame_18_DoAction.onEnterFrame` unlocks buttons `le1`…`le15` up to `lvls`; each sets `lvls` and calls `gameStart`; no script jumps here |
+| 18 | `level selection` | `frame_18_DoAction.onEnterFrame` unlocks buttons `le1`…`le15` up to `lvls`; each sets `lvls` and calls `gameStart`; the frame places `le1`…`le10` only, so the handlers of `le11`…`le15` never run; no script jumps here (the scripted session uses the context menu) |
 | 19 / 20 | `gamewin` / `gameover` | show `levelscore` and `mscore`; button 473 (`btn0`) zeroes the scores and returns to frame 10 |
 
 ## Boot
@@ -36,7 +36,8 @@ The init actions sit on three frames (tag positions from the original): the nine
 on frame 1, before the preloader `frame_1_DoAction_main`; the three `lib_*` registrations
 (`lib_forward_wheel_main`, `lib_back_wheel_main`, `lib_man_main`) on frame 10; the game's own
 `DoInitAction_main` on frame 11. Button 124 jumps from frame 10 to 15, button 147 from frames 11–12. Whether the player runs
-frame 11's init action on that jump isn't settled here; S13's runtime check can answer it. The init
+frame 11's init action on that jump isn't settled: the scripted behaviour session presses button 124
+first at tick 2802, long after it passed frame 11 at tick 720 (`tests/behaviour/checkpoints.json`). The init
 action declares the globals with their first values: `stopSoundFlag = false`,
 `zastSoundFlag = true`, `life = 10`, `highQuality = true`, and `bikeSync`, `engine`, `objCamera`,
 `back1`, `back2` all `null` until the first level is built.
@@ -94,8 +95,20 @@ unverified; nothing in the file names an author.
 
 `keyPressed` and `addLevelScores` are called but defined nowhere in the scripts. `rotates`,
 `jeepselection` and `hell` are read and never written. No script jumps to `soundatta`, `main`,
-`carselection` or `level selection`. The 19 functions of the init action are split by role across
+`carselection` or `level selection`; the player's own context menu (Forward, Back), which the game
+leaves on, reaches all four. The 19 functions of the init action are split by role across
 `core.md`, `audio.md`, `ui.md`, `gameplay-bullet-id.md` and `gameplay-cbikesynchronizer.md`.
+
+## The source and its compiler
+
+Every script is rebuilt from `src/` (95 of 95) and compared with the original's P-code (`build/check.json`).
+The compiler is FFDec 26.3.0 with one patch, `tools/ffdec-26.3.0-define-kind-1.patch`, which gives it the
+original compiler's choice of function header: `DefineFunction` for a body that calls `eval` or `set`
+(`processGame`, `clearStuff`, which read `_root` by name), `DefineFunction2` for one with a parameter, a
+register local, a preloadable identifier or an enclosing function (`initLevel` and `calcBikeNVector`: register
+locals, no parameter), `DefineFunction` otherwise. The rule reproduces the header of every function the
+original defines. `configure.py` fetches the one FFDec source file the patch changes, applies it and loads
+the built class beside the released jar.
 
 ## Subsystems
 
