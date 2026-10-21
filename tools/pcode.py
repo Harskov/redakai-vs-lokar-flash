@@ -447,8 +447,10 @@ def map_register_locals(text):
     and comments; the comment line itself and everything else stay as they are. FFDec places a local in a register only
     under that spelling (whatever N); the source on disk keeps the author's name (K1 §4). The function's own parameters and
     the preload names (PRELOAD_ORDER) are never mapped: FFDec places those itself, and a comment whose prose named one made
-    it an undeclared variable (redakai run 2026-10-16-031 F-3: `r3 = levelX, then ...` mapped the parameter levelX). A text
-    without such a comment comes back unchanged."""
+    it an undeclared variable (redakai run 2026-10-16-031 F-3: `r3 = levelX, then ...` mapped the parameter levelX). An
+    object-literal key (`{` or `,` before it, `:` after it) is a property name like a member after a dot and is never
+    mapped (redakai run 2026-10-21-051 F-1: `{k1:k1, k2:k2}` became `{_loc12_:_loc12_, ...}`). A text without such a
+    comment comes back unchanged."""
     if not REGISTERS_COMMENT_RE.search(text):
         return text
     used = {int(n) for n in re.findall(r"\b_loc(\d+)_\b", text)}
@@ -470,9 +472,19 @@ def map_register_locals(text):
             nxt += 1
         body = text[open_:close]
 
+        def object_key(t):
+            i, j = t.start() - 1, t.end()
+            while i >= 0 and body[i].isspace():
+                i -= 1
+            while j < len(body) and body[j].isspace():
+                j += 1
+            return i >= 0 and body[i] in "{," and j < len(body) and body[j] == ":"
+
         def swap(t):
             s = t.group(0)
             if s[0] in "\"'/" or (t.start() > 0 and body[t.start() - 1] == "."):   # a string, a comment, a member name
+                return s
+            if s in mapping and object_key(t):   # `{k1: k1}`: the key is a property name
                 return s
             return mapping.get(s, s)
         body = AS_TOKEN_RE.sub(swap, body)
