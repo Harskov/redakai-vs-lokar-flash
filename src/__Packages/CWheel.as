@@ -56,8 +56,148 @@ class CWheel extends MovieClip
       wheel.rot.rotate(wheel.speed / wheel.rad);
       wheel.mc.mc_rim._rotation = Math.atan2(wheel.rot.y, wheel.rot.x) * 180 / 3.141593;
    }
+   // tests the hitCount rim points against hit_mc: with every point inside, the particle keeps 0.3 of its
+   // step; otherwise each run of touching points is pushed out, a move against their summed normal n has
+   // its part along n reversed and scaled by koeffSpring, and lastN keeps n for validateRotation
+   // registers: r2 = the alias of this (wheel), r10 = the rim point index (k), r7 = the loop counter (i), r8 = the rim point in global coordinates (pt), r15 = whether any rim point hits (anyHit), r3 = the first point of a touching run (first), r4 = its last point (last), r17 = the number of runs (count), r18 = the particle's position before this step (oldPos), r5 = the summed normal of the touching points (n), r16 = the number of points that hit (hits), r6 = the particle's move over the step (move), r12 = the run popped from intersArray (inters), r13 = the angle of n (angle)
    function checkCollision(hit_mc)
-   { /* @reference CWheel.checkCollision */ }
+   {
+      var wheel = this;
+      var k;
+      var i;
+      var pt = new CVector2D(0, 0);
+      var anyHit = false;
+      var first;
+      var last;
+      var count;
+      var oldPos = new CVector2D(wheel.particle.prevPos.x, wheel.particle.prevPos.y);
+      var n = new CVector2D(0, 0);
+      var hits;
+      wheel._x = wheel.particle.pos.x;
+      wheel._y = wheel.particle.pos.y;
+      hits = 0;
+      k = 0;
+      while(k < wheel.hitCount)
+      {
+         wheel.hitPointArray[k].copyTo(pt);
+         wheel.localToGlobal(pt);
+         if(wheel.hitArray[k] = hit_mc.hitTest(pt.x, pt.y, true))
+         {
+            anyHit = true;
+            first = k;
+            hits++;
+         }
+         k++;
+      }
+      if(hits == wheel.hitCount)
+      {
+         wheel.particle.pos.x = wheel.particle.prevPos.x + (wheel.particle.pos.x - wheel.particle.prevPos.x) * 0.3;
+         wheel.particle.pos.y = wheel.particle.prevPos.y + (wheel.particle.pos.y - wheel.particle.prevPos.y) * 0.3;
+         wheel._x = wheel.particle.pos.x;
+         wheel._y = wheel.particle.pos.y;
+         return;
+      }
+      k = 0;
+      if(anyHit)
+      {
+         while(true)
+         {
+            k++;
+            if(k == wheel.hitCount)
+            {
+               k = 0;
+            }
+            // !FAKE: the author wrote if(!wheel.hitArray[k]); the doubled parentheses keep the double Not before the branch
+            if((!wheel.hitArray[k]))
+            {
+               first = -1;
+               i = 0;
+               while(i < wheel.hitCount)
+               {
+                  k++;
+                  if(k == wheel.hitCount)
+                  {
+                     k = 0;
+                  }
+                  if(first == -1)
+                  {
+                     if(wheel.hitArray[k])
+                     {
+                        first = k;
+                        n.plus(wheel.normalArray[k]);
+                     }
+                  }
+                  // !FAKE: the author wrote else if(!wheel.hitArray[k]); the doubled parentheses keep the double Not before the branch
+                  else if((!wheel.hitArray[k]))
+                  {
+                     last = k - 1;
+                     if(last < 0)
+                     {
+                        last = wheel.hitCount - 1;
+                     }
+                     wheel.intersArray.push({k1:first, k2:last});
+                     first = -1;
+                  }
+                  else
+                  {
+                     n.plus(wheel.normalArray[k]);
+                  }
+                  i++;
+               }
+               break;
+            }
+         }
+         var move = new CVector2D(0, 0);
+         if(wheel.intersArray.length > 0)
+         {
+            n.normalize();
+            if(wheel.intersectionFlag)
+            {
+               n.x += wheel.lastN.x;
+               n.y += wheel.lastN.y;
+               n.x /= 2;
+               n.y /= 2;
+            }
+            var inters;
+            var angle;
+            count = wheel.intersArray.length;
+            k = 0;
+            while(k < count)
+            {
+               inters = wheel.intersArray.pop();
+               first = inters.k1;
+               last = inters.k2;
+               wheel.particle.pos.minusNew(wheel.particle.prevPos).copyTo(move);
+               if(n.scalar(move) < 0)
+               {
+                  angle = Math.atan2(n.y, n.x);
+                  move.rotate(- angle);
+                  move.x = (- move.x) * wheel.koeffSpring;
+                  move.rotate(angle);
+                  wheel.pushOut(first, last, hit_mc);
+                  wheel.particle.prevPos.x = wheel.particle.pos.x - move.x;
+                  wheel.particle.prevPos.y = wheel.particle.pos.y - move.y;
+               }
+               else
+               {
+                  wheel.pushOut(first, last, hit_mc);
+               }
+               k++;
+            }
+            wheel.validateRotation(n, oldPos);
+            wheel.intersectionFlag = true;
+            wheel.particle.pos.copyTo(wheel.lastIntersPoint);
+            n.copyTo(wheel.lastN);
+         }
+      }
+      else if(wheel.intersectionFlag)
+      {
+         wheel.validateRotation(wheel.lastN, oldPos);
+         wheel.intersectionFlag = false;
+      }
+      wheel._x = wheel.particle.pos.x;
+      wheel._y = wheel.particle.pos.y;
+   }
    // pushes the wheel out of hit_mc along the normals of rim points k1 and k2: two points push by the
    // overlap along their summed normal; one point steps the particle along its normal by 0.03 until
    // the rim point opposite it no longer hits, then steps back once and moves prevPos along

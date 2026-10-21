@@ -156,7 +156,7 @@ Packages_CWheel_main	Packages_CWheel	main	matched	gameplay/cwheel	a method of cl
 CWheel	Packages_CWheel	constructor	matched	gameplay/cwheel	a method of class CWheel (__Packages/CWheel)
 CWheel.init	Packages_CWheel	method	matched	gameplay/cwheel	a method of class CWheel (__Packages/CWheel)
 CWheel.process	Packages_CWheel	method	matched	gameplay/cwheel	a method of class CWheel (__Packages/CWheel)
-CWheel.checkCollision	Packages_CWheel	method	asm	gameplay/cwheel	a method of class CWheel (__Packages/CWheel)
+CWheel.checkCollision	Packages_CWheel	method	matched	gameplay/cwheel	a method of class CWheel (__Packages/CWheel)
 CWheel.pushOut	Packages_CWheel	method	matched	gameplay/cwheel	a method of class CWheel (__Packages/CWheel)
 CWheel.validateRotation	Packages_CWheel	method	matched	gameplay/cwheel	a method of class CWheel (__Packages/CWheel)
 CWheel.applyAddedAcc	Packages_CWheel	method	matched	gameplay/cwheel	a method of class CWheel (__Packages/CWheel)
