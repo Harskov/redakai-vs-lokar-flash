@@ -8,8 +8,7 @@ onClipEvent(enterFrame){
       i = 0;
       while(i < blen)
       {
-         // !FAKE: the author wrote if(_root.bulletArray[i] != ""); the doubled parentheses keep the double Not before the branch
-         if((_root.bulletArray[i] != ""))
+         if(_root.bulletArray[i] != "")
          {
             if(eval("_root." + _root.bulletArray[i])._alpha == 100 && eval("_root." + _root.bulletArray[i])._x < 710)
             {

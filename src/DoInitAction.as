@@ -432,8 +432,7 @@ function clearStuff()
       j = 0;
       while(j < tlen)
       {
-         // !FAKE: the author wrote if(_root.bulletArray[j] != ""); the doubled parentheses keep the double Not before the branch
-         if((eval("_root").bulletArray[j] != ""))
+         if(eval("_root").bulletArray[j] != "")
          {
             eval("_root." + eval("_root").bulletArray[j])._alpha = 0;
             eval("_root." + eval("_root").bulletArray[j]).gotoAndStop(39);

@@ -23,8 +23,7 @@ class CParticle
       me.pos.x += (me.pos.x - me.prevPos.x) * koeffDamp + me.acc.x * dTime;
       me.pos.y += (me.pos.y - me.prevPos.y) * koeffDamp + me.acc.y * dTime;
       oldPos.copyTo(me.prevPos);
-      // !FAKE: the author wrote if(me.mc != null); the doubled parentheses keep the double Not before the branch
-      if((me.mc != null))
+      if(me.mc != null)
       {
          me.mc._x = me.pos.x;
          me.mc._y = me.pos.y;

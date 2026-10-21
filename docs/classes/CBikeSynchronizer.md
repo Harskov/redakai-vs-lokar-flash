@@ -9,4 +9,4 @@ The bike's assembly: `initLevel` makes the one instance (`bikeSync`), `init` att
 | `CBikeSynchronizer()` | yes | initLevel (`bikeSync = new CBikeSynchronizer()`) |
 | `init(mc_container, sX, sY)` | yes | initLevel (`bikeSync.init(mc_level.mc.mc_bike, 0, 0)`) |
 | `setParticles(pBody_, pBWheel_, pFWheel_)` | yes | initLevel |
-| `process()` | no | processGame |
+| `process()` | yes | processGame |
