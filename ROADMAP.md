@@ -11,9 +11,9 @@ The project serves four purposes — preservation, recompilation, porting and le
 | M5 | Gameplay | done | 146/146 gameplay functions matched |
 | M6 | Complete | done | 202/202 game functions matched; check ok=True |
 | M7 | Documented | current | docs.py check ok=False (2026-10-21T07:12:49Z) |
-| M8 | Behaviour-verified | done | last behaviour compare ok=True at 2026-10-21T07:12:16Z; coverage: scripted input, 25/30 matched input handler(s) run, unexercised: frame_18_DoAction.onRelease_11, frame_18_DoAction.onRelease_12, frame_18_DoAction.onRelease_13, frame_18_DoAction.onRelease_14, frame_18_DoAction.onRelease_15 |
-| M9 | Reverse-engineered | later | names without checked evidence: 0; matches since the last name pass: 2; named types with two layouts: 0 |
+| M8 | Behaviour-verified | later | last behaviour compare ok=True at 2026-10-21T07:12:16Z; coverage: scripted input, 25/30 matched input handler(s) run, unexercised: frame_18_DoAction.onRelease_11, frame_18_DoAction.onRelease_12, frame_18_DoAction.onRelease_13, frame_18_DoAction.onRelease_14, frame_18_DoAction.onRelease_15 |
+| M9 | Reverse-engineered | later | names without checked evidence: 0; matches since the last name pass: 4; named types with two layouts: 0 |
 
-Readability debt: 13 function(s) carry a `// !FAKE:` body and 0 carry a lint finding (see CONTRIBUTING.md); a pull request that replaces one with plain source that still matches is welcome.
+Readability debt: 11 function(s) carry a `// !FAKE:` body and 0 carry a lint finding (see CONTRIBUTING.md); a pull request that replaces one with plain source that still matches is welcome.
 
 Reverse-engineering debt: 0 name(s) wait for a fact a script can check (M9); [docs/NAMES.md](docs/NAMES.md) lists every name with its evidence.

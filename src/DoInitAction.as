@@ -165,7 +165,6 @@ function initLevel()
 }
 // the game's per-frame step (the frame-15 clip's enterFrame calls it): while gameState is 0, the clock,
 // the arrow-key tilt, the physics, the pickups, the shots (F, G), the finish and the rider's hit tests
-// !FAKE: the author wrote _root; eval("_root") keeps the original DefineFunction, which reads _root by name
 function processGame()
 {
    engine.gravity = 4;
@@ -252,13 +251,13 @@ function processGame()
          if(mc_level.mc.maskman_mc._currentframe == 1)
          {
             mc_level.mc.maskman_mc.gotoAndPlay(2);
-            eval("_root").themask_mc.gotoAndStop(508);
+            _root.themask_mc.gotoAndStop(508);
          }
       }
       if(kfire == undefined)
       {
          kfire = true;
-         eval("_root").bulletArray = new Array();
+         _root.bulletArray = new Array();
       }
       // keys 71 and 70 are G (a bullet) and F (a rocket)
       if(Key.isDown(71) && kfire == true || Key.isDown(70) && kfire == true)
@@ -271,9 +270,9 @@ function processGame()
          {
             weapontype = "bullet";
          }
-         eval("_root").kfire = false;
-         var p_a = eval("_root").my2 - eval("_root").my1;
-         var p_b = eval("_root").mx2 - eval("_root").mx1;
+         _root.kfire = false;
+         var p_a = _root.my2 - _root.my1;
+         var p_b = _root.mx2 - _root.mx1;
          var p_radians = Math.atan2(p_a, p_b);
          // 0.01745329 is pi / 180: radians to degrees
          var degrees = p_radians / 0.01745329;
@@ -302,58 +301,58 @@ function processGame()
          {
             delete tmparray;
             tmparray = new Array();
-            var tlen = eval("_root").bulletArray.length;
+            var tlen = _root.bulletArray.length;
             if(tlen > 0)
             {
                j = 0;
                while(j < tlen)
                {
-                  if(eval("_root").bulletArray[j] != "")
+                  if(_root.bulletArray[j] != "")
                   {
-                     tmparray.push(eval("_root").bulletArray[j]);
+                     tmparray.push(_root.bulletArray[j]);
                   }
                   else
                   {
-                     eval("_root").arrdeactivate = true;
+                     _root.arrdeactivate = true;
                   }
                   j++;
                }
-               eval("_root").bulletArray = tmparray;
-               eval("_root").arrdeactivate = false;
+               _root.bulletArray = tmparray;
+               _root.arrdeactivate = false;
             }
             tcheck = 1;
          }
          if(weapontype == "bullet")
          {
-            eval("_root").attachMovie("bullet_id", "bullet_id" + kval, eval("_root").getNextHighestDepth());
+            _root.attachMovie("bullet_id", "bullet_id" + kval, _root.getNextHighestDepth());
             eval("_root.bullet_id" + kval)._rotation = angle;
             eval("_root.bullet_id" + kval).weapontype = weapontype;
-            eval("_root.bullet_id" + kval)._x = eval("_root").mx3;
-            eval("_root.bullet_id" + kval)._y = eval("_root").my3;
+            eval("_root.bullet_id" + kval)._x = _root.mx3;
+            eval("_root.bullet_id" + kval)._y = _root.my3;
          }
          else
          {
-            eval("_root").attachMovie("rocket_id", "bullet_id" + kval, eval("_root").getNextHighestDepth());
+            _root.attachMovie("rocket_id", "bullet_id" + kval, _root.getNextHighestDepth());
             eval("_root.bullet_id" + kval)._rotation = angle - 40;
             eval("_root.bullet_id" + kval).weapontype = weapontype;
-            eval("_root.bullet_id" + kval)._x = eval("_root").mx3 - 40;
-            eval("_root.bullet_id" + kval)._y = eval("_root").my3 - 30;
+            eval("_root.bullet_id" + kval)._x = _root.mx3 - 40;
+            eval("_root.bullet_id" + kval)._y = _root.my3 - 30;
          }
-         eval("_root").bulletArray.push("bullet_id" + kval);
+         _root.bulletArray.push("bullet_id" + kval);
          setTimeout(fire, 50);
          setTimeout(resetkfire, 290);
       }
-      if(eval("_root").helicounter == undefined)
+      if(_root.helicounter == undefined)
       {
-         eval("_root").helicounter = 1;
+         _root.helicounter = 1;
       }
-      eval("_root").helicounter += 1;
-      if(eval("_root").helicounter == 200)
+      _root.helicounter += 1;
+      if(_root.helicounter == 200)
       {
-         eval("_root").helicop._x = 786.4;
-         eval("_root").heliactivate = true;
-         eval("_root").helicop._rotation = 0;
-         setTimeout(eval("_root").firebomb, 1800);
+         _root.helicop._x = 786.4;
+         _root.heliactivate = true;
+         _root.helicop._rotation = 0;
+         setTimeout(_root.firebomb, 1800);
       }
       if(bikeSync.mc_bike._x + mc_level.mc.mc_bike._x >= mc_level.mc.mc_finish._x && stargeted >= 3)
       {
@@ -388,7 +387,7 @@ function processGame()
       _loc4.localToGlobal(_loc2);
       if(mc_level.mc.mc_hit.hitTest(_loc2.x, _loc2.y, true))
       {
-         eval("_root").setBright(eval("_root").bikeSync.mc_bike, 0);
+         _root.setBright(_root.bikeSync.mc_bike, 0);
          loose();
          return;
       }
@@ -398,7 +397,7 @@ function processGame()
       _loc4.localToGlobal(_loc2);
       if(mc_level.mc.mc_hit.hitTest(_loc2.x, _loc2.y, true))
       {
-         eval("_root").setBright(eval("_root").bikeSync.mc_bike, 0);
+         _root.setBright(_root.bikeSync.mc_bike, 0);
          loose();
          return;
       }
@@ -408,7 +407,7 @@ function processGame()
       _loc4.localToGlobal(_loc2);
       if(mc_level.mc.mc_hit.hitTest(_loc2.x, _loc2.y, true))
       {
-         eval("_root").setBright(eval("_root").bikeSync.mc_bike, 0);
+         _root.setBright(_root.bikeSync.mc_bike, 0);
          loose();
       }
    }
@@ -487,39 +486,38 @@ function pauseGame()
 }
 // reset the level's moving parts: remove every clip named in _root.bulletArray, then put the
 // bomb and the helicopter back to their starting state
-// !FAKE: the author wrote _root; eval("_root") keeps the original DefineFunction, which reads _root by name
 function clearStuff()
 {
-   eval("_root").arrdeactivate = true;
-   var tlen = eval("_root").bulletArray.length;
+   _root.arrdeactivate = true;
+   var tlen = _root.bulletArray.length;
    if(tlen > 0)
    {
       j = 0;
       while(j < tlen)
       {
-         if(eval("_root").bulletArray[j] != "")
+         if(_root.bulletArray[j] != "")
          {
-            eval("_root." + eval("_root").bulletArray[j])._alpha = 0;
-            eval("_root." + eval("_root").bulletArray[j]).gotoAndStop(39);
-            removeMovieClip(eval("_root." + eval("_root").bulletArray[j]));
+            eval("_root." + _root.bulletArray[j])._alpha = 0;
+            eval("_root." + _root.bulletArray[j]).gotoAndStop(39);
+            removeMovieClip(eval("_root." + _root.bulletArray[j]));
          }
          j++;
       }
    }
-   eval("_root").bulletArray = new Array();
-   eval("_root").arrdeactivate = false;
-   eval("_root").bikedartctr = 0;
-   eval("_root").bomb._alpha = 0;
-   eval("_root").dropbomb = false;
-   eval("_root").bomb.gotoAndStop(1);
-   eval("_root").heliactivate = false;
-   eval("_root").helicounter = 1;
-   eval("_root").helicop._x = 786.4;
-   eval("_root").helicop.rotation = 0;
-   eval("_root").helicop._y = 58.4;
-   eval("_root").setBright(eval("_root").helicop, 0);
-   eval("_root").setBright(eval("_root").bikeSync.mc_bike, 0);
-   eval("_root").helidestroy = false;
+   _root.bulletArray = new Array();
+   _root.arrdeactivate = false;
+   _root.bikedartctr = 0;
+   _root.bomb._alpha = 0;
+   _root.dropbomb = false;
+   _root.bomb.gotoAndStop(1);
+   _root.heliactivate = false;
+   _root.helicounter = 1;
+   _root.helicop._x = 786.4;
+   _root.helicop.rotation = 0;
+   _root.helicop._y = 58.4;
+   _root.setBright(_root.helicop, 0);
+   _root.setBright(_root.bikeSync.mc_bike, 0);
+   _root.helidestroy = false;
 }
 // a lost life (the author's "loose" for lose): fail sound, one life off, the wheels moved
 // 1000 px right (probably off the stage), the crash clips played, the times and score shown
