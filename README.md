@@ -37,7 +37,7 @@ with AI assistance, and accepted only when the pinned toolchain rebuilt it to ma
 | M6 Complete | later | 200/202 game functions matched; check ok=True |
 | M7 Documented | done | docs.py check ok=True (2026-10-21T02:55:22Z) |
 | M8 Behaviour-verified | later | last behaviour compare ok=True at 2026-10-21T02:42:47Z; coverage: no input (28 matched input handler(s) unexercised) |
-| M9 Reverse-engineered | later | names without checked evidence: 0; matches since the last name pass: 3; named types with two layouts: 0 |
+| M9 Reverse-engineered | done | names without checked evidence: 0; matches since the last name pass: 0; named types with two layouts: 0 |
 
 The milestones and why they come in this order: [ROADMAP.md](ROADMAP.md).
 
