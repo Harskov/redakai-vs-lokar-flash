@@ -1,7 +1,7 @@
 {
   "version": 2,
   "measures": {
-    "fuzzy_match_percent": 99.57,
+    "fuzzy_match_percent": 99.58,
     "total_code": 10936,
     "matched_code": 10433,
     "matched_code_percent": 95.4,
@@ -1793,7 +1793,7 @@
     {
       "name": "init/DoInitAction",
       "measures": {
-        "fuzzy_match_percent": 98.34,
+        "fuzzy_match_percent": 98.37,
         "total_code": 2832,
         "matched_code": 2329,
         "matched_code_percent": 82.24,
@@ -1900,7 +1900,7 @@
         {
           "name": "calcBikeNVector",
           "size": 51,
-          "fuzzy_match_percent": 98.11
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
@@ -3223,7 +3223,7 @@
       "id": "gameplay",
       "name": "gameplay",
       "measures": {
-        "fuzzy_match_percent": 99.99,
+        "fuzzy_match_percent": 100.0,
         "total_code": 7024,
         "matched_code": 6973,
         "matched_code_percent": 99.27,
@@ -3275,7 +3275,7 @@
       "id": "gameplay.cbikesynchronizer",
       "name": "gameplay/cbikesynchronizer",
       "measures": {
-        "fuzzy_match_percent": 99.9,
+        "fuzzy_match_percent": 100.0,
         "total_code": 964,
         "matched_code": 913,
         "matched_code_percent": 94.71,
