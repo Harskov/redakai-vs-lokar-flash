@@ -95,7 +95,7 @@ Packages_CBikeSynchronizer_main	Packages_CBikeSynchronizer	main	matched	gameplay
 CBikeSynchronizer	Packages_CBikeSynchronizer	constructor	matched	gameplay/cbikesynchronizer	a method of class CBikeSynchronizer (__Packages/CBikeSynchronizer)
 CBikeSynchronizer.init	Packages_CBikeSynchronizer	method	matched	gameplay/cbikesynchronizer	a method of class CBikeSynchronizer (__Packages/CBikeSynchronizer)
 CBikeSynchronizer.setParticles	Packages_CBikeSynchronizer	method	matched	gameplay/cbikesynchronizer	a method of class CBikeSynchronizer (__Packages/CBikeSynchronizer)
-CBikeSynchronizer.process	Packages_CBikeSynchronizer	method	asm	gameplay/cbikesynchronizer	a method of class CBikeSynchronizer (__Packages/CBikeSynchronizer)
+CBikeSynchronizer.process	Packages_CBikeSynchronizer	method	matched	gameplay/cbikesynchronizer	a method of class CBikeSynchronizer (__Packages/CBikeSynchronizer)
 Packages_CCamera_main	Packages_CCamera	main	matched	gameplay/ccamera	a method of class CCamera (__Packages/CCamera)
 CCamera	Packages_CCamera	constructor	matched	gameplay/ccamera	a method of class CCamera (__Packages/CCamera)
 CCamera.init	Packages_CCamera	method	matched	gameplay/ccamera	a method of class CCamera (__Packages/CCamera)

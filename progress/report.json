@@ -1,15 +1,15 @@
 {
   "version": 2,
   "measures": {
-    "fuzzy_match_percent": 80.74,
+    "fuzzy_match_percent": 84.43,
     "total_code": 10936,
-    "matched_code": 8374,
-    "matched_code_percent": 76.57,
+    "matched_code": 8777,
+    "matched_code_percent": 80.26,
     "total_functions": 202,
-    "matched_functions": 196,
-    "matched_functions_percent": 97.03,
+    "matched_functions": 197,
+    "matched_functions_percent": 97.52,
     "total_units": 95,
-    "complete_units": 90
+    "complete_units": 91
   },
   "units": [
     {
@@ -1963,13 +1963,13 @@
     {
       "name": "classes/CBikeSynchronizer",
       "measures": {
-        "fuzzy_match_percent": 55.86,
+        "fuzzy_match_percent": 100.0,
         "total_code": 913,
-        "matched_code": 510,
-        "matched_code_percent": 55.86,
+        "matched_code": 913,
+        "matched_code_percent": 100.0,
         "total_functions": 5,
-        "matched_functions": 4,
-        "matched_functions_percent": 80.0
+        "matched_functions": 5,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
@@ -1995,11 +1995,11 @@
         {
           "name": "CBikeSynchronizer.process",
           "size": 403,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "Packages_CBikeSynchronizer",
         "source_path": "src/__Packages/CBikeSynchronizer.as",
         "progress_categories": [
@@ -3223,13 +3223,13 @@
       "id": "gameplay",
       "name": "gameplay",
       "measures": {
-        "fuzzy_match_percent": 70.67,
+        "fuzzy_match_percent": 76.41,
         "total_code": 7024,
-        "matched_code": 4914,
-        "matched_code_percent": 69.96,
+        "matched_code": 5317,
+        "matched_code_percent": 75.7,
         "total_functions": 146,
-        "matched_functions": 141,
-        "matched_functions_percent": 96.58
+        "matched_functions": 142,
+        "matched_functions_percent": 97.26
       }
     },
     {
@@ -3275,13 +3275,13 @@
       "id": "gameplay.cbikesynchronizer",
       "name": "gameplay/cbikesynchronizer",
       "measures": {
-        "fuzzy_match_percent": 58.1,
+        "fuzzy_match_percent": 99.9,
         "total_code": 964,
-        "matched_code": 510,
-        "matched_code_percent": 52.9,
+        "matched_code": 913,
+        "matched_code_percent": 94.71,
         "total_functions": 6,
-        "matched_functions": 4,
-        "matched_functions_percent": 66.67
+        "matched_functions": 5,
+        "matched_functions_percent": 83.33
       }
     },
     {

@@ -61,6 +61,42 @@ class CBikeSynchronizer
       sync.bdir.x -= sync.mc_bike.mc.mc_b_spring._x;
       sync.bdir.y -= sync.mc_bike.mc.mc_b_spring._y;
    }
+   // puts the body clip on the particles: mc_bike at pBody, turned along the wheelbase; the front spring
+   // clip on the front wheel, with mc_body_man slid along x to keep fpos on the fork's line; the back
+   // spring clip on the back wheel, turned by the angle between bdir and its direction to bpos now
+   // registers: r2 = the alias of this (sync), r3 = the point carried between the clips' spaces (pt), r4 = the wheelbase and then the back spring's direction (dir), r5 = the slide of mc_body_man along x (dx)
    function process()
-   { /* @reference CBikeSynchronizer.process */ }
+   {
+      var sync = this;
+      var pt = {x:0, y:0};
+      var dir;
+      sync.mc_bike._x = sync.pBody.pos.x;
+      sync.mc_bike._y = sync.pBody.pos.y;
+      dir = sync.pFWheel.pos.minusNew(sync.pBWheel.pos);
+      sync.mc_bike._rotation = Math.atan2(dir.y, dir.x) * 180 / 3.141593;
+      pt.x = sync.pFWheel.pos.x;
+      pt.y = sync.pFWheel.pos.y;
+      sync.mc_bike._parent.localToGlobal(pt);
+      sync.mc_bike.mc.globalToLocal(pt);
+      sync.mc_bike.mc.mc_f_spring._x = pt.x;
+      sync.mc_bike.mc.mc_f_spring._y = pt.y;
+      var dx = pt.x + sync.fdir.x * (-pt.y) / sync.fdir.y - sync.mc_bike.mc.mc_body_man._x - sync.fpos.x;
+      sync.mc_bike.mc.mc_body_man._x += dx;
+      pt.x = sync.mc_bike.mc.mc_f_spring.mc_spring._x;
+      pt.y = sync.mc_bike.mc.mc_f_spring.mc_spring._y;
+      sync.mc_bike.mc.mc_f_spring.localToGlobal(pt);
+      sync.mc_bike.mc.globalToLocal(pt);
+      pt.x = sync.pBWheel.pos.x;
+      pt.y = sync.pBWheel.pos.y;
+      sync.mc_bike._parent.localToGlobal(pt);
+      sync.mc_bike.mc.globalToLocal(pt);
+      sync.mc_bike.mc.mc_b_spring._x = pt.x;
+      sync.mc_bike.mc.mc_b_spring._y = pt.y;
+      dir.reinit(sync.bpos.x, sync.bpos.y);
+      sync.mc_bike.mc.mc_body_man.localToGlobal(dir);
+      sync.mc_bike.mc.globalToLocal(dir);
+      dir.x -= sync.mc_bike.mc.mc_b_spring._x;
+      dir.y -= sync.mc_bike.mc.mc_b_spring._y;
+      sync.mc_bike.mc.mc_b_spring._rotation = (dir.getUgol() - sync.bdir.getUgol()) * 180 / 3.141593;
+   }
 }
