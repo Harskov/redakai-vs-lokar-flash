@@ -96,8 +96,73 @@ function playSnd(lib_snd)
    s.attachSound(lib_snd);
    s.start();
 }
+// sets up level `level`: the minimap's marks, the level clip, the bike's three particles and its springs, the camera, the sound loop
+// registers: r1 = the counter (i), r2 = the particle at the forward wheel (forwardPart), r3 = the particle at the bike (bikePart), r4 = the particle at the back wheel (backPart)
 function initLevel()
-{ /* @reference initLevel */ }
+{
+   lastTimer = getTimer();
+   mc_level.mc_minimap._visible = true;
+   mc_level.mc_minimap.mc_stage.gotoAndStop(level);
+   if(level > 1)
+   {
+      var i = 1;
+      while(i < level)
+      {
+         mc_level.mc_minimap["s" + i].gotoAndStop(2);
+         i++;
+      }
+   }
+   mc_level.mc_minimap["s" + level].gotoAndStop(3);
+   mc_level.gotoAndStop(level);
+   mc_level.mc.mc_hit._visible = false;
+   if(bikeSync == null)
+   {
+      bikeSync = new CBikeSynchronizer();
+      engine = new CParticleEngine();
+      objCamera = new CCamera();
+      back1 = new CBack();
+      back2 = new CBack();
+   }
+   else
+   {
+      engine.clear();
+   }
+   back1.init(mc_level.mc.mc_fon.mc_grass.mc1, mc_level.mc.mc_fon.mc_grass.mc2, 1);
+   back2.init(mc_level.mc.mc_fon.mc_hill.mc1, mc_level.mc.mc_fon.mc_hill.mc2, 2);
+   bikeSync.init(mc_level.mc.mc_bike, 0, 0);
+   var backPart = new CParticle(bikeSync.mc_back_wheel._x, bikeSync.mc_back_wheel._y, 3);
+   engine.addParticle(backPart);
+   engine.addWheel(bikeSync.mc_back_wheel, backPart, 28.5, 17.5);
+   var forwardPart = new CParticle(bikeSync.mc_forward_wheel._x, bikeSync.mc_forward_wheel._y, 3);
+   engine.addParticle(forwardPart);
+   engine.addWheel(bikeSync.mc_forward_wheel, forwardPart, 10.5, 17.5);
+   var bikePart = new CParticle(bikeSync.mc_bike._x, bikeSync.mc_bike._y, 3);
+   bikePart.mc = mc_level.mc.mc_bike.mc_test;
+   engine.addParticle(bikePart);
+   engine.addSpringConstraint(backPart, forwardPart, 0.45, 0.5);
+   engine.addSpringConstraint(backPart, bikePart, 0.45, 0.55);
+   engine.addSpringConstraint(bikePart, forwardPart, 0.45, 0.7);
+   bikeSync.setParticles(bikePart, backPart, forwardPart);
+   objCamera.init(bikeSync.mc_bike, mc_level.mc);
+   engine.setHitMovie(mc_level.mc.mc_hit);
+   engine.start();
+   accFlag = false;
+   accCounter = 50;
+   // !FAKE: the author wrote if(!stopSoundFlag); the doubled parentheses keep the double Not before the branch
+   if((!stopSoundFlag))
+   {
+      mc_sloop.gotoAndStop(2);
+   }
+   mc_messageF.gotoAndStop(1);
+   mc_messageF.mc_message.gotoAndStop("empty");
+   gameState = 0;
+   i = 1;
+   while(i <= 10)
+   {
+      mc_level.mc["s" + i].gotoAndStop(Math.floor(Math.random() * 3 + 1));
+      i++;
+   }
+}
 // the game's per-frame step (the frame-15 clip's enterFrame calls it): while gameState is 0, the clock,
 // the arrow-key tilt, the physics, the pickups, the shots (F, G), the finish and the rider's hit tests
 // !FAKE: the author wrote _root; eval("_root") keeps the original DefineFunction, which reads _root by name
@@ -489,8 +554,20 @@ function loose()
    bikeSync.mc_bike.mc.mc_body_man.mc.stopMCAnim();
    gameState = 1;
 }
+// the unit vector from the bike's back wheel to its front wheel, turned a quarter
+// turn to (-y, x): the normal to the line through the two wheels
+// registers: r1 = the vector returned (n), r2 = its x before the turn (oldX)
 function calcBikeNVector()
-{ /* @reference calcBikeNVector */ }
+{
+   var n;
+   n = bikeSync.mc_forward_wheel.particle.pos.minusNew(bikeSync.mc_back_wheel.particle.pos);
+   n.normalize();
+   var oldX;
+   oldX = n.x;
+   n.x = - n.y;
+   n.y = oldX;
+   return n;
+}
 var lastTimer;
 var level;
 var stopSoundFlag = false;

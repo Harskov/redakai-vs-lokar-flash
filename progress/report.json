@@ -1,15 +1,15 @@
 {
   "version": 2,
   "measures": {
-    "fuzzy_match_percent": 99.99,
+    "fuzzy_match_percent": 100.0,
     "total_code": 10936,
-    "matched_code": 10433,
-    "matched_code_percent": 95.4,
+    "matched_code": 10936,
+    "matched_code_percent": 100.0,
     "total_functions": 202,
-    "matched_functions": 200,
-    "matched_functions_percent": 99.01,
+    "matched_functions": 202,
+    "matched_functions_percent": 100.0,
     "total_units": 95,
-    "complete_units": 94
+    "complete_units": 95
   },
   "units": [
     {
@@ -1793,13 +1793,13 @@
     {
       "name": "init/DoInitAction",
       "measures": {
-        "fuzzy_match_percent": 99.95,
+        "fuzzy_match_percent": 100.0,
         "total_code": 2832,
-        "matched_code": 2329,
-        "matched_code_percent": 82.24,
+        "matched_code": 2832,
+        "matched_code_percent": 100.0,
         "total_functions": 20,
-        "matched_functions": 18,
-        "matched_functions_percent": 90.0
+        "matched_functions": 20,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
@@ -1850,7 +1850,7 @@
         {
           "name": "initLevel",
           "size": 452,
-          "fuzzy_match_percent": 99.67
+          "fuzzy_match_percent": 100.0
         },
         {
           "name": "processGame",
@@ -1904,7 +1904,7 @@
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "DoInitAction",
         "source_path": "src/DoInitAction.as",
         "progress_categories": [
@@ -3210,13 +3210,13 @@
       "id": "core",
       "name": "core",
       "measures": {
-        "fuzzy_match_percent": 99.94,
+        "fuzzy_match_percent": 100.0,
         "total_code": 2681,
-        "matched_code": 2229,
-        "matched_code_percent": 83.14,
+        "matched_code": 2681,
+        "matched_code_percent": 100.0,
         "total_functions": 13,
-        "matched_functions": 12,
-        "matched_functions_percent": 92.31
+        "matched_functions": 13,
+        "matched_functions_percent": 100.0
       }
     },
     {
@@ -3225,11 +3225,11 @@
       "measures": {
         "fuzzy_match_percent": 100.0,
         "total_code": 7024,
-        "matched_code": 6973,
-        "matched_code_percent": 99.27,
+        "matched_code": 7024,
+        "matched_code_percent": 100.0,
         "total_functions": 146,
-        "matched_functions": 145,
-        "matched_functions_percent": 99.32
+        "matched_functions": 146,
+        "matched_functions_percent": 100.0
       }
     },
     {
@@ -3277,11 +3277,11 @@
       "measures": {
         "fuzzy_match_percent": 100.0,
         "total_code": 964,
-        "matched_code": 913,
-        "matched_code_percent": 94.71,
+        "matched_code": 964,
+        "matched_code_percent": 100.0,
         "total_functions": 6,
-        "matched_functions": 5,
-        "matched_functions_percent": 83.33
+        "matched_functions": 6,
+        "matched_functions_percent": 100.0
       }
     },
     {

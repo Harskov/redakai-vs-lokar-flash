@@ -76,7 +76,7 @@ nextLevel	DoInitAction	function	matched	core	steps the main timeline through "re
 replay	DoInitAction	function	matched	core	steps the main timeline through "reset" to "game"
 newGame	DoInitAction	function	matched	core	gotoAndStop("main"); calls updateSoundLoop
 playSnd	DoInitAction	function	matched	audio	constructs or drives Sound (Sound, attachSound, start)
-initLevel	DoInitAction	function	wip	core	writes gameState; builds engine, bikeSync, objCamera for the level
+initLevel	DoInitAction	function	matched	core	writes gameState; builds engine, bikeSync, objCamera for the level
 processGame	DoInitAction	function	matched	core	reads and writes gameState; the per-frame loop calling showTime, loose, clearStuff
 fire	DoInitAction	function	matched	gameplay/bullet_id	gotoAndPlay on _root.bullet_id
 resetkfire	DoInitAction	function	matched	gameplay/bullet_id	clears kfire, which processGame checks before attaching bullet_id
@@ -86,7 +86,7 @@ resume	DoInitAction	function	matched	core	writes gameState; restarts bikeSync an
 pauseGame	DoInitAction	function	matched	core	writes gameState; gotoAndStop("pause") on mc_messageF
 clearStuff	DoInitAction	function	matched	core	resets bulletArray, bomb and helicop state between levels
 loose	DoInitAction	function	matched	core	writes gameState; calls clearStuff, playSnd
-calcBikeNVector	DoInitAction	function	wip	gameplay/cbikesynchronizer	reads bikeSync (a CBikeSynchronizer) wheel particle positions
+calcBikeNVector	DoInitAction	function	matched	gameplay/cbikesynchronizer	reads bikeSync (a CBikeSynchronizer) wheel particle positions
 Packages_CBack_main	Packages_CBack	main	matched	gameplay/cback	a method of class CBack (__Packages/CBack)
 CBack	Packages_CBack	constructor	matched	gameplay/cback	a method of class CBack (__Packages/CBack)
 CBack.init	Packages_CBack	method	matched	gameplay/cback	a method of class CBack (__Packages/CBack)
