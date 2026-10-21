@@ -35,6 +35,7 @@ MAGIC = ((b"FWS", 0, "uncompressed SWF"), (b"CWS", 0, "zlib-compressed SWF"), (b
          (b"\x7fELF", 0, "ELF executable or object"), (b"!<arch>\n", 0, "Unix archive"), (b"MZ", 0, "PE/DOS executable"),
          (b"\x89PNG", 0, "PNG image"), (b"\xff\xd8\xff", 0, "JPEG image"), (b"PK\x03\x04", 0, "ZIP archive"), (b"CD001", 0x8001, "ISO 9660 disc image"),
          (b"\xa4\xc6\x12\x00", 0, "Game Maker 5 game data"), (b"\x91\xd5\x12\x00\xbc\x02\x00\x00", 0, "Game Maker 7 game data"),
+         (b"\x91\xd5\x12\x00\x58\x02\x00\x00", 0, "Game Maker 6 game data"),
          (b"RIFF", 0, "RIFF media (WAV, AVI)"), (b"MThd", 0, "MIDI file"))
 CEILING = 1 << 20
 REPORT_CEILING = 16 << 20
