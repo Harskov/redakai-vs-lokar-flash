@@ -1,15 +1,15 @@
 {
   "version": 2,
   "measures": {
-    "fuzzy_match_percent": 90.58,
+    "fuzzy_match_percent": 94.97,
     "total_code": 10936,
-    "matched_code": 9450,
-    "matched_code_percent": 86.41,
+    "matched_code": 9930,
+    "matched_code_percent": 90.8,
     "total_functions": 202,
-    "matched_functions": 198,
-    "matched_functions_percent": 98.02,
+    "matched_functions": 199,
+    "matched_functions_percent": 98.51,
     "total_units": 95,
-    "complete_units": 92
+    "complete_units": 93
   },
   "units": [
     {
@@ -2894,23 +2894,23 @@
     {
       "name": "clip-actions/frame_15/455_357/onClipEvent(enterFrame)",
       "measures": {
-        "fuzzy_match_percent": 0.0,
+        "fuzzy_match_percent": 100.0,
         "total_code": 480,
-        "matched_code": 0,
-        "matched_code_percent": 0.0,
+        "matched_code": 480,
+        "matched_code_percent": 100.0,
         "total_functions": 1,
-        "matched_functions": 0,
-        "matched_functions_percent": 0.0
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0
       },
       "functions": [
         {
           "name": "frame_15_PlaceObject2_455_357_CLIPACTIONRECORD_onClipEvent_enterFrame_main",
           "size": 480,
-          "fuzzy_match_percent": 0.0
+          "fuzzy_match_percent": 100.0
         }
       ],
       "metadata": {
-        "complete": false,
+        "complete": true,
         "module_name": "frame_15_PlaceObject2_455_357_CLIPACTIONRECORD_onClipEvent_enterFrame",
         "source_path": "src/frame_15/PlaceObject2_455_357/CLIPACTIONRECORD onClipEvent(enterFrame).as",
         "progress_categories": [
@@ -3223,13 +3223,13 @@
       "id": "gameplay",
       "name": "gameplay",
       "measures": {
-        "fuzzy_match_percent": 85.99,
+        "fuzzy_match_percent": 92.83,
         "total_code": 7024,
-        "matched_code": 5990,
-        "matched_code_percent": 85.28,
+        "matched_code": 6470,
+        "matched_code_percent": 92.11,
         "total_functions": 146,
-        "matched_functions": 143,
-        "matched_functions_percent": 97.95
+        "matched_functions": 144,
+        "matched_functions_percent": 98.63
       }
     },
     {
@@ -3444,13 +3444,13 @@
       "id": "gameplay.timeline-game",
       "name": "gameplay/timeline-game",
       "measures": {
-        "fuzzy_match_percent": 32.81,
+        "fuzzy_match_percent": 65.62,
         "total_code": 1463,
-        "matched_code": 480,
-        "matched_code_percent": 32.81,
+        "matched_code": 960,
+        "matched_code_percent": 65.62,
         "total_functions": 43,
-        "matched_functions": 41,
-        "matched_functions_percent": 95.35
+        "matched_functions": 42,
+        "matched_functions_percent": 97.67
       }
     },
     {
