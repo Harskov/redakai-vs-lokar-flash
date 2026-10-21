@@ -3,13 +3,18 @@
 copy of the game, and the check.
 
     python3 configure.py             prepare, build and check in one go
-    python3 configure.py --prepare   download and verify the pinned FFDec (tools/ffdec/), check orig/<file>.swf against the recorded SHA-1
+    python3 configure.py --prepare   download and verify the pinned FFDec (tools/ffdec/) and build the pinned compiler patches
+                                     (tools/ffdec-patch/: FFDec's own source file, downloaded and checked, with
+                                     tools/<patch> applied, compiled and loaded by tools/ClassOverlayAgent.java), check
+                                     orig/<file>.swf against the recorded SHA-1
     python3 configure.py --build     rebuild build/<file>.swf from src/ (every fully written script compiled by FFDec's -importScript;
                                      every other tag copied from your original) and write build/build.json
     python3 configure.py --check     run tools/check.py
 
-Needs Java (8 or newer) on the PATH and your own copy of the game at orig/<file>.swf (its SHA-1 is in config/flash-avm1/checksum.sha1).
-Nothing of the game is in this repository.
+Needs Java (8 or newer) on the PATH, with its compiler when the pin names a compiler patch (`javac`, or the jdk.compiler module
+of the running Java), and your own copy of the game at orig/<file>.swf (its SHA-1 is in config/flash-avm1/checksum.sha1).
+Nothing of the game is in this repository. A compiler patch modifies one file of FFDec's library and is licensed as that file
+is (GNU LGPL 3.0); FFDec's own files stay as released.
 """
 import argparse
 import hashlib
@@ -28,6 +33,7 @@ sys.path.insert(0, str(HERE / "tools"))
 PIN = json.loads((HERE / "config" / "flash-avm1" / "toolchain.json").read_text(encoding="utf-8"))
 ORIGINAL = PIN["original"]["file"]
 FFDEC = HERE / "tools" / "ffdec" / "ffdec.jar"
+PATCHES = PIN.get("compiler_patches") or []      # the pinned compiler's patches (tools/ffdec_patch.py)
 
 
 def sha(path, algo="sha256"):
@@ -38,10 +44,31 @@ def sha(path, algo="sha256"):
     return h.hexdigest()
 
 
-def ffdec(*args):
-    cmd = ["java", "-Djava.awt.headless=true", "-Xmx2g", "-jar", str(FFDEC), "-config", PIN.get("ffdec_config", "autoDeobfuscate=1"), "-cli", "-onerror", "abort",
-           "-timeout", "600", "-exportTimeout", "600"] + [str(a) for a in args]
+def ffdec(*args, compile=False):
+    """One FFDec call; a compile (`-importScript`) loads the pinned compiler's patches, built by --prepare."""
+    agents = []
+    if compile and PATCHES:
+        import ffdec_patch
+        agents = ffdec_patch.java_args([HERE / spec["path"] for spec in PATCHES])
+    cmd = ["java", "-Djava.awt.headless=true", "-Xmx2g"] + agents + ["-jar", str(FFDEC), "-config", PIN.get("ffdec_config", "autoDeobfuscate=1"), "-cli",
+           "-onerror", "abort", "-timeout", "600", "-exportTimeout", "600"] + [str(a) for a in args]
     return subprocess.run(cmd, capture_output=True, text=True, timeout=900)
+
+
+def prepare_patches():
+    """Each pinned compiler patch built into tools/ffdec-patch/<id>/ (kept when already built from the pinned files)."""
+    import ffdec_patch
+    for spec in PATCHES:
+        out = HERE / spec["path"]
+        if ffdec_patch.built(out, spec):
+            continue
+        print(f"building the compiler patch {spec['id']} from {spec['source']['url']}")
+        try:
+            ffdec_patch.build(spec, HERE / "tools" / "ffdec", HERE, out)
+        except (ffdec_patch.PatchError, OSError, subprocess.SubprocessError) as e:
+            print(f"the compiler patch {spec['id']}: {e}", file=sys.stderr)
+            return 1
+    return 0
 
 
 def prepare():
@@ -68,6 +95,8 @@ def prepare():
     if cp.returncode != 0:
         print("java is not on the PATH", file=sys.stderr)
         return 1
+    if prepare_patches():
+        return 1
     orig = HERE / "orig" / ORIGINAL
     if not orig.is_file():
         print(f"put your own copy of the game at orig/{ORIGINAL}", file=sys.stderr)
@@ -77,7 +106,8 @@ def prepare():
     if got != want:
         print(f"orig/{ORIGINAL}: sha1 {got} is not the supported version ({want})", file=sys.stderr)
         return 1
-    print(f"prepared: FFDec {tool['version']} in tools/ffdec/, orig/{ORIGINAL} is the supported version")
+    print(f"prepared: FFDec {tool['version']} in tools/ffdec/" + (f" with {', '.join(s['id'] for s in PATCHES)} (tools/ffdec-patch/)" if PATCHES else "")
+          + f", orig/{ORIGINAL} is the supported version")
     return 0
 
 
@@ -103,7 +133,7 @@ def build():
                 # a local named in a `// registers:` comment is spelled _locN_ for FFDec's compiler (tools/pcode.py)
                 dst.write_text(pcode.map_register_locals((HERE / "src" / f"{script}.as").read_text(encoding="utf-8")), encoding="utf-8")
             out = Path(td) / "out.swf"
-            cp = ffdec("-importScript", orig, out, folder)
+            cp = ffdec("-importScript", orig, out, folder, compile=True)
             if cp.returncode != 0 or not out.is_file():
                 print((cp.stderr or cp.stdout)[-800:], file=sys.stderr)
                 return 1

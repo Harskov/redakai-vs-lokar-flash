@@ -1,0 +1,50 @@
+FFDec define-kind patch 1: the original compiler's DefineFunction / DefineFunction2 rule, for FFDec 26.3.0's ActionScript 1/2
+compiler.
+
+It changes libsrc/ffdec_lib/src/com/jpexs/decompiler/flash/action/model/FunctionActionItem.java at the tag version26.3.0 of
+https://github.com/jindrapetrik/jpexs-decompiler (the file's sha256 is pinned in config/flash-avm1/toolchain.json).
+configure.py (tools/ffdec_patch.py) downloads that file, applies this patch, compiles it against the released FFDec and loads
+the class with tools/ClassOverlayAgent.java; FFDec's own files stay as released.
+
+The rule, as the original game's 107 function headers show it: a function whose body calls eval or set (or holds a function
+that does) is a DefineFunction that reads every name by name; any other function is a DefineFunction2 when it has
+parameters, a local kept in a register, a preloadable identifier (this, arguments, super, _root, _parent, _global) or an
+enclosing function, and a DefineFunction otherwise. FFDec as released gives DefineFunction2 for parameters, a preloadable
+identifier or an enclosing function only.
+
+The file this patch modifies is part of FFDec's library, licensed under the GNU Lesser General Public License 3.0; this patch
+is distributed under the same licence.
+
+--- a/libsrc/ffdec_lib/src/com/jpexs/decompiler/flash/action/model/FunctionActionItem.java
++++ b/libsrc/ffdec_lib/src/com/jpexs/decompiler/flash/action/model/FunctionActionItem.java
+@@ -421,7 +421,9 @@
+ 
+         boolean needsFun2 = false;
+         
+-        boolean canFun2 = asGenerator.getSwfVersion() >= 7;
++        //define-kind patch: a function whose body calls eval or set (or holds a function that does) reads every name by
++        //name, so the original compiler gave it DefineFunction, with no preloads and no locals in registers
++        boolean canFun2 = asGenerator.getSwfVersion() >= 7 && !hasEval;
+         
+         List<String> registerNames = new ArrayList<>();
+         if (canFun2) {
+@@ -495,6 +497,19 @@
+         for (int i = 0; i < paramNames.size(); i++) {
+             paramRegs.add(0); //0 = use variable, no reg
+         }
++
++        //define-kind patch: a local the compiler keeps in a register needs DefineFunction2, as the original compiler gave
++        //it to every function with register locals, parameters or not
++        if (canFun2 && !needsFun2) {
++            Pattern localRegisterPattern = Pattern.compile(Configuration.registerNameFormat.get().replace("%d", "(?<regnum>[0-9]+)"));
++            for (VariableActionItem v : variables) {
++                String varName = v.getVariableName();
++                if (v.isDefinition() && !deeplyUsedVariableNames.contains(varName) && localRegisterPattern.matcher(varName).matches()) {
++                    needsFun2 = true;
++                    break;
++                }
++            }
++        }
+         
+         if (needsFun2 && !hasEval) {
+             String registerNameMask = Configuration.registerNameFormat.get();
