@@ -17,11 +17,13 @@ The workflow .github/workflows/audit.yml runs it on every push and pull request.
             a JPEG, a ZIP, an ISO 9660 image, a Dreamcast IP.BIN or a raw disc sector, or that opens with a Game Boy Advance
             cartridge header (an ARM branch, the fixed byte 0x96 at 0xB2 and a complement that checks)
   checksum  a tracked file whose SHA-1 equals a hash recorded in config/*/checksum.sha1 (the original file)
-  size      a tracked file over the ceiling no source file reaches: 1 MiB (16 MiB for progress/report.json and a release's progress/<VERSION>/report.json)
+  size      a tracked file over the ceiling no source file reaches: 1 MiB (16 MiB for progress/report.json, a release's
+            progress/<VERSION>/report.json and a pack's config/<pack>/layout.json while it reads as JSON)
 Exit 0 when every tracked file passes, 1 on any hit, 2 on usage.
 """
 import argparse
 import hashlib
+import json
 import os
 import re
 import subprocess
@@ -46,6 +48,10 @@ MAGIC = ((b"FWS", 0, "uncompressed SWF"), (b"CWS", 0, "zlib-compressed SWF"), (b
 CEILING = 1 << 20
 REPORT_CEILING = 16 << 20
 REPORT_RE = re.compile(r"^progress/(?:[^/]+/)?report\.json$")   # a further release's: progress/<VERSION>/report.json
+# a pack's generated layout (one entry per function and block: the Dreamcast boot file's 7,119 functions took it past 1 MiB,
+# remediation-82), and a further release's (config/versions/<id>/layout.json, remediation-85); the larger ceiling holds only
+# while the file reads as JSON, so a renamed dump keeps the 1 MiB one
+LAYOUT_RE = re.compile(r"^config/(?:versions/)?[^/]+/layout\.json$")
 SHA1_LINE_RE = re.compile(r"^([0-9a-fA-F]{40})\s+\*?(\S.*)$")
 
 
@@ -103,10 +109,18 @@ def audit(root, files):
                     h.update(chunk)
             if h.hexdigest() in hashes:
                 hits.append(("checksum", rel, f"SHA-1 recorded in {hashes[h.hexdigest()]}"))
-        ceiling = REPORT_CEILING if REPORT_RE.match(rel) else CEILING
+        ceiling = REPORT_CEILING if REPORT_RE.match(rel) or (LAYOUT_RE.match(rel) and size > CEILING and reads_as_json(p)) else CEILING
         if size > ceiling:
             hits.append(("size", rel, f"{size} bytes, over the {ceiling >> 20} MiB ceiling"))
     return hits
+
+
+def reads_as_json(p):
+    try:
+        json.loads(Path(p).read_text(encoding="utf-8"))
+        return True
+    except (OSError, ValueError):
+        return False
 
 
 def gba_header(head):
