@@ -245,21 +245,28 @@ def functions(text, unit="unit", class_name=None):
                 else:
                     anon += 1
                     name, kind = f"anon_{anon}", "anon"
-            fn = Fn(name, kind, t.strip(), i, None, len(stack), counter, h["params"], h["regs"], h["flags"])
+            open_fns = [f for f in stack if f is not None]
+            fn = Fn(name, kind, t.strip(), i, None, len(open_fns), counter, h["params"], h["regs"], h["flags"])
             fn.preg = h["preg"]
             counter += 1
-            if stack:
-                stack[-1].children.append(fn)
+            if open_fns:
+                open_fns[-1].children.append(fn)
             stack.append(fn)
             out.append(fn)
+        elif t.strip().endswith("{"):
+            # FFDec prints `Try "e" {`, `Catch {`, `Finally {` and `With {` as brace blocks: their `}` closes them, not the
+            # function around them (remediation-107, pack-flash#2)
+            stack.append(None)
         elif t.strip() == "}" and stack:
             fn = stack.pop()
-            fn.end = i
+            if fn is not None:
+                fn.end = i
     for fn in out:
         if fn.end is None:
             fn.end = len(lines) - 1
     seen = {}
     for fn in out:
+        fn.base_name = fn.name          # the name the source spells; `_2`, `_3` count repeats in this script (pack-flash#4)
         seen[fn.name] = seen.get(fn.name, 0) + 1
         if seen[fn.name] > 1:
             fn.name = f"{fn.name}_{seen[fn.name]}"

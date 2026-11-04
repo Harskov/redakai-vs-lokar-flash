@@ -145,6 +145,8 @@ def build():
             for script, meta in full:
                 by_tag.setdefault(meta["tag_index"], []).append(script)
             for idx, scripts in by_tag.items():
+                if idx is None:            # a script the map could not place keeps the original's bytes (remediation-107, pack-flash#1)
+                    continue
                 if all((HERE / "src" / f"{s}.as").is_file() for s in [x for x, m in smap.items() if m["tag_index"] == idx]) and \
                         all("@reference" not in (HERE / "src" / f"{s}.as").read_text(encoding="utf-8") for s in [x for x, m in smap.items() if m["tag_index"] == idx]):
                     tags[idx] = built.tags[idx]

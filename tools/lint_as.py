@@ -13,7 +13,8 @@ within three lines), dynamic-ref (`eval(`, `this["…" + …]`, `_root["…"]`),
 or `eval("_root").x`, and in a script that runs on the main timeline — src/frame_<n>/DoAction*.as, src/DoInitAction*.as — a bare
 write no enclosing function declares and a `var` outside every function, not listed in docs/globals.md), globals-stale (a
 whole-tree run with the ledger: a docs/globals.md row whose "not yet accepted" clause names a matched function),
-long-function (> 150 lines), nested-depth (> 5), fake-body (the marker with its reason). Reference lines (`// @reference`) and
+long-function (> 150 lines), nested-depth (> 5), fake-body (the marker with its reason), invalid-utf8-escape (FFDec's
+`{invalid_utf8=N}` spelling of a SWF 5 string byte, which compiles back to the byte but is not what the author typed). Reference lines (`// @reference`) and
 body markers are not findings. Prints `path:line: rule: text`; the JSON line carries {findings: [{path, line, rule, level, text}],
 errors, readability_debt}. Writes nothing. Exit 0 clean, 1 error findings, 2 usage.
 """
@@ -59,6 +60,7 @@ PROCESS = re.compile(r"\b(run \d{4}-\d{2}-\d{2}|score:? \d+|F-\d+\b|K[1-9]-|K[1-
                      r"|normali[sz]ers?|matched|attempt[- ]#?\d+|ledger|batch|campaign)\b"
                      r"|\bmatch\w*\s+(?:at\s+)?\d{1,3}(?:\.\d+)?\s?%|\b\d{1,3}(?:\.\d+)?\s?%\s+match", re.I)
 PLACEHOLDER = re.compile(r"\b(TODO|FIXME|XXX)\b|\?\?\?")
+INVALID_UTF8 = re.compile(r"\{invalid_utf8=\d+\}")
 FAKE = re.compile(r"!FAKE(\s*:\s*(\S.*))?")
 DYNAMIC = re.compile(r"\beval\s*\(|\bthis\s*\[\s*\"|_root\s*\[\s*\"|_global\s*\[\s*\"")
 GLOBAL_WRITE = re.compile(r"\b(_root|_global)\.([A-Za-z_$][\w$]*)\s*(=(?!=)|\+=|-=|\*=|/=|\+\+|--)")
@@ -267,6 +269,10 @@ def lint_file(repo, path, known_globals):
             add(i, "placeholder-left", "error", raw)
         if DYNAMIC.search(code):
             add(i, "dynamic-ref", "advisory", raw)
+        if INVALID_UTF8.search(raw):
+            # a SWF 5 string byte FFDec spells in its own escape: the only spelling that compiles back, never the author's
+            # (remediation-107, pack-flash#7); counted, and its ledger note names the byte's character
+            add(i, "invalid-utf8-escape", "advisory", raw)
         written = [m.group(2) for m in GLOBAL_WRITE.finditer(code)] + [m.group(3) for m in EVAL_WRITE.finditer(COMMENT.sub("", raw))] \
             + bare.get(i, [])
         if any(n not in known_globals for n in written):

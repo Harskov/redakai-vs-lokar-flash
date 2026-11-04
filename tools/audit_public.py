@@ -35,7 +35,7 @@ IGNORED_DIRS = ("orig/", "reference/", "build/", "asm/", "wip/", "renders/", "te
 IGNORED_EXT = {".swf", ".fla", ".xfl", ".pcode", ".o", ".obj", ".a", ".elf", ".exe", ".dll", ".so", ".iso", ".bin", ".img",
                ".png", ".jpg", ".jpeg", ".mp3", ".wav", ".flv", ".s", ".S", ".asm", ".pyc", ".lock", ".zip", ".gz",
                ".gmd", ".gm6", ".gmk", ".bmp", ".mid", ".midi", ".ico", ".a52", ".a26", ".car", ".rom", ".gdi", ".cdi", ".chd", ".cue",
-               ".gba", ".agb", ".mb", ".sav", ".srm"}
+               ".gba", ".agb", ".mb", ".sav", ".srm", ".ldb", ".lmt", ".lmu", ".lsd", ".xyz"}
 GITKEEP_RE = re.compile(r"^orig/(?:[^/]+/)?\.gitkeep$")   # orig/<SERIAL>/.gitkeep: a PS2 target keeps one folder per release
 MAGIC = ((b"FWS", 0, "uncompressed SWF"), (b"CWS", 0, "zlib-compressed SWF"), (b"ZWS", 0, "LZMA-compressed SWF"),
          (b"\x7fELF", 0, "ELF executable or object"), (b"!<arch>\n", 0, "Unix archive"), (b"MZ", 0, "PE/DOS executable"),
@@ -44,6 +44,8 @@ MAGIC = ((b"FWS", 0, "uncompressed SWF"), (b"CWS", 0, "zlib-compressed SWF"), (b
          (b"\x91\xd5\x12\x00\x58\x02\x00\x00", 0, "Game Maker 6 game data"),
          (b"RIFF", 0, "RIFF media (WAV, AVI)"), (b"MThd", 0, "MIDI file"), (b"CART", 0, "Atari cartridge image with an emulator header"),
          (b"SEGA SEGAKATANA ", 0, "Dreamcast IP.BIN or the start of a GD-ROM data track"),
+         (b"\x0bLcfDataBase", 0, "RPG Maker 2000/2003 database"), (b"\x0aLcfMapUnit", 0, "RPG Maker 2000/2003 map unit"),
+         (b"\x0aLcfMapTree", 0, "RPG Maker 2000/2003 map tree"), (b"\x0bLcfSaveData", 0, "RPG Maker 2000/2003 save"),
          (b"\x00" + b"\xff" * 10 + b"\x00", 0, "raw 2,352-byte disc sector (a CD or GD-ROM track dump)"))
 CEILING = 1 << 20
 REPORT_CEILING = 16 << 20

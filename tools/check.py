@@ -99,7 +99,12 @@ def main():
             if not ok:
                 first = first or {"unit": script, "function": detail.split(" ")[0], "row": detail}
     for i, scripts in claimed.items():
-        if i not in differing:
+        if i is None:
+            # a script the map could not place is never byte-identical by default (remediation-107, pack-flash#1)
+            for s in scripts:
+                rows.append({"name": s, "ok": False, "detail": "no tag index in the script map"})
+            first = first or {"unit": scripts[0], "function": None, "row": "no tag index in the script map"}
+        elif i not in differing:
             for s in scripts:
                 rows.append({"name": s, "ok": True, "detail": "tag byte-identical"})
     check = {"ok": first is None and all(r["ok"] for r in rows), "criterion": crit, "first_diff": first, "units": rows,
