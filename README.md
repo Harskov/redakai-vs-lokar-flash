@@ -38,6 +38,7 @@ with AI assistance, and accepted only when the pinned toolchain rebuilt it to ma
 | M7 Documented | done | docs.py check ok=True (2026-10-21T11:09:00Z) |
 | M8 Behaviour-verified | done | last behaviour compare ok=True at 2026-10-21T11:08:36Z; coverage: scripted input, 25/30 matched input handler(s) run, none unexercised; unreachable (no input runs them in the original either): frame_18_DoAction.onRelease_11, frame_18_DoAction.onRelease_12, frame_18_DoAction.onRelease_13, frame_18_DoAction.onRelease_14, frame_18_DoAction.onRelease_15 |
 | M9 Reverse-engineered | done | names without checked evidence: 0; matches since the last name pass: 0; named types with two layouts: 0 |
+| M10 Designed | current | no design document yet |
 
 The milestones and why they come in this order: [ROADMAP.md](ROADMAP.md).
 
