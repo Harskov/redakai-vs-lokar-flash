@@ -44,7 +44,10 @@ IGNORED_EXT = {".swf", ".fla", ".xfl", ".pcode", ".o", ".obj", ".a", ".elf", ".e
                ".gba", ".agb", ".mb", ".sav", ".srm", ".ldb", ".lmt", ".lmu", ".lsd", ".xyz",
                # every pack's publish.binary_globs is held to this set by the suite (remediation-132, publication#5): the
                # Dreamcast pack's raw track dumps, the RPG Maker pack's media, the Unity pack's asset, debug and package files
-               ".raw", ".ogg", ".avi", ".mpg", ".pdb", ".mdb", ".assets", ".ress", ".resource", ".unity3d", ".bundle", ".nupkg"}
+               ".raw", ".ogg", ".avi", ".mpg", ".pdb", ".mdb", ".assets", ".ress", ".resource", ".unity3d", ".bundle", ".nupkg",
+               # an Unreal Engine game's pak, its packages and its other cooked content (remediation-135)
+               ".pak", ".uasset", ".umap", ".uexp", ".ubulk", ".uptnl", ".utoc", ".ucas", ".locres", ".ushaderbytecode", ".ufont",
+               ".bk2", ".mp4"}
 GITKEEP_RE = re.compile(r"^orig/(?:[^/]+/)?\.gitkeep$")   # orig/<SERIAL>/.gitkeep: a PS2 target keeps one folder per release
 MAGIC = ((b"FWS", 0, "uncompressed SWF"), (b"CWS", 0, "zlib-compressed SWF"), (b"ZWS", 0, "LZMA-compressed SWF"),
          (b"\x7fELF", 0, "ELF executable or object"), (b"!<arch>\n", 0, "Unix archive"), (b"MZ", 0, "PE/DOS executable"),
@@ -55,6 +58,7 @@ MAGIC = ((b"FWS", 0, "uncompressed SWF"), (b"CWS", 0, "zlib-compressed SWF"), (b
          (b"SEGA SEGAKATANA ", 0, "Dreamcast IP.BIN or the start of a GD-ROM data track"),
          (b"\x0bLcfDataBase", 0, "RPG Maker 2000/2003 database"), (b"\x0aLcfMapUnit", 0, "RPG Maker 2000/2003 map unit"),
          (b"\x0aLcfMapTree", 0, "RPG Maker 2000/2003 map tree"), (b"\x0bLcfSaveData", 0, "RPG Maker 2000/2003 save"),
+         (b"\xc1\x83\x2a\x9e", 0, "Unreal Engine package"),
          (b"UnityFS\x00", 0, "Unity asset bundle"), (b"UnityWeb\x00", 0, "Unity web bundle"), (b"UnityRaw\x00", 0, "Unity raw bundle"),
          (b"BSJB", 0, "portable PDB or .NET metadata"), (b"FSB5", 0, "FMOD sound bank"), (b"OggS", 0, "Ogg media"),
          (b"\x00\x00\x01\xba", 0, "MPEG program stream"),
