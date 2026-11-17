@@ -8,13 +8,16 @@
 
 The workflow .github/workflows/audit.yml runs it on every push and pull request. Four rules, each a line
 `<rule>  <path>  <why>` on a hit:
-  path      a tracked file under orig/ (except orig/.gitkeep and orig/<release>/.gitkeep), reference/, build/, asm/, wip/, renders/ or tests/behaviour/renders/,
+  path      a tracked file outside src/ and include/ under orig/ (except orig/.gitkeep and orig/<release>/.gitkeep), reference/,
+            build/, asm/, wip/, renders/ or tests/behaviour/renders/,
             or with an original, export, object, archive or render extension (.swf .fla .xfl .pcode .o .obj .a .elf .exe .dll
             .so .iso .bin .img .png .jpg .jpeg .mp3 .wav .flv .s .S .asm .pyc .lock .zip .tar.gz, the disc dumps .gdi .cdi .chd
-            .cue, the cartridge dumps and saves .gba .agb .mb .sav .srm); an extension a pack names
+            .cue .raw, the cartridge dumps and saves .gba .agb .mb .sav .srm, the media .ogg .avi .mpg, Unity's asset, debug
+            and package files .assets .resS .resource .unity3d .bundle .pdb .mdb .nupkg); an extension a pack names
             in config/<pack>/source-ext is its own source under src/ and include/
   magic     a tracked file whose first bytes are an SWF (FWS/CWS/ZWS), an ELF, a Unix archive, a PE/DOS executable, a PNG,
-            a JPEG, a ZIP, an ISO 9660 image, a Dreamcast IP.BIN or a raw disc sector, or that opens with a Game Boy Advance
+            a JPEG, a ZIP, an ISO 9660 image, a Dreamcast IP.BIN or a raw disc sector, a Unity bundle (UnityFS/UnityWeb/
+            UnityRaw), a portable PDB (BSJB), an FMOD bank, Ogg or MPEG media, or that opens with a Game Boy Advance
             cartridge header (an ARM branch, the fixed byte 0x96 at 0xB2 and a complement that checks)
   checksum  a tracked file whose SHA-1 equals a hash recorded in config/*/checksum.sha1 (the original file)
   size      a tracked file over the ceiling no source file reaches: 1 MiB (16 MiB for progress/report.json, a release's
@@ -38,7 +41,10 @@ IGNORED_DIRS = ("orig/", "reference/", "build/", "asm/", "wip/", "renders/", "te
 IGNORED_EXT = {".swf", ".fla", ".xfl", ".pcode", ".o", ".obj", ".a", ".elf", ".exe", ".dll", ".so", ".iso", ".bin", ".img",
                ".png", ".jpg", ".jpeg", ".mp3", ".wav", ".flv", ".s", ".S", ".asm", ".pyc", ".lock", ".zip", ".gz",
                ".gmd", ".gm6", ".gmk", ".bmp", ".mid", ".midi", ".ico", ".a52", ".a26", ".car", ".rom", ".gdi", ".cdi", ".chd", ".cue",
-               ".gba", ".agb", ".mb", ".sav", ".srm", ".ldb", ".lmt", ".lmu", ".lsd", ".xyz"}
+               ".gba", ".agb", ".mb", ".sav", ".srm", ".ldb", ".lmt", ".lmu", ".lsd", ".xyz",
+               # every pack's publish.binary_globs is held to this set by the suite (remediation-132, publication#5): the
+               # Dreamcast pack's raw track dumps, the RPG Maker pack's media, the Unity pack's asset, debug and package files
+               ".raw", ".ogg", ".avi", ".mpg", ".pdb", ".mdb", ".assets", ".ress", ".resource", ".unity3d", ".bundle", ".nupkg"}
 GITKEEP_RE = re.compile(r"^orig/(?:[^/]+/)?\.gitkeep$")   # orig/<SERIAL>/.gitkeep: a PS2 target keeps one folder per release
 MAGIC = ((b"FWS", 0, "uncompressed SWF"), (b"CWS", 0, "zlib-compressed SWF"), (b"ZWS", 0, "LZMA-compressed SWF"),
          (b"\x7fELF", 0, "ELF executable or object"), (b"!<arch>\n", 0, "Unix archive"), (b"MZ", 0, "PE/DOS executable"),
@@ -49,6 +55,9 @@ MAGIC = ((b"FWS", 0, "uncompressed SWF"), (b"CWS", 0, "zlib-compressed SWF"), (b
          (b"SEGA SEGAKATANA ", 0, "Dreamcast IP.BIN or the start of a GD-ROM data track"),
          (b"\x0bLcfDataBase", 0, "RPG Maker 2000/2003 database"), (b"\x0aLcfMapUnit", 0, "RPG Maker 2000/2003 map unit"),
          (b"\x0aLcfMapTree", 0, "RPG Maker 2000/2003 map tree"), (b"\x0bLcfSaveData", 0, "RPG Maker 2000/2003 save"),
+         (b"UnityFS\x00", 0, "Unity asset bundle"), (b"UnityWeb\x00", 0, "Unity web bundle"), (b"UnityRaw\x00", 0, "Unity raw bundle"),
+         (b"BSJB", 0, "portable PDB or .NET metadata"), (b"FSB5", 0, "FMOD sound bank"), (b"OggS", 0, "Ogg media"),
+         (b"\x00\x00\x01\xba", 0, "MPEG program stream"),
          (b"\x00" + b"\xff" * 10 + b"\x00", 0, "raw 2,352-byte disc sector (a CD or GD-ROM track dump)"))
 CEILING = 1 << 20
 REPORT_CEILING = 16 << 20
@@ -100,7 +109,10 @@ def audit(root, files):
         p = root / rel
         if not p.is_file():
             continue
-        if any(rel.startswith(d) or ("/" + d) in rel for d in IGNORED_DIRS) and not GITKEEP_RE.match(rel):
+        # under src/ and include/ a folder named build, orig, asm or wip is a package or namespace of the original, which the
+        # extension, magic and checksum rules still hold (remediation-132, publication#6)
+        if (any(rel.startswith(d) or ("/" + d) in rel for d in IGNORED_DIRS) and not GITKEEP_RE.match(rel)
+                and not rel.startswith(("src/", "include/"))):
             hits.append(("path", rel, "under an ignored folder"))
         elif p.suffix.lower() in IGNORED_EXT and not (p.suffix.lower() in own and rel.startswith(("src/", "include/"))):
             hits.append(("path", rel, f"{p.suffix} is an ignored class"))

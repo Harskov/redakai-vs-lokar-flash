@@ -9,6 +9,11 @@ tools/*
 reference/
 __pycache__/
 *.pyc
+# a source folder named like one above is a package or namespace of the original, and is tracked
+!/src/**/build/
+!/src/**/reference/
+!/include/**/build/
+!/include/**/reference/
 # game-derived files of a Flash target (the pack's additions)
 *.swf
 !platforms/**/fixture.swf
