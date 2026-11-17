@@ -10,7 +10,7 @@ The project serves four purposes — preservation, recompilation, porting and le
 | M4 | Core | done | 13/13 core functions matched; FORMATS.md present |
 | M5 | Gameplay | done | 146/146 gameplay functions matched |
 | M6 | Complete | done | 202/202 game functions matched; check ok=True |
-| M7 | Documented | done | docs.py check ok=True (2026-10-21T11:09:00Z) |
+| M7 | Documented | done | docs.py check ok on the tree as it stands; last recorded ok=True (2026-10-21T11:09:00Z) |
 | M8 | Behaviour-verified | done | last behaviour compare ok=True at 2026-10-21T11:08:36Z; coverage: scripted input, 25/30 matched input handler(s) run, none unexercised; unreachable (no input runs them in the original either): frame_18_DoAction.onRelease_11, frame_18_DoAction.onRelease_12, frame_18_DoAction.onRelease_13, frame_18_DoAction.onRelease_14, frame_18_DoAction.onRelease_15 |
 | M9 | Reverse-engineered | done | names without checked evidence: 0; matches since the last name pass: 0; named types with two layouts: 0 |
 | M10 | Designed | current | no design document yet |
