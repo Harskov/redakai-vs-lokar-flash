@@ -18,7 +18,10 @@ The workflow .github/workflows/audit.yml runs it on every push and pull request.
             cartridge header (an ARM branch, the fixed byte 0x96 at 0xB2 and a complement that checks)
   checksum  a tracked file whose SHA-1 equals a hash recorded in config/*/checksum.sha1 (the original file)
   size      a tracked file over the ceiling no source file reaches: 1 MiB (16 MiB for progress/report.json, a release's
-            progress/<VERSION>/report.json and a pack's config/<pack>/layout.json while it reads as JSON)
+            progress/<VERSION>/report.json and a pack's config/<pack>/layout.json while it reads as JSON, and for the
+            tables the projection generates while they read as UTF-8 text with no NUL: symbols/*, docs/NAMES.md,
+            docs/CODE-MAP.md, docs/functions.tsv, config/<release>/symbol_addrs.txt, undefined_*.txt and
+            symbols-evidence.tsv, assets/MANIFEST.json)
 Exit 0 when every tracked file passes, 1 on any hit, 2 on usage.
 """
 import argparse
@@ -54,6 +57,13 @@ REPORT_RE = re.compile(r"^progress/(?:[^/]+/)?report\.json$")   # a further rele
 # remediation-82), and a further release's (config/versions/<id>/layout.json, remediation-85); the larger ceiling holds only
 # while the file reads as JSON, so a renamed dump keeps the 1 MiB one
 LAYOUT_RE = re.compile(r"^config/(?:versions/)?[^/]+/layout\.json$")
+# the other files the projection generates, one row per function, symbol or name, which grow with the game and not with any
+# file an author wrote: the symbol map, the published name, code and function tables, a release's symbol files, the asset
+# manifest (remediation-124, publication#1: Persona 4's symbol map stood at 89 % of 1 MiB, the third ceiling of this class);
+# the larger ceiling holds only while the file reads as UTF-8 text with no NUL byte, so a renamed dump keeps the 1 MiB one
+GENERATED_RE = re.compile(r"^(?:symbols/[^/]+\.(?:tsv|txt|json)|docs/(?:NAMES\.md|CODE-MAP\.md|functions\.tsv)"
+                          r"|config/(?:versions/)?[^/]+/(?:symbol_addrs\.txt|undefined_\w+\.txt|symbols-evidence\.tsv)"
+                          r"|assets/MANIFEST\.json)$")
 SHA1_LINE_RE = re.compile(r"^([0-9a-fA-F]{40})\s+\*?(\S.*)$")
 
 
@@ -111,7 +121,8 @@ def audit(root, files):
                     h.update(chunk)
             if h.hexdigest() in hashes:
                 hits.append(("checksum", rel, f"SHA-1 recorded in {hashes[h.hexdigest()]}"))
-        ceiling = REPORT_CEILING if REPORT_RE.match(rel) or (LAYOUT_RE.match(rel) and size > CEILING and reads_as_json(p)) else CEILING
+        ceiling = REPORT_CEILING if (REPORT_RE.match(rel) or (LAYOUT_RE.match(rel) and size > CEILING and reads_as_json(p))
+                                     or (GENERATED_RE.match(rel) and size > CEILING and reads_as_text(p))) else CEILING
         if size > ceiling:
             hits.append(("size", rel, f"{size} bytes, over the {ceiling >> 20} MiB ceiling"))
     return hits
@@ -122,6 +133,16 @@ def reads_as_json(p):
         json.loads(Path(p).read_text(encoding="utf-8"))
         return True
     except (OSError, ValueError):
+        return False
+
+
+def reads_as_text(p):
+    """UTF-8 text with no NUL byte: what a generated table is, and what no binary dump is."""
+    try:
+        data = Path(p).read_bytes()
+        data.decode("utf-8")
+        return b"\0" not in data
+    except (OSError, UnicodeDecodeError):
         return False
 
 
