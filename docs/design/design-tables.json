@@ -1,0 +1,88 @@
+{
+  "schema": 1,
+  "levels": {
+    "label": "Level",
+    "order": ["level1", "level2", "level3", "level4", "level5", "level6"],
+    "exclude": [],
+    "display": {"level1": "1", "level2": "2", "level3": "3", "level4": "4", "level5": "5", "level6": "6"}
+  },
+  "groups": {
+    "boxes": ["box1", "box2", "box3", "box4", "box5", "box6", "box7"],
+    "trees": ["character_168", "mc_tree", "character_172"],
+    "industrial": ["character_161", "character_175", "character_180"],
+    "one-level": ["character_221", "character_224", "character_359", "character_365"],
+    "scenery": ["character_168", "mc_tree", "character_172", "character_161", "character_175", "character_180", "character_164",
+                "character_200", "character_371", "hoterelement", "character_221", "character_224", "character_359", "character_365"]
+  },
+  "beat": {
+    "columns": [
+      {"label": "New in this level", "cells": {
+        "level1": "The bike, both weapons and the dragon; two boxes, near the end",
+        "level2": "All seven boxes",
+        "level3": "A second backdrop; the longest course",
+        "level4": "One new scenery clip; no new rule",
+        "level5": "No new piece; the second longest course",
+        "level6": "Six boxes; a different finish figure for Lokar"}},
+      {"label": "Story", "cells": {"level6": "Lokar ends behind bars"}, "default": "Lokar gets away"},
+      {"label": "Goal", "default": "Reach the finish line"},
+      {"label": "Boxes", "group": "boxes"},
+      {"label": "Scenery pieces", "group": "scenery"}
+    ]
+  },
+  "pacing": {
+    "title": "Boxes placed per level",
+    "y_label": "Boxes",
+    "group": "boxes",
+    "axis": {}
+  },
+  "schedule": {
+    "columns": [
+      {"label": "Boxes", "group": "boxes"},
+      {"label": "Cactus and tree clips", "group": "trees"},
+      {"label": "Industrial clips", "group": "industrial"},
+      {"label": "Clip 164", "objects": ["character_164"]},
+      {"label": "Clip 200", "objects": ["character_200"]},
+      {"label": "Clip 371", "objects": ["character_371"]},
+      {"label": "Clip hoterelement", "objects": ["hoterelement"]},
+      {"label": "One-level pieces", "group": "one-level"}
+    ]
+  },
+  "elements": {
+    "rows": [
+      {"label": "Box", "group": "boxes", "notes": "Solid until a compact rocket breaks it; 10 points"},
+      {"label": "Start marker", "objects": ["mc_bike"], "notes": "Where the bike is attached"},
+      {"label": "Finish marker", "objects": ["mc_finish"], "notes": "The level ends when the bike's x reaches its x"},
+      {"label": "Lokar's finish figure", "objects": ["maskman_mc"], "notes": "Plays once when the bike is within 190 px of the finish"},
+      {"label": "Ground mask", "objects": ["mc_hit"], "notes": "Hidden; the wheels, the rider's three points and the fireball test against it"},
+      {"label": "Backdrop", "objects": ["mc_fon"], "notes": "Kept still sideways behind the course"},
+      {"label": "Cactus and tree clips", "group": "trees", "notes": "Scenery; nothing tests against them"},
+      {"label": "Industrial clips", "group": "industrial", "notes": "Scenery"},
+      {"label": "Clip 164", "objects": ["character_164"], "notes": "Scenery; the most placed piece"},
+      {"label": "Clip 200", "objects": ["character_200"], "notes": "Scenery"},
+      {"label": "Clip 371", "objects": ["character_371"], "notes": "Scenery"},
+      {"label": "Clip hoterelement", "objects": ["hoterelement"], "notes": "Scenery; no script addresses it by this name"},
+      {"label": "One-level pieces", "group": "one-level", "notes": "Scenery placed in one level only"}
+    ]
+  },
+  "seeds": {
+    "cell": 1,
+    "columns": [
+      {"label": "Start (x, y)", "objects": ["mc_bike"], "cells": {
+        "level1": "(239, -34)", "level2": "(212, -139)", "level3": "(78, 197)", "level4": "(258, -253)", "level5": "(259, -60)", "level6": "(336, -180)"}},
+      {"label": "Finish (x, y)", "objects": ["mc_finish"], "cells": {
+        "level1": "(8625, 55)", "level2": "(9597, -246)", "level3": "(17121, 269)", "level4": "(9615, -116)", "level5": "(11393, 17)", "level6": "(9149, 107)"}},
+      {"label": "First box x", "cells": {
+        "level1": "7206", "level2": "1253", "level3": "1019", "level4": "1769", "level5": "1090", "level6": "1063"}},
+      {"label": "Last box x", "cells": {
+        "level1": "8006", "level2": "8412", "level3": "14763", "level4": "8873", "level5": "10248", "level6": "8429"}}
+    ],
+    "idea": {
+      "level1": "A short opening course: only two boxes, both in its last fifth",
+      "level2": "The first course with all seven boxes, spread from near the start to near the finish",
+      "level3": "The long course, half as long again as the next longest, on its own backdrop",
+      "level4": "A course of level 2's length with no new rule",
+      "level5": "The second longest course, with no new rule",
+      "level6": "The final course: six boxes, and a different figure of Lokar at the finish"
+    }
+  }
+}

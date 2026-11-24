@@ -10,8 +10,9 @@
 
 ## Not known
 
-- it is placed on frames 1 and 10-12, not 15; whether it is still on stage when `processGame` addresses it
-  during play is not established
+- none on its placement: frame 12 places it at depth 345 and no RemoveObject takes it off before frame 17, so it is
+  on stage on frames 15 and 16 when `processGame` addresses it; its 19 frames hold no shape and no sound (the original's
+  tags), so playing it shows and sounds nothing
 
 ## Evidence
 

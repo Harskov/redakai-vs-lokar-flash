@@ -17,14 +17,14 @@ On frame 15 (instance names from the original's PlaceObject tags):
 
 Inside the levels (`mc_level`, sprite 387, frames `level1`...`level6`):
 
-- `mc_fon`, the background: sprite 159 in levels 1, 2, 4, 5, 6 and sprite 358 in level 3, each showing one of five backgrounds at random.
+- `mc_fon`, the background: sprite 159 in levels 1, 2, 4, 5, 6 and sprite 358 in level 3. Each script picks one of five frames at random for a clip named `bg`, and neither sprite places a clip of that name (no PlaceObject of the original names one), so each level shows one fixed backdrop.
 - the boxes `box1`...`box7` (sprite 197, 72 placements): each waits on frame 1; the shot checker plays it on a bullet hit and it holds at frame 11. Their counterparts in the box mask (sprite 198: `mask_mc` in level 1, `mask_hit_mc` inside the hit map `mc_hit`) play with them, so the ground the wheels touch changes when a box breaks.
 - `maskman_mc`, the masked man: sprite 218 in levels 1-5 (held at 34) and sprite 385 in level 6 (held at 5); `processGame` plays it from frame 2 when the bike is within 190 px of `mc_finish`.
 - `things53` (sprite 206) inside `hoterelement` (sprite 207, in every level): holds either of its two frames and contains sprite 205 (`thingsin`, gameplay-205.md).
 
 ## Functions
 
-- `DefineSprite_159_frame_1_DoAction_main` (matched) — a level background (mc_fon in levels 1, 2, 4, 5, 6): shows one of five backgrounds at random on its bg clip
+- `DefineSprite_159_frame_1_DoAction_main` (matched) — a level background (mc_fon in levels 1, 2, 4, 5, 6): picks one of five frames at random for a clip named bg; the sprite places no clip of that name, so the backdrop does not change
 - `DefineSprite_197_frame_1_DoAction_main` (matched) — the destructible box (box1-box7 in the level sprites) waits on frame 1; the bullet checker plays it on a bullet hit; the doubled stop() is in the original
 - `DefineSprite_197_frame_11_DoAction_main` (matched) — the box's last frame: holds after the destruction animation
 - `DefineSprite_198_frame_1_DoAction_main` (matched) — holds the box mask (198: mask_mc in level 1, mask_hit_mc in the hit map) on frame 1; its box6 and box7 children play with the boxes
@@ -32,7 +32,7 @@ Inside the levels (`mc_level`, sprite 387, frames `level1`...`level6`):
 - `DefineSprite_206_frame_2_DoAction_main` (matched) — holds sprite 206 on frame 2; no script sends it there
 - `DefineSprite_218_frame_1_DoAction_main` (matched) — holds maskman_mc (218, in levels 1-5) on frame 1 until processGame plays it near the finish line
 - `DefineSprite_218_frame_34_DoAction_main` (matched) — holds maskman_mc at the end of its animation (frame 34)
-- `DefineSprite_358_frame_1_DoAction_main` (matched) — level 3's background (mc_fon in sprite 367): the same random pick of five as sprite 159
+- `DefineSprite_358_frame_1_DoAction_main` (matched) — level 3's background (mc_fon in sprite 367): the same random pick as sprite 159, for a bg clip this sprite does not place either
 - `DefineSprite_385_frame_1_DoAction_main` (matched) — holds level 6's maskman_mc (385, in sprite 386) on frame 1
 - `DefineSprite_385_frame_5_DoAction_main` (matched) — holds level 6's maskman_mc on frame 5, the end of its animation
 - `DefineSprite_399_frame_1_DoAction_main` (matched) — the on/off switch on frame 15 (label on): holds and points btnon's press to the off frame; probably the sound switch (unverified)
@@ -66,14 +66,14 @@ Inside the levels (`mc_level`, sprite 387, frames `level1`...`level6`):
 - `frame_15_PlaceObject2_446_349_CLIPACTIONRECORD_onClipEvent_enterFrame_main` (matched) — the helicopter: 4 px left a frame while active, off past x -270; destroyed, it falls 12 px a frame at brightness -150 and comes back at (1006.4, 58.4), firing again
 - `frame_15_PlaceObject2_453_353_CLIPACTIONRECORD_onClipEvent_enterFrame_main` (matched) — the bomb's flight, 22 px a frame along `degrees`: a hit on the bike costs 50 mscore and one health frame (loose at frame 4); the ground mask or y > 500 ends it
 - `frame_15_PlaceObject2_453_353_CLIPACTIONRECORD_onClipEvent_load_main` (matched) — the bomb's heading on load: rotation 220 and degrees set to that angle in radians (despite its name)
-- `frame_15_PlaceObject2_455_357_CLIPACTIONRECORD_onClipEvent_enterFrame_main` (matched) — the shot checker: bullets against boxes 1-7 (+10), any shot against the helicopter (6 bullets or 1 rocket destroy it, +50)
+- `frame_15_PlaceObject2_455_357_CLIPACTIONRECORD_onClipEvent_enterFrame_main` (matched) — the shot checker: bullets against boxes 1-7 still on frame 1 (+10); for a box slot that is missing or off frame 1, any shot against the helicopter (6 bullets or 1 rocket destroy it, +50), so with all seven boxes on frame 1 the helicopter is not tested
 
 ## Not known
 
 - `keyPressed` is called by both keyDown handlers and defined nowhere in the scripts
 - `hell`, started when the helicopter returns, is never assigned by a script
 - what `sd1` is, and what sends `things53` to its frame 2
-- whether sprite 399 is the sound switch: `soundOn` and `soundOff` are never called, and nothing turns the sound back on at `on`
+- what the switch (sprite 399) was meant to restore: `soundOn` and `soundOff` are never called; its `on` frame carries a StartSound of sound 6 (`btnon`), so a press while off starts that loop again, and nothing restarts `intro` before the next entry of frame 15
 
 ## Evidence
 

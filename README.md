@@ -35,10 +35,10 @@ with AI assistance, and accepted only when the pinned toolchain rebuilt it to ma
 | M4 Core | done | 13/13 core functions matched; FORMATS.md present |
 | M5 Gameplay | done | 146/146 gameplay functions matched |
 | M6 Complete | done | 202/202 game functions matched; check ok=True |
-| M7 Documented | done | docs.py check ok on the tree as it stands; last recorded ok=True (2026-11-24T20:32:44Z) |
+| M7 Documented | done | docs.py check ok on the tree as it stands; last recorded ok=True (2026-11-24T20:55:30Z) |
 | M8 Behaviour-verified | done | last behaviour compare ok=True at 2026-10-21T11:08:36Z; coverage: scripted input, 25/30 matched input handler(s) run, none unexercised; unreachable (no input runs them in the original either): frame_18_DoAction.onRelease_11, frame_18_DoAction.onRelease_12, frame_18_DoAction.onRelease_13, frame_18_DoAction.onRelease_14, frame_18_DoAction.onRelease_15 |
 | M9 Reverse-engineered | done | names without checked evidence: 0; matches since the last name pass: 0; named types with two layouts: 0 |
-| M10 Designed | current | no design document yet |
+| M10 Designed | done | GAME-DESIGN-DOCUMENT.md Final; gdd.py check ok=True; coverage current |
 
 The milestones and why they come in this order: [ROADMAP.md](ROADMAP.md).
 
@@ -70,7 +70,7 @@ maintainer's tooling does with a merged pull request.
 ## Layout
 
 `src/` the source in the layout the toolchain consumes (one file per unit; a function not yet accepted is a reference
-line) · `docs/` the architecture, the subsystem pages, the code map and `NAMES.md` (every name and its evidence) · `config/flash-avm1/` the toolchain pin and the
+line) · `docs/` the architecture, the subsystem pages, the code map and `NAMES.md` (every name and its evidence), and the [game design document](docs/design/GAME-DESIGN-DOCUMENT.md) · `config/flash-avm1/` the toolchain pin and the
 checksum · `symbols/` the symbol map with its evidence · `tools/` the contributor copies of the lint and the check ·
 `progress/report.json` the progress report.
 
