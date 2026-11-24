@@ -355,6 +355,161 @@ def place_object_translate(tag):
     return signed(tx), signed(ty)
 
 
+def read_matrix(data, pos):
+    """{sx, sy, r0, r1, tx, ty} of a MATRIX at `pos`: the scales and rotate-skews as floats (1.0 when absent, 0.0), the
+    translation in pixels. A position read from a placement is read with its scale: redakai run 2026-11-24-071 F-6 (sprite 98
+    places the bike's art at 0.78, sprite 443 scales the R.I.P letters from 7.02 to 1.0)."""
+    b = _Bits(data, pos)
+
+    def fixed(n):
+        v = b.read(n)
+        return (v - (1 << n) if n and v >> (n - 1) else v) / 65536.0
+    sx = sy = 1.0
+    r0 = r1 = 0.0
+    if b.read(1):
+        n = b.read(5)
+        sx, sy = fixed(n), fixed(n)
+    if b.read(1):
+        n = b.read(5)
+        r0, r1 = fixed(n), fixed(n)
+    n = b.read(5)
+    tx, ty = b.read(n), b.read(n)
+    signed = lambda v: v - (1 << n) if n and v >> (n - 1) else v   # noqa: E731
+    return {"sx": round(sx, 4), "sy": round(sy, 4), "r0": round(r0, 4), "r1": round(r1, 4), "tx": signed(tx) / 20.0, "ty": signed(ty) / 20.0}
+
+
+def place_object_matrix(tag):
+    """The MATRIX of a PlaceObject (4) or PlaceObject2/3 (26, 70) as read_matrix gives it, or None without one."""
+    d = tag.body
+    if tag.code == 4:
+        return read_matrix(d, 4) if len(d) > 4 else None
+    flags, pos, flags2 = d[0], 1, 0
+    if tag.code == 70:
+        flags2, pos = d[1], 2
+    pos += 2                                               # depth
+    if tag.code == 70 and flags2 & 0x08:
+        _n, pos = _cstring(d, pos)
+    if flags & 0x02:
+        pos += 2
+    return read_matrix(d, pos) if flags & 0x04 else None
+
+
+def timeline_events(swf, sprite_id=None):
+    """[{frame, op, depth, character_id?, name?, matrix?, ratio?}] of the main timeline, or of DefineSprite `sprite_id`, in tag
+    order: `place` (a character at a depth), `move` (the same depth's character given a new matrix, a tween's frames, or
+    replaced), `remove`, and `sound` (a StartSound's sound id; StartSound2's class name). What is on the stage at a frame is
+    display_list's replay of them (redakai run 2026-11-24-071 F-1: what frame 16's reset removes, where a sound starts)."""
+    tags = swf.tags
+    if sprite_id is not None:
+        tags = next((sprite_subtags(t)[2] for t in swf.tags if t.code == 39 and struct.unpack_from("<H", t.body, 0)[0] == sprite_id), [])
+    out, frame = [], 1
+    for t in tags:
+        if t.code == 1:
+            frame += 1
+        elif t.code == 4:
+            cid, depth = struct.unpack_from("<HH", t.body, 0)
+            out.append({"frame": frame, "op": "place", "depth": depth, "character_id": cid, "matrix": place_object_matrix(t)})
+        elif t.code in (26, 70):
+            cid, depth, name, _pos, flags, _f2, _po3 = _place_object_head(t)
+            e = {"frame": frame, "op": "move" if flags & 0x01 else "place", "depth": depth}
+            if cid is not None:
+                e["character_id"] = cid
+            if name is not None:
+                e["name"] = name
+            m = place_object_matrix(t)
+            if m is not None:
+                e["matrix"] = m
+            out.append(e)
+        elif t.code in (5, 28):
+            out.append({"frame": frame, "op": "remove", "depth": struct.unpack_from("<H", t.body, 2 if t.code == 5 else 0)[0]})
+        elif t.code == 15:
+            out.append({"frame": frame, "op": "sound", "character_id": struct.unpack_from("<H", t.body, 0)[0]})
+        elif t.code == 89:
+            out.append({"frame": frame, "op": "sound", "class": _cstring(t.body, 0)[0]})
+    return out
+
+
+def display_list(events, frame):
+    """{depth: {character_id, name, matrix, since}} on the stage at `frame` after replaying timeline_events up to it (a
+    `move` keeps the character and name it does not replace)."""
+    stage = {}
+    for e in events:
+        if e["frame"] > frame:
+            break
+        d = e.get("depth")
+        if e["op"] == "remove":
+            stage.pop(d, None)
+        elif e["op"] == "place" or (e["op"] == "move" and d in stage):
+            cur = dict(stage.get(d) or {}) if e["op"] == "move" else {}
+            if e["op"] == "place" or "character_id" in e:
+                cur["since"] = e["frame"]
+            for k in ("character_id", "name", "matrix"):
+                if k in e:
+                    cur[k] = e[k]
+            stage[d] = cur
+    return stage
+
+
+def edit_texts(swf):
+    """[{id, variable, text, font_id, html, read_only}] of every DefineEditText (37): the variable a field shows is the
+    author's name for what it displays (redakai run 2026-11-24-071 F-1: the lives field shows `lifee`)."""
+    out = []
+    for t in swf.tags:
+        if t.code != 37:
+            continue
+        d = t.body
+        cid = struct.unpack_from("<H", d, 0)[0]
+        _r, _raw, pos = _read_rect(d, 2)
+        f1, f2 = d[pos], d[pos + 1]
+        pos += 2
+        font = None
+        if f1 & 0x01:
+            font = struct.unpack_from("<H", d, pos)[0]
+            pos += 2
+        if f2 & 0x80:
+            _n, pos = _cstring(d, pos)
+        if f1 & 0x01:
+            pos += 2
+        if f1 & 0x04:
+            pos += 4
+        if f1 & 0x02:
+            pos += 2
+        if f2 & 0x20:
+            pos += 9
+        var, pos = _cstring(d, pos)
+        text = _cstring(d, pos)[0] if f1 & 0x80 else None
+        out.append({"id": cid, "variable": var, "text": text, "font_id": font, "html": bool(f2 & 0x02), "read_only": bool(f1 & 0x08)})
+    return out
+
+
+def font_glyphs(swf):
+    """[{id, name, glyphs}] of every DefineFont2/3 (48, 75): `glyphs` the characters the font embeds, from its code table. A
+    field drawn in a font that embeds only digits shows only digits (redakai run 2026-11-24-071 F-1: font 392, 0 1 5 6)."""
+    out = []
+    for t in swf.tags:
+        if t.code not in (48, 75):
+            continue
+        d = t.body
+        fid, flags, _lang, nlen = struct.unpack_from("<HBBB", d, 0)
+        name = d[5:5 + nlen].split(b"\0")[0].decode("latin-1")
+        pos = 5 + nlen
+        n = struct.unpack_from("<H", d, pos)[0]
+        pos += 2
+        wide_off, wide_codes = bool(flags & 0x08), bool(flags & 0x04)
+        glyphs = ""
+        if n:
+            w = 4 if wide_off else 2
+            base = pos
+            code_off = struct.unpack_from("<I" if wide_off else "<H", d, base + n * w)[0]
+            cpos = base + code_off
+            if wide_codes:
+                glyphs = "".join(chr(c) for c in struct.unpack_from(f"<{n}H", d, cpos))
+            else:
+                glyphs = d[cpos:cpos + n].decode("latin-1")
+        out.append({"id": fid, "name": name, "glyphs": glyphs})
+    return out
+
+
 def placements(swf, positions=False):
     """[{character_id, depth, name, parent, frame}] for every PlaceObject2/3 that places a character, on the main timeline
     (`parent` None) and inside every DefineSprite (`parent` the sprite id); `name` is the instance name or None. The data
