@@ -35,9 +35,10 @@ The rest is frame actions inside sprites, mostly a single `stop()`.
 The init actions sit on three frames (tag positions from the original): the nine class definitions
 on frame 1, before the preloader `frame_1_DoAction_main`; the three `lib_*` registrations
 (`lib_forward_wheel_main`, `lib_back_wheel_main`, `lib_man_main`) on frame 10; the game's own
-`DoInitAction_main` on frame 11. Button 124 jumps from frame 10 to 15, button 147 from frames 11–12. Whether the player runs
-frame 11's init action on that jump isn't settled: the scripted behaviour session presses button 124
-first at tick 2802, long after it passed frame 11 at tick 720 (`tests/behaviour/checkpoints.json`). The init
+`DoInitAction_main` on frame 11. Button 124 jumps from frame 10 to 15, button 147 from frames 11–12. In the reference runtime
+(Ruffle) that jump needs nothing of frame 11: the scripted behaviour session runs the init action's code at tick 1,
+as the movie loads, and its checkpoint `start-before-forward` shows course 1 running after button 124 is pressed at
+tick 600, before frame 11 is ever shown (`tests/behaviour/checkpoints.json`). How Adobe's Flash Player orders it is not tested. The init
 action declares the globals with their first values: `stopSoundFlag = false`,
 `zastSoundFlag = true`, `life = 10`, `highQuality = true`, and `bikeSync`, `engine`, `objCamera`,
 `back1`, `back2` all `null` until the first level is built.

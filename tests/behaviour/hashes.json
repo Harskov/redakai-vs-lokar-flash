@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "at": "2026-10-21T11:08:36Z",
+  "at": "2026-11-24T22:51:19Z",
   "rows": [
     {
       "checkpoint": "carselection",
@@ -18,8 +18,8 @@
     },
     {
       "checkpoint": "crash",
-      "sha256_original": "d8ef5d49003d068304bab7edb0abbae9d4cab66006b4de9f1a57dec41cfc7418",
-      "sha256_rebuilt": "d8ef5d49003d068304bab7edb0abbae9d4cab66006b4de9f1a57dec41cfc7418",
+      "sha256_original": "fc69020630065abe969cc41436bfb65b8c56b8fe12d2660e844d7b87f5e15d47",
+      "sha256_rebuilt": "fc69020630065abe969cc41436bfb65b8c56b8fe12d2660e844d7b87f5e15d47",
       "pixel_diff_percent": 0.0,
       "verdict": "identical"
     },
@@ -32,15 +32,15 @@
     },
     {
       "checkpoint": "game-more-games",
-      "sha256_original": "739a60874adb13b8481d75cb40454baed7bf42bf6f50c7a45862110195e465a5",
-      "sha256_rebuilt": "739a60874adb13b8481d75cb40454baed7bf42bf6f50c7a45862110195e465a5",
+      "sha256_original": "0eba67fec2d918ec7863175553f8ddfa2fa184f2b25eccc9d8049a0086382622",
+      "sha256_rebuilt": "0eba67fec2d918ec7863175553f8ddfa2fa184f2b25eccc9d8049a0086382622",
       "pixel_diff_percent": 0.0,
       "verdict": "identical"
     },
     {
       "checkpoint": "gameover",
-      "sha256_original": "7f259c882cb29079b3e2c33bf8c95543a09de79a7c593706e2d816ccb698b5be",
-      "sha256_rebuilt": "7f259c882cb29079b3e2c33bf8c95543a09de79a7c593706e2d816ccb698b5be",
+      "sha256_original": "e5ead6bcfc4483a8b500923f9d79a412c1db9183e4c383c0cd6c2869e19602c7",
+      "sha256_rebuilt": "e5ead6bcfc4483a8b500923f9d79a412c1db9183e4c383c0cd6c2869e19602c7",
       "pixel_diff_percent": 0.0,
       "verdict": "identical"
     },
@@ -144,8 +144,8 @@
     },
     {
       "checkpoint": "level-1-enemy",
-      "sha256_original": "6d4e6842f1356faf972ae0d5f3e8927c545daf3018b04f803d2bbf27ff4e864b",
-      "sha256_rebuilt": "6d4e6842f1356faf972ae0d5f3e8927c545daf3018b04f803d2bbf27ff4e864b",
+      "sha256_original": "bbfe272a7b4589eb0815e334f531b3bf34f74b40408cef10974869627ee7317c",
+      "sha256_rebuilt": "bbfe272a7b4589eb0815e334f531b3bf34f74b40408cef10974869627ee7317c",
       "pixel_diff_percent": 0.0,
       "verdict": "identical"
     },
@@ -158,15 +158,15 @@
     },
     {
       "checkpoint": "level-1-riding",
-      "sha256_original": "485ea73a2b6451ce9151ddd79c643aa7c28f062e0fd624ce1cac7bc5d8bf78d8",
-      "sha256_rebuilt": "485ea73a2b6451ce9151ddd79c643aa7c28f062e0fd624ce1cac7bc5d8bf78d8",
+      "sha256_original": "fc4e1bb4c7fb7a10d0c351b1421fa1940b6bad04110c7e3e49d77bf412b10b83",
+      "sha256_rebuilt": "fc4e1bb4c7fb7a10d0c351b1421fa1940b6bad04110c7e3e49d77bf412b10b83",
       "pixel_diff_percent": 0.0,
       "verdict": "identical"
     },
     {
       "checkpoint": "level-1",
-      "sha256_original": "ee132371a4349e0d9182393b2223dd08c614019c318ab0a1656fbf3fdaf3d1e9",
-      "sha256_rebuilt": "ee132371a4349e0d9182393b2223dd08c614019c318ab0a1656fbf3fdaf3d1e9",
+      "sha256_original": "ae598e4413b1ae4749192b528a64ad3eb7a3ad4802b7b2113ac0c7cd06000f09",
+      "sha256_rebuilt": "ae598e4413b1ae4749192b528a64ad3eb7a3ad4802b7b2113ac0c7cd06000f09",
       "pixel_diff_percent": 0.0,
       "verdict": "identical"
     },
@@ -319,22 +319,22 @@
     },
     {
       "checkpoint": "lives-1500",
-      "sha256_original": "6b40c83c265e60c3f5025827fcdf01b7fe2c11347228ecfdaf667ed7a4b86a51",
-      "sha256_rebuilt": "6b40c83c265e60c3f5025827fcdf01b7fe2c11347228ecfdaf667ed7a4b86a51",
+      "sha256_original": "a67131e5e9a371dfdad393845c49891569f831fbd92bff19056904198f3514f5",
+      "sha256_rebuilt": "a67131e5e9a371dfdad393845c49891569f831fbd92bff19056904198f3514f5",
       "pixel_diff_percent": 0.0,
       "verdict": "identical"
     },
     {
       "checkpoint": "lives-2000",
-      "sha256_original": "81e62d0a94511359561095b9bf53367b959dfd7584ef38dc0536ef6e9acaeb7e",
-      "sha256_rebuilt": "81e62d0a94511359561095b9bf53367b959dfd7584ef38dc0536ef6e9acaeb7e",
+      "sha256_original": "e8bf0574978889228a4f26e4d742f7b516112cd85a727f679ce1e0fff1bc8d13",
+      "sha256_rebuilt": "e8bf0574978889228a4f26e4d742f7b516112cd85a727f679ce1e0fff1bc8d13",
       "pixel_diff_percent": 0.0,
       "verdict": "identical"
     },
     {
       "checkpoint": "lives-2500",
-      "sha256_original": "af2e24275479f762c103aea6fd14f6da3e2f70bcd2c1fa85e7df33431e3e1e81",
-      "sha256_rebuilt": "af2e24275479f762c103aea6fd14f6da3e2f70bcd2c1fa85e7df33431e3e1e81",
+      "sha256_original": "7ed4d7821d50a3c46d73e4c28cd3e330838712ec6234db90e4af118b4db339cf",
+      "sha256_rebuilt": "7ed4d7821d50a3c46d73e4c28cd3e330838712ec6234db90e4af118b4db339cf",
       "pixel_diff_percent": 0.0,
       "verdict": "identical"
     },
@@ -346,9 +346,16 @@
       "verdict": "identical"
     },
     {
+      "checkpoint": "logo-by-back",
+      "sha256_original": "8f8ff49b35ff81ca6e4d477e0fd113093f524ed70190646015f54f7c1f3277b8",
+      "sha256_rebuilt": "8f8ff49b35ff81ca6e4d477e0fd113093f524ed70190646015f54f7c1f3277b8",
+      "pixel_diff_percent": 0.0,
+      "verdict": "identical"
+    },
+    {
       "checkpoint": "logo-more-games",
-      "sha256_original": "ccd426de5f61cbe50b65e32fe88fdc0a2a8319662315c4406ea6d896407fa15f",
-      "sha256_rebuilt": "ccd426de5f61cbe50b65e32fe88fdc0a2a8319662315c4406ea6d896407fa15f",
+      "sha256_original": "453c34683b138d827a676799af7bf02efc8c6eaaa1e08a556992a3d86602bbee",
+      "sha256_rebuilt": "453c34683b138d827a676799af7bf02efc8c6eaaa1e08a556992a3d86602bbee",
       "pixel_diff_percent": 0.0,
       "verdict": "identical"
     },
@@ -382,8 +389,8 @@
     },
     {
       "checkpoint": "missile",
-      "sha256_original": "b6f482cb2621af6fb559ef0587832ae1d076a4398e6a721c26933d26a7d6e3d8",
-      "sha256_rebuilt": "b6f482cb2621af6fb559ef0587832ae1d076a4398e6a721c26933d26a7d6e3d8",
+      "sha256_original": "422f0628ba2b67dca891c3b1ed770fb0af40073213a25cea1b6000fcbe67a414",
+      "sha256_rebuilt": "422f0628ba2b67dca891c3b1ed770fb0af40073213a25cea1b6000fcbe67a414",
       "pixel_diff_percent": 0.0,
       "verdict": "identical"
     },
@@ -396,8 +403,8 @@
     },
     {
       "checkpoint": "replay",
-      "sha256_original": "fc14fbf94c450a3fa1b86940866d500708c6cc996be55e1cd803ae53724be1da",
-      "sha256_rebuilt": "fc14fbf94c450a3fa1b86940866d500708c6cc996be55e1cd803ae53724be1da",
+      "sha256_original": "1f3089acf5d7d0155908e060880675c2080338f1e03846bec5900453718577f8",
+      "sha256_rebuilt": "1f3089acf5d7d0155908e060880675c2080338f1e03846bec5900453718577f8",
       "pixel_diff_percent": 0.0,
       "verdict": "identical"
     },
@@ -410,22 +417,22 @@
     },
     {
       "checkpoint": "rockets",
-      "sha256_original": "26be4d31f1c19fa303571486f24284c65b35a7a0a6fbb56fbc8e1d6760d4a16c",
-      "sha256_rebuilt": "26be4d31f1c19fa303571486f24284c65b35a7a0a6fbb56fbc8e1d6760d4a16c",
+      "sha256_original": "f7a3bdd2e42b0e8804816df155b6421685472ec286722e5d2a628bf6ced1147e",
+      "sha256_rebuilt": "f7a3bdd2e42b0e8804816df155b6421685472ec286722e5d2a628bf6ced1147e",
       "pixel_diff_percent": 0.0,
       "verdict": "identical"
     },
     {
       "checkpoint": "sound-off",
-      "sha256_original": "5f6507ec17cbfe8e698b513f08338994c5265cbed00f71626f518f2f36f8e43b",
-      "sha256_rebuilt": "5f6507ec17cbfe8e698b513f08338994c5265cbed00f71626f518f2f36f8e43b",
+      "sha256_original": "75113c2d6e952b5998a14b46e81251cbebd55f4341cb9aa04d65180e13954fec",
+      "sha256_rebuilt": "75113c2d6e952b5998a14b46e81251cbebd55f4341cb9aa04d65180e13954fec",
       "pixel_diff_percent": 0.0,
       "verdict": "identical"
     },
     {
       "checkpoint": "sound-on",
-      "sha256_original": "04c5768aa94a69a8a104a47e0ad36651948ee46a7153f95c82be226e9e976457",
-      "sha256_rebuilt": "04c5768aa94a69a8a104a47e0ad36651948ee46a7153f95c82be226e9e976457",
+      "sha256_original": "f0d83924c62e6fde75e851bb0983a91e3271db0f03f6473231fc869c7e06bedf",
+      "sha256_rebuilt": "f0d83924c62e6fde75e851bb0983a91e3271db0f03f6473231fc869c7e06bedf",
       "pixel_diff_percent": 0.0,
       "verdict": "identical"
     },
@@ -433,6 +440,13 @@
       "checkpoint": "soundatta",
       "sha256_original": "efa33246c29e003264c4941b705bbd5a266443b6a6a1e6fd37ad135852055d9d",
       "sha256_rebuilt": "efa33246c29e003264c4941b705bbd5a266443b6a6a1e6fd37ad135852055d9d",
+      "pixel_diff_percent": 0.0,
+      "verdict": "identical"
+    },
+    {
+      "checkpoint": "start-before-forward",
+      "sha256_original": "486cae88b83ed5235488d6cf57397fb449a8e86136945727c8439498815e48f0",
+      "sha256_rebuilt": "486cae88b83ed5235488d6cf57397fb449a8e86136945727c8439498815e48f0",
       "pixel_diff_percent": 0.0,
       "verdict": "identical"
     },
@@ -559,27 +573,6 @@
       "checkpoint": "t17s-f595",
       "sha256_original": "474ec63aef1b6910ec78331e767bc88d8969f841e4ffa1cb01fc2312f742d153",
       "sha256_rebuilt": "474ec63aef1b6910ec78331e767bc88d8969f841e4ffa1cb01fc2312f742d153",
-      "pixel_diff_percent": 0.0,
-      "verdict": "identical"
-    },
-    {
-      "checkpoint": "t18s-f630",
-      "sha256_original": "30e6351217961ff719edad2005c5dbb787861a74820b05280755eebab5ae87a2",
-      "sha256_rebuilt": "30e6351217961ff719edad2005c5dbb787861a74820b05280755eebab5ae87a2",
-      "pixel_diff_percent": 0.0,
-      "verdict": "identical"
-    },
-    {
-      "checkpoint": "t19s-f665",
-      "sha256_original": "2bff7057605be4f5386dc75e28cf96f4f530fd35541ce058c7f0cd316d92b771",
-      "sha256_rebuilt": "2bff7057605be4f5386dc75e28cf96f4f530fd35541ce058c7f0cd316d92b771",
-      "pixel_diff_percent": 0.0,
-      "verdict": "identical"
-    },
-    {
-      "checkpoint": "t20s-f700",
-      "sha256_original": "dd7c161d632ec91de039ab410fd9cb87708f18fbee64a1896cd63cf7ffb63a12",
-      "sha256_rebuilt": "dd7c161d632ec91de039ab410fd9cb87708f18fbee64a1896cd63cf7ffb63a12",
       "pixel_diff_percent": 0.0,
       "verdict": "identical"
     }

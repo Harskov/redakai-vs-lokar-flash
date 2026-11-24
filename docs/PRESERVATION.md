@@ -47,9 +47,16 @@ Filled at S13 from the behaviour checks (Ruffle renders of the original and the 
   same day after `processGame` and `clearStuff` were rewritten to read `_root` plainly: 83 of 83 identical, every render
   byte-identical to the previous check's, the same 25 handlers run at the same ticks; compared once more with the five
   handlers no input reaches classified unreachable: 83 of 83 identical, the renders unchanged.
-- What the renders show. Without input (the first 32 checkpoints): the loader on the first frame, then the title menu
+- 2026-11-24, re-checked after comment-only source edits, with the timeline extended: the start button pressed on the
+  title menu at tick 600, before frame 11 has been shown, then five Backs of the context menu to the menu before the
+  session's next input at tick 705; the three unattended checkpoints from tick 630 on gave way to two along the new input.
+  82 checkpoints (29 unattended, 53 along the timeline): 82 of 82 pixel-identical, the same 25 handlers run. In both
+  sessions the code of frame 11's init action runs at tick 1, as the movie loads, so the direct jump from the menu to
+  the course finds its functions defined.
+- What the renders show. Without input (the first 29 checkpoints): the loader on the first frame, then the title menu
   (Start Game and More Games beside the control instructions) on every other checkpoint, its background animated;
-  playback stops there, so a label's checkpoint shows the menu, not the frame the label names. Along the timeline: the
+  playback stops there, so a label's checkpoint shows the menu, not the frame the label names. Along the timeline: course 1
+  started straight from the title menu's start button, then the title menu again by five Backs; the
   menu frames 11 and 12 with the start and help buttons' hover animations; frame 13 `carselection` and frame 14 `help`,
   each an unfinished panel; level 1 ridden with Up held, a missile (F) and compact rockets (G) fired, the speaker toggled
   off and on, the enemy attacking, crashes ("R.I.P!!") and replays taking a life each until game over ("You lost him");

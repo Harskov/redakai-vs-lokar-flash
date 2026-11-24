@@ -4,6 +4,49 @@
   "input": {
     "events": [
       {
+        "tick": 600,
+        "type": "mouse_move",
+        "x": 572,
+        "y": 434
+      },
+      {
+        "tick": 601,
+        "type": "mouse_down",
+        "x": 572,
+        "y": 434
+      },
+      {
+        "tick": 602,
+        "type": "mouse_up",
+        "x": 572,
+        "y": 434
+      },
+      {
+        "tick": 660,
+        "type": "menu",
+        "item": "Back"
+      },
+      {
+        "tick": 665,
+        "type": "menu",
+        "item": "Back"
+      },
+      {
+        "tick": 670,
+        "type": "menu",
+        "item": "Back"
+      },
+      {
+        "tick": 675,
+        "type": "menu",
+        "item": "Back"
+      },
+      {
+        "tick": 680,
+        "type": "menu",
+        "item": "Back"
+      },
+      {
         "tick": 705,
         "type": "mouse_move",
         "x": 572,
@@ -912,19 +955,14 @@
       "why": "every 35th player tick to 20 s"
     },
     {
-      "name": "t18s-f630",
+      "name": "start-before-forward",
       "frame": 630,
-      "why": "every 35th player tick to 20 s"
+      "why": "frame 15 `game`, course 1 running (score 0, five lives), after the logo's start button (button 124) at tick 600, before frame 11 was ever shown; frame 11's init action had already run at tick 1, as the movie loaded"
     },
     {
-      "name": "t19s-f665",
-      "frame": 665,
-      "why": "every 35th player tick to 20 s"
-    },
-    {
-      "name": "t20s-f700",
+      "name": "logo-by-back",
       "frame": 700,
-      "why": "every 35th player tick to 20 s"
+      "why": "frame 10 `logo` again, five Backs of the context menu from the course"
     },
     {
       "name": "logo-more-games",
