@@ -1,5 +1,6 @@
-// the frame after a level: count the level, add 100 to scorecard, show it beside the running total,
-// and once lvls reaches 7 go to the gamewin frame
+// the frame after a level: count the level and add 100 to scorecard; frame 16 removed every text
+// field, so the two writes show nothing and levelscore reads back undefined; once lvls reaches 7
+// go to the gamewin frame
 stop();
 stopAllSounds();
 lvls++;

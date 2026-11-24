@@ -2,8 +2,8 @@
 stop();
 preloader._width = 0;
 preloader._visible = preloader_bg._visible = true;
-// the preloader: every frame, the bar's width and the text follow the percentage loaded
-// (a zero total is taken as 1 to avoid dividing by zero); at 100% both hide and play frame 10
+// the preloader: every frame, the bar's width follows the percentage loaded, and so does txt, which
+// no text field shows (a zero total is taken as 1); at 100% bar and background hide and frame 10 plays
 preloader.onEnterFrame = function()
 {
    filesize_total = _root.getBytesTotal();

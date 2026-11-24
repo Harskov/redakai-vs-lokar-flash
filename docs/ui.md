@@ -1,6 +1,6 @@
 # ui
 
-The menus, the buttons and the readouts: the main-timeline frames 12-20, the buttons on them, the level selection and the time readout. The flow between frames is the table in `ARCHITECTURE.md`.
+The menus, the buttons and the score fields: the main-timeline frames 12-20, the buttons on them, the level selection and the elapsed-time text. The flow between frames is the table in `ARCHITECTURE.md`.
 
 ## Functions
 
@@ -15,12 +15,12 @@ The menus, the buttons and the readouts: the main-timeline frames 12-20, the but
 - `DefineButton2_389_BUTTONCONDACTION_on_release_main` (matched) — button 389 (btn2 on frame 15 game): opens http://www.jeuxredakai.com in a new window
 - `DefineButton2_461_BUTTONCONDACTION_on_release_main` (matched) — btn2 on comple: carries mscore into tscore, then gameStart (frame 17 has already raised lvls)
 - `DefineButton2_473_BUTTONCONDACTION_on_release_main` (matched) — btn0 on gamewin and gameover: zeroes tscore and mscore and sends the main timeline to the logo frame (10)
-- `showTime` (matched) — formats the elapsed game time (timeCounter, in ms) into the txtTime readout; called by processGame every frame
+- `showTime` (matched) — formats the elapsed game time (timeCounter, in ms) into txtTime, a variable no text field shows; called by processGame every frame
 - `getTimeString` (matched) — a time in milliseconds as mm:ss, each part zero-padded; used by showTime, loose and processGame's finish
 - `frame_12_DoAction_main` (matched) — the main frame (12): holds and sets the starting state lvls 1, scores 0, lifee 5, totascores 0
 - `frame_13_DoAction_main` (matched) — the carselection frame (13): stops every sound
 - `frame_14_DoAction_main` (matched) — the help frame (14): stops every sound
-- `frame_17_DoAction_main` (matched) — the comple frame: holds, silences, lvls++, scorecard + 100 into txtlevel, the running total into txtscore and levelscore, gamewin once lvls is 7
+- `frame_17_DoAction_main` (matched) — the comple frame: holds, silences, lvls++, scorecard + 100; its writes to txtlevel and txtscore reach no field (frame 16 removed them), so levelscore reads back undefined; gamewin once lvls is 7
 - `frame_18_DoAction_main` (matched) — the level selection frame: holds, silences and installs the per-frame handler that unlocks the level buttons
 - `frame_18_DoAction.onEnterFrame` (matched) — each frame: buttons le1 ... le15 up to lvls go to their frame 2 and get their press handler
 - `frame_18_DoAction.onRelease` (matched) — le1's press: lvls 1 and gameStart
@@ -38,8 +38,8 @@ The menus, the buttons and the readouts: the main-timeline frames 12-20, the but
 - `frame_18_DoAction.onRelease_13` (matched) — le13's press: lvls 13 and gameStart; never runs: frame 18 places le1 to le10 only
 - `frame_18_DoAction.onRelease_14` (matched) — le14's press: lvls 14 and gameStart; never runs: frame 18 places le1 to le10 only
 - `frame_18_DoAction.onRelease_15` (matched) — le15's press: lvls 15 and gameStart; never runs: frame 18 places le1 to le10 only
-- `frame_19_DoAction_main` (matched) — the gamewin frame: holds, silences, levelscore into txtfinalscore and mscore + " points" into txtscore2
-- `frame_20_DoAction_main` (matched) — the gameover frame: the same as gamewin, levelscore and mscore + " points" into the two readouts
+- `frame_19_DoAction_main` (matched) — the gamewin frame: holds, silences, mscore + " points" into txtscore2; levelscore goes to txtfinalscore, a name no field in the movie carries
+- `frame_20_DoAction_main` (matched) — the gameover frame: the same as gamewin: mscore + " points" into txtscore2, levelscore to the absent txtfinalscore
 
 ## Not known
 
@@ -49,4 +49,4 @@ The menus, the buttons and the readouts: the main-timeline frames 12-20, the but
 
 - button placements (the original's PlaceObject tags): 124 `btn1` on frame 10; 127 `btn2` on 10, 17, 19, 20; 147 and 148 on 11-12; 389 `btn2` on 15; 461 `btn2` on 17; 473 `btn0` on 19 and 20
 - the string "http://www.jeuxredakai.com/" in `DefineButton2_127_BUTTONCONDACTION_on_release_main` (and without the slash in button 389)
-- readouts written by the scripts: txtTime (`showTime`), txtscore and txtlevel (frame 17), txtfinalscore and txtscore2 (frames 19, 20)
+- the text fields (the original's DefineEditText and PlaceObject tags): `txtscore` placed on frame 15 and removed on frame 16 `reset`; `txtscore2` placed on frame 19 and kept on 20; fields tied to `lifee`, `level` and `_root.scoress` on frame 15, and to `_root.totalscoress` on 19 and 20. No field is named `txtlevel` or `txtfinalscore`, and none is named or tied to `txtTime`, so those writes (frame 17, frames 19 and 20, `showTime`) show nothing

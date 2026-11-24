@@ -12,7 +12,7 @@ On frame 15 (instance names from the original's PlaceObject tags):
 - `helicop` (sprite 446) and its explosion `explode_mc` (449): `processGame` brings the helicopter in at x 786.4 when `helicounter` reaches 200; `setBright` marks its state (150 hit, -150 destroyed, 0 normal).
 - `bomb` (sprite 453): reset to frame 1 by `firebomb` and `clearStuff`, played on impact, held at frame 5.
 - `themask_mc` (sprite 437): loops frames 1-507; `processGame` parks it on 508 when the masked man starts.
-- the on/off switch (sprite 399, frame labels `on`, `off`): its button `btnon` toggles between the two, and `off` stops every sound; probably the sound switch (unverified).
+- the sound switch (sprite 399, frame labels `on`, `off`): its button `btnon` toggles between the two; `off` stops every sound and `on` carries a StartSound of sound 6 (`btnon`).
 - `sd1` (sprite 440): holds frame 1; no script names it.
 
 Inside the levels (`mc_level`, sprite 387, frames `level1`...`level6`):
@@ -35,8 +35,8 @@ Inside the levels (`mc_level`, sprite 387, frames `level1`...`level6`):
 - `DefineSprite_358_frame_1_DoAction_main` (matched) — level 3's background (mc_fon in sprite 367): the same random pick as sprite 159, for a bg clip this sprite does not place either
 - `DefineSprite_385_frame_1_DoAction_main` (matched) — holds level 6's maskman_mc (385, in sprite 386) on frame 1
 - `DefineSprite_385_frame_5_DoAction_main` (matched) — holds level 6's maskman_mc on frame 5, the end of its animation
-- `DefineSprite_399_frame_1_DoAction_main` (matched) — the on/off switch on frame 15 (label on): holds and points btnon's press to the off frame; probably the sound switch (unverified)
-- `DefineSprite_399_frame_1_DoAction.onPress` (matched) — the on/off switch on frame 15 (labels on, off): a press while on plays from `off`, whose frame stops every sound; probably the sound switch (unverified)
+- `DefineSprite_399_frame_1_DoAction_main` (matched) — the sound switch on frame 15, frame on (a StartSound of the btnon loop sits on it): holds and points the button btnon's press to off
+- `DefineSprite_399_frame_1_DoAction.onPress` (matched) — the sound switch's press while on: plays from `off`, whose frame stops every sound
 - `DefineSprite_399_frame_2_DoAction_main` (matched) — the switch's off frame: holds, stops every sound and points btnon's press back to on
 - `DefineSprite_399_frame_2_DoAction.onPress` (matched) — the on/off switch's press while off: plays from `on`
 - `DefineSprite_408_frame_1_DoAction_main` (matched) — the health meter (health_mc) holds frame 1, full health; a bomb hit advances it with nextFrame

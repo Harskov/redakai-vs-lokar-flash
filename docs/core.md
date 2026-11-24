@@ -16,7 +16,7 @@ The game's control functions: the init action of sprite 150 (`DoInitAction`, fra
 - `clearStuff` (matched) — clears the attempt's moving parts: every shot in bulletArray hidden, sent to 39 and removed, the list emptied, the bomb and helicopter back to their start, both brightnesses reset; called by loose and processGame's finish
 - `loose` (matched) — a lost attempt (the author's spelling of lose): clearStuff, tscore into mscore and txtscore, the fail sound, life--, the wheels moved 1000 px right, the jeep parts and the crash clip played, the times and score shown, gameState 1
 - `frame_1_DoAction_main` (matched) — the preloader frame: holds, empties the bar (preloader width 0), shows bar and background, and installs the bar's per-frame handler
-- `frame_1_DoAction.onEnterFrame` (matched) — the preloader bar: width and text follow the percent loaded (getBytesLoaded over getBytesTotal); at 100% it hides both, removes itself and plays from frame 10
+- `frame_1_DoAction.onEnterFrame` (matched) — the preloader bar: its width follows the percent loaded (getBytesLoaded over getBytesTotal), and txt the percent as text, which no field shows; at 100% bar and background hide, the handler removes itself and frame 10 plays
 
 ## Not known
 

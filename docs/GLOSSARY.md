@@ -6,7 +6,7 @@
 | `level` | the level the physics game builds (`mc_level` frame); 1-10 in `nextLevel` | `initLevel`, `nextLevel`, frame 15 |
 | `lvls` | the level the menus track (1-15 on the level selection; `gamewin` at 7) | frames 12, 15, 17, 18 |
 | `life` / `lifee` | two life counters: `life` (10) is decremented by `loose` and never tested; `lifee` (5) by the crash clip, tested on frame 15 | `gameStart`, `loose`, `DefineSprite_443_frame_51_DoAction.onEnterFrame`, `frame_15_DoAction_main` |
-| `scores` / `mscore` / `tscore` / `levelscore` / `scorecard` | the physics game's score (shown in `mc_messageF`) and the menus' running scores | `gameStart`, `loose`, the shot checker, frames 17, 19, 20 |
+| `scores` / `mscore` / `tscore` / `levelscore` / `scorecard` | the physics game's score (written to `mc_messageF`, which the movie never places) and the menus' running scores | `gameStart`, `loose`, the shot checker, frames 17, 19, 20 |
 | `stargeted` | a count `processGame` tests `>= 3` at the finish; `processGame` sets it to 5 just before | `processGame`, `replay`, `nextLevel` |
 | `bulletArray` / `kval` / `kfire` | the live shots' names, the next shot's number (1000-1100), the gun's ready flag | `processGame`, `clearStuff`, `resetkfire` |
 | `mx1`...`my3` | the gun's aim points on the stage, written by `car1`'s clip actions | `car1`'s clip actions (gameplay-lib-bike-body.md) |

@@ -26,9 +26,9 @@ The rest is frame actions inside sprites, mostly a single `stop()`.
 | 14 | `help` | `frame_14_DoAction_main` stops every sound; reached from button 148 |
 | 15 | `game` | the level: `frame_15_DoAction_main` defines `firebomb` and `setBright`, maps `lvls` to `level`, sends the timeline to `gameover` when `lifee == 0` |
 | 16 | `reset` | no script; `nextLevel` and `replay` stop here and go straight back to `game` |
-| 17 | `comple` | `frame_17_DoAction_main`: `lvls++`, 100 points to `scorecard`, `gamewin` when `lvls == 7`; button 461 restarts through `gameStart` |
+| 17 | `comple` | `frame_17_DoAction_main`: `lvls++`, 100 points to `scorecard` (its writes to `txtlevel` and `txtscore` reach no field: frame 16 removed them), `gamewin` when `lvls == 7`; button 461 restarts through `gameStart` |
 | 18 | `level selection` | `frame_18_DoAction.onEnterFrame` unlocks buttons `le1`…`le15` up to `lvls`; each sets `lvls` and calls `gameStart`; the frame places `le1`…`le10` only, so the handlers of `le11`…`le15` never run; no script jumps here (the scripted session uses the context menu) |
-| 19 / 20 | `gamewin` / `gameover` | show `levelscore` and `mscore`; button 473 (`btn0`) zeroes the scores and returns to frame 10 |
+| 19 / 20 | `gamewin` / `gameover` | show `mscore` in `txtscore2`; `levelscore` goes to `txtfinalscore`, which no field carries; button 473 (`btn0`) zeroes the scores and returns to frame 10 |
 
 ## Boot
 
@@ -85,7 +85,7 @@ against the boxes and the helicopter; the helicopter (`helicop`, sprite 446) dro
 
 The scripts keep two of several things: `life` (10, decremented by `loose`) and `lifee` (5, decremented
 by the crash clip, tested on frame 15); `level` (up to 10 in `nextLevel`) and `lvls` (1–15 on the
-level selection; `gamewin` at 7); `scores` (shown in `mc_messageF`) and `mscore`/`tscore`/`levelscore`.
+level selection; `gamewin` at 7); `scores` (written to `mc_messageF`, a clip no PlaceObject of the movie places) and `mscore`/`tscore`/`levelscore`.
 `processGame` also sets `stargeted = 5` just before testing `stargeted >= 3`, which makes that test always
 true. A likely reading is that a bike-physics engine with Russian identifiers (`ugol`, `modul`,
 `koeff…`, `mc_fon`) was re-skinned with a second layer of menus, combat and scoring. That reading is

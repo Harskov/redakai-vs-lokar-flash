@@ -422,7 +422,7 @@ function resetkfire()
 {
    kfire = true;
 }
-// the clock readout: the elapsed game time (timeCounter) formatted into txtTime
+// the elapsed game time (timeCounter) formatted into txtTime, a variable no text field shows
 function showTime()
 {
    txtTime = getTimeString(timeCounter);
