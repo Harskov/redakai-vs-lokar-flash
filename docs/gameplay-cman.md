@@ -20,7 +20,7 @@ The rider (sprite 95, export `lib_man`, linked to CMan by `lib_man_main`): a Mov
 ## Not known
 
 - none of the file's 95 scripts calls `endMove`, so states 2 and 5 are never entered from the code
-- the file has 9 sprite frame labels: `stay` (95), `on`/`off` (399), `level1`...`level6` (387) (DOSSIER.md's census and the original's FrameLabel tags). `toLeft`, `left`, `fromLeft`, `toRight`, `right` and `fromRight` are none of them, so those `gotoAndStop` calls find no frame, which AVM1 ignores. That leaves the lean graphics unexplained; S13's runtime check can show what the rider does.
+- the file has 9 sprite frame labels: `stay` (95), `on`/`off` (399), `level1`...`level6` (387) (the original's FrameLabel tags inside its sprites). `toLeft`, `left`, `fromLeft`, `toRight`, `right` and `fromRight` are none of them, so those `gotoAndStop` calls find no frame, which AVM1 ignores. That leaves the lean graphics unexplained; S13's runtime check can show what the rider does.
 
 ## Evidence
 

@@ -85,5 +85,5 @@ Inside the levels (`mc_level`, sprite 387, frames `level1`...`level6`):
 - `mc_level.mc.box<pi>.play()`, `mask_mc.box<pi>.play()` and `mc_hit.mask_hit_mc.box<pi>.play()` in the shot checker
 - `bg.gotoAndStop(1 + random(5))` in `DefineSprite_159_frame_1_DoAction_main` and `DefineSprite_358_frame_1_DoAction_main`
 - frame labels `on` (1) and `off` (2) of sprite 399; `stopAllSounds()` in its frame-2 script
-- the clip-action scripts frame_15/PlaceObject2_33_1, _446_349, _453_353, _455_357 (reference/MANIFEST.json)
+- the clip-action scripts frame_15/PlaceObject2_33_1, _446_349, _453_353, _455_357 (`src/frame_15/PlaceObject2_*/`)
 - 0.01745329 (pi/180) in the bomb's load handler and in `processGame`'s aim

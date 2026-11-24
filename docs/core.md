@@ -26,7 +26,7 @@ The game's control functions: the init action of sprite 150 (`DoInitAction`, fra
 ## Evidence
 
 - `gameState` writers in the reference listing: `initLevel` and `resume` (0), `loose` (1), `processGame` (2, 3), `pauseGame` (4)
-- the frame labels `main`, `reset`, `game`, `comple` (DOSSIER.md) named by `newGame`, `nextLevel`, `replay`, `processGame`
+- the frame labels `main`, `reset`, `game`, `comple` (the main timeline's frame labels of frames 12, 16, 15 and 17) named by `newGame`, `nextLevel`, `replay`, `processGame`
 - `Math.floor(Math.random() * 3 + 1)` for `mc_level.mc["s" + i]`, i 1 to 10, in `initLevel`
 - `mc_control` (sprite 33, root frame 15) calls `initLevel` on load and `processGame` on enterFrame (gameplay-timeline-game.md)
 - DoInitAction tag 304 belongs to sprite 150 and sits on root frame 11 (the original's tag order)

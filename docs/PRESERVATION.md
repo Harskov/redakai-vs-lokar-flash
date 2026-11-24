@@ -12,8 +12,8 @@ timeline, 857 top-level tags, 95 scripts (AVM1).
 
 ## Reference exports
 
-FFDec (JPEXS Free Flash Decompiler v.26.3.0) P-code and ActionScript exports under `reference/` (gitignored) with `reference/MANIFEST.json`
-committed (counts and hashes). Assets are inventoried in `assets/MANIFEST.json` at S7 without their content.
+FFDec (JPEXS Free Flash Decompiler v.26.3.0) P-code and ActionScript exports of the original are the matching reference; being
+game-derived, they stay on the workbench and are not published. Assets are inventoried in `assets/MANIFEST.json` at S7 without their content.
 
 ## The rebuild
 

@@ -16,7 +16,7 @@
 | `mc_fon` | the level's background holder (the grass and hill parallax layers, the random background); fon is Russian for background (a reading) | `initLevel`, `processGame`, sprites 159 and 358 |
 | `ugol`, `modul`, `koeff` | angle, magnitude, coefficient: Russian terms in the physics classes' identifiers | `CVector2D.getUgol`, `CVector2D.modul`, `CWheel`, `CSpringConstraint` |
 | `zast` | in `zastSoundFlag` and `mc_sloop_zast`: picks the menus' music loop; possibly Russian for title screen (unverified) | `updateSoundLoop`, `newGame`, `gameStart` |
-| `logo`, `soundatta`, `main`, `carselection`, `help`, `game`, `reset`, `comple`, `level selection`, `gamewin`, `gameover` | the main timeline's frame labels, frames 10-20 | DOSSIER.md |
+| `logo`, `soundatta`, `main`, `carselection`, `help`, `game`, `reset`, `comple`, `level selection`, `gamewin`, `gameover` | the main timeline's frame labels, frames 10-20 | the main timeline's FrameLabel tags |
 | `lib_man`, `lib_bike_body`, `lib_forward_wheel`, `lib_back_wheel`, `bullet_id`, `rocket_id` | export names the code attaches or links to a class | the original's ExportAssets |
 | `bexplode` | set when a bomb hits the bike; sprite 52 inside `car1` plays while it is set and its frame 2 clears it | the bomb's clip action, `DefineSprite_52_frame_2_DoAction_main` |
 | `jeepselection` | the vehicle frame the jeep (sprite 97) and the tyres (sprite 113) show; no script writes it | `DefineSprite_97_frame_1_DoAction_main`, `DefineSprite_113_frame_1_DoAction_main` |

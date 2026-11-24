@@ -11,7 +11,7 @@ Keeps the bike in view: each frame `process` shifts the level clip so the target
 
 ## Not known
 
-- the class uses a 500 x 400 screen while the stage is 700 x 500 (DOSSIER.md); whether that is deliberate is not known
+- the class uses a 500 x 400 screen while the stage is 700 x 500 (the SWF header); whether that is deliberate is not known
 
 ## Evidence
 

@@ -8,7 +8,7 @@ accepted, the rest is still the reference line.
 ## The file
 
 One SWF 9 movie, 700×500 px at 35 fps, 20 frames on the main timeline, 95 AVM1 scripts
-(`DOSSIER.md`). The code lives in three places: the main timeline's frame actions (`frame_<n>_DoAction`),
+(the SWF header; one unit file per script under `src/`). The code lives in three places: the main timeline's frame actions (`frame_<n>_DoAction`),
 one init action that defines the game's global functions (`DoInitAction`, the init action of
 sprite 150, tag 304, on frame 11 `soundatta`; its functions run with `this` as `_root`), and nine AS2 classes under `__Packages` (`CVector2D`, `CParticle`,
 `CSpringConstraint`, `CWheel`, `CParticleEngine`, `CBikeSynchronizer`, `CCamera`, `CBack`, `CMan`).

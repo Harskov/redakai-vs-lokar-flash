@@ -13,4 +13,4 @@ The one function whose code touches only the player: the hold on frame 11 `sound
 ## Evidence
 
 - `frame_11_DoAction_main` is the platform-only set in PLATFORM.md (milestone M3)
-- frame label 11 `soundatta` (DOSSIER.md)
+- frame label 11 `soundatta` (the main timeline's FrameLabel tags)

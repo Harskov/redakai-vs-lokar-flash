@@ -34,7 +34,7 @@ checkpoints inject no input, so they do not answer it either.
 
 ## Asset formats
 
-The scripts reach library assets by export name (the 22 `ExportAssets` entries, `DOSSIER.md`; each is
+The scripts reach library assets by export name (the 22 `ExportAssets` entries; each is
 the `name` of its asset in `assets/MANIFEST.json`):
 
 - sounds: `playSnd` (matched) attaches a sound to a `Sound` on its timeline and starts it;
@@ -77,6 +77,6 @@ The tag formats, from the manifest:
 - `processGame` (matched): `mc_level.mc.mc_hit.hitTest(x, y, true)` for the rider's `h`, `b` and `l` points;
   the two `mc_finish._x` tests; the `s1`…`s20` hit test; `attachMovie("bullet_id" | "rocket_id", …)`
 - `CWheel.checkCollision` and `CWheel.pushOut` (reference listing): `hit_mc.hitTest(x, y, true)`
-- `assets/MANIFEST.json`: sprite 387 with 6 frames; 22 named assets, matching the 22 `ExportAssets` entries in
-  `DOSSIER.md`; no asset named `play bg1`, `crashbike` or `lib_snd_fail`; 10 MP3 sounds, all mono
+- `assets/MANIFEST.json`: sprite 387 with 6 frames; 22 named assets, one per `ExportAssets` entry of the
+  original; no asset named `play bg1`, `crashbike` or `lib_snd_fail`; 10 MP3 sounds, all mono
 - `lib_forward_wheel_main`, `lib_back_wheel_main`, `lib_man_main` (matched): the three `Object.registerClass` calls
